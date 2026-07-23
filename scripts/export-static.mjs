@@ -5,9 +5,9 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const OUT_DIR = path.join(ROOT, "dist", "github");
-const SRC_DIR = path.join(ROOT, "dist", "client");
-const SSR_HANDLER = path.join(ROOT, "dist", "server", "index.mjs");
+const OUT_DIR = path.join(ROOT, ".output", "github");
+const SRC_DIR = path.join(ROOT, ".output", "public");
+const SSR_HANDLER = path.join(ROOT, ".output", "server", "index.mjs");
 
 function log(...args) {
   console.log("[export-static]", ...args);
@@ -65,7 +65,7 @@ async function main() {
 
   // 1. Production build
   log("running production build...");
-  execSync("bun run build", { cwd: ROOT, stdio: "inherit" });
+execSync("npm run build", { cwd: ROOT, stdio: "inherit" });
 
   // 2. Import SSR handler
   log("importing SSR handler from", SSR_HANDLER.replace(ROOT + path.sep, ""));
