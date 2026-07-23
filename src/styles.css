@@ -1,0 +1,211 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-blue: var(--blue);
+  --color-blue-light: var(--blue-light);
+  --color-blue-deep: var(--blue-deep);
+  --color-cyan: var(--cyan);
+  --color-ink: var(--ink);
+  --color-slate: var(--slate);
+  --color-subtle: var(--subtle);
+  --font-display: "Raleway", sans-serif;
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Rethink Sans", sans-serif;
+}
+
+/* LIGHT (default) */
+:root {
+  --radius: 0.75rem;
+  --background: #f6f8fc;
+  --foreground: #0b1220;
+  --panel: #ffffff;
+  --panel-2: #eef2fa;
+  --card: #ffffff;
+  --card-foreground: #0b1220;
+  --popover: #ffffff;
+  --popover-foreground: #0b1220;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #eef2fa;
+  --secondary-foreground: #0b1220;
+  --muted: #eef2fa;
+  --muted-foreground: #4a5468;
+  --accent: #e0eaff;
+  --accent-foreground: #1d4ed8;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(11, 18, 32, 0.1);
+  --input: rgba(11, 18, 32, 0.12);
+  --ring: #3b82f6;
+
+  --blue: #3b82f6;
+  --blue-light: #60a5fa;
+  --blue-deep: #1d4ed8;
+  --cyan: #22d3ee;
+  --ink: #0b1220;
+  --slate: #4a5468;
+  --subtle: #8592a8;
+}
+
+.dark {
+  --background: #05070d;
+  --foreground: #f4f6fb;
+  --panel: #0b0f19;
+  --panel-2: #10151f;
+  --card: #0b0f19;
+  --card-foreground: #f4f6fb;
+  --popover: #0b0f19;
+  --popover-foreground: #f4f6fb;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #10151f;
+  --secondary-foreground: #f4f6fb;
+  --muted: #10151f;
+  --muted-foreground: #9aa3b8;
+  --accent: #10151f;
+  --accent-foreground: #60a5fa;
+  --destructive: #f87171;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.12);
+  --ring: #3b82f6;
+
+  --blue: #3b82f6;
+  --blue-light: #60a5fa;
+  --blue-deep: #1d4ed8;
+  --cyan: #22d3ee;
+  --ink: #f4f6fb;
+  --slate: #9aa3b8;
+  --subtle: #5b6376;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  h4, h5, h6, button, label, .ui {
+    font-family: var(--font-heading);
+  }
+}
+
+@utility circuit-bg {
+  background-image:
+    radial-gradient(circle at 20% 30%, color-mix(in oklab, var(--blue) 18%, transparent) 0, transparent 40%),
+    radial-gradient(circle at 80% 70%, color-mix(in oklab, var(--blue-deep) 22%, transparent) 0, transparent 45%),
+    linear-gradient(to bottom, transparent, var(--background));
+}
+
+@utility gradient-text {
+  background: linear-gradient(135deg, var(--blue-light), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@utility panel-border {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+@utility panel-border-hover {
+  &:hover {
+    border-color: color-mix(in oklab, var(--blue) 45%, transparent);
+    background: var(--panel-2);
+  }
+}
+
+@utility marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 70s linear infinite;
+  will-change: transform;
+}
+
+@utility marquee_reverse {
+  display: flex;
+  width: max-content;
+  animation: marqueeReverse 70s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marqueeReverse {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+@utility reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hide Calendly's side panel */
+[data-container="side-panel"] {
+  display: none !important;
+}
+
