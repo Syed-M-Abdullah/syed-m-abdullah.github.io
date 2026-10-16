@@ -10,11 +10,37 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ProcessRouteImport } from './routes/process'
 import { Route as CaseSlugRouteImport } from './routes/case.$slug'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesRoute = CaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcessRoute = ProcessRouteImport.update({
+  id: '/process',
+  path: '/process',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CaseSlugRoute = CaseSlugRouteImport.update({
@@ -22,31 +48,90 @@ const CaseSlugRoute = CaseSlugRouteImport.update({
   path: '/case/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/services/$slug',
+  path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/case-studies': typeof CaseStudiesRoute
+  '/contact': typeof ContactRoute
+  '/process': typeof ProcessRoute
   '/case/$slug': typeof CaseSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/case-studies': typeof CaseStudiesRoute
+  '/contact': typeof ContactRoute
+  '/process': typeof ProcessRoute
   '/case/$slug': typeof CaseSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/case-studies': typeof CaseStudiesRoute
+  '/contact': typeof ContactRoute
+  '/process': typeof ProcessRoute
   '/case/$slug': typeof CaseSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/case/$slug'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/case-studies'
+    | '/contact'
+    | '/process'
+    | '/case/$slug'
+    | '/services/$slug'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/case/$slug'
-  id: '__root__' | '/' | '/case/$slug'
+  to:
+    | '/'
+    | '/about'
+    | '/case-studies'
+    | '/contact'
+    | '/process'
+    | '/case/$slug'
+    | '/services/$slug'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/case-studies'
+    | '/contact'
+    | '/process'
+    | '/case/$slug'
+    | '/services/$slug'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  CaseStudiesRoute: typeof CaseStudiesRoute
+  ContactRoute: typeof ContactRoute
+  ProcessRoute: typeof ProcessRoute
   CaseSlugRoute: typeof CaseSlugRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,6 +143,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies': {
+      id: '/case-studies'
+      path: '/case-studies'
+      fullPath: '/case-studies'
+      preLoaderRoute: typeof CaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/process': {
+      id: '/process'
+      path: '/process'
+      fullPath: '/process'
+      preLoaderRoute: typeof ProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/case/$slug': {
       id: '/case/$slug'
       path: '/case/$slug'
@@ -65,12 +178,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CaseSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/services/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  CaseStudiesRoute: CaseStudiesRoute,
+  ContactRoute: ContactRoute,
+  ProcessRoute: ProcessRoute,
   CaseSlugRoute: CaseSlugRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

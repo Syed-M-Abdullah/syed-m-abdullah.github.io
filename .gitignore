@@ -16,6 +16,11 @@ dist-ssr
 .nitro
 *.local
 
+# Secrets — SMTP credentials for the contact API live only here, never in git
+.env
+.env.*
+!.env.example
+
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars

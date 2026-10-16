@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
+    "dev:full": "node scripts/dev-full.mjs",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "export:github": "node scripts/export-static.mjs",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "api": "npm --prefix server start",
+    "api:dev": "npm --prefix server run dev"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

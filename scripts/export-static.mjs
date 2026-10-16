@@ -1,102 +1,173 @@
-import { execSync } from "node:child_process";
+// Builds the app and pre-renders every route to static HTML for GitHub Pages.
+//   npm run export:github  →  .output/github/
+import { execFileSync, execSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const OUT_DIR = path.join(ROOT, ".output", "github");
 const SRC_DIR = path.join(ROOT, ".output", "public");
 const SSR_HANDLER = path.join(ROOT, ".output", "server", "index.mjs");
+const ROUTES_MODULE = path.join(ROOT, "src", "data", "routes.ts");
+// Files the Cloudflare/Nitro build emits that GitHub Pages doesn't use.
+const SKIP_FILES = new Set(["_headers", "_redirects"]);
+const NOT_FOUND_PROBE = "/__export-404__";
 
 function log(...args) {
   console.log("[export-static]", ...args);
 }
 
 function ensureDir(dir) {
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  fs.mkdirSync(dir, { recursive: true });
 }
 
 function rmrf(dir) {
   if (fs.existsSync(dir)) fs.rmSync(dir, { recursive: true, force: true });
 }
 
-function readSlugs() {
-  const file = path.join(ROOT, "src", "data", "caseStudies.ts");
-  const text = fs.readFileSync(file, "utf-8");
-  const matches = [...text.matchAll(/slug:\s*"([^"]+)"/g)];
-  return matches.map((m) => m[1]);
-}
-
 function copyDir(src, dest) {
   ensureDir(dest);
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    if (SKIP_FILES.has(entry.name)) continue;
     const srcPath = path.join(src, entry.name);
     const destPath = path.join(dest, entry.name);
-    if (entry.isDirectory()) {
-      copyDir(srcPath, destPath);
-    } else {
-      fs.copyFileSync(srcPath, destPath);
+    if (entry.isDirectory()) copyDir(srcPath, destPath);
+    else fs.copyFileSync(srcPath, destPath);
+  }
+}
+
+/**
+ * Loads the route list from src/data/routes.ts using Node's built-in TypeScript
+ * type-stripping (Node ≥ 22.6). Runs in a child process so the flag works on every
+ * supported Node version without changing how this script is invoked.
+ */
+function loadRouteConfig() {
+  const code = `import(${JSON.stringify(pathToFileURL(ROUTES_MODULE).href)}).then((m) => {
+    process.stdout.write(JSON.stringify({ routes: m.getStaticRoutes(), siteUrl: m.siteUrl, siteName: m.siteName }));
+  });`;
+  const out = execFileSync(
+    process.execPath,
+    ["--experimental-strip-types", "--no-warnings", "--input-type=module", "-e", code],
+    { cwd: ROOT, encoding: "utf-8" },
+  );
+  const { routes, siteUrl, siteName } = JSON.parse(out);
+  if (!Array.isArray(routes) || routes.length === 0)
+    throw new Error("No routes found in routes.ts");
+  const dupes = routes.filter((r, i) => routes.indexOf(r) !== i);
+  if (dupes.length) throw new Error(`Duplicate routes: ${dupes.join(", ")}`);
+  return { routes, siteUrl: siteUrl.replace(/\/+$/, ""), siteName };
+}
+
+/**
+ * Every srcset candidate in the exported HTML must exist — e.g. the 800px "-800.webp" copy of a
+ * large case-study screenshot (see CONTENT-GUIDE.md). A missing one would show a broken image.
+ */
+function missingSrcsetFiles() {
+  const missing = new Set();
+  const walk = (dir) => {
+    for (const name of fs.readdirSync(dir)) {
+      const p = path.join(dir, name);
+      if (fs.statSync(p).isDirectory()) walk(p);
+      else if (name.endsWith(".html")) {
+        const html = fs.readFileSync(p, "utf-8");
+        for (const [, set] of html.matchAll(/srcSet="([^"]+)"/gi)) {
+          for (const candidate of set.split(",")) {
+            const url = candidate.trim().split(/\s+/)[0];
+            if (url.startsWith("/") && !fs.existsSync(path.join(OUT_DIR, decodeURI(url))))
+              missing.add(url);
+          }
+        }
+      }
     }
-  }
+  };
+  walk(OUT_DIR);
+  return [...missing];
 }
 
-async function renderRoute(handler, route, url) {
-  const request = new Request(url);
-  const response = await handler.fetch(request, {}, { waitUntil: (p) => p });
-  const html = await response.text();
-  if (!response.ok) {
-    throw new Error(`Failed to render ${route}: ${response.status} ${response.statusText}`);
-  }
-  return html;
+async function render(handler, url) {
+  const response = await handler.fetch(new Request(url), {}, { waitUntil: (p) => p });
+  return { status: response.status, html: await response.text() };
 }
 
-function writeHtml(dir, route, html) {
-  const filePath = route === "/"
-    ? path.join(dir, "index.html")
-    : path.join(dir, route, "index.html");
+function outputFile(route) {
+  return route === "/" ? path.join(OUT_DIR, "index.html") : path.join(OUT_DIR, route, "index.html");
+}
+
+function writeFile(filePath, contents) {
   ensureDir(path.dirname(filePath));
-  fs.writeFileSync(filePath, html, "utf-8");
-  log("wrote", filePath.replace(ROOT + path.sep, ""));
+  fs.writeFileSync(filePath, contents, "utf-8");
+  log("wrote", path.relative(ROOT, filePath));
+}
+
+const canonical = (siteUrl, route) => (route === "/" ? `${siteUrl}/` : `${siteUrl}${route}/`);
+
+function sitemapXml(siteUrl, routes) {
+  const urls = routes.map((r) => `  <url><loc>${canonical(siteUrl, r)}</loc></url>`).join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
 
 async function main() {
   log("starting static export for GitHub Pages");
 
-  // 1. Production build
+  // 1. Route list (fails fast before the slow build if routes.ts is broken)
+  const { routes, siteUrl, siteName } = loadRouteConfig();
+  log(`found ${routes.length} routes for ${siteUrl}`);
+
+  // 2. Production build
   log("running production build...");
-execSync("npm run build", { cwd: ROOT, stdio: "inherit" });
+  execSync("npm run build", { cwd: ROOT, stdio: "inherit" });
 
-  // 2. Import SSR handler
-  log("importing SSR handler from", SSR_HANDLER.replace(ROOT + path.sep, ""));
-  const { default: handler } = await import("file://" + SSR_HANDLER);
+  // 3. Import SSR handler
+  const { default: handler } = await import(pathToFileURL(SSR_HANDLER).href);
 
-  // 3. Collect routes
-  const slugs = readSlugs();
-  const routes = ["/", ...slugs.map((s) => `/case/${s}`)];
-  log("rendering", routes.length, "routes");
-
-  // 4. Clean output
+  // 4. Clean output and copy client assets
   rmrf(OUT_DIR);
-  ensureDir(OUT_DIR);
-
-  // 5. Copy client assets
   copyDir(SRC_DIR, OUT_DIR);
 
-  // 6. Render every route to HTML
-  const baseUrl = "http://localhost:8080";
+  // 5. Render every route
+  const base = "http://localhost:8080";
   for (const route of routes) {
-    const html = await renderRoute(handler, route, baseUrl + route);
-    writeHtml(OUT_DIR, route, html);
+    const { status, html } = await render(handler, base + route);
+    if (status !== 200) throw new Error(`Failed to render ${route}: HTTP ${status}`);
+    if (!/<title>[^<]+<\/title>/.test(html)) throw new Error(`No <title> rendered for ${route}`);
+    writeFile(outputFile(route), html);
   }
 
-  // 7. SPA fallback for unknown routes (GitHub Pages 404 trick)
-  const indexHtml = fs.readFileSync(path.join(OUT_DIR, "index.html"), "utf-8");
-  fs.writeFileSync(path.join(OUT_DIR, "404.html"), indexHtml, "utf-8");
-  log("wrote 404.html (SPA fallback)");
+  // 6. Branded 404 page (GitHub Pages serves 404.html for unknown paths)
+  const notFound = await render(handler, base + NOT_FOUND_PROBE);
+  if (notFound.status !== 404) {
+    throw new Error(`Expected 404 for ${NOT_FOUND_PROBE}, got HTTP ${notFound.status}`);
+  }
+  // The root route's default <title> is rendered for unknown paths; give 404.html its own.
+  const notFoundHtml = notFound.html.replace(
+    /<title>[^<]*<\/title>/,
+    `<title>Page not found | ${siteName}</title><meta name="robots" content="noindex"/>`,
+  );
+  writeFile(path.join(OUT_DIR, "404.html"), notFoundHtml);
 
-  log("done — output ready at", OUT_DIR.replace(ROOT + path.sep, ""));
-  log("deploy this folder to GitHub Pages");
+  // 7. Sitemap + robots
+  writeFile(path.join(OUT_DIR, "sitemap.xml"), sitemapXml(siteUrl, routes));
+  writeFile(
+    path.join(OUT_DIR, "robots.txt"),
+    `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\n`,
+  );
+
+  // 8. Verify output
+  const missing = routes.filter((r) => !fs.existsSync(outputFile(r)));
+  if (missing.length) throw new Error(`Missing exported pages: ${missing.join(", ")}`);
+  const missingImages = missingSrcsetFiles();
+  if (missingImages.length) {
+    throw new Error(
+      `Missing responsive image files (add an 800px-wide copy, see CONTENT-GUIDE.md): ${missingImages.join(", ")}`,
+    );
+  }
+
+  log(
+    `done — ${routes.length} pages + 404.html, sitemap.xml, robots.txt in`,
+    path.relative(ROOT, OUT_DIR),
+  );
 }
 
 main().catch((err) => {

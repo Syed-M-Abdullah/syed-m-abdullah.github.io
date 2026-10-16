@@ -1,66 +1,70 @@
-# Auto-deploy portfolio to GitHub Pages
+# Deploying to GitHub Pages
 
-Every push to `main` in this repo automatically builds the portfolio and publishes it to:
-
-**https://syed-m-abdullah.github.io**
-
-The workflow lives at `.github/workflows/deploy.yml`.
-
-## One-time setup (5 minutes)
-
-You need to do this **once**. After that, every push auto-deploys.
-
-### 1. Create the target Pages repo (if not created yet)
-
-- Go to https://github.com/new
-- Repository name: `syed-m-abdullah.github.io` (exact name)
-- Owner: `Syed-M-Abdullah`
-- Public
-- Do **not** add README / .gitignore / license
-- Click **Create repository**
-
-### 2. Create a Personal Access Token (PAT)
-
-This lets the workflow push to your Pages repo.
-
-1. Go to https://github.com/settings/tokens?type=beta (Fine-grained tokens)
-2. Click **Generate new token**
-3. Token name: `portfolio-deploy`
-4. Expiration: `No expiration` (or 1 year)
-5. Repository access → **Only select repositories** → pick `syed-m-abdullah.github.io`
-6. Repository permissions → **Contents** → **Read and write**
-7. Click **Generate token** and **copy the token** (starts with `github_pat_...`)
-
-### 3. Add the token as a secret in THIS source repo
-
-1. Open this repo on GitHub → **Settings** → **Secrets and variables** → **Actions**
-2. Click **New repository secret**
-3. Name: `DEPLOY_TOKEN`
-4. Secret: paste the token from step 2
-5. Click **Add secret**
-
-### 4. Enable GitHub Pages on the target repo
-
-1. Go to `https://github.com/Syed-M-Abdullah/syed-m-abdullah.github.io/settings/pages`
-2. Source → **Deploy from a branch**
-3. Branch → **main** → **/ (root)** → **Save**
-
-(First deploy will populate `main`; after that Pages serves it automatically.)
-
-## That's it
-
-Push any change to `main` in this source repo → GitHub Actions builds → pushes static files to `syed-m-abdullah.github.io` → live in ~1 minute at:
+The site is a static export of the TanStack Start app, published to:
 
 **https://syed-m-abdullah.github.io**
 
-You can also trigger a manual deploy from the **Actions** tab → **Build & Deploy Portfolio to GitHub Pages** → **Run workflow**.
+This repository _is_ the Pages repository (`Syed-M-Abdullah/syed-m-abdullah.github.io`), so the
+site is served from the domain root and no base path is needed.
 
-## Local export (optional)
+## How it works
 
-If you want to build locally without pushing:
+Every push to `main` runs `.github/workflows/deploy.yml`:
+
+1. Checks out the repo and sets up Node 22.
+2. `npm install`
+3. `npm run export:github` — builds the app and pre-renders every page (see below) into
+   `.output/github/`.
+4. Uploads `.output/github/` as a Pages artifact and deploys it with `actions/deploy-pages`.
+
+No personal access token or second repository is involved.
+
+## One-time setup
+
+In this repository on GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+That's it — after that, every push to `main` deploys automatically. You can follow progress in the
+**Actions** tab.
+
+## What the export produces
+
+`scripts/export-static.mjs`:
+
+- reads the page list from `src/data/routes.ts` (static pages, every service page and every case
+  study — add a service or case study to the data files and it's exported automatically);
+- renders each route to `<route>/index.html`, failing the build if any page doesn't render;
+- renders a branded `404.html` (GitHub Pages serves it for unknown URLs);
+- writes `sitemap.xml` and `robots.txt` using `site.url` from `src/data/site.ts`.
+
+The export uses Node's built-in TypeScript type-stripping to read `src/data/routes.ts`, so it needs
+Node 22.6 or newer (the workflow uses Node 22).
+
+## Run it locally
 
 ```bash
-bun run export:github
+npm ci
+npm run export:github
 ```
 
-Output goes to `dist/github/`.
+Then serve `.output/github/` with any static file server to check it. GitHub Pages redirects
+`/about` to `/about/`, so canonical URLs and the sitemap use the trailing-slash form.
+
+## Contact form
+
+The form posts to the contact API in [`server/`](./server/README.md) — Express + Nodemailer sending
+through Gmail SMTP (smtp.gmail.com:465). It emails you a lead alert and the visitor a confirmation.
+Only after the API confirms success does the visitor see "Thank you" for ~1.5 seconds and get
+taken to the Calendly booking page (`site.calendly`); on any failure they see an error and stay.
+
+GitHub Pages can't run Node, so the API is deployed separately (Vercel or Render — steps in
+`server/README.md`). Then set `contactApi` in `src/data/site.ts` to its URL and push. Until that
+URL is set, the live form shows an error with your email address.
+
+SMTP credentials live only in the git-ignored `.env` (locally) and in the API host's environment
+settings — never in this repository or the website code.
+
+## Custom domain (optional)
+
+If you later add a custom domain, add a `public/CNAME` file containing the domain, configure it under
+**Settings → Pages**, and update `site.url` in `src/data/site.ts` so canonical URLs, Open Graph tags
+and the sitemap point at the new domain.

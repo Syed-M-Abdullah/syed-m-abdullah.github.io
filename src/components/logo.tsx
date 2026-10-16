@@ -1,22 +1,37 @@
-import logoAsset from "@/assets/slogo.png";
+import abLogo from "@/assets/brand/ab-logo.webp";
+import abLogo2x from "@/assets/brand/ab-logo@2x.webp";
+import { cn } from "@/lib/utils";
+
+/** The AB monogram (transparent cut of the official logo). */
+export function LogoMark({ className }: { className?: string }) {
+  return (
+    <img
+      src={abLogo}
+      srcSet={`${abLogo} 1x, ${abLogo2x} 2x`}
+      width={179}
+      height={120}
+      alt=""
+      decoding="async"
+      className={cn(
+        "h-9 w-auto shrink-0 object-contain drop-shadow-[0_4px_14px_rgba(59,130,246,0.35)] md:h-10",
+        className,
+      )}
+    />
+  );
+}
 
 export function Logo({ className = "" }: { className?: string }) {
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
-      <img
-        src={logoAsset}
-        alt="Abdullah Bukhari"
-        className="h-10 w-auto object-contain"
-      />
-      <div className="hidden flex-col leading-none sm:flex">
-        <span className="font-heading text-[13px] font-semibold tracking-[0.14em]">
-          <span className="text-foreground">ABDULLAH</span>{" "}
-          <span className="text-blue">BUKHARI</span>
+    <span className={cn("flex items-center gap-3", className)}>
+      <LogoMark />
+      <span className="flex flex-col leading-none">
+        <span className="font-display text-[15px] font-bold tracking-tight whitespace-nowrap text-foreground">
+          Abdullah Bukhari
         </span>
-        <span className="mt-1 font-heading text-[9px] tracking-[0.35em] text-subtle uppercase">
-          Build · Automate · Scale
+        <span className="mt-1 hidden text-[11px] text-muted-foreground sm:block">
+          AI Automation &amp; Software Engineer
         </span>
-      </div>
-    </div>
+      </span>
+    </span>
   );
 }

@@ -1,116 +1,138 @@
+import { Link } from "@tanstack/react-router";
+import { Linkedin, Mail, MessageCircle, CalendarClock } from "lucide-react";
 import { site } from "@/data/site";
-import { Linkedin, Mail, Phone } from "lucide-react";
-import logoAsset from "@/assets/slogo.png";
+import { services } from "@/data/services";
+import { Logo } from "./logo";
 
 export function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer className="relative overflow-hidden border-t border-border bg-panel/60 pt-20 pb-8">
-      <div className="pointer-events-none absolute inset-x-0 -top-1/2 -z-10 h-[200%] circuit-bg opacity-40" />
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+    <footer className="relative overflow-hidden border-t border-border bg-panel/40">
+      <div
+        aria-hidden
+        className="tech-grid pointer-events-none absolute inset-0 -z-10 opacity-60"
+      />
+      <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
-            <div className="font-heading text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              Your trusted partner
-            </div>
-
-            <div className="mt-2 font-display text-4xl font-extrabold leading-none tracking-tight text-foreground md:text-5xl">
-            <img
-  src={logoAsset}
-  alt="Abdullah Bukhari"
-  className="w-auto object-contain"
-  style={{ height: "95px", marginLeft: "-10px" }}
-/>
-              <span>ABDULLAH</span>{" "}
-              <span className="gradient-text">BUKHARI</span>
-            </div>
-            <div className="mt-3 font-heading text-xs uppercase tracking-[0.3em] text-blue">
-              Build · Automate · Scale
-            </div>
-            <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              AI systems and enterprise software that live in production. Remote-first from
-              Multan, shipping to clients worldwide.
+            <Link to="/" className="inline-block rounded-lg" aria-label={`${site.name} — home`}>
+              <Logo />
+            </Link>
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              GoHighLevel workflows, n8n automations, API integrations and AI voice and chat systems
+              for agencies and businesses — with custom .NET engineering when a project needs it.
             </p>
+            <p className="mt-4 text-sm text-muted-foreground">{site.location}</p>
           </div>
 
-          <FooterCol
-            title="Services"
-            links={[
-              { label: "AI Voice Agents", href: "#services" },
-              { label: "Omnichannel Chatbots", href: "#services" },
-              { label: "Automation Systems", href: "#services" },
-              { label: "Enterprise Software", href: "#services" },
-            ]}
-          />
-          <FooterCol
-            title="Company"
-            links={[
-              { label: "Case Studies", href: "#cases" },
-              { label: "Process", href: "#process" },
-              { label: "Tech Stack", href: "#stack" },
-              { label: "Experience", href: "#experience" },
-            ]}
-          />
-          <FooterCol
-            title="Connect"
-            links={[
-              { label: "LinkedIn", href: site.linkedin, external: true },
-              { label: "Fiverr", href: site.fiverr, external: true },
-              { label: "Email", href: `mailto:${site.email}` },
-              { label: "WhatsApp", href: `https://wa.me/${site.whatsapp}`, external: true }
-            ]}
-          />
+          <FooterCol title="Services">
+            {services.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  to="/services/$slug"
+                  params={{ slug: s.slug }}
+                  className="text-sm text-muted-foreground transition hover:text-foreground"
+                >
+                  {s.shortTitle}
+                </Link>
+              </li>
+            ))}
+          </FooterCol>
+
+          <FooterCol title="Explore">
+            {(
+              [
+                { to: "/case-studies", label: "Case studies" },
+                { to: "/process", label: "How I work" },
+                { to: "/about", label: "About" },
+                { to: "/contact", label: "Contact" },
+              ] as const
+            ).map((l) => (
+              <li key={l.to}>
+                <Link
+                  to={l.to}
+                  className="text-sm text-muted-foreground transition hover:text-foreground"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </FooterCol>
+
+          <FooterCol title="Connect">
+            <li>
+              <a
+                href={`mailto:${site.email}`}
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground"
+              >
+                <Mail size={14} aria-hidden /> Email
+              </a>
+            </li>
+            <li>
+              <a
+                href={site.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground"
+              >
+                <Linkedin size={14} aria-hidden /> LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                href={site.calendly}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground"
+              >
+                <CalendarClock size={14} aria-hidden /> Book a call
+              </a>
+            </li>
+            <li>
+              <a
+                href={`https://wa.me/${site.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground"
+              >
+                <MessageCircle size={14} aria-hidden /> WhatsApp
+              </a>
+            </li>
+            {site.fiverr && (
+              <li>
+                <a
+                  href={site.fiverr}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground transition hover:text-foreground"
+                >
+                  Fiverr
+                </a>
+              </li>
+            )}
+          </FooterCol>
         </div>
 
-        <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground">
-          <div>© {new Date().getFullYear()} Syed Abdullah Bukhari · Pakistan · Remote worldwide</div>
-          <div className="flex flex-wrap items-center gap-5">
-            {/* <a href={`tel:${site.phone}`} className="flex items-center gap-2 hover:text-foreground">
-              <Phone size={13} /> {site.phone}
-            </a> */}
-            <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-foreground">
-              {site.whatsapp}
-            </a>
-            {site.emails.map((e) => (
-              <a key={e} href={`mailto:${e}`} className="flex items-center gap-2 hover:text-foreground">
-                <Mail size={13} /> {e}
-              </a>
-            ))}
-            <a href={site.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-foreground">
-              <Linkedin size={13} /> LinkedIn
-            </a>
-          </div>
+        <div className="mt-14 flex flex-col gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {year} {site.name}
+          </p>
+          <a href={`mailto:${site.email}`} className="break-all hover:text-foreground">
+            {site.email}
+          </a>
         </div>
       </div>
     </footer>
   );
 }
 
-function FooterCol({
-  title,
-  links,
-}: {
-  title: string;
-  links: { label: string; href: string; external?: boolean }[];
-}) {
+function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <div className="font-heading text-[11px] uppercase tracking-[0.2em] text-blue">
+      <h2 className="font-heading text-xs font-semibold uppercase tracking-[0.16em] text-foreground">
         {title}
-      </div>
-      <ul className="mt-4 space-y-2.5">
-        {links.map((l) => (
-          <li key={l.label}>
-            <a
-              href={l.href}
-              target={l.external ? "_blank" : undefined}
-              rel={l.external ? "noreferrer" : undefined}
-              className="text-sm text-muted-foreground transition hover:text-foreground"
-            >
-              {l.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+      </h2>
+      <ul className="mt-4 space-y-2.5">{children}</ul>
     </div>
   );
 }
