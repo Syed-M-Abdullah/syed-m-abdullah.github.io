@@ -42,7 +42,10 @@ function Row({ hidden = false }: { hidden?: boolean }) {
 export function TechMarquee() {
   const [paused, setPaused] = useState(false);
   return (
-    <section aria-labelledby="stack-title" className="py-10 md:py-14">
+    <section
+      aria-labelledby="stack-title"
+      className="cv-auto py-10 [contain-intrinsic-size:auto_200px] md:py-14"
+    >
       <Container>
         <div className="mb-5 flex items-center justify-center gap-3">
           <p

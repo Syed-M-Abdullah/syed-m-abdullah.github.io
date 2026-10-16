@@ -529,6 +529,13 @@
   }
 }
 
+/* ---- Below-the-fold sections: the browser skips their layout and paint until they near the
+   viewport (a big win on phones). contain-intrinsic-size keeps the scrollbar stable. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
 /* ---- Hero: drifting grid, noise, word-by-word reveal */
 .hero-grid {
   position: absolute;

@@ -41,6 +41,7 @@ function Index() {
 
       <Section
         id="services"
+        className="cv-auto"
         eyebrow="Services"
         title="What I help you build"
         intro="AI voice and chat agents, automation and the software behind them — for agencies and the businesses they serve."
@@ -65,13 +66,14 @@ function Index() {
             View all projects <ArrowRight size={15} aria-hidden />
           </ButtonLink>
         }
-        className="border-y border-border bg-panel/30"
+        className="cv-auto border-y border-border bg-panel/30"
       >
         <CaseStudyGrid studies={featuredCaseStudies} reveal="view" />
       </Section>
 
       <Section
         id="process"
+        className="cv-auto"
         eyebrow="How I work"
         title="A simple, transparent process"
         intro="From first call to a live system, you work directly with the engineer who designs and builds it."
@@ -89,7 +91,7 @@ function Index() {
         eyebrow="Engineering approach"
         title="Built to keep working after launch"
         intro="Demos are easy. Systems that survive messy data, API outages and staff changes take deliberate engineering."
-        className="pt-0 md:pt-0"
+        className="cv-auto pt-0 md:pt-0"
       >
         <Principles />
       </Section>

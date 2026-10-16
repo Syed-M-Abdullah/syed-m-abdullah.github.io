@@ -28,7 +28,13 @@ export function useReveal(key?: string) {
       { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
     );
     els.forEach((el) => {
-      if (el.getBoundingClientRect().top > window.innerHeight) {
+      // Inside a content-visibility section that has not rendered yet, measure the section.
+      const host = el.closest<HTMLElement>(".cv-auto");
+      const top = Math.max(
+        el.getBoundingClientRect().top,
+        host ? host.getBoundingClientRect().top : -Infinity,
+      );
+      if (top > window.innerHeight) {
         el.classList.add("reveal-pending");
         io.observe(el);
       }
