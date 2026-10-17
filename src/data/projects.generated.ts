@@ -3,2377 +3,1715 @@
 import type { ProjectSummary } from "./projects";
 
 export const generatedProjects: ProjectSummary[] = [
- {
-  "slug": "hisabdaar",
-  "title": "Hisabdaar",
-  "subtitle": "Hisabdaar Business Management System",
-  "tool": "custom",
-  "excerpt": "Hisabdaar is a complete business management system built to manage sales, customers, products, purchases, expenses, inventory, accounting, payments, and reports from one…",
-  "cover": {
-   "src": "/projects/hisabdaar/01-960.webp",
-   "srcSet": "/projects/hisabdaar/01-480.webp 480w, /projects/hisabdaar/01-960.webp 960w, /projects/hisabdaar/01-1400.webp 1400w",
-   "full": "/projects/hisabdaar/01-1400.webp",
-   "width": 1400,
-   "height": 611,
-   "alt": "Hisabdaar: Hisabdaar Dashboard"
+  {
+    slug: "hisabdaar",
+    title: "Hisabdaar",
+    subtitle: "Hisabdaar Business Management System",
+    tool: "custom",
+    excerpt:
+      "Hisabdaar is a complete business management system built to manage sales, customers, products, purchases, expenses, inventory, accounting, payments, and reports from one…",
+    cover: {
+      src: "/projects/hisabdaar/01-960.webp",
+      srcSet:
+        "/projects/hisabdaar/01-480.webp 480w, /projects/hisabdaar/01-960.webp 960w, /projects/hisabdaar/01-1400.webp 1400w",
+      full: "/projects/hisabdaar/01-1400.webp",
+      width: 1400,
+      height: 611,
+      alt: "Hisabdaar: Hisabdaar Dashboard",
+    },
+    imageCount: 4,
+    toolsUsed: ["ASP.NET MVC", "SQL Server", "jQuery", "Bootstrap"],
+    toolIds: ["aspnetcore", "sqlserver", "jquery", "bootstrap"],
+    services: ["custom-software"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["hisabdaar"],
+    source: "folder",
   },
-  "imageCount": 4,
-  "toolsUsed": [
-   "ASP.NET MVC",
-   "SQL Server",
-   "jQuery",
-   "Bootstrap"
-  ],
-  "toolIds": [
-   "aspnetcore",
-   "sqlserver",
-   "jquery",
-   "bootstrap"
-  ],
-  "services": [
-   "custom-software"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "hisabdaar"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "medzah-admin-portal",
-  "title": "Medzah Admin Portal",
-  "subtitle": "MEDZAH Medical Product & Administration Management System",
-  "tool": "custom",
-  "excerpt": "MEDZAH is a web based administration platform built for managing medical products, orders, users, reports, permissions, and internal communication from one centralized…",
-  "cover": {
-   "src": "/projects/medzah-admin-portal/01-960.webp",
-   "srcSet": "/projects/medzah-admin-portal/01-480.webp 480w, /projects/medzah-admin-portal/01-960.webp 960w, /projects/medzah-admin-portal/01-1600.webp 1600w",
-   "full": "/projects/medzah-admin-portal/01-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "Medzah Admin Portal: 8s"
+  {
+    slug: "medzah-admin-portal",
+    title: "Medzah Admin Portal",
+    subtitle: "MEDZAH Medical Product & Administration Management System",
+    tool: "custom",
+    excerpt:
+      "MEDZAH is a web based administration platform built for managing medical products, orders, users, reports, permissions, and internal communication from one centralized…",
+    cover: {
+      src: "/projects/medzah-admin-portal/01-960.webp",
+      srcSet:
+        "/projects/medzah-admin-portal/01-480.webp 480w, /projects/medzah-admin-portal/01-960.webp 960w, /projects/medzah-admin-portal/01-1600.webp 1600w",
+      full: "/projects/medzah-admin-portal/01-1600.webp",
+      width: 1600,
+      height: 783,
+      alt: "Medzah Admin Portal: 8s",
+    },
+    imageCount: 4,
+    toolsUsed: ["ASP.NET MVC 5 / Core", "JWT", "Stripe", "FedEx API"],
+    toolIds: ["aspnetcore", "stripe"],
+    services: ["custom-software"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "folder",
   },
-  "imageCount": 4,
-  "toolsUsed": [
-   "ASP.NET MVC 5 / Core",
-   "JWT",
-   "Stripe",
-   "FedEx API"
-  ],
-  "toolIds": [
-   "aspnetcore",
-   "stripe"
-  ],
-  "services": [
-   "custom-software"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "folder"
- },
- {
-  "slug": "medzah-client-portal",
-  "title": "Medzah Client Portal",
-  "subtitle": "MEDZAH Medical Product Ordering & Customer Portal",
-  "tool": "custom",
-  "excerpt": "MEDZAH is a web based customer portal for medical product suppliers, allowing business customers to browse products, configure product options, place orders, manage…",
-  "cover": {
-   "src": "/projects/medzah-client-portal/01-960.webp",
-   "srcSet": "/projects/medzah-client-portal/01-480.webp 480w, /projects/medzah-client-portal/01-960.webp 960w, /projects/medzah-client-portal/01-1600.webp 1600w",
-   "full": "/projects/medzah-client-portal/01-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "Medzah Client Portal: 01 8s"
+  {
+    slug: "medzah-client-portal",
+    title: "Medzah Client Portal",
+    subtitle: "MEDZAH Medical Product Ordering & Customer Portal",
+    tool: "custom",
+    excerpt:
+      "MEDZAH is a web based customer portal for medical product suppliers, allowing business customers to browse products, configure product options, place orders, manage…",
+    cover: {
+      src: "/projects/medzah-client-portal/01-960.webp",
+      srcSet:
+        "/projects/medzah-client-portal/01-480.webp 480w, /projects/medzah-client-portal/01-960.webp 960w, /projects/medzah-client-portal/01-1600.webp 1600w",
+      full: "/projects/medzah-client-portal/01-1600.webp",
+      width: 1600,
+      height: 783,
+      alt: "Medzah Client Portal: 01 8s",
+    },
+    imageCount: 5,
+    toolsUsed: ["ASP.NET MVC 5 / Core", "JWT", "Stripe", "FedEx API"],
+    toolIds: ["aspnetcore", "stripe"],
+    services: ["custom-software"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["medzah-ecommerce"],
+    source: "folder",
   },
-  "imageCount": 5,
-  "toolsUsed": [
-   "ASP.NET MVC 5 / Core",
-   "JWT",
-   "Stripe",
-   "FedEx API"
-  ],
-  "toolIds": [
-   "aspnetcore",
-   "stripe"
-  ],
-  "services": [
-   "custom-software"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "medzah-ecommerce"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "privont",
-  "title": "Privont",
-  "subtitle": "PRIVONT Real Estate Relationship & Lead Management Platform",
-  "tool": "custom",
-  "excerpt": "PRIVONT is a secure web based real estate management platform built to centralize agents, lenders, vendors, leads, users, and business relationships in one system.",
-  "cover": {
-   "src": "/projects/privont/01-960.webp",
-   "srcSet": "/projects/privont/01-480.webp 480w, /projects/privont/01-960.webp 960w, /projects/privont/01-1600.webp 1600w",
-   "full": "/projects/privont/01-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "Privont: 01 1s"
+  {
+    slug: "privont",
+    title: "Privont",
+    subtitle: "PRIVONT Real Estate Relationship & Lead Management Platform",
+    tool: "custom",
+    excerpt:
+      "PRIVONT is a secure web based real estate management platform built to centralize agents, lenders, vendors, leads, users, and business relationships in one system.",
+    cover: {
+      src: "/projects/privont/01-960.webp",
+      srcSet:
+        "/projects/privont/01-480.webp 480w, /projects/privont/01-960.webp 960w, /projects/privont/01-1600.webp 1600w",
+      full: "/projects/privont/01-1600.webp",
+      width: 1600,
+      height: 783,
+      alt: "Privont: 01 1s",
+    },
+    imageCount: 5,
+    toolsUsed: ["ASP.NET MVC", "React Native", "JWT", "Follow Up Boss API"],
+    toolIds: ["aspnetcore", "reactnative"],
+    services: ["custom-software"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["privont"],
+    source: "folder",
   },
-  "imageCount": 5,
-  "toolsUsed": [
-   "ASP.NET MVC",
-   "React Native",
-   "JWT",
-   "Follow Up Boss API"
-  ],
-  "toolIds": [
-   "aspnetcore",
-   "reactnative"
-  ],
-  "services": [
-   "custom-software"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "privont"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "restaurant-pos-zatca-integrated",
-  "title": "Restaurant POS (ZATCA Integrated)",
-  "subtitle": "Restaurant POS & Table Management System",
-  "tool": "custom",
-  "excerpt": "A desktop based restaurant management system designed to handle daily restaurant operations from one platform.",
-  "cover": {
-   "src": "/projects/restaurant-pos-zatca-integrated/01-960.webp",
-   "srcSet": "/projects/restaurant-pos-zatca-integrated/01-480.webp 480w, /projects/restaurant-pos-zatca-integrated/01-960.webp 960w",
-   "full": "/projects/restaurant-pos-zatca-integrated/01-960.webp",
-   "width": 960,
-   "height": 518,
-   "alt": "Restaurant POS (ZATCA Integrated): 01 Login Start 00s"
+  {
+    slug: "restaurant-pos-zatca-integrated",
+    title: "Restaurant POS (ZATCA Integrated)",
+    subtitle: "Restaurant POS & Table Management System",
+    tool: "custom",
+    excerpt:
+      "A desktop based restaurant management system designed to handle daily restaurant operations from one platform.",
+    cover: {
+      src: "/projects/restaurant-pos-zatca-integrated/01-960.webp",
+      srcSet:
+        "/projects/restaurant-pos-zatca-integrated/01-480.webp 480w, /projects/restaurant-pos-zatca-integrated/01-960.webp 960w",
+      full: "/projects/restaurant-pos-zatca-integrated/01-960.webp",
+      width: 960,
+      height: 518,
+      alt: "Restaurant POS (ZATCA Integrated): 01 Login Start 00s",
+    },
+    imageCount: 7,
+    toolsUsed: ["WinForms", "ZATCA SDK", "Crystal Reports"],
+    toolIds: [],
+    services: ["custom-software"],
+    featured: true,
+    order: 100,
+    legacySlugs: ["ziafat-pos"],
+    source: "folder",
   },
-  "imageCount": 7,
-  "toolsUsed": [
-   "WinForms",
-   "ZATCA SDK",
-   "Crystal Reports"
-  ],
-  "toolIds": [],
-  "services": [
-   "custom-software"
-  ],
-  "featured": true,
-  "order": 100,
-  "legacySlugs": [
-   "ziafat-pos"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "ruda",
-  "title": "RUDA",
-  "subtitle": "RUDA Property & Administrative Management System",
-  "tool": "custom",
-  "excerpt": "Built a centralized administrative management system for Ravi Urban Development Authority (RUDA) to manage property operations, applications, offerings, payment plans,…",
-  "cover": {
-   "src": "/projects/ruda/01-960.webp",
-   "srcSet": "/projects/ruda/01-480.webp 480w, /projects/ruda/01-960.webp 960w, /projects/ruda/01-1600.webp 1600w",
-   "full": "/projects/ruda/01-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "RUDA, screenshot 1"
+  {
+    slug: "ruda",
+    title: "RUDA",
+    subtitle: "RUDA Property & Administrative Management System",
+    tool: "custom",
+    excerpt:
+      "Built a centralized administrative management system for Ravi Urban Development Authority (RUDA) to manage property operations, applications, offerings, payment plans,…",
+    cover: {
+      src: "/projects/ruda/01-960.webp",
+      srcSet:
+        "/projects/ruda/01-480.webp 480w, /projects/ruda/01-960.webp 960w, /projects/ruda/01-1600.webp 1600w",
+      full: "/projects/ruda/01-1600.webp",
+      width: 1600,
+      height: 783,
+      alt: "RUDA, screenshot 1",
+    },
+    imageCount: 6,
+    toolsUsed: ["ASP.NET MVC", "ADO.NET", "SQL Server 2022", "React"],
+    toolIds: ["aspnetcore", "sqlserver", "react"],
+    services: ["custom-software"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["ruda-erp"],
+    source: "folder",
   },
-  "imageCount": 6,
-  "toolsUsed": [
-   "ASP.NET MVC",
-   "ADO.NET",
-   "SQL Server 2022",
-   "React"
-  ],
-  "toolIds": [
-   "aspnetcore",
-   "sqlserver",
-   "react"
-  ],
-  "services": [
-   "custom-software"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "ruda-erp"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "gohighlevel-automation-showcase",
-  "title": "GoHighLevel Automation Showcase",
-  "tool": "ghl",
-  "excerpt": "A set of GoHighLevel workflows covering lead nurturing, appointment management, payment processing and instalment plans.",
-  "cover": {
-   "src": "/projects/gohighlevel-automation-showcase/01-736.webp",
-   "srcSet": "/projects/gohighlevel-automation-showcase/01-480.webp 480w, /projects/gohighlevel-automation-showcase/01-736.webp 736w",
-   "full": "/projects/gohighlevel-automation-showcase/01-736.webp",
-   "width": 736,
-   "height": 877,
-   "alt": "GoHighLevel Automation Showcase: Appointment Booking"
+  {
+    slug: "gohighlevel-automation-showcase",
+    title: "GoHighLevel Automation Showcase",
+    tool: "ghl",
+    excerpt:
+      "A set of GoHighLevel workflows covering lead nurturing, appointment management, payment processing and instalment plans.",
+    cover: {
+      src: "/projects/gohighlevel-automation-showcase/01-736.webp",
+      srcSet:
+        "/projects/gohighlevel-automation-showcase/01-480.webp 480w, /projects/gohighlevel-automation-showcase/01-736.webp 736w",
+      full: "/projects/gohighlevel-automation-showcase/01-736.webp",
+      width: 736,
+      height: 877,
+      alt: "GoHighLevel Automation Showcase: Appointment Booking",
+    },
+    imageCount: 11,
+    toolsUsed: ["GoHighLevel", "Workflows", "Email", "SMS", "Payments"],
+    toolIds: ["gohighlevel"],
+    services: ["gohighlevel-automation"],
+    featured: true,
+    order: 100,
+    legacySlugs: ["ghl-workflow-library"],
+    source: "folder",
   },
-  "imageCount": 11,
-  "toolsUsed": [
-   "GoHighLevel",
-   "Workflows",
-   "Email",
-   "SMS",
-   "Payments"
-  ],
-  "toolIds": [
-   "gohighlevel"
-  ],
-  "services": [
-   "gohighlevel-automation"
-  ],
-  "featured": true,
-  "order": 100,
-  "legacySlugs": [
-   "ghl-workflow-library"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "ai-powered-customer-support-sla-and-escalation-system",
-  "title": "AI Powered Customer Support SLA & Escalation System",
-  "tool": "make",
-  "excerpt": "Built an automated customer support and SLA management system for handling support requests across multiple communication channels.",
-  "cover": {
-   "src": "/projects/ai-powered-customer-support-sla-and-escalation-system/01-960.webp",
-   "srcSet": "/projects/ai-powered-customer-support-sla-and-escalation-system/01-480.webp 480w, /projects/ai-powered-customer-support-sla-and-escalation-system/01-960.webp 960w, /projects/ai-powered-customer-support-sla-and-escalation-system/01-1600.webp 1600w",
-   "full": "/projects/ai-powered-customer-support-sla-and-escalation-system/01-1600.webp",
-   "width": 1600,
-   "height": 614,
-   "alt": "AI Powered Customer Support SLA & Escalation System: AI Powered Customer Support SLA & Escalation System 1"
+  {
+    slug: "ai-powered-customer-support-sla-and-escalation-system",
+    title: "AI Powered Customer Support SLA & Escalation System",
+    tool: "make",
+    excerpt:
+      "Built an automated customer support and SLA management system for handling support requests across multiple communication channels.",
+    cover: {
+      src: "/projects/ai-powered-customer-support-sla-and-escalation-system/01-960.webp",
+      srcSet:
+        "/projects/ai-powered-customer-support-sla-and-escalation-system/01-480.webp 480w, /projects/ai-powered-customer-support-sla-and-escalation-system/01-960.webp 960w, /projects/ai-powered-customer-support-sla-and-escalation-system/01-1600.webp 1600w",
+      full: "/projects/ai-powered-customer-support-sla-and-escalation-system/01-1600.webp",
+      width: 1600,
+      height: 614,
+      alt: "AI Powered Customer Support SLA & Escalation System: AI Powered Customer Support SLA & Escalation System 1",
+    },
+    imageCount: 4,
+    toolsUsed: [
+      "Make.com",
+      "Gmail",
+      "WhatsApp/Twilio",
+      "HubSpot/SmartSuite",
+      "OpenAI/Claude",
+      "Notion",
+      "Slack",
+      "Google Drive",
+      "Google Sheets",
+      "Webhooks",
+    ],
+    toolIds: [
+      "make",
+      "gmail",
+      "whatsapp",
+      "twilio",
+      "hubspot",
+      "openai",
+      "claude",
+      "notion",
+      "slack",
+      "googlesheets",
+    ],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["make-support-sla"],
+    source: "folder",
   },
-  "imageCount": 4,
-  "toolsUsed": [
-   "Make.com",
-   "Gmail",
-   "WhatsApp/Twilio",
-   "HubSpot/SmartSuite",
-   "OpenAI/Claude",
-   "Notion",
-   "Slack",
-   "Google Drive",
-   "Google Sheets",
-   "Webhooks"
-  ],
-  "toolIds": [
-   "make",
-   "gmail",
-   "whatsapp",
-   "twilio",
-   "hubspot",
-   "openai",
-   "claude",
-   "notion",
-   "slack",
-   "googlesheets"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "make-support-sla"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "ai-powered-field-service-asset-maintenance-and-technician-dispatch-system",
-  "title": "AI Powered Field Service, Asset Maintenance & Technician Dispatch System",
-  "tool": "make",
-  "excerpt": "Built an automated field service and asset maintenance system for managing equipment faults, technician dispatch, repair operations, and preventive maintenance.",
-  "cover": {
-   "src": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-960.webp",
-   "srcSet": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-480.webp 480w, /projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-960.webp 960w, /projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-1600.webp 1600w",
-   "full": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-1600.webp",
-   "width": 1600,
-   "height": 566,
-   "alt": "AI Powered Field Service, Asset Maintenance & Technician Dispatch System: AI Powered Field Service, Asset Maintenance & Technician Dispatch System 1"
+  {
+    slug: "ai-powered-field-service-asset-maintenance-and-technician-dispatch-system",
+    title: "AI Powered Field Service, Asset Maintenance & Technician Dispatch System",
+    tool: "make",
+    excerpt:
+      "Built an automated field service and asset maintenance system for managing equipment faults, technician dispatch, repair operations, and preventive maintenance.",
+    cover: {
+      src: "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-960.webp",
+      srcSet:
+        "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-480.webp 480w, /projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-960.webp 960w, /projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-1600.webp 1600w",
+      full: "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-1600.webp",
+      width: 1600,
+      height: 566,
+      alt: "AI Powered Field Service, Asset Maintenance & Technician Dispatch System: AI Powered Field Service, Asset Maintenance & Technician Dispatch System 1",
+    },
+    imageCount: 4,
+    toolsUsed: [
+      "Make.com",
+      "Airtable/SmartSuite",
+      "OpenAI/Claude",
+      "Google Drive",
+      "Google Calendar",
+      "Google Maps API",
+      "Twilio",
+      "Slack",
+      "Gmail",
+      "Google Sheets",
+    ],
+    toolIds: ["make", "airtable", "openai", "claude", "twilio", "slack", "gmail", "googlesheets"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["make-field-service"],
+    source: "folder",
   },
-  "imageCount": 4,
-  "toolsUsed": [
-   "Make.com",
-   "Airtable/SmartSuite",
-   "OpenAI/Claude",
-   "Google Drive",
-   "Google Calendar",
-   "Google Maps API",
-   "Twilio",
-   "Slack",
-   "Gmail",
-   "Google Sheets"
-  ],
-  "toolIds": [
-   "make",
-   "airtable",
-   "openai",
-   "claude",
-   "twilio",
-   "slack",
-   "gmail",
-   "googlesheets"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "make-field-service"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "ai-powered-procurement-and-vendor-management-system",
-  "title": "AI Powered Procurement & Vendor Management System",
-  "tool": "make",
-  "excerpt": "Built an automated procurement and vendor management system for handling purchase requests, vendor onboarding, quotation comparison, approvals, purchase orders, and…",
-  "cover": {
-   "src": "/projects/ai-powered-procurement-and-vendor-management-system/01-960.webp",
-   "srcSet": "/projects/ai-powered-procurement-and-vendor-management-system/01-480.webp 480w, /projects/ai-powered-procurement-and-vendor-management-system/01-960.webp 960w, /projects/ai-powered-procurement-and-vendor-management-system/01-1600.webp 1600w",
-   "full": "/projects/ai-powered-procurement-and-vendor-management-system/01-1600.webp",
-   "width": 1600,
-   "height": 532,
-   "alt": "AI Powered Procurement & Vendor Management System: AI Powered Procurement & Vendor Management System 1"
+  {
+    slug: "ai-powered-procurement-and-vendor-management-system",
+    title: "AI Powered Procurement & Vendor Management System",
+    tool: "make",
+    excerpt:
+      "Built an automated procurement and vendor management system for handling purchase requests, vendor onboarding, quotation comparison, approvals, purchase orders, and…",
+    cover: {
+      src: "/projects/ai-powered-procurement-and-vendor-management-system/01-960.webp",
+      srcSet:
+        "/projects/ai-powered-procurement-and-vendor-management-system/01-480.webp 480w, /projects/ai-powered-procurement-and-vendor-management-system/01-960.webp 960w, /projects/ai-powered-procurement-and-vendor-management-system/01-1600.webp 1600w",
+      full: "/projects/ai-powered-procurement-and-vendor-management-system/01-1600.webp",
+      width: 1600,
+      height: 532,
+      alt: "AI Powered Procurement & Vendor Management System: AI Powered Procurement & Vendor Management System 1",
+    },
+    imageCount: 4,
+    toolsUsed: [
+      "Make.com",
+      "Airtable",
+      "Google Sheets",
+      "Google Drive",
+      "Gmail",
+      "Slack",
+      "OpenAI",
+      "DocuSign",
+      "Webhooks",
+    ],
+    toolIds: ["make", "airtable", "googlesheets", "gmail", "slack", "openai", "docusign"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["make-procurement"],
+    source: "folder",
   },
-  "imageCount": 4,
-  "toolsUsed": [
-   "Make.com",
-   "Airtable",
-   "Google Sheets",
-   "Google Drive",
-   "Gmail",
-   "Slack",
-   "OpenAI",
-   "DocuSign",
-   "Webhooks"
-  ],
-  "toolIds": [
-   "make",
-   "airtable",
-   "googlesheets",
-   "gmail",
-   "slack",
-   "openai",
-   "docusign"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "make-procurement"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "ai-powered-recruitment-and-candidate-screening-system",
-  "title": "AI Powered Recruitment & Candidate Screening System",
-  "tool": "make",
-  "excerpt": "Built an automated recruitment and candidate screening system for managing job applications from initial submission to interview scheduling.",
-  "cover": {
-   "src": "/projects/ai-powered-recruitment-and-candidate-screening-system/01-960.webp",
-   "srcSet": "/projects/ai-powered-recruitment-and-candidate-screening-system/01-480.webp 480w, /projects/ai-powered-recruitment-and-candidate-screening-system/01-960.webp 960w, /projects/ai-powered-recruitment-and-candidate-screening-system/01-1600.webp 1600w",
-   "full": "/projects/ai-powered-recruitment-and-candidate-screening-system/01-1600.webp",
-   "width": 1600,
-   "height": 533,
-   "alt": "AI Powered Recruitment & Candidate Screening System: AI Powered Recruitment & Candidate Screening System 1"
+  {
+    slug: "ai-powered-recruitment-and-candidate-screening-system",
+    title: "AI Powered Recruitment & Candidate Screening System",
+    tool: "make",
+    excerpt:
+      "Built an automated recruitment and candidate screening system for managing job applications from initial submission to interview scheduling.",
+    cover: {
+      src: "/projects/ai-powered-recruitment-and-candidate-screening-system/01-960.webp",
+      srcSet:
+        "/projects/ai-powered-recruitment-and-candidate-screening-system/01-480.webp 480w, /projects/ai-powered-recruitment-and-candidate-screening-system/01-960.webp 960w, /projects/ai-powered-recruitment-and-candidate-screening-system/01-1600.webp 1600w",
+      full: "/projects/ai-powered-recruitment-and-candidate-screening-system/01-1600.webp",
+      width: 1600,
+      height: 533,
+      alt: "AI Powered Recruitment & Candidate Screening System: AI Powered Recruitment & Candidate Screening System 1",
+    },
+    imageCount: 3,
+    toolsUsed: [
+      "Make.com",
+      "Airtable",
+      "google Drive",
+      "OpenAI",
+      "Gmail",
+      "Google Calendar",
+      "Slack",
+      "Webhooks",
+    ],
+    toolIds: ["make", "airtable", "openai", "gmail", "slack"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["make-recruitment"],
+    source: "folder",
   },
-  "imageCount": 3,
-  "toolsUsed": [
-   "Make.com",
-   "Airtable",
-   "google Drive",
-   "OpenAI",
-   "Gmail",
-   "Google Calendar",
-   "Slack",
-   "Webhooks"
-  ],
-  "toolIds": [
-   "make",
-   "airtable",
-   "openai",
-   "gmail",
-   "slack"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "make-recruitment"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "automated-agreements-invoices-and-client-document-workflow",
-  "title": "Automated Agreements Invoices & Client Document Workflow",
-  "tool": "make",
-  "excerpt": "Built an automated document processing system for managing client agreements, invoices, folders, and sales pitch files.",
-  "cover": {
-   "src": "/projects/automated-agreements-invoices-and-client-document-workflow/01-906.webp",
-   "srcSet": "/projects/automated-agreements-invoices-and-client-document-workflow/01-480.webp 480w, /projects/automated-agreements-invoices-and-client-document-workflow/01-906.webp 906w",
-   "full": "/projects/automated-agreements-invoices-and-client-document-workflow/01-906.webp",
-   "width": 906,
-   "height": 286,
-   "alt": "Automated Agreements Invoices & Client Document Workflow: Automated Agreements Invoices & Client Document Workflow 2"
+  {
+    slug: "automated-agreements-invoices-and-client-document-workflow",
+    title: "Automated Agreements Invoices & Client Document Workflow",
+    tool: "make",
+    excerpt:
+      "Built an automated document processing system for managing client agreements, invoices, folders, and sales pitch files.",
+    cover: {
+      src: "/projects/automated-agreements-invoices-and-client-document-workflow/01-906.webp",
+      srcSet:
+        "/projects/automated-agreements-invoices-and-client-document-workflow/01-480.webp 480w, /projects/automated-agreements-invoices-and-client-document-workflow/01-906.webp 906w",
+      full: "/projects/automated-agreements-invoices-and-client-document-workflow/01-906.webp",
+      width: 906,
+      height: 286,
+      alt: "Automated Agreements Invoices & Client Document Workflow: Automated Agreements Invoices & Client Document Workflow 2",
+    },
+    imageCount: 3,
+    toolsUsed: [
+      "Make.com",
+      "Google Sheets",
+      "Google Docs",
+      "Google Drive",
+      "SmartSuite",
+      "Webhooks",
+      "Automation Routers",
+    ],
+    toolIds: ["make", "googlesheets"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["make-document-generation"],
+    source: "folder",
   },
-  "imageCount": 3,
-  "toolsUsed": [
-   "Make.com",
-   "Google Sheets",
-   "Google Docs",
-   "Google Drive",
-   "SmartSuite",
-   "Webhooks",
-   "Automation Routers"
-  ],
-  "toolIds": [
-   "make",
-   "googlesheets"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "make-document-generation"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "automated-xero-pos-invoices-and-bill-attachments-from-monday-com",
-  "title": "Automated Xero POs, Invoices & Bill Attachments from Monday.com",
-  "tool": "make",
-  "excerpt": "Built an automated finance workflow that connects Monday.com with Xero to automate purchase orders, client invoices, supplier invoices, and bill attachments.",
-  "cover": {
-   "src": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-960.webp",
-   "srcSet": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-480.webp 480w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-960.webp 960w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-1080.webp 1080w",
-   "full": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-1080.webp",
-   "width": 1080,
-   "height": 427,
-   "alt": "Automated Xero POs, Invoices & Bill Attachments from Monday.com: Automated Xero POs, Invoices & Bill Attachments from Monday.com(1)"
+  {
+    slug: "automated-xero-pos-invoices-and-bill-attachments-from-monday-com",
+    title: "Automated Xero POs, Invoices & Bill Attachments from Monday.com",
+    tool: "make",
+    excerpt:
+      "Built an automated finance workflow that connects Monday.com with Xero to automate purchase orders, client invoices, supplier invoices, and bill attachments.",
+    cover: {
+      src: "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-960.webp",
+      srcSet:
+        "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-480.webp 480w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-960.webp 960w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-1080.webp 1080w",
+      full: "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-1080.webp",
+      width: 1080,
+      height: 427,
+      alt: "Automated Xero POs, Invoices & Bill Attachments from Monday.com: Automated Xero POs, Invoices & Bill Attachments from Monday.com(1)",
+    },
+    imageCount: 3,
+    toolsUsed: [
+      "Make.com",
+      "Monday.com",
+      "Xero API",
+      "Monday.com API",
+      "PDF Processing",
+      "Automated Email",
+      "Error Handling",
+    ],
+    toolIds: ["make", "monday", "xero"],
+    services: ["workflow-automation"],
+    featured: true,
+    order: 100,
+    legacySlugs: ["make-monday-xero"],
+    source: "folder",
   },
-  "imageCount": 3,
-  "toolsUsed": [
-   "Make.com",
-   "Monday.com",
-   "Xero API",
-   "Monday.com API",
-   "PDF Processing",
-   "Automated Email",
-   "Error Handling"
-  ],
-  "toolIds": [
-   "make",
-   "monday",
-   "xero"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": true,
-  "order": 100,
-  "legacySlugs": [
-   "make-monday-xero"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "automated-youtube-content-and-scheduling-workflow",
-  "title": "Automated YouTube Content & Scheduling Workflow",
-  "tool": "make",
-  "excerpt": "Built a fully automated YouTube content system that handles video uploads, SEO content generation, validation, scheduling, and publishing through Make.com.",
-  "cover": {
-   "src": "/projects/automated-youtube-content-and-scheduling-workflow/01-960.webp",
-   "srcSet": "/projects/automated-youtube-content-and-scheduling-workflow/01-480.webp 480w, /projects/automated-youtube-content-and-scheduling-workflow/01-960.webp 960w, /projects/automated-youtube-content-and-scheduling-workflow/01-1080.webp 1080w",
-   "full": "/projects/automated-youtube-content-and-scheduling-workflow/01-1080.webp",
-   "width": 1080,
-   "height": 270,
-   "alt": "Automated YouTube Content & Scheduling Workflow: Automated YouTube Content & Scheduling Workflow"
+  {
+    slug: "automated-youtube-content-and-scheduling-workflow",
+    title: "Automated YouTube Content & Scheduling Workflow",
+    tool: "make",
+    excerpt:
+      "Built a fully automated YouTube content system that handles video uploads, SEO content generation, validation, scheduling, and publishing through Make.com.",
+    cover: {
+      src: "/projects/automated-youtube-content-and-scheduling-workflow/01-960.webp",
+      srcSet:
+        "/projects/automated-youtube-content-and-scheduling-workflow/01-480.webp 480w, /projects/automated-youtube-content-and-scheduling-workflow/01-960.webp 960w, /projects/automated-youtube-content-and-scheduling-workflow/01-1080.webp 1080w",
+      full: "/projects/automated-youtube-content-and-scheduling-workflow/01-1080.webp",
+      width: 1080,
+      height: 270,
+      alt: "Automated YouTube Content & Scheduling Workflow: Automated YouTube Content & Scheduling Workflow",
+    },
+    imageCount: 1,
+    toolsUsed: [
+      "Make.com",
+      "YouTube API",
+      "Google Drive",
+      "Google Sheets",
+      "Airtable",
+      "AI",
+      "Automated Scheduling",
+      "Content Validation",
+    ],
+    toolIds: ["make", "googlesheets", "airtable"],
+    services: ["workflow-automation", "ai-content-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["make-youtube-scheduling"],
+    source: "folder",
   },
-  "imageCount": 1,
-  "toolsUsed": [
-   "Make.com",
-   "YouTube API",
-   "Google Drive",
-   "Google Sheets",
-   "Airtable",
-   "AI",
-   "Automated Scheduling",
-   "Content Validation"
-  ],
-  "toolIds": [
-   "make",
-   "googlesheets",
-   "airtable"
-  ],
-  "services": [
-   "workflow-automation",
-   "ai-content-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "make-youtube-scheduling"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "freightflow-control-tower",
-  "title": "FreightFlow Control Tower",
-  "tool": "make",
-  "excerpt": "Built an automated logistics control system for managing shipment booking, carrier selection, pickup coordination, live tracking, delivery exceptions, proof of delivery,…",
-  "cover": {
-   "src": "/projects/freightflow-control-tower/01-960.webp",
-   "srcSet": "/projects/freightflow-control-tower/01-480.webp 480w, /projects/freightflow-control-tower/01-960.webp 960w, /projects/freightflow-control-tower/01-1600.webp 1600w",
-   "full": "/projects/freightflow-control-tower/01-1600.webp",
-   "width": 1600,
-   "height": 759,
-   "alt": "FreightFlow Control Tower: FreightFlow Control Tower 1"
+  {
+    slug: "freightflow-control-tower",
+    title: "FreightFlow Control Tower",
+    tool: "make",
+    excerpt:
+      "Built an automated logistics control system for managing shipment booking, carrier selection, pickup coordination, live tracking, delivery exceptions, proof of delivery,…",
+    cover: {
+      src: "/projects/freightflow-control-tower/01-960.webp",
+      srcSet:
+        "/projects/freightflow-control-tower/01-480.webp 480w, /projects/freightflow-control-tower/01-960.webp 960w, /projects/freightflow-control-tower/01-1600.webp 1600w",
+      full: "/projects/freightflow-control-tower/01-1600.webp",
+      width: 1600,
+      height: 759,
+      alt: "FreightFlow Control Tower: FreightFlow Control Tower 1",
+    },
+    imageCount: 6,
+    toolsUsed: [
+      "Make.com",
+      "Airtable/SmartSuite",
+      "Gmail",
+      "Slack",
+      "Google Maps API",
+      "Google Drive",
+      "Google Sheets",
+      "DocuSign",
+      "Twilio/WhatsApp",
+      "Webhooks",
+      "Carrier APIs",
+      "OpenAI/Claude",
+    ],
+    toolIds: [
+      "make",
+      "airtable",
+      "gmail",
+      "slack",
+      "googlesheets",
+      "docusign",
+      "twilio",
+      "whatsapp",
+      "openai",
+      "claude",
+    ],
+    services: ["workflow-automation"],
+    featured: true,
+    order: 100,
+    legacySlugs: ["freightflow-control-tower"],
+    source: "folder",
   },
-  "imageCount": 6,
-  "toolsUsed": [
-   "Make.com",
-   "Airtable/SmartSuite",
-   "Gmail",
-   "Slack",
-   "Google Maps API",
-   "Google Drive",
-   "Google Sheets",
-   "DocuSign",
-   "Twilio/WhatsApp",
-   "Webhooks",
-   "Carrier APIs",
-   "OpenAI/Claude"
-  ],
-  "toolIds": [
-   "make",
-   "airtable",
-   "gmail",
-   "slack",
-   "googlesheets",
-   "docusign",
-   "twilio",
-   "whatsapp",
-   "openai",
-   "claude"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": true,
-  "order": 100,
-  "legacySlugs": [
-   "freightflow-control-tower"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "garageflow-360-auto-repair-operations-and-customer-retention-automation",
-  "title": "GarageFlow 360 – Auto Repair Operations & Customer Retention Automation",
-  "tool": "make",
-  "excerpt": "Built an automated workshop management system for handling customer inquiries, vehicle appointments, inspections, repair estimates, parts coordination, technician…",
-  "cover": {
-   "src": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-960.webp",
-   "srcSet": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-480.webp 480w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-960.webp 960w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-1600.webp 1600w",
-   "full": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-1600.webp",
-   "width": 1600,
-   "height": 726,
-   "alt": "GarageFlow 360 – Auto Repair Operations & Customer Retention Automation: GarageFlow 360 1"
+  {
+    slug: "garageflow-360-auto-repair-operations-and-customer-retention-automation",
+    title: "GarageFlow 360 – Auto Repair Operations & Customer Retention Automation",
+    tool: "make",
+    excerpt:
+      "Built an automated workshop management system for handling customer inquiries, vehicle appointments, inspections, repair estimates, parts coordination, technician…",
+    cover: {
+      src: "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-960.webp",
+      srcSet:
+        "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-480.webp 480w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-960.webp 960w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-1600.webp 1600w",
+      full: "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-1600.webp",
+      width: 1600,
+      height: 726,
+      alt: "GarageFlow 360 – Auto Repair Operations & Customer Retention Automation: GarageFlow 360 1",
+    },
+    imageCount: 3,
+    toolsUsed: [
+      "Make.com",
+      "WhatsApp Business",
+      "Airtable/SmartSuite",
+      "Google Calendar",
+      "Google Drive",
+      "OpenAI/Claude",
+      "Gmail",
+      "Slack",
+      "Google Sheets",
+      "Webhooks",
+    ],
+    toolIds: ["make", "whatsapp", "airtable", "openai", "claude", "gmail", "slack", "googlesheets"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["garageflow-360"],
+    source: "folder",
   },
-  "imageCount": 3,
-  "toolsUsed": [
-   "Make.com",
-   "WhatsApp Business",
-   "Airtable/SmartSuite",
-   "Google Calendar",
-   "Google Drive",
-   "OpenAI/Claude",
-   "Gmail",
-   "Slack",
-   "Google Sheets",
-   "Webhooks"
-  ],
-  "toolIds": [
-   "make",
-   "whatsapp",
-   "airtable",
-   "openai",
-   "claude",
-   "gmail",
-   "slack",
-   "googlesheets"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "garageflow-360"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "stockpulse-command-center",
-  "title": "StockPulse Command Center",
-  "tool": "make",
-  "excerpt": "Built an automated multi location inventory and replenishment management system for preventing stockouts, reducing overstock, and improving warehouse inventory…",
-  "cover": {
-   "src": "/projects/stockpulse-command-center/01-960.webp",
-   "srcSet": "/projects/stockpulse-command-center/01-480.webp 480w, /projects/stockpulse-command-center/01-960.webp 960w, /projects/stockpulse-command-center/01-1600.webp 1600w",
-   "full": "/projects/stockpulse-command-center/01-1600.webp",
-   "width": 1600,
-   "height": 535,
-   "alt": "StockPulse Command Center: StockPulse Command Center 1"
+  {
+    slug: "stockpulse-command-center",
+    title: "StockPulse Command Center",
+    tool: "make",
+    excerpt:
+      "Built an automated multi location inventory and replenishment management system for preventing stockouts, reducing overstock, and improving warehouse inventory…",
+    cover: {
+      src: "/projects/stockpulse-command-center/01-960.webp",
+      srcSet:
+        "/projects/stockpulse-command-center/01-480.webp 480w, /projects/stockpulse-command-center/01-960.webp 960w, /projects/stockpulse-command-center/01-1600.webp 1600w",
+      full: "/projects/stockpulse-command-center/01-1600.webp",
+      width: 1600,
+      height: 535,
+      alt: "StockPulse Command Center: StockPulse Command Center 1",
+    },
+    imageCount: 4,
+    toolsUsed: [
+      "Make.com",
+      "Shopify/WooCommerce",
+      "Airtable/SmartSuite",
+      "Google Sheets",
+      "OpenAI/Claude",
+      "Slack",
+      "Gmail",
+      "Google Drive",
+      "ERP/API",
+      "Webhooks",
+    ],
+    toolIds: ["make", "shopify", "airtable", "googlesheets", "openai", "claude", "slack", "gmail"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["stockpulse-command-center"],
+    source: "folder",
   },
-  "imageCount": 4,
-  "toolsUsed": [
-   "Make.com",
-   "Shopify/WooCommerce",
-   "Airtable/SmartSuite",
-   "Google Sheets",
-   "OpenAI/Claude",
-   "Slack",
-   "Gmail",
-   "Google Drive",
-   "ERP/API",
-   "Webhooks"
-  ],
-  "toolIds": [
-   "make",
-   "shopify",
-   "airtable",
-   "googlesheets",
-   "openai",
-   "claude",
-   "slack",
-   "gmail"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "stockpulse-command-center"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "ai-blog-automation-system",
-  "title": "AI Blog Automation System",
-  "tool": "n8n",
-  "excerpt": "",
-  "cover": {
-   "src": "/projects/ai-blog-automation-system/01-960.webp",
-   "srcSet": "/projects/ai-blog-automation-system/01-480.webp 480w, /projects/ai-blog-automation-system/01-960.webp 960w, /projects/ai-blog-automation-system/01-1600.webp 1600w",
-   "full": "/projects/ai-blog-automation-system/01-1600.webp",
-   "width": 1600,
-   "height": 774,
-   "alt": "AI Blog Automation System, screenshot 1"
+  {
+    slug: "ai-blog-automation-system",
+    title: "AI Blog Automation System",
+    tool: "n8n",
+    excerpt: "",
+    cover: {
+      src: "/projects/ai-blog-automation-system/01-960.webp",
+      srcSet:
+        "/projects/ai-blog-automation-system/01-480.webp 480w, /projects/ai-blog-automation-system/01-960.webp 960w, /projects/ai-blog-automation-system/01-1600.webp 1600w",
+      full: "/projects/ai-blog-automation-system/01-1600.webp",
+      width: 1600,
+      height: 774,
+      alt: "AI Blog Automation System, screenshot 1",
+    },
+    imageCount: 2,
+    toolsUsed: ["n8n"],
+    toolIds: ["n8n"],
+    services: ["workflow-automation", "ai-content-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "folder",
   },
-  "imageCount": 2,
-  "toolsUsed": [
-   "n8n"
-  ],
-  "toolIds": [
-   "n8n"
-  ],
-  "services": [
-   "workflow-automation",
-   "ai-content-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "folder"
- },
- {
-  "slug": "apollo-lead-generation-and-ai-outreach-automation-workflow-report",
-  "title": "Apollo Lead Generation & AI Outreach Automation Workflow Report",
-  "subtitle": "Apollo Lead Generation & Outreach Automation",
-  "tool": "n8n",
-  "excerpt": "An automated outbound lead generation system built with n8n, Apollo, Apify, Google Sheets, and Zoho CRM.",
-  "cover": {
-   "src": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-960.webp",
-   "srcSet": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-480.webp 480w, /projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-960.webp 960w, /projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-1600.webp 1600w",
-   "full": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-1600.webp",
-   "width": 1600,
-   "height": 737,
-   "alt": "Apollo Lead Generation & AI Outreach Automation Workflow Report: Apollo 1"
+  {
+    slug: "apollo-lead-generation-and-ai-outreach-automation-workflow-report",
+    title: "Apollo Lead Generation & AI Outreach Automation Workflow Report",
+    subtitle: "Apollo Lead Generation & Outreach Automation",
+    tool: "n8n",
+    excerpt:
+      "An automated outbound lead generation system built with n8n, Apollo, Apify, Google Sheets, and Zoho CRM.",
+    cover: {
+      src: "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-960.webp",
+      srcSet:
+        "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-480.webp 480w, /projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-960.webp 960w, /projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-1600.webp 1600w",
+      full: "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-1600.webp",
+      width: 1600,
+      height: 737,
+      alt: "Apollo Lead Generation & AI Outreach Automation Workflow Report: Apollo 1",
+    },
+    imageCount: 2,
+    toolsUsed: ["n8n", "Apollo", "Apify", "OpenAI", "Google Sheets", "Zoho CRM"],
+    toolIds: ["n8n", "apollo", "apify", "openai", "googlesheets", "zoho"],
+    services: ["workflow-automation", "lead-generation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["b2b-outreach-pipeline"],
+    source: "folder",
   },
-  "imageCount": 2,
-  "toolsUsed": [
-   "n8n",
-   "Apollo",
-   "Apify",
-   "OpenAI",
-   "Google Sheets",
-   "Zoho CRM"
-  ],
-  "toolIds": [
-   "n8n",
-   "apollo",
-   "apify",
-   "openai",
-   "googlesheets",
-   "zoho"
-  ],
-  "services": [
-   "workflow-automation",
-   "lead-generation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "b2b-outreach-pipeline"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "auto-generation-website-home-page",
-  "title": "Auto Generation Website Home Page",
-  "subtitle": "Automated Real Estate Deal Landing Page System",
-  "tool": "n8n",
-  "excerpt": "Built an automated system for creating deal specific landing pages for real estate investment opportunities.",
-  "cover": {
-   "src": "/projects/auto-generation-website-home-page/01-960.webp",
-   "srcSet": "/projects/auto-generation-website-home-page/01-480.webp 480w, /projects/auto-generation-website-home-page/01-960.webp 960w, /projects/auto-generation-website-home-page/01-1600.webp 1600w",
-   "full": "/projects/auto-generation-website-home-page/01-1600.webp",
-   "width": 1600,
-   "height": 773,
-   "alt": "Auto Generation Website Home Page: BRRR Form Workflow"
+  {
+    slug: "auto-generation-website-home-page",
+    title: "Auto Generation Website Home Page",
+    subtitle: "Automated Real Estate Deal Landing Page System",
+    tool: "n8n",
+    excerpt:
+      "Built an automated system for creating deal specific landing pages for real estate investment opportunities.",
+    cover: {
+      src: "/projects/auto-generation-website-home-page/01-960.webp",
+      srcSet:
+        "/projects/auto-generation-website-home-page/01-480.webp 480w, /projects/auto-generation-website-home-page/01-960.webp 960w, /projects/auto-generation-website-home-page/01-1600.webp 1600w",
+      full: "/projects/auto-generation-website-home-page/01-1600.webp",
+      width: 1600,
+      height: 773,
+      alt: "Auto Generation Website Home Page: BRRR Form Workflow",
+    },
+    imageCount: 4,
+    toolsUsed: [
+      "n8n",
+      "Dynamic web forms",
+      "Google Sheets",
+      "Webhooks",
+      "API integrations",
+      "Landing page automation",
+    ],
+    toolIds: ["n8n", "googlesheets"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["real-estate-deal-pages"],
+    source: "folder",
   },
-  "imageCount": 4,
-  "toolsUsed": [
-   "n8n",
-   "Dynamic web forms",
-   "Google Sheets",
-   "Webhooks",
-   "API integrations",
-   "Landing page automation"
-  ],
-  "toolIds": [
-   "n8n",
-   "googlesheets"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "real-estate-deal-pages"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "auto-invoice-generation-and-therapy-confirmation-system-message",
-  "title": "Auto Invoice Generation & Therapy Confirmation System Message",
-  "subtitle": "Invoice & Therapy Confirmation Automation System",
-  "tool": "n8n",
-  "excerpt": "Built two connected n8n workflows for a healthcare business to automate invoice and therapy confirmation document generation.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "n8n",
-   "HubSpot API",
-   "Google Drive API",
-   "Google Sheets API",
-   "PDFMonkey API",
-   "Google Cloud Run",
-   ".NET Swiss QR Library",
-   "JavaScript",
-   "REST APIs"
-  ],
-  "toolIds": [
-   "n8n",
-   "hubspot",
-   "googlesheets",
-   "googlecloud",
-   "aspnetcore",
-   "javascript"
-  ],
-  "services": [
-   "workflow-automation",
-   "custom-software"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "therapy-invoices-swiss-qr"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "automated-social-media-image-and-branding-workflow",
-  "title": "Automated Social Media Image & Branding Workflow",
-  "tool": "n8n",
-  "excerpt": "Built an automated image production system for a law firm’s social media content. The workflow takes an approved content idea and turns it into a finished branded social…",
-  "cover": {
-   "src": "/projects/automated-social-media-image-and-branding-workflow/01-960.webp",
-   "srcSet": "/projects/automated-social-media-image-and-branding-workflow/01-480.webp 480w, /projects/automated-social-media-image-and-branding-workflow/01-960.webp 960w, /projects/automated-social-media-image-and-branding-workflow/01-1600.webp 1600w",
-   "full": "/projects/automated-social-media-image-and-branding-workflow/01-1600.webp",
-   "width": 1600,
-   "height": 769,
-   "alt": "Automated Social Media Image & Branding Workflow, screenshot 1"
+  {
+    slug: "auto-invoice-generation-and-therapy-confirmation-system-message",
+    title: "Auto Invoice Generation & Therapy Confirmation System Message",
+    subtitle: "Invoice & Therapy Confirmation Automation System",
+    tool: "n8n",
+    excerpt:
+      "Built two connected n8n workflows for a healthcare business to automate invoice and therapy confirmation document generation.",
+    imageCount: 0,
+    toolsUsed: [
+      "n8n",
+      "HubSpot API",
+      "Google Drive API",
+      "Google Sheets API",
+      "PDFMonkey API",
+      "Google Cloud Run",
+      ".NET Swiss QR Library",
+      "JavaScript",
+      "REST APIs",
+    ],
+    toolIds: ["n8n", "hubspot", "googlesheets", "googlecloud", "aspnetcore", "javascript"],
+    services: ["workflow-automation", "custom-software"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["therapy-invoices-swiss-qr"],
+    source: "folder",
   },
-  "imageCount": 2,
-  "toolsUsed": [
-   "n8n",
-   "Claude",
-   "Google Gemini",
-   "Browserless",
-   "Google Sheets API",
-   "Google Drive",
-   "JavaScript",
-   "REST APIs"
-  ],
-  "toolIds": [
-   "n8n",
-   "claude",
-   "gemini",
-   "googlesheets",
-   "javascript"
-  ],
-  "services": [
-   "workflow-automation",
-   "ai-content-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "law-firm-social-graphics"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "gmail-email-management-and-auto-reply-automation",
-  "title": "Gmail Email Management & Auto Reply Automation",
-  "tool": "n8n",
-  "excerpt": "An automated Gmail management system built with n8n to organize incoming emails, apply the right labels, route messages to the appropriate team, and prepare replies as…",
-  "cover": {
-   "src": "/projects/gmail-email-management-and-auto-reply-automation/01-960.webp",
-   "srcSet": "/projects/gmail-email-management-and-auto-reply-automation/01-480.webp 480w, /projects/gmail-email-management-and-auto-reply-automation/01-960.webp 960w, /projects/gmail-email-management-and-auto-reply-automation/01-1600.webp 1600w",
-   "full": "/projects/gmail-email-management-and-auto-reply-automation/01-1600.webp",
-   "width": 1600,
-   "height": 576,
-   "alt": "Gmail Email Management & Auto Reply Automation: Gmail Email Management & Auto Reply Automation"
+  {
+    slug: "automated-social-media-image-and-branding-workflow",
+    title: "Automated Social Media Image & Branding Workflow",
+    tool: "n8n",
+    excerpt:
+      "Built an automated image production system for a law firm’s social media content. The workflow takes an approved content idea and turns it into a finished branded social…",
+    cover: {
+      src: "/projects/automated-social-media-image-and-branding-workflow/01-960.webp",
+      srcSet:
+        "/projects/automated-social-media-image-and-branding-workflow/01-480.webp 480w, /projects/automated-social-media-image-and-branding-workflow/01-960.webp 960w, /projects/automated-social-media-image-and-branding-workflow/01-1600.webp 1600w",
+      full: "/projects/automated-social-media-image-and-branding-workflow/01-1600.webp",
+      width: 1600,
+      height: 769,
+      alt: "Automated Social Media Image & Branding Workflow, screenshot 1",
+    },
+    imageCount: 2,
+    toolsUsed: [
+      "n8n",
+      "Claude",
+      "Google Gemini",
+      "Browserless",
+      "Google Sheets API",
+      "Google Drive",
+      "JavaScript",
+      "REST APIs",
+    ],
+    toolIds: ["n8n", "claude", "gemini", "googlesheets", "javascript"],
+    services: ["workflow-automation", "ai-content-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["law-firm-social-graphics"],
+    source: "folder",
   },
-  "imageCount": 1,
-  "toolsUsed": [
-   "n8n",
-   "Gmail API",
-   "OpenAI",
-   "Pinecone",
-   "JavaScript"
-  ],
-  "toolIds": [
-   "n8n",
-   "gmail",
-   "openai",
-   "pinecone",
-   "javascript"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "gmail-triage-rag"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "lead-handling-and-appointment-booking-chatbot",
-  "title": "Lead Handling & Appointment Booking Chatbot",
-  "tool": "n8n",
-  "excerpt": "Built a chatbot for a skin treatment clinic to handle leads coming from Facebook Ads and GoHighLevel.",
-  "cover": {
-   "src": "/projects/lead-handling-and-appointment-booking-chatbot/01-960.webp",
-   "srcSet": "/projects/lead-handling-and-appointment-booking-chatbot/01-480.webp 480w, /projects/lead-handling-and-appointment-booking-chatbot/01-960.webp 960w, /projects/lead-handling-and-appointment-booking-chatbot/01-1600.webp 1600w",
-   "full": "/projects/lead-handling-and-appointment-booking-chatbot/01-1600.webp",
-   "width": 1600,
-   "height": 696,
-   "alt": "Lead Handling & Appointment Booking Chatbot: Chatbot"
+  {
+    slug: "gmail-email-management-and-auto-reply-automation",
+    title: "Gmail Email Management & Auto Reply Automation",
+    tool: "n8n",
+    excerpt:
+      "An automated Gmail management system built with n8n to organize incoming emails, apply the right labels, route messages to the appropriate team, and prepare replies as…",
+    cover: {
+      src: "/projects/gmail-email-management-and-auto-reply-automation/01-960.webp",
+      srcSet:
+        "/projects/gmail-email-management-and-auto-reply-automation/01-480.webp 480w, /projects/gmail-email-management-and-auto-reply-automation/01-960.webp 960w, /projects/gmail-email-management-and-auto-reply-automation/01-1600.webp 1600w",
+      full: "/projects/gmail-email-management-and-auto-reply-automation/01-1600.webp",
+      width: 1600,
+      height: 576,
+      alt: "Gmail Email Management & Auto Reply Automation: Gmail Email Management & Auto Reply Automation",
+    },
+    imageCount: 1,
+    toolsUsed: ["n8n", "Gmail API", "OpenAI", "Pinecone", "JavaScript"],
+    toolIds: ["n8n", "gmail", "openai", "pinecone", "javascript"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["gmail-triage-rag"],
+    source: "folder",
   },
-  "imageCount": 2,
-  "toolsUsed": [
-   "GoHighLevel",
-   "Facebook Ads",
-   "CRM workflows",
-   "Chatbot",
-   "Custom conversation logic",
-   "Lead routing and booking workflows"
-  ],
-  "toolIds": [
-   "n8n",
-   "gohighlevel"
-  ],
-  "services": [
-   "ai-chatbots",
-   "gohighlevel-automation",
-   "workflow-automation"
-  ],
-  "featured": true,
-  "order": 100,
-  "legacySlugs": [
-   "skin-clinic-chatbot"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "n8n-shopify-order-processing",
-  "title": "n8n Shopify Order Processing",
-  "subtitle": "Shopify Order Processing & Financial Automation",
-  "tool": "n8n",
-  "excerpt": "Built an automated Shopify order processing system that handles order data, product costs, financial calculations, and reporting without manual spreadsheet work.",
-  "cover": {
-   "src": "/projects/n8n-shopify-order-processing/01-960.webp",
-   "srcSet": "/projects/n8n-shopify-order-processing/01-480.webp 480w, /projects/n8n-shopify-order-processing/01-960.webp 960w, /projects/n8n-shopify-order-processing/01-1600.webp 1600w",
-   "full": "/projects/n8n-shopify-order-processing/01-1600.webp",
-   "width": 1600,
-   "height": 743,
-   "alt": "n8n Shopify Order Processing: Shopify S"
+  {
+    slug: "lead-handling-and-appointment-booking-chatbot",
+    title: "Lead Handling & Appointment Booking Chatbot",
+    tool: "n8n",
+    excerpt:
+      "Built a chatbot for a skin treatment clinic to handle leads coming from Facebook Ads and GoHighLevel.",
+    cover: {
+      src: "/projects/lead-handling-and-appointment-booking-chatbot/01-960.webp",
+      srcSet:
+        "/projects/lead-handling-and-appointment-booking-chatbot/01-480.webp 480w, /projects/lead-handling-and-appointment-booking-chatbot/01-960.webp 960w, /projects/lead-handling-and-appointment-booking-chatbot/01-1600.webp 1600w",
+      full: "/projects/lead-handling-and-appointment-booking-chatbot/01-1600.webp",
+      width: 1600,
+      height: 696,
+      alt: "Lead Handling & Appointment Booking Chatbot: Chatbot",
+    },
+    imageCount: 2,
+    toolsUsed: [
+      "GoHighLevel",
+      "Facebook Ads",
+      "CRM workflows",
+      "Chatbot",
+      "Custom conversation logic",
+      "Lead routing and booking workflows",
+    ],
+    toolIds: ["n8n", "gohighlevel"],
+    services: ["ai-chatbots", "gohighlevel-automation", "workflow-automation"],
+    featured: true,
+    order: 100,
+    legacySlugs: ["skin-clinic-chatbot"],
+    source: "folder",
   },
-  "imageCount": 1,
-  "toolsUsed": [
-   "n8n",
-   "Shopify API",
-   "Google Drive API",
-   "Google Sheets API",
-   "JavaScript",
-   "REST APIs"
-  ],
-  "toolIds": [
-   "n8n",
-   "shopify",
-   "googlesheets",
-   "javascript"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "shopify-financial-automation"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "seo-content-automation-with-neuronwriter",
-  "title": "SEO Content Automation with NeuronWriter",
-  "tool": "n8n",
-  "excerpt": "Built an automated SEO content system that generates, checks, and improves articles against NeuronWriter guidelines.",
-  "cover": {
-   "src": "/projects/seo-content-automation-with-neuronwriter/01-960.webp",
-   "srcSet": "/projects/seo-content-automation-with-neuronwriter/01-480.webp 480w, /projects/seo-content-automation-with-neuronwriter/01-960.webp 960w, /projects/seo-content-automation-with-neuronwriter/01-1600.webp 1600w",
-   "full": "/projects/seo-content-automation-with-neuronwriter/01-1600.webp",
-   "width": 1600,
-   "height": 637,
-   "alt": "SEO Content Automation with NeuronWriter: SEO"
+  {
+    slug: "n8n-shopify-order-processing",
+    title: "n8n Shopify Order Processing",
+    subtitle: "Shopify Order Processing & Financial Automation",
+    tool: "n8n",
+    excerpt:
+      "Built an automated Shopify order processing system that handles order data, product costs, financial calculations, and reporting without manual spreadsheet work.",
+    cover: {
+      src: "/projects/n8n-shopify-order-processing/01-960.webp",
+      srcSet:
+        "/projects/n8n-shopify-order-processing/01-480.webp 480w, /projects/n8n-shopify-order-processing/01-960.webp 960w, /projects/n8n-shopify-order-processing/01-1600.webp 1600w",
+      full: "/projects/n8n-shopify-order-processing/01-1600.webp",
+      width: 1600,
+      height: 743,
+      alt: "n8n Shopify Order Processing: Shopify S",
+    },
+    imageCount: 1,
+    toolsUsed: [
+      "n8n",
+      "Shopify API",
+      "Google Drive API",
+      "Google Sheets API",
+      "JavaScript",
+      "REST APIs",
+    ],
+    toolIds: ["n8n", "shopify", "googlesheets", "javascript"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["shopify-financial-automation"],
+    source: "folder",
   },
-  "imageCount": 1,
-  "toolsUsed": [
-   "n8n",
-   "NeuronWriter API",
-   "OpenAI",
-   "Gemini",
-   "Google Sheets"
-  ],
-  "toolIds": [
-   "n8n",
-   "openai",
-   "gemini",
-   "googlesheets"
-  ],
-  "services": [
-   "workflow-automation",
-   "ai-content-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "seo-pipeline"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "social-media-content-generation",
-  "title": "Social Media Content Generation",
-  "subtitle": "Social Media Legal Reel Automation",
-  "tool": "n8n",
-  "excerpt": "Built an automated content system for producing branded legal reels for Facebook and Instagram.",
-  "cover": {
-   "src": "/projects/social-media-content-generation/01-960.webp",
-   "srcSet": "/projects/social-media-content-generation/01-480.webp 480w, /projects/social-media-content-generation/01-960.webp 960w, /projects/social-media-content-generation/01-1600.webp 1600w",
-   "full": "/projects/social-media-content-generation/01-1600.webp",
-   "width": 1600,
-   "height": 797,
-   "alt": "Social Media Content Generation: Google Sheet"
+  {
+    slug: "seo-content-automation-with-neuronwriter",
+    title: "SEO Content Automation with NeuronWriter",
+    tool: "n8n",
+    excerpt:
+      "Built an automated SEO content system that generates, checks, and improves articles against NeuronWriter guidelines.",
+    cover: {
+      src: "/projects/seo-content-automation-with-neuronwriter/01-960.webp",
+      srcSet:
+        "/projects/seo-content-automation-with-neuronwriter/01-480.webp 480w, /projects/seo-content-automation-with-neuronwriter/01-960.webp 960w, /projects/seo-content-automation-with-neuronwriter/01-1600.webp 1600w",
+      full: "/projects/seo-content-automation-with-neuronwriter/01-1600.webp",
+      width: 1600,
+      height: 637,
+      alt: "SEO Content Automation with NeuronWriter: SEO",
+    },
+    imageCount: 1,
+    toolsUsed: ["n8n", "NeuronWriter API", "OpenAI", "Gemini", "Google Sheets"],
+    toolIds: ["n8n", "openai", "gemini", "googlesheets"],
+    services: ["workflow-automation", "ai-content-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["seo-pipeline"],
+    source: "folder",
   },
-  "imageCount": 3,
-  "toolsUsed": [
-   "n8n",
-   "Google Gemini",
-   "JSON2Video",
-   "Google Sheets API",
-   "JavaScript",
-   "REST APIs"
-  ],
-  "toolIds": [
-   "n8n",
-   "gemini",
-   "googlesheets",
-   "javascript"
-  ],
-  "services": [
-   "workflow-automation",
-   "ai-content-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "law-firm-legal-reels"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "barber",
-  "title": "Barber",
-  "subtitle": "Barber Inbound & Outbound Voice Automation System",
-  "tool": "voice",
-  "excerpt": "Built a GoHighLevel automation system for a barber business to manage inbound and outbound calls, appointment bookings, post call data, and customer communication.",
-  "cover": {
-   "src": "/projects/barber/01-960.webp",
-   "srcSet": "/projects/barber/01-480.webp 480w, /projects/barber/01-960.webp 960w, /projects/barber/01-1600.webp 1600w",
-   "full": "/projects/barber/01-1600.webp",
-   "width": 1600,
-   "height": 827,
-   "alt": "Barber: Barber Synthflow"
+  {
+    slug: "social-media-content-generation",
+    title: "Social Media Content Generation",
+    subtitle: "Social Media Legal Reel Automation",
+    tool: "n8n",
+    excerpt:
+      "Built an automated content system for producing branded legal reels for Facebook and Instagram.",
+    cover: {
+      src: "/projects/social-media-content-generation/01-960.webp",
+      srcSet:
+        "/projects/social-media-content-generation/01-480.webp 480w, /projects/social-media-content-generation/01-960.webp 960w, /projects/social-media-content-generation/01-1600.webp 1600w",
+      full: "/projects/social-media-content-generation/01-1600.webp",
+      width: 1600,
+      height: 797,
+      alt: "Social Media Content Generation: Google Sheet",
+    },
+    imageCount: 3,
+    toolsUsed: [
+      "n8n",
+      "Google Gemini",
+      "JSON2Video",
+      "Google Sheets API",
+      "JavaScript",
+      "REST APIs",
+    ],
+    toolIds: ["n8n", "gemini", "googlesheets", "javascript"],
+    services: ["workflow-automation", "ai-content-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["law-firm-legal-reels"],
+    source: "folder",
   },
-  "imageCount": 5,
-  "toolsUsed": [
-   "GoHighLevel",
-   "Synthflow",
-   "Voice Agents",
-   "CRM Workflows",
-   "Inbound Calling",
-   "Outbound Calling",
-   "Appointment Booking"
-  ],
-  "toolIds": [
-   "gohighlevel",
-   "synthflow"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "voice-barber-shop"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "beauty-salon",
-  "title": "Beauty Salon",
-  "subtitle": "Beauty Salon Lead & Appointment Automation System",
-  "tool": "voice",
-  "excerpt": "Built a GoHighLevel automation system for a beauty salon to manage inbound and outbound customer calls, appointment booking, follow ups, and customer communication.",
-  "cover": {
-   "src": "/projects/beauty-salon/01-960.webp",
-   "srcSet": "/projects/beauty-salon/01-480.webp 480w, /projects/beauty-salon/01-960.webp 960w, /projects/beauty-salon/01-1600.webp 1600w",
-   "full": "/projects/beauty-salon/01-1600.webp",
-   "width": 1600,
-   "height": 839,
-   "alt": "Beauty Salon: Beauty Salon Synthflow"
+  {
+    slug: "barber",
+    title: "Barber",
+    subtitle: "Barber Inbound & Outbound Voice Automation System",
+    tool: "voice",
+    excerpt:
+      "Built a GoHighLevel automation system for a barber business to manage inbound and outbound calls, appointment bookings, post call data, and customer communication.",
+    cover: {
+      src: "/projects/barber/01-960.webp",
+      srcSet:
+        "/projects/barber/01-480.webp 480w, /projects/barber/01-960.webp 960w, /projects/barber/01-1600.webp 1600w",
+      full: "/projects/barber/01-1600.webp",
+      width: 1600,
+      height: 827,
+      alt: "Barber: Barber Synthflow",
+    },
+    imageCount: 5,
+    toolsUsed: [
+      "GoHighLevel",
+      "Synthflow",
+      "Voice Agents",
+      "CRM Workflows",
+      "Inbound Calling",
+      "Outbound Calling",
+      "Appointment Booking",
+    ],
+    toolIds: ["gohighlevel", "synthflow"],
+    services: ["voice-ai", "gohighlevel-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["voice-barber-shop"],
+    source: "folder",
   },
-  "imageCount": 5,
-  "toolsUsed": [
-   "GoHighLevel",
-   "Synthflow",
-   "Voice Agents",
-   "CRM Workflows",
-   "Appointment Booking",
-   "Email Automation"
-  ],
-  "toolIds": [
-   "gohighlevel",
-   "synthflow"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "voice-beauty-salon"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "social-media-agency-voice-assistant",
-  "title": "Social Media Agency Voice Assistant",
-  "subtitle": "Social Inbound Voice & Appointment Automation",
-  "tool": "voice",
-  "excerpt": "Built an inbound voice automation system for Brandy Social using Synthflow and GoHighLevel.",
-  "cover": {
-   "src": "/projects/social-media-agency-voice-assistant/01-960.webp",
-   "srcSet": "/projects/social-media-agency-voice-assistant/01-480.webp 480w, /projects/social-media-agency-voice-assistant/01-960.webp 960w, /projects/social-media-agency-voice-assistant/01-1600.webp 1600w",
-   "full": "/projects/social-media-agency-voice-assistant/01-1600.webp",
-   "width": 1600,
-   "height": 802,
-   "alt": "Social Media Agency Voice Assistant: Brandy Synthflow"
+  {
+    slug: "beauty-salon",
+    title: "Beauty Salon",
+    subtitle: "Beauty Salon Lead & Appointment Automation System",
+    tool: "voice",
+    excerpt:
+      "Built a GoHighLevel automation system for a beauty salon to manage inbound and outbound customer calls, appointment booking, follow ups, and customer communication.",
+    cover: {
+      src: "/projects/beauty-salon/01-960.webp",
+      srcSet:
+        "/projects/beauty-salon/01-480.webp 480w, /projects/beauty-salon/01-960.webp 960w, /projects/beauty-salon/01-1600.webp 1600w",
+      full: "/projects/beauty-salon/01-1600.webp",
+      width: 1600,
+      height: 839,
+      alt: "Beauty Salon: Beauty Salon Synthflow",
+    },
+    imageCount: 5,
+    toolsUsed: [
+      "GoHighLevel",
+      "Synthflow",
+      "Voice Agents",
+      "CRM Workflows",
+      "Appointment Booking",
+      "Email Automation",
+    ],
+    toolIds: ["gohighlevel", "synthflow"],
+    services: ["voice-ai", "gohighlevel-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["voice-beauty-salon"],
+    source: "folder",
   },
-  "imageCount": 4,
-  "toolsUsed": [
-   "GoHighLevel",
-   "Synthflow",
-   "Voice Agent",
-   "CRM Workflows",
-   "Appointment Booking",
-   "Email Automation"
-  ],
-  "toolIds": [
-   "gohighlevel",
-   "synthflow"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "voice-social-agency-inbound"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "cafe",
-  "title": "Cafe",
-  "subtitle": "Cafe Inbound & Outbound Voice Automation System",
-  "tool": "voice",
-  "excerpt": "Built a GoHighLevel automation system for a cafe to manage inbound and outbound customer calls, appointment booking, follow ups, and customer communication.",
-  "cover": {
-   "src": "/projects/cafe/01-960.webp",
-   "srcSet": "/projects/cafe/01-480.webp 480w, /projects/cafe/01-960.webp 960w, /projects/cafe/01-1600.webp 1600w",
-   "full": "/projects/cafe/01-1600.webp",
-   "width": 1600,
-   "height": 789,
-   "alt": "Cafe: Cafe Agents"
+  {
+    slug: "social-media-agency-voice-assistant",
+    title: "Social Media Agency Voice Assistant",
+    subtitle: "Social Inbound Voice & Appointment Automation",
+    tool: "voice",
+    excerpt:
+      "Built an inbound voice automation system for Brandy Social using Synthflow and GoHighLevel.",
+    cover: {
+      src: "/projects/social-media-agency-voice-assistant/01-960.webp",
+      srcSet:
+        "/projects/social-media-agency-voice-assistant/01-480.webp 480w, /projects/social-media-agency-voice-assistant/01-960.webp 960w, /projects/social-media-agency-voice-assistant/01-1600.webp 1600w",
+      full: "/projects/social-media-agency-voice-assistant/01-1600.webp",
+      width: 1600,
+      height: 802,
+      alt: "Social Media Agency Voice Assistant: Brandy Synthflow",
+    },
+    imageCount: 4,
+    toolsUsed: [
+      "GoHighLevel",
+      "Synthflow",
+      "Voice Agent",
+      "CRM Workflows",
+      "Appointment Booking",
+      "Email Automation",
+    ],
+    toolIds: ["gohighlevel", "synthflow"],
+    services: ["voice-ai", "gohighlevel-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["voice-social-agency-inbound"],
+    source: "folder",
   },
-  "imageCount": 5,
-  "toolsUsed": [
-   "GoHighLevel",
-   "Synthflow",
-   "Voice Agents",
-   "CRM Workflows",
-   "Appointment Booking",
-   "Email Automation"
-  ],
-  "toolIds": [
-   "gohighlevel",
-   "synthflow"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "voice-cafe"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "german-outbound-appointment-setter",
-  "title": "German Outbound Appointment Setter",
-  "subtitle": "Outbound Voice & Appointment Automation System",
-  "tool": "voice",
-  "excerpt": "Built an outbound calling system for Jobilla using GoHighLevel and Synthflow. The setup connects the voice agent with GoHighLevel workflows to manage outbound calls,…",
-  "cover": {
-   "src": "/projects/german-outbound-appointment-setter/01-960.webp",
-   "srcSet": "/projects/german-outbound-appointment-setter/01-480.webp 480w, /projects/german-outbound-appointment-setter/01-960.webp 960w, /projects/german-outbound-appointment-setter/01-1600.webp 1600w",
-   "full": "/projects/german-outbound-appointment-setter/01-1600.webp",
-   "width": 1600,
-   "height": 789,
-   "alt": "German Outbound Appointment Setter: Jobilla Agent"
+  {
+    slug: "cafe",
+    title: "Cafe",
+    subtitle: "Cafe Inbound & Outbound Voice Automation System",
+    tool: "voice",
+    excerpt:
+      "Built a GoHighLevel automation system for a cafe to manage inbound and outbound customer calls, appointment booking, follow ups, and customer communication.",
+    cover: {
+      src: "/projects/cafe/01-960.webp",
+      srcSet:
+        "/projects/cafe/01-480.webp 480w, /projects/cafe/01-960.webp 960w, /projects/cafe/01-1600.webp 1600w",
+      full: "/projects/cafe/01-1600.webp",
+      width: 1600,
+      height: 789,
+      alt: "Cafe: Cafe Agents",
+    },
+    imageCount: 5,
+    toolsUsed: [
+      "GoHighLevel",
+      "Synthflow",
+      "Voice Agents",
+      "CRM Workflows",
+      "Appointment Booking",
+      "Email Automation",
+    ],
+    toolIds: ["gohighlevel", "synthflow"],
+    services: ["voice-ai", "gohighlevel-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["voice-cafe"],
+    source: "folder",
   },
-  "imageCount": 4,
-  "toolsUsed": [
-   "GoHighLevel",
-   "Synthflow",
-   "Voice Agent",
-   "CRM Workflows",
-   "Outbound Calling",
-   "Appointment Automation"
-  ],
-  "toolIds": [
-   "gohighlevel",
-   "synthflow"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "voice-german-outbound"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "hair-salon",
-  "title": "Hair Salon",
-  "subtitle": "Hair Salon Lead & Appointment Automation System",
-  "tool": "voice",
-  "excerpt": "Built a GoHighLevel automation system for a hair salon to manage inbound and outbound leads, handle calls, book appointments, and keep customer communication organized…",
-  "cover": {
-   "src": "/projects/hair-salon/01-960.webp",
-   "srcSet": "/projects/hair-salon/01-480.webp 480w, /projects/hair-salon/01-960.webp 960w, /projects/hair-salon/01-1600.webp 1600w",
-   "full": "/projects/hair-salon/01-1600.webp",
-   "width": 1600,
-   "height": 833,
-   "alt": "Hair Salon: Hair Saloon Synthflow"
+  {
+    slug: "german-outbound-appointment-setter",
+    title: "German Outbound Appointment Setter",
+    subtitle: "Outbound Voice & Appointment Automation System",
+    tool: "voice",
+    excerpt:
+      "Built an outbound calling system for Jobilla using GoHighLevel and Synthflow. The setup connects the voice agent with GoHighLevel workflows to manage outbound calls,…",
+    cover: {
+      src: "/projects/german-outbound-appointment-setter/01-960.webp",
+      srcSet:
+        "/projects/german-outbound-appointment-setter/01-480.webp 480w, /projects/german-outbound-appointment-setter/01-960.webp 960w, /projects/german-outbound-appointment-setter/01-1600.webp 1600w",
+      full: "/projects/german-outbound-appointment-setter/01-1600.webp",
+      width: 1600,
+      height: 789,
+      alt: "German Outbound Appointment Setter: Jobilla Agent",
+    },
+    imageCount: 4,
+    toolsUsed: [
+      "GoHighLevel",
+      "Synthflow",
+      "Voice Agent",
+      "CRM Workflows",
+      "Outbound Calling",
+      "Appointment Automation",
+    ],
+    toolIds: ["gohighlevel", "synthflow"],
+    services: ["voice-ai", "gohighlevel-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["voice-german-outbound"],
+    source: "folder",
   },
-  "imageCount": 5,
-  "toolsUsed": [
-   "GoHighLevel",
-   "Voice Agents",
-   "CRM",
-   "Workflow Automation",
-   "Appointment Booking",
-   "Email Automation"
-  ],
-  "toolIds": [
-   "gohighlevel"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "voice-hair-salon"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "real-estate",
-  "title": "Real Estate",
-  "subtitle": "Inbound Voice & Appointment Automation System",
-  "tool": "voice",
-  "excerpt": "Built an inbound voice automation system for a real estate client to handle customer calls, collect lead information, book appointments, and manage follow up…",
-  "imageCount": 0,
-  "toolsUsed": [
-   "GoHighLevel",
-   "Synthflow",
-   "Voice Agent",
-   "CRM",
-   "Workflow Automation",
-   "Appointment Booking",
-   "Email Automation"
-  ],
-  "toolIds": [
-   "gohighlevel",
-   "synthflow"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "voice-real-estate-inbound"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "rental-cars",
-  "title": "Rental Cars",
-  "subtitle": "Rental Car Inbound Voice & Appointment Automation",
-  "tool": "voice",
-  "excerpt": "Built an inbound voice and appointment automation system for a car rental client using GoHighLevel and Synthflow.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "GoHighLevel",
-   "Synthflow",
-   "Voice Agent",
-   "CRM Workflows",
-   "Appointment Booking",
-   "Email Automation"
-  ],
-  "toolIds": [
-   "gohighlevel",
-   "synthflow"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "voice-car-rental-inbound"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "rental-homes-services",
-  "title": "Rental Homes Services",
-  "subtitle": "Inbound Voice Receptionist & CRM Automation",
-  "tool": "voice",
-  "excerpt": "Built an inbound voice receptionist for Coastal Home & Estate Management to handle customer calls, collect caller information, answer common questions, and assist with…",
-  "cover": {
-   "src": "/projects/rental-homes-services/01-960.webp",
-   "srcSet": "/projects/rental-homes-services/01-480.webp 480w, /projects/rental-homes-services/01-960.webp 960w, /projects/rental-homes-services/01-1600.webp 1600w",
-   "full": "/projects/rental-homes-services/01-1600.webp",
-   "width": 1600,
-   "height": 728,
-   "alt": "Rental Homes Services: Elevenlabs Inbound Agent"
+  {
+    slug: "hair-salon",
+    title: "Hair Salon",
+    subtitle: "Hair Salon Lead & Appointment Automation System",
+    tool: "voice",
+    excerpt:
+      "Built a GoHighLevel automation system for a hair salon to manage inbound and outbound leads, handle calls, book appointments, and keep customer communication organized…",
+    cover: {
+      src: "/projects/hair-salon/01-960.webp",
+      srcSet:
+        "/projects/hair-salon/01-480.webp 480w, /projects/hair-salon/01-960.webp 960w, /projects/hair-salon/01-1600.webp 1600w",
+      full: "/projects/hair-salon/01-1600.webp",
+      width: 1600,
+      height: 833,
+      alt: "Hair Salon: Hair Saloon Synthflow",
+    },
+    imageCount: 5,
+    toolsUsed: [
+      "GoHighLevel",
+      "Voice Agents",
+      "CRM",
+      "Workflow Automation",
+      "Appointment Booking",
+      "Email Automation",
+    ],
+    toolIds: ["gohighlevel"],
+    services: ["voice-ai", "gohighlevel-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["voice-hair-salon"],
+    source: "folder",
   },
-  "imageCount": 1,
-  "toolsUsed": [
-   "ElevenLabs",
-   "n8n",
-   "GoHighLevel",
-   "Voice Automation",
-   "CRM Integration",
-   "Appointment Booking"
-  ],
-  "toolIds": [
-   "elevenlabs",
-   "n8n",
-   "gohighlevel"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation",
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "elevenlabs-voice-receptionist"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "restaurant",
-  "title": "Restaurant",
-  "subtitle": "Restaurant Lead & Appointment Automation System",
-  "tool": "voice",
-  "excerpt": "Built a GoHighLevel automation system for a restaurant to manage inbound leads, outbound follow ups, appointment bookings, and customer communication from one CRM.",
-  "cover": {
-   "src": "/projects/restaurant/01-960.webp",
-   "srcSet": "/projects/restaurant/01-480.webp 480w, /projects/restaurant/01-960.webp 960w, /projects/restaurant/01-1600.webp 1600w",
-   "full": "/projects/restaurant/01-1600.webp",
-   "width": 1600,
-   "height": 814,
-   "alt": "Restaurant: Restaurant Synthflow"
+  {
+    slug: "real-estate",
+    title: "Real Estate",
+    subtitle: "Inbound Voice & Appointment Automation System",
+    tool: "voice",
+    excerpt:
+      "Built an inbound voice automation system for a real estate client to handle customer calls, collect lead information, book appointments, and manage follow up…",
+    imageCount: 0,
+    toolsUsed: [
+      "GoHighLevel",
+      "Synthflow",
+      "Voice Agent",
+      "CRM",
+      "Workflow Automation",
+      "Appointment Booking",
+      "Email Automation",
+    ],
+    toolIds: ["gohighlevel", "synthflow"],
+    services: ["voice-ai", "gohighlevel-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["voice-real-estate-inbound"],
+    source: "folder",
   },
-  "imageCount": 5,
-  "toolsUsed": [
-   "GoHighLevel",
-   "CRM",
-   "Voice Agents",
-   "Workflow Automation",
-   "Appointment Booking",
-   "Email Automation"
-  ],
-  "toolIds": [
-   "gohighlevel"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "voice-restaurant"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "ai-customer-support-escalation-and-resolution-system",
-  "title": "AI Customer Support Escalation & Resolution System",
-  "tool": "zapier",
-  "excerpt": "",
-  "cover": {
-   "src": "/projects/ai-customer-support-escalation-and-resolution-system/01-960.webp",
-   "srcSet": "/projects/ai-customer-support-escalation-and-resolution-system/01-480.webp 480w, /projects/ai-customer-support-escalation-and-resolution-system/01-960.webp 960w, /projects/ai-customer-support-escalation-and-resolution-system/01-1312.webp 1312w",
-   "full": "/projects/ai-customer-support-escalation-and-resolution-system/01-1312.webp",
-   "width": 1312,
-   "height": 1199,
-   "alt": "AI Customer Support Escalation & Resolution System: AI Customer Support Escalation & Resolution System (1)"
+  {
+    slug: "rental-cars",
+    title: "Rental Cars",
+    subtitle: "Rental Car Inbound Voice & Appointment Automation",
+    tool: "voice",
+    excerpt:
+      "Built an inbound voice and appointment automation system for a car rental client using GoHighLevel and Synthflow.",
+    imageCount: 0,
+    toolsUsed: [
+      "GoHighLevel",
+      "Synthflow",
+      "Voice Agent",
+      "CRM Workflows",
+      "Appointment Booking",
+      "Email Automation",
+    ],
+    toolIds: ["gohighlevel", "synthflow"],
+    services: ["voice-ai", "gohighlevel-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["voice-car-rental-inbound"],
+    source: "folder",
   },
-  "imageCount": 6,
-  "toolsUsed": [
-   "Zapier",
-   "Zendesk",
-   "OpenAI",
-   "Webhooks",
-   "Gmail",
-   "Slack",
-   "Airtable",
-   "Google Sheets",
-   "Typeform / Google Forms"
-  ],
-  "toolIds": [
-   "zapier",
-   "zendesk",
-   "openai",
-   "gmail",
-   "slack",
-   "airtable",
-   "googlesheets",
-   "typeform"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "zapier-support-escalation"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "ai-lead-qualification-and-sales-automation",
-  "title": "AI Lead Qualification & Sales Automation",
-  "tool": "zapier",
-  "excerpt": "Built an end to end lead management and sales automation system that captures leads, enriches their information, scores their potential, routes them to the right…",
-  "cover": {
-   "src": "/projects/ai-lead-qualification-and-sales-automation/01-960.webp",
-   "srcSet": "/projects/ai-lead-qualification-and-sales-automation/01-480.webp 480w, /projects/ai-lead-qualification-and-sales-automation/01-960.webp 960w, /projects/ai-lead-qualification-and-sales-automation/01-1600.webp 1600w",
-   "full": "/projects/ai-lead-qualification-and-sales-automation/01-1600.webp",
-   "width": 1600,
-   "height": 750,
-   "alt": "AI Lead Qualification & Sales Automation: 1 (1)"
+  {
+    slug: "rental-homes-services",
+    title: "Rental Homes Services",
+    subtitle: "Inbound Voice Receptionist & CRM Automation",
+    tool: "voice",
+    excerpt:
+      "Built an inbound voice receptionist for Coastal Home & Estate Management to handle customer calls, collect caller information, answer common questions, and assist with…",
+    cover: {
+      src: "/projects/rental-homes-services/01-960.webp",
+      srcSet:
+        "/projects/rental-homes-services/01-480.webp 480w, /projects/rental-homes-services/01-960.webp 960w, /projects/rental-homes-services/01-1600.webp 1600w",
+      full: "/projects/rental-homes-services/01-1600.webp",
+      width: 1600,
+      height: 728,
+      alt: "Rental Homes Services: Elevenlabs Inbound Agent",
+    },
+    imageCount: 1,
+    toolsUsed: [
+      "ElevenLabs",
+      "n8n",
+      "GoHighLevel",
+      "Voice Automation",
+      "CRM Integration",
+      "Appointment Booking",
+    ],
+    toolIds: ["elevenlabs", "n8n", "gohighlevel"],
+    services: ["voice-ai", "gohighlevel-automation", "workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["elevenlabs-voice-receptionist"],
+    source: "folder",
   },
-  "imageCount": 5,
-  "toolsUsed": [
-   "Zapier",
-   "Webhooks",
-   "HubSpot",
-   "OpenAI",
-   "Clearbit",
-   "Slack",
-   "Mailchimp",
-   "Calendly",
-   "Gmail",
-   "Xero",
-   "Google Calendar"
-  ],
-  "toolIds": [
-   "zapier",
-   "hubspot",
-   "openai",
-   "slack",
-   "mailchimp",
-   "calendly",
-   "gmail",
-   "xero"
-  ],
-  "services": [
-   "workflow-automation",
-   "lead-generation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "zapier-lead-qualification"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "ai-powered-e-commerce-order-recovery-and-customer-retention",
-  "title": "AI Powered E-Commerce Order Recovery & Customer Retention",
-  "tool": "zapier",
-  "excerpt": "Built an automated e commerce workflow that monitors customer orders and identifies opportunities for payment recovery, abandoned cart recovery, delivery issue handling,…",
-  "cover": {
-   "src": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-960.webp",
-   "srcSet": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-480.webp 480w, /projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-960.webp 960w, /projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-1600.webp 1600w",
-   "full": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-1600.webp",
-   "width": 1600,
-   "height": 751,
-   "alt": "AI Powered E-Commerce Order Recovery & Customer Retention: AI Powered E-Commerce Order Recovery & Customer Retention (1)"
+  {
+    slug: "restaurant",
+    title: "Restaurant",
+    subtitle: "Restaurant Lead & Appointment Automation System",
+    tool: "voice",
+    excerpt:
+      "Built a GoHighLevel automation system for a restaurant to manage inbound leads, outbound follow ups, appointment bookings, and customer communication from one CRM.",
+    cover: {
+      src: "/projects/restaurant/01-960.webp",
+      srcSet:
+        "/projects/restaurant/01-480.webp 480w, /projects/restaurant/01-960.webp 960w, /projects/restaurant/01-1600.webp 1600w",
+      full: "/projects/restaurant/01-1600.webp",
+      width: 1600,
+      height: 814,
+      alt: "Restaurant: Restaurant Synthflow",
+    },
+    imageCount: 5,
+    toolsUsed: [
+      "GoHighLevel",
+      "CRM",
+      "Voice Agents",
+      "Workflow Automation",
+      "Appointment Booking",
+      "Email Automation",
+    ],
+    toolIds: ["gohighlevel"],
+    services: ["voice-ai", "gohighlevel-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["voice-restaurant"],
+    source: "folder",
   },
-  "imageCount": 2,
-  "toolsUsed": [
-   "Zapier",
-   "Shopify / WooCommerce",
-   "HubSpot",
-   "OpenAI",
-   "Stripe",
-   "Slack",
-   "Gmail",
-   "Zendesk",
-   "Airtable"
-  ],
-  "toolIds": [
-   "zapier",
-   "shopify",
-   "hubspot",
-   "openai",
-   "stripe",
-   "slack",
-   "gmail",
-   "zendesk",
-   "airtable"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "zapier-ecommerce-recovery"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "ai-powered-real-estate-deal-lifecycle-automation",
-  "title": "AI Powered Real Estate Deal Lifecycle Automation",
-  "tool": "zapier",
-  "excerpt": "Built an automated real estate workflow that manages the journey from property inquiry through qualification, property matching, viewings, offers, contracts, closing,…",
-  "cover": {
-   "src": "/projects/ai-powered-real-estate-deal-lifecycle-automation/01-960.webp",
-   "srcSet": "/projects/ai-powered-real-estate-deal-lifecycle-automation/01-480.webp 480w, /projects/ai-powered-real-estate-deal-lifecycle-automation/01-960.webp 960w, /projects/ai-powered-real-estate-deal-lifecycle-automation/01-1024.webp 1024w",
-   "full": "/projects/ai-powered-real-estate-deal-lifecycle-automation/01-1024.webp",
-   "width": 1024,
-   "height": 1536,
-   "alt": "AI Powered Real Estate Deal Lifecycle Automation: 1 (1)"
+  {
+    slug: "ai-customer-support-escalation-and-resolution-system",
+    title: "AI Customer Support Escalation & Resolution System",
+    tool: "zapier",
+    excerpt: "",
+    cover: {
+      src: "/projects/ai-customer-support-escalation-and-resolution-system/01-960.webp",
+      srcSet:
+        "/projects/ai-customer-support-escalation-and-resolution-system/01-480.webp 480w, /projects/ai-customer-support-escalation-and-resolution-system/01-960.webp 960w, /projects/ai-customer-support-escalation-and-resolution-system/01-1312.webp 1312w",
+      full: "/projects/ai-customer-support-escalation-and-resolution-system/01-1312.webp",
+      width: 1312,
+      height: 1199,
+      alt: "AI Customer Support Escalation & Resolution System: AI Customer Support Escalation & Resolution System (1)",
+    },
+    imageCount: 6,
+    toolsUsed: [
+      "Zapier",
+      "Zendesk",
+      "OpenAI",
+      "Webhooks",
+      "Gmail",
+      "Slack",
+      "Airtable",
+      "Google Sheets",
+      "Typeform / Google Forms",
+    ],
+    toolIds: [
+      "zapier",
+      "zendesk",
+      "openai",
+      "gmail",
+      "slack",
+      "airtable",
+      "googlesheets",
+      "typeform",
+    ],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["zapier-support-escalation"],
+    source: "folder",
   },
-  "imageCount": 3,
-  "toolsUsed": [
-   "Zapier",
-   "Webhooks",
-   "HubSpot",
-   "OpenAI",
-   "Airtable",
-   "Gmail",
-   "Google Calendar",
-   "Xero",
-   "E Signature"
-  ],
-  "toolIds": [
-   "zapier",
-   "hubspot",
-   "openai",
-   "airtable",
-   "gmail",
-   "xero"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "zapier-real-estate-lifecycle"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "case-manager-email-detection-and-routing",
-  "title": "Case Manager Email Detection & Routing",
-  "tool": "zapier",
-  "excerpt": "Built an email routing workflow that identifies the assigned case manager and sends the case information to the appropriate person automatically.",
-  "cover": {
-   "src": "/projects/case-manager-email-detection-and-routing/01-960.webp",
-   "srcSet": "/projects/case-manager-email-detection-and-routing/01-480.webp 480w, /projects/case-manager-email-detection-and-routing/01-960.webp 960w, /projects/case-manager-email-detection-and-routing/01-1600.webp 1600w",
-   "full": "/projects/case-manager-email-detection-and-routing/01-1600.webp",
-   "width": 1600,
-   "height": 770,
-   "alt": "Case Manager Email Detection & Routing: Case Manager"
+  {
+    slug: "ai-lead-qualification-and-sales-automation",
+    title: "AI Lead Qualification & Sales Automation",
+    tool: "zapier",
+    excerpt:
+      "Built an end to end lead management and sales automation system that captures leads, enriches their information, scores their potential, routes them to the right…",
+    cover: {
+      src: "/projects/ai-lead-qualification-and-sales-automation/01-960.webp",
+      srcSet:
+        "/projects/ai-lead-qualification-and-sales-automation/01-480.webp 480w, /projects/ai-lead-qualification-and-sales-automation/01-960.webp 960w, /projects/ai-lead-qualification-and-sales-automation/01-1600.webp 1600w",
+      full: "/projects/ai-lead-qualification-and-sales-automation/01-1600.webp",
+      width: 1600,
+      height: 750,
+      alt: "AI Lead Qualification & Sales Automation: 1 (1)",
+    },
+    imageCount: 5,
+    toolsUsed: [
+      "Zapier",
+      "Webhooks",
+      "HubSpot",
+      "OpenAI",
+      "Clearbit",
+      "Slack",
+      "Mailchimp",
+      "Calendly",
+      "Gmail",
+      "Xero",
+      "Google Calendar",
+    ],
+    toolIds: ["zapier", "hubspot", "openai", "slack", "mailchimp", "calendly", "gmail", "xero"],
+    services: ["workflow-automation", "lead-generation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["zapier-lead-qualification"],
+    source: "folder",
   },
-  "imageCount": 1,
-  "toolsUsed": [
-   "Zapier",
-   "Paths & Conditions",
-   "Gmail",
-   "Sub Zaps",
-   "Email Automation"
-  ],
-  "toolIds": [
-   "zapier",
-   "gmail"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "zapier-case-manager-routing"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "crm-and-follow-up-automation",
-  "title": "CRM & Follow-Up Automation",
-  "subtitle": "New Lead CRM & Follow-Up Automation",
-  "tool": "zapier",
-  "excerpt": "Built an automated lead management workflow that captures new form submissions, checks lead status, updates the CRM, notifies the team, and manages follow up…",
-  "cover": {
-   "src": "/projects/crm-and-follow-up-automation/01-960.webp",
-   "srcSet": "/projects/crm-and-follow-up-automation/01-480.webp 480w, /projects/crm-and-follow-up-automation/01-960.webp 960w, /projects/crm-and-follow-up-automation/01-1536.webp 1536w",
-   "full": "/projects/crm-and-follow-up-automation/01-1536.webp",
-   "width": 1536,
-   "height": 1024,
-   "alt": "CRM & Follow-Up Automation: CRM & Follow-Up Automation"
+  {
+    slug: "ai-powered-e-commerce-order-recovery-and-customer-retention",
+    title: "AI Powered E-Commerce Order Recovery & Customer Retention",
+    tool: "zapier",
+    excerpt:
+      "Built an automated e commerce workflow that monitors customer orders and identifies opportunities for payment recovery, abandoned cart recovery, delivery issue handling,…",
+    cover: {
+      src: "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-960.webp",
+      srcSet:
+        "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-480.webp 480w, /projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-960.webp 960w, /projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-1600.webp 1600w",
+      full: "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-1600.webp",
+      width: 1600,
+      height: 751,
+      alt: "AI Powered E-Commerce Order Recovery & Customer Retention: AI Powered E-Commerce Order Recovery & Customer Retention (1)",
+    },
+    imageCount: 2,
+    toolsUsed: [
+      "Zapier",
+      "Shopify / WooCommerce",
+      "HubSpot",
+      "OpenAI",
+      "Stripe",
+      "Slack",
+      "Gmail",
+      "Zendesk",
+      "Airtable",
+    ],
+    toolIds: [
+      "zapier",
+      "shopify",
+      "hubspot",
+      "openai",
+      "stripe",
+      "slack",
+      "gmail",
+      "zendesk",
+      "airtable",
+    ],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["zapier-ecommerce-recovery"],
+    source: "folder",
   },
-  "imageCount": 1,
-  "toolsUsed": [
-   "Zapier",
-   "Typeform",
-   "GoHighLevel",
-   "Google Sheets",
-   "Gmail",
-   "Twilio",
-   "Slack",
-   "Asana"
-  ],
-  "toolIds": [
-   "zapier",
-   "typeform",
-   "gohighlevel",
-   "googlesheets",
-   "gmail",
-   "twilio",
-   "slack"
-  ],
-  "services": [
-   "workflow-automation",
-   "gohighlevel-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "zapier-new-lead-ghl"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "legal-case-email-automation",
-  "title": "Legal Case Email Automation",
-  "tool": "zapier",
-  "excerpt": "Built an automated legal case email workflow using Zapier to receive case data, evaluate different conditions, and send the appropriate email based on the case stage.",
-  "cover": {
-   "src": "/projects/legal-case-email-automation/01-960.webp",
-   "srcSet": "/projects/legal-case-email-automation/01-480.webp 480w, /projects/legal-case-email-automation/01-960.webp 960w, /projects/legal-case-email-automation/01-1600.webp 1600w",
-   "full": "/projects/legal-case-email-automation/01-1600.webp",
-   "width": 1600,
-   "height": 736,
-   "alt": "Legal Case Email Automation, screenshot 1"
+  {
+    slug: "ai-powered-real-estate-deal-lifecycle-automation",
+    title: "AI Powered Real Estate Deal Lifecycle Automation",
+    tool: "zapier",
+    excerpt:
+      "Built an automated real estate workflow that manages the journey from property inquiry through qualification, property matching, viewings, offers, contracts, closing,…",
+    cover: {
+      src: "/projects/ai-powered-real-estate-deal-lifecycle-automation/01-960.webp",
+      srcSet:
+        "/projects/ai-powered-real-estate-deal-lifecycle-automation/01-480.webp 480w, /projects/ai-powered-real-estate-deal-lifecycle-automation/01-960.webp 960w, /projects/ai-powered-real-estate-deal-lifecycle-automation/01-1024.webp 1024w",
+      full: "/projects/ai-powered-real-estate-deal-lifecycle-automation/01-1024.webp",
+      width: 1024,
+      height: 1536,
+      alt: "AI Powered Real Estate Deal Lifecycle Automation: 1 (1)",
+    },
+    imageCount: 3,
+    toolsUsed: [
+      "Zapier",
+      "Webhooks",
+      "HubSpot",
+      "OpenAI",
+      "Airtable",
+      "Gmail",
+      "Google Calendar",
+      "Xero",
+      "E Signature",
+    ],
+    toolIds: ["zapier", "hubspot", "openai", "airtable", "gmail", "xero"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["zapier-real-estate-lifecycle"],
+    source: "folder",
   },
-  "imageCount": 1,
-  "toolsUsed": [
-   "Zapier",
-   "Webhooks",
-   "Paths & Conditions",
-   "Gmail",
-   "Automated Email Workflows"
-  ],
-  "toolIds": [
-   "zapier",
-   "gmail"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [
-   "zapier-legal-case-routing"
-  ],
-  "source": "folder"
- },
- {
-  "slug": "white-label-voice-agents",
-  "title": "White-Label Voice Agents for an AI Agency",
-  "tool": "voice",
-  "excerpt": "Inbound and outbound Synthflow voice agents built per client sub-account inside an AI agency's white-labelled GoHighLevel.",
-  "cover": {
-   "src": "/case-media/white-label-voice-agents/01-800.webp",
-   "srcSet": "/case-media/white-label-voice-agents/01-800.webp 800w, /case-media/white-label-voice-agents/01.webp 1600w",
-   "full": "/case-media/white-label-voice-agents/01.webp",
-   "width": 1600,
-   "height": 828,
-   "alt": "Synthflow agent list for a café sub-account with inbound and outbound agents"
+  {
+    slug: "case-manager-email-detection-and-routing",
+    title: "Case Manager Email Detection & Routing",
+    tool: "zapier",
+    excerpt:
+      "Built an email routing workflow that identifies the assigned case manager and sends the case information to the appropriate person automatically.",
+    cover: {
+      src: "/projects/case-manager-email-detection-and-routing/01-960.webp",
+      srcSet:
+        "/projects/case-manager-email-detection-and-routing/01-480.webp 480w, /projects/case-manager-email-detection-and-routing/01-960.webp 960w, /projects/case-manager-email-detection-and-routing/01-1600.webp 1600w",
+      full: "/projects/case-manager-email-detection-and-routing/01-1600.webp",
+      width: 1600,
+      height: 770,
+      alt: "Case Manager Email Detection & Routing: Case Manager",
+    },
+    imageCount: 1,
+    toolsUsed: ["Zapier", "Paths & Conditions", "Gmail", "Sub Zaps", "Email Automation"],
+    toolIds: ["zapier", "gmail"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["zapier-case-manager-routing"],
+    source: "folder",
   },
-  "imageCount": 4,
-  "toolsUsed": [
-   "GoHighLevel",
-   "Synthflow",
-   "Voice agents",
-   "Email automation"
-  ],
-  "toolIds": [
-   "gohighlevel",
-   "synthflow"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation"
-  ],
-  "featured": true,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Call in / out",
-   "Synthflow agent",
-   "Book appointment",
-   "Post-call data",
-   "CRM + confirmation"
-  ]
- },
- {
-  "slug": "zapier-lead-crm-integrations",
-  "title": "Lead & CRM Integrations with Zapier",
-  "tool": "zapier",
-  "excerpt": "A set of Zaps moving leads from Typeform, Calendly, ManyChat, Yelp and Airtable into Pipedrive, Mailchimp, GoHighLevel and ClickFunnels.",
-  "cover": {
-   "src": "/case-media/zapier-lead-crm-integrations/01-800.webp",
-   "srcSet": "/case-media/zapier-lead-crm-integrations/01-800.webp 800w, /case-media/zapier-lead-crm-integrations/01.webp 1009w",
-   "full": "/case-media/zapier-lead-crm-integrations/01.webp",
-   "width": 1009,
-   "height": 720,
-   "alt": "Zapier Yelp lead routing with paths to LeadConnector and Code by Zapier"
+  {
+    slug: "crm-and-follow-up-automation",
+    title: "CRM & Follow-Up Automation",
+    subtitle: "New Lead CRM & Follow-Up Automation",
+    tool: "zapier",
+    excerpt:
+      "Built an automated lead management workflow that captures new form submissions, checks lead status, updates the CRM, notifies the team, and manages follow up…",
+    cover: {
+      src: "/projects/crm-and-follow-up-automation/01-960.webp",
+      srcSet:
+        "/projects/crm-and-follow-up-automation/01-480.webp 480w, /projects/crm-and-follow-up-automation/01-960.webp 960w, /projects/crm-and-follow-up-automation/01-1536.webp 1536w",
+      full: "/projects/crm-and-follow-up-automation/01-1536.webp",
+      width: 1536,
+      height: 1024,
+      alt: "CRM & Follow-Up Automation: CRM & Follow-Up Automation",
+    },
+    imageCount: 1,
+    toolsUsed: [
+      "Zapier",
+      "Typeform",
+      "GoHighLevel",
+      "Google Sheets",
+      "Gmail",
+      "Twilio",
+      "Slack",
+      "Asana",
+    ],
+    toolIds: ["zapier", "typeform", "gohighlevel", "googlesheets", "gmail", "twilio", "slack"],
+    services: ["workflow-automation", "gohighlevel-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["zapier-new-lead-ghl"],
+    source: "folder",
   },
-  "imageCount": 4,
-  "toolsUsed": [
-   "Zapier",
-   "Pipedrive",
-   "Typeform",
-   "Calendly",
-   "Mailchimp",
-   "GoHighLevel"
-  ],
-  "toolIds": [
-   "zapier",
-   "pipedrive",
-   "typeform",
-   "calendly",
-   "mailchimp",
-   "gohighlevel"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Form / booking / chat lead",
-   "Clean with code",
-   "Find existing record",
-   "Create or update",
-   "Notify / enrol"
-  ]
- },
- {
-  "slug": "tristrum-sales-lettings",
-  "title": "Property-Search Voice Agent — Tristrum Sales & Lettings",
-  "tool": "voice",
-  "excerpt": "Inbound voice agent that searches the agency's live property data during the call and books valuations.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "Synthflow",
-   "ElevenLabs",
-   "Firebase",
-   "GCP",
-   "Jupix ERP"
-  ],
-  "toolIds": [
-   "synthflow",
-   "elevenlabs",
-   "firebase"
-  ],
-  "services": [
-   "voice-ai"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Call in",
-   "Query Jupix data",
-   "Match listings",
-   "Book valuation"
-  ]
- },
- {
-  "slug": "neo-taxi",
-  "title": "Taxi Booking Voice Agent — NEO Taxi",
-  "tool": "voice",
-  "excerpt": "Voice agent that books taxi rides in a single call and sends the caller a live Google Maps link.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "Synthflow",
-   "Google Maps API",
-   "GoHighLevel",
-   "ElevenLabs"
-  ],
-  "toolIds": [
-   "synthflow",
-   "gohighlevel",
-   "elevenlabs"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Call in",
-   "AI takes booking",
-   "Generate Maps link",
-   "Send to caller"
-  ]
- },
- {
-  "slug": "mavera-ai",
-  "title": "AI Outbound Calling Pipeline — Mavera.ai",
-  "tool": "voice",
-  "excerpt": "Outbound pipeline that sources leads, calls them with an AI agent, books appointments and hands off to GoHighLevel follow-up.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "Synthflow",
-   "GoHighLevel",
-   "Apify",
-   "Apollo",
-   "n8n"
-  ],
-  "toolIds": [
-   "synthflow",
-   "gohighlevel",
-   "apify",
-   "apollo",
-   "n8n"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation",
-   "workflow-automation",
-   "lead-generation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Scrape leads",
-   "AI calls lead",
-   "Book appointment",
-   "GHL follow-up"
-  ]
- },
- {
-  "slug": "dental-clinic",
-  "title": "Dental Clinic 24/7 Receptionist",
-  "tool": "voice",
-  "excerpt": "AI receptionist that answers calls around the clock, books dental appointments and runs a three-stage reminder sequence.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "Vapi",
-   "GoHighLevel",
-   "n8n"
-  ],
-  "toolIds": [
-   "vapi",
-   "gohighlevel",
-   "n8n"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation",
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Call in",
-   "AI books appointment",
-   "Escalating reminders",
-   "Confirmed visit"
-  ]
- },
- {
-  "slug": "car-rental-fleet",
-  "title": "Car Rental Fleet Sales Agent",
-  "tool": "voice",
-  "excerpt": "Inbound agent that qualifies callers, identifies the decision-maker, dials them and creates the GoHighLevel opportunity.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "ElevenLabs",
-   "GoHighLevel",
-   "n8n"
-  ],
-  "toolIds": [
-   "elevenlabs",
-   "gohighlevel",
-   "n8n"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation",
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "AI qualifies caller",
-   "Identify owner",
-   "Auto-dial owner",
-   "Create GHL deal"
-  ]
- },
- {
-  "slug": "my360agents",
-  "title": "Industry Voice Agent Library — My360Agents.ai",
-  "tool": "voice",
-  "excerpt": "Library of pre-built, industry-specific voice agents with an embeddable inbound-call widget and a live demo.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "Synthflow",
-   "Vapi",
-   "GoHighLevel",
-   "ElevenLabs",
-   "n8n"
-  ],
-  "toolIds": [
-   "synthflow",
-   "vapi",
-   "gohighlevel",
-   "elevenlabs",
-   "n8n"
-  ],
-  "services": [
-   "voice-ai",
-   "gohighlevel-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Select industry",
-   "Deploy pre-built agent",
-   "Embed widget",
-   "Live on site"
-  ]
- },
- {
-  "slug": "lead-processing-engine",
-  "title": "Lead Processing Engine",
-  "tool": "n8n",
-  "excerpt": "n8n pipeline that verifies, classifies, researches and personalises large lead lists in batch.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "n8n",
-   "MillionVerifier",
-   "OpenAI",
-   "Google Sheets"
-  ],
-  "toolIds": [
-   "n8n",
-   "openai",
-   "googlesheets"
-  ],
-  "services": [
-   "workflow-automation",
-   "lead-generation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Verify emails",
-   "Classify industry",
-   "AI research",
-   "Personalise",
-   "Export"
-  ]
- },
- {
-  "slug": "linkedin-lead-enrichment",
-  "title": "LinkedIn Lead Enrichment",
-  "tool": "n8n",
-  "excerpt": "Three-stage enrichment that turns LinkedIn profile URLs into a sheet of direct email addresses.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "n8n",
-   "SalesQL API",
-   "Google Sheets"
-  ],
-  "toolIds": [
-   "n8n",
-   "googlesheets"
-  ],
-  "services": [
-   "workflow-automation",
-   "lead-generation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Collect URLs",
-   "SalesQL enrich",
-   "Filter direct emails",
-   "Store in Sheets"
-  ]
- },
- {
-  "slug": "cancellation-recovery",
-  "title": "Cancellation Recovery",
-  "tool": "n8n",
-  "excerpt": "Detects cancelled appointments and offers the slot to a waitlist through an automatic campaign.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "n8n",
-   "SendGrid",
-   "Gmail API"
-  ],
-  "toolIds": [
-   "n8n",
-   "gmail"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Detect cancellation",
-   "Recovery campaign",
-   "Refill from waitlist",
-   "Log"
-  ]
- },
- {
-  "slug": "crm-sync-dedup",
-  "title": "CRM Sync & Dedup",
-  "tool": "n8n",
-  "excerpt": "Uploaded lists are AI-enriched, matched by company domain and created or updated in Zoho CRM.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "n8n",
-   "OpenAI",
-   "Zoho CRM",
-   "Google Drive"
-  ],
-  "toolIds": [
-   "n8n",
-   "openai",
-   "zoho"
-  ],
-  "services": [
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "File upload",
-   "AI enrichment",
-   "Domain-based match",
-   "Create / update CRM"
-  ]
- },
- {
-  "slug": "universal-receptionist-builder",
-  "title": "Universal Receptionist Builder",
-  "tool": "voice",
-  "excerpt": "Enter a website URL and the pipeline builds a knowledge base and deploys a receptionist voice agent.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "n8n",
-   "ElevenLabs",
-   "GoHighLevel"
-  ],
-  "toolIds": [
-   "n8n",
-   "elevenlabs",
-   "gohighlevel"
-  ],
-  "services": [
-   "voice-ai",
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Enter URL",
-   "Scrape content",
-   "Build knowledge base",
-   "Deploy agent"
-  ]
- },
- {
-  "slug": "hospital-whatsapp-bot",
-  "title": "Hospital WhatsApp Bot",
-  "tool": "n8n",
-  "excerpt": "WhatsApp assistant for booking imaging and lab tests, with 48h / 12h / 3h reminders and knowledge-base answers.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "n8n",
-   "Airtable",
-   "RAG",
-   "Meta API"
-  ],
-  "toolIds": [
-   "n8n",
-   "airtable"
-  ],
-  "services": [
-   "ai-chatbots",
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Book via WhatsApp",
-   "Airtable entry",
-   "Reminders 48h / 12h / 3h",
-   "RAG Q&A"
-  ]
- },
- {
-  "slug": "omnichannel-bot",
-  "title": "Omnichannel Assistant (6 Platforms)",
-  "tool": "n8n",
-  "excerpt": "One AI assistant answering across six messaging platforms, with intent detection and GoHighLevel sync.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "n8n",
-   "OpenAI",
-   "Meta API",
-   "Pinecone",
-   "GoHighLevel"
-  ],
-  "toolIds": [
-   "n8n",
-   "openai",
-   "pinecone",
-   "gohighlevel"
-  ],
-  "services": [
-   "ai-chatbots",
-   "gohighlevel-automation",
-   "workflow-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Message in (any channel)",
-   "LLM responds",
-   "Qualify",
-   "Escalate on intent",
-   "CRM sync"
-  ]
- },
- {
-  "slug": "linkedin-outreach-bot",
-  "title": "LinkedIn Outreach Bot",
-  "tool": "n8n",
-  "excerpt": "Automates connection requests, scores replies with AI and triggers the right CRM follow-up.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "n8n",
-   "LinkedIn API",
-   "OpenAI",
-   "Zoho CRM"
-  ],
-  "toolIds": [
-   "n8n",
-   "openai",
-   "zoho"
-  ],
-  "services": [
-   "workflow-automation",
-   "lead-generation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Auto-connect",
-   "AI scores reply",
-   "Sync to CRM",
-   "Trigger follow-up"
-  ]
- },
- {
-  "slug": "social-content-machine",
-  "title": "Social Content Machine",
-  "tool": "n8n",
-  "excerpt": "Generates posts, captions and hashtags, then schedules and publishes them to Facebook, Instagram and LinkedIn.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "n8n",
-   "OpenAI",
-   "Meta API",
-   "LinkedIn API"
-  ],
-  "toolIds": [
-   "n8n",
-   "openai"
-  ],
-  "services": [
-   "workflow-automation",
-   "ai-content-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Generate post + caption",
-   "Schedule",
-   "Publish to FB / IG / LinkedIn"
-  ]
- },
- {
-  "slug": "ai-ad-creative-pipeline",
-  "title": "AI Ad Creative Pipeline",
-  "tool": "n8n",
-  "excerpt": "Generates ad creatives in three formats, checks them against brand rules and schedules them.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "n8n",
-   "OpenAI / DALL·E",
-   "Meta Ads API"
-  ],
-  "toolIds": [
-   "n8n",
-   "openai"
-  ],
-  "services": [
-   "workflow-automation",
-   "ai-content-automation"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Prompt in",
-   "Generate creative",
-   "Brand check",
-   "Schedule & post"
-  ]
- },
- {
-  "slug": "ahmad-sweets-pos",
-  "title": "Ahmad Sweets POS",
-  "tool": "custom",
-  "excerpt": "Multi-location retail POS integrated with Pakistan's FBR invoicing API, with automatic tax calculation.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "WinForms",
-   "FBR API",
-   "Crystal Reports"
-  ],
-  "toolIds": [],
-  "services": [
-   "custom-software"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Sale made",
-   "FBR API auth",
-   "Tax calculated",
-   "Invoice generated"
-  ]
- },
- {
-  "slug": "order-take-app",
-  "title": "Order Take App",
-  "tool": "custom",
-  "excerpt": "Offline-first field ordering app that stores orders on the device and syncs when the connection returns.",
-  "imageCount": 0,
-  "toolsUsed": [
-   "Xamarin.Forms",
-   "ASP.NET Web API",
-   "SQLite"
-  ],
-  "toolIds": [
-   "xamarin",
-   "aspnetcore"
-  ],
-  "services": [
-   "custom-software"
-  ],
-  "featured": false,
-  "order": 100,
-  "legacySlugs": [],
-  "source": "manual",
-  "flow": [
-   "Rep takes order (offline)",
-   "Stored locally",
-   "Device reconnects",
-   "Sync to API"
-  ]
- }
+  {
+    slug: "legal-case-email-automation",
+    title: "Legal Case Email Automation",
+    tool: "zapier",
+    excerpt:
+      "Built an automated legal case email workflow using Zapier to receive case data, evaluate different conditions, and send the appropriate email based on the case stage.",
+    cover: {
+      src: "/projects/legal-case-email-automation/01-960.webp",
+      srcSet:
+        "/projects/legal-case-email-automation/01-480.webp 480w, /projects/legal-case-email-automation/01-960.webp 960w, /projects/legal-case-email-automation/01-1600.webp 1600w",
+      full: "/projects/legal-case-email-automation/01-1600.webp",
+      width: 1600,
+      height: 736,
+      alt: "Legal Case Email Automation, screenshot 1",
+    },
+    imageCount: 1,
+    toolsUsed: ["Zapier", "Webhooks", "Paths & Conditions", "Gmail", "Automated Email Workflows"],
+    toolIds: ["zapier", "gmail"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: ["zapier-legal-case-routing"],
+    source: "folder",
+  },
+  {
+    slug: "white-label-voice-agents",
+    title: "White-Label Voice Agents for an AI Agency",
+    tool: "voice",
+    excerpt:
+      "Inbound and outbound Synthflow voice agents built per client sub-account inside an AI agency's white-labelled GoHighLevel.",
+    cover: {
+      src: "/case-media/white-label-voice-agents/01-800.webp",
+      srcSet:
+        "/case-media/white-label-voice-agents/01-800.webp 800w, /case-media/white-label-voice-agents/01.webp 1600w",
+      full: "/case-media/white-label-voice-agents/01.webp",
+      width: 1600,
+      height: 828,
+      alt: "Synthflow agent list for a café sub-account with inbound and outbound agents",
+    },
+    imageCount: 4,
+    toolsUsed: ["GoHighLevel", "Synthflow", "Voice agents", "Email automation"],
+    toolIds: ["gohighlevel", "synthflow"],
+    services: ["voice-ai", "gohighlevel-automation"],
+    featured: true,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: [
+      "Call in / out",
+      "Synthflow agent",
+      "Book appointment",
+      "Post-call data",
+      "CRM + confirmation",
+    ],
+  },
+  {
+    slug: "zapier-lead-crm-integrations",
+    title: "Lead & CRM Integrations with Zapier",
+    tool: "zapier",
+    excerpt:
+      "A set of Zaps moving leads from Typeform, Calendly, ManyChat, Yelp and Airtable into Pipedrive, Mailchimp, GoHighLevel and ClickFunnels.",
+    cover: {
+      src: "/case-media/zapier-lead-crm-integrations/01-800.webp",
+      srcSet:
+        "/case-media/zapier-lead-crm-integrations/01-800.webp 800w, /case-media/zapier-lead-crm-integrations/01.webp 1009w",
+      full: "/case-media/zapier-lead-crm-integrations/01.webp",
+      width: 1009,
+      height: 720,
+      alt: "Zapier Yelp lead routing with paths to LeadConnector and Code by Zapier",
+    },
+    imageCount: 4,
+    toolsUsed: ["Zapier", "Pipedrive", "Typeform", "Calendly", "Mailchimp", "GoHighLevel"],
+    toolIds: ["zapier", "pipedrive", "typeform", "calendly", "mailchimp", "gohighlevel"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: [
+      "Form / booking / chat lead",
+      "Clean with code",
+      "Find existing record",
+      "Create or update",
+      "Notify / enrol",
+    ],
+  },
+  {
+    slug: "tristrum-sales-lettings",
+    title: "Property-Search Voice Agent — Tristrum Sales & Lettings",
+    tool: "voice",
+    excerpt:
+      "Inbound voice agent that searches the agency's live property data during the call and books valuations.",
+    imageCount: 0,
+    toolsUsed: ["Synthflow", "ElevenLabs", "Firebase", "GCP", "Jupix ERP"],
+    toolIds: ["synthflow", "elevenlabs", "firebase"],
+    services: ["voice-ai"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Call in", "Query Jupix data", "Match listings", "Book valuation"],
+  },
+  {
+    slug: "neo-taxi",
+    title: "Taxi Booking Voice Agent — NEO Taxi",
+    tool: "voice",
+    excerpt:
+      "Voice agent that books taxi rides in a single call and sends the caller a live Google Maps link.",
+    imageCount: 0,
+    toolsUsed: ["Synthflow", "Google Maps API", "GoHighLevel", "ElevenLabs"],
+    toolIds: ["synthflow", "gohighlevel", "elevenlabs"],
+    services: ["voice-ai", "gohighlevel-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Call in", "AI takes booking", "Generate Maps link", "Send to caller"],
+  },
+  {
+    slug: "mavera-ai",
+    title: "AI Outbound Calling Pipeline — Mavera.ai",
+    tool: "voice",
+    excerpt:
+      "Outbound pipeline that sources leads, calls them with an AI agent, books appointments and hands off to GoHighLevel follow-up.",
+    imageCount: 0,
+    toolsUsed: ["Synthflow", "GoHighLevel", "Apify", "Apollo", "n8n"],
+    toolIds: ["synthflow", "gohighlevel", "apify", "apollo", "n8n"],
+    services: ["voice-ai", "gohighlevel-automation", "workflow-automation", "lead-generation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Scrape leads", "AI calls lead", "Book appointment", "GHL follow-up"],
+  },
+  {
+    slug: "dental-clinic",
+    title: "Dental Clinic 24/7 Receptionist",
+    tool: "voice",
+    excerpt:
+      "AI receptionist that answers calls around the clock, books dental appointments and runs a three-stage reminder sequence.",
+    imageCount: 0,
+    toolsUsed: ["Vapi", "GoHighLevel", "n8n"],
+    toolIds: ["vapi", "gohighlevel", "n8n"],
+    services: ["voice-ai", "gohighlevel-automation", "workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Call in", "AI books appointment", "Escalating reminders", "Confirmed visit"],
+  },
+  {
+    slug: "car-rental-fleet",
+    title: "Car Rental Fleet Sales Agent",
+    tool: "voice",
+    excerpt:
+      "Inbound agent that qualifies callers, identifies the decision-maker, dials them and creates the GoHighLevel opportunity.",
+    imageCount: 0,
+    toolsUsed: ["ElevenLabs", "GoHighLevel", "n8n"],
+    toolIds: ["elevenlabs", "gohighlevel", "n8n"],
+    services: ["voice-ai", "gohighlevel-automation", "workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["AI qualifies caller", "Identify owner", "Auto-dial owner", "Create GHL deal"],
+  },
+  {
+    slug: "my360agents",
+    title: "Industry Voice Agent Library — My360Agents.ai",
+    tool: "voice",
+    excerpt:
+      "Library of pre-built, industry-specific voice agents with an embeddable inbound-call widget and a live demo.",
+    imageCount: 0,
+    toolsUsed: ["Synthflow", "Vapi", "GoHighLevel", "ElevenLabs", "n8n"],
+    toolIds: ["synthflow", "vapi", "gohighlevel", "elevenlabs", "n8n"],
+    services: ["voice-ai", "gohighlevel-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Select industry", "Deploy pre-built agent", "Embed widget", "Live on site"],
+  },
+  {
+    slug: "lead-processing-engine",
+    title: "Lead Processing Engine",
+    tool: "n8n",
+    excerpt:
+      "n8n pipeline that verifies, classifies, researches and personalises large lead lists in batch.",
+    imageCount: 0,
+    toolsUsed: ["n8n", "MillionVerifier", "OpenAI", "Google Sheets"],
+    toolIds: ["n8n", "openai", "googlesheets"],
+    services: ["workflow-automation", "lead-generation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Verify emails", "Classify industry", "AI research", "Personalise", "Export"],
+  },
+  {
+    slug: "linkedin-lead-enrichment",
+    title: "LinkedIn Lead Enrichment",
+    tool: "n8n",
+    excerpt:
+      "Three-stage enrichment that turns LinkedIn profile URLs into a sheet of direct email addresses.",
+    imageCount: 0,
+    toolsUsed: ["n8n", "SalesQL API", "Google Sheets"],
+    toolIds: ["n8n", "googlesheets"],
+    services: ["workflow-automation", "lead-generation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Collect URLs", "SalesQL enrich", "Filter direct emails", "Store in Sheets"],
+  },
+  {
+    slug: "cancellation-recovery",
+    title: "Cancellation Recovery",
+    tool: "n8n",
+    excerpt:
+      "Detects cancelled appointments and offers the slot to a waitlist through an automatic campaign.",
+    imageCount: 0,
+    toolsUsed: ["n8n", "SendGrid", "Gmail API"],
+    toolIds: ["n8n", "gmail"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Detect cancellation", "Recovery campaign", "Refill from waitlist", "Log"],
+  },
+  {
+    slug: "crm-sync-dedup",
+    title: "CRM Sync & Dedup",
+    tool: "n8n",
+    excerpt:
+      "Uploaded lists are AI-enriched, matched by company domain and created or updated in Zoho CRM.",
+    imageCount: 0,
+    toolsUsed: ["n8n", "OpenAI", "Zoho CRM", "Google Drive"],
+    toolIds: ["n8n", "openai", "zoho"],
+    services: ["workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["File upload", "AI enrichment", "Domain-based match", "Create / update CRM"],
+  },
+  {
+    slug: "universal-receptionist-builder",
+    title: "Universal Receptionist Builder",
+    tool: "voice",
+    excerpt:
+      "Enter a website URL and the pipeline builds a knowledge base and deploys a receptionist voice agent.",
+    imageCount: 0,
+    toolsUsed: ["n8n", "ElevenLabs", "GoHighLevel"],
+    toolIds: ["n8n", "elevenlabs", "gohighlevel"],
+    services: ["voice-ai", "workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Enter URL", "Scrape content", "Build knowledge base", "Deploy agent"],
+  },
+  {
+    slug: "hospital-whatsapp-bot",
+    title: "Hospital WhatsApp Bot",
+    tool: "n8n",
+    excerpt:
+      "WhatsApp assistant for booking imaging and lab tests, with 48h / 12h / 3h reminders and knowledge-base answers.",
+    imageCount: 0,
+    toolsUsed: ["n8n", "Airtable", "RAG", "Meta API"],
+    toolIds: ["n8n", "airtable"],
+    services: ["ai-chatbots", "workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Book via WhatsApp", "Airtable entry", "Reminders 48h / 12h / 3h", "RAG Q&A"],
+  },
+  {
+    slug: "omnichannel-bot",
+    title: "Omnichannel Assistant (6 Platforms)",
+    tool: "n8n",
+    excerpt:
+      "One AI assistant answering across six messaging platforms, with intent detection and GoHighLevel sync.",
+    imageCount: 0,
+    toolsUsed: ["n8n", "OpenAI", "Meta API", "Pinecone", "GoHighLevel"],
+    toolIds: ["n8n", "openai", "pinecone", "gohighlevel"],
+    services: ["ai-chatbots", "gohighlevel-automation", "workflow-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Message in (any channel)", "LLM responds", "Qualify", "Escalate on intent", "CRM sync"],
+  },
+  {
+    slug: "linkedin-outreach-bot",
+    title: "LinkedIn Outreach Bot",
+    tool: "n8n",
+    excerpt:
+      "Automates connection requests, scores replies with AI and triggers the right CRM follow-up.",
+    imageCount: 0,
+    toolsUsed: ["n8n", "LinkedIn API", "OpenAI", "Zoho CRM"],
+    toolIds: ["n8n", "openai", "zoho"],
+    services: ["workflow-automation", "lead-generation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Auto-connect", "AI scores reply", "Sync to CRM", "Trigger follow-up"],
+  },
+  {
+    slug: "social-content-machine",
+    title: "Social Content Machine",
+    tool: "n8n",
+    excerpt:
+      "Generates posts, captions and hashtags, then schedules and publishes them to Facebook, Instagram and LinkedIn.",
+    imageCount: 0,
+    toolsUsed: ["n8n", "OpenAI", "Meta API", "LinkedIn API"],
+    toolIds: ["n8n", "openai"],
+    services: ["workflow-automation", "ai-content-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Generate post + caption", "Schedule", "Publish to FB / IG / LinkedIn"],
+  },
+  {
+    slug: "ai-ad-creative-pipeline",
+    title: "AI Ad Creative Pipeline",
+    tool: "n8n",
+    excerpt:
+      "Generates ad creatives in three formats, checks them against brand rules and schedules them.",
+    imageCount: 0,
+    toolsUsed: ["n8n", "OpenAI / DALL·E", "Meta Ads API"],
+    toolIds: ["n8n", "openai"],
+    services: ["workflow-automation", "ai-content-automation"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Prompt in", "Generate creative", "Brand check", "Schedule & post"],
+  },
+  {
+    slug: "ahmad-sweets-pos",
+    title: "Ahmad Sweets POS",
+    tool: "custom",
+    excerpt:
+      "Multi-location retail POS integrated with Pakistan's FBR invoicing API, with automatic tax calculation.",
+    imageCount: 0,
+    toolsUsed: ["WinForms", "FBR API", "Crystal Reports"],
+    toolIds: [],
+    services: ["custom-software"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Sale made", "FBR API auth", "Tax calculated", "Invoice generated"],
+  },
+  {
+    slug: "order-take-app",
+    title: "Order Take App",
+    tool: "custom",
+    excerpt:
+      "Offline-first field ordering app that stores orders on the device and syncs when the connection returns.",
+    imageCount: 0,
+    toolsUsed: ["Xamarin.Forms", "ASP.NET Web API", "SQLite"],
+    toolIds: ["xamarin", "aspnetcore"],
+    services: ["custom-software"],
+    featured: false,
+    order: 100,
+    legacySlugs: [],
+    source: "manual",
+    flow: ["Rep takes order (offline)", "Stored locally", "Device reconnects", "Sync to API"],
+  },
 ];
