@@ -1,0 +1,216 @@
+{
+ "slug": "ai-customer-support-escalation-and-resolution-system",
+ "tags": [
+  "Zapier",
+  "Zendesk",
+  "OpenAI",
+  "Webhooks",
+  "Gmail",
+  "Slack",
+  "Airtable",
+  "Google Sheets"
+ ],
+ "overview": [],
+ "sections": [
+  {
+   "heading": "Ticket Management",
+   "blocks": [
+    {
+     "p": "The workflow:"
+    },
+    {
+     "list": [
+      "Receives requests through email, forms, or chat",
+      "Creates a Zendesk ticket",
+      "Analyzes the ticket details",
+      "Identifies the issue category and urgency",
+      "Determines customer type and required department",
+      "Routes the ticket to the appropriate support workflow"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Smart Routing",
+   "blocks": [
+    {
+     "p": "The system routes tickets based on their conditions:"
+    },
+    {
+     "list": [
+      "Critical issues → Senior Support + Slack Alert",
+      "Billing issues → Finance Team",
+      "Technical issues → Technical Support",
+      "General questions → Automated Response",
+      "VIP customers → Priority Handling"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "AI Ticket Analysis",
+   "blocks": [
+    {
+     "p": "Each ticket is evaluated for:"
+    },
+    {
+     "list": [
+      "Issue category",
+      "Urgency",
+      "Customer type",
+      "Product or service",
+      "Sentiment",
+      "Required department"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Customer Responses",
+   "blocks": [
+    {
+     "p": "For simple requests:"
+    },
+    {
+     "list": [
+      "Generates a response",
+      "Sends the response to the customer",
+      "Updates the ticket"
+     ]
+    },
+    {
+     "p": "For complex requests:"
+    },
+    {
+     "list": [
+      "Creates a response draft",
+      "Sends it to a support agent for review",
+      "Waits for the agent to handle the case"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "SLA Monitoring",
+   "blocks": [
+    {
+     "p": "The workflow checks whether tickets are handled within the required timeframe."
+    },
+    {
+     "p": "Example:"
+    }
+   ]
+  },
+  {
+   "heading": "Ticket Created → Wait 2 Hours → Check Status → Resolved / Escalate",
+   "blocks": [
+    {
+     "p": "Unresolved tickets trigger an internal Slack alert and escalation."
+    }
+   ]
+  },
+  {
+   "heading": "Sentiment Escalation",
+   "blocks": [
+    {
+     "p": "If a ticket is marked as highly negative and belongs to a VIP customer:"
+    },
+    {
+     "list": [
+      "Escalates the ticket immediately",
+      "Notifies the support manager",
+      "Prioritizes the case for review"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Resolution & Follow-Up",
+   "blocks": [
+    {
+     "p": "When a customer responds:"
+    },
+    {
+     "list": [
+      "Reanalyzes the latest message",
+      "Checks whether the issue is resolved",
+      "Closes resolved tickets",
+      "Escalates unresolved cases",
+      "Sends a customer satisfaction survey"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Reporting",
+   "blocks": [
+    {
+     "p": "Resolved tickets are recorded with:"
+    },
+    {
+     "list": [
+      "Customer",
+      "Category",
+      "Priority",
+      "Resolution time",
+      "Sentiment",
+      "CSAT score"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A complete customer support workflow that connects ticket management, automated responses, smart routing, SLA monitoring, escalation, resolution, and customer satisfaction tracking into one system."
+ ],
+ "images": [
+  {
+   "src": "/projects/ai-customer-support-escalation-and-resolution-system/01-960.webp",
+   "srcSet": "/projects/ai-customer-support-escalation-and-resolution-system/01-480.webp 480w, /projects/ai-customer-support-escalation-and-resolution-system/01-960.webp 960w, /projects/ai-customer-support-escalation-and-resolution-system/01-1312.webp 1312w",
+   "full": "/projects/ai-customer-support-escalation-and-resolution-system/01-1312.webp",
+   "width": 1312,
+   "height": 1199,
+   "alt": "AI Customer Support Escalation & Resolution System: AI Customer Support Escalation & Resolution System (1)"
+  },
+  {
+   "src": "/projects/ai-customer-support-escalation-and-resolution-system/02-960.webp",
+   "srcSet": "/projects/ai-customer-support-escalation-and-resolution-system/02-480.webp 480w, /projects/ai-customer-support-escalation-and-resolution-system/02-960.webp 960w, /projects/ai-customer-support-escalation-and-resolution-system/02-1600.webp 1600w",
+   "full": "/projects/ai-customer-support-escalation-and-resolution-system/02-1600.webp",
+   "width": 1600,
+   "height": 749,
+   "alt": "AI Customer Support Escalation & Resolution System: AI Customer Support Escalation & Resolution System (2)"
+  },
+  {
+   "src": "/projects/ai-customer-support-escalation-and-resolution-system/03-960.webp",
+   "srcSet": "/projects/ai-customer-support-escalation-and-resolution-system/03-480.webp 480w, /projects/ai-customer-support-escalation-and-resolution-system/03-960.webp 960w, /projects/ai-customer-support-escalation-and-resolution-system/03-1600.webp 1600w",
+   "full": "/projects/ai-customer-support-escalation-and-resolution-system/03-1600.webp",
+   "width": 1600,
+   "height": 750,
+   "alt": "AI Customer Support Escalation & Resolution System: AI Customer Support Escalation & Resolution System (3)"
+  },
+  {
+   "src": "/projects/ai-customer-support-escalation-and-resolution-system/04-960.webp",
+   "srcSet": "/projects/ai-customer-support-escalation-and-resolution-system/04-480.webp 480w, /projects/ai-customer-support-escalation-and-resolution-system/04-960.webp 960w, /projects/ai-customer-support-escalation-and-resolution-system/04-1600.webp 1600w",
+   "full": "/projects/ai-customer-support-escalation-and-resolution-system/04-1600.webp",
+   "width": 1600,
+   "height": 749,
+   "alt": "AI Customer Support Escalation & Resolution System: AI Customer Support Escalation & Resolution System (4)"
+  },
+  {
+   "src": "/projects/ai-customer-support-escalation-and-resolution-system/05-960.webp",
+   "srcSet": "/projects/ai-customer-support-escalation-and-resolution-system/05-480.webp 480w, /projects/ai-customer-support-escalation-and-resolution-system/05-960.webp 960w, /projects/ai-customer-support-escalation-and-resolution-system/05-1600.webp 1600w",
+   "full": "/projects/ai-customer-support-escalation-and-resolution-system/05-1600.webp",
+   "width": 1600,
+   "height": 749,
+   "alt": "AI Customer Support Escalation & Resolution System: AI Customer Support Escalation & Resolution System (5)"
+  },
+  {
+   "src": "/projects/ai-customer-support-escalation-and-resolution-system/06-960.webp",
+   "srcSet": "/projects/ai-customer-support-escalation-and-resolution-system/06-480.webp 480w, /projects/ai-customer-support-escalation-and-resolution-system/06-960.webp 960w, /projects/ai-customer-support-escalation-and-resolution-system/06-1600.webp 1600w",
+   "full": "/projects/ai-customer-support-escalation-and-resolution-system/06-1600.webp",
+   "width": 1600,
+   "height": 749,
+   "alt": "AI Customer Support Escalation & Resolution System: AI Customer Support Escalation & Resolution System (6)"
+  }
+ ]
+}

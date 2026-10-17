@@ -3,6 +3,7 @@ import { ArrowRight, Home, LayoutGrid, Mail } from "lucide-react";
 import { site } from "@/data/site";
 import { PageShell } from "./page-shell";
 import { Container } from "./section";
+import { bandClass } from "@/lib/band";
 import { ButtonLink } from "./button-link";
 
 /** Branded 404, also exported to 404.html for GitHub Pages. */
@@ -12,7 +13,7 @@ export function NotFoundPage() {
   }, []);
   return (
     <PageShell>
-      <section className="relative isolate overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32">
+      <section className={`${bandClass("brand")} overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32`}>
         <div aria-hidden className="aurora" />
         <Container className="max-w-3xl text-center">
           <p className="font-mono text-sm text-eyebrow">Error 404</p>
@@ -27,7 +28,7 @@ export function NotFoundPage() {
             <ButtonLink to="/" variant="secondary" size="lg">
               <Home size={16} aria-hidden /> Home
             </ButtonLink>
-            <ButtonLink to="/case-studies" variant="secondary" size="lg">
+            <ButtonLink to="/projects" variant="secondary" size="lg">
               <LayoutGrid size={16} aria-hidden /> Case studies
             </ButtonLink>
             <ButtonLink to="/contact" size="lg">

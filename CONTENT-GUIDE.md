@@ -1,66 +1,76 @@
 # Updating the site's content
 
 All content lives in typed data files under `src/data/`. Pages are generated from them, and the
-static export picks up new services and case studies automatically.
+static export picks up new services and projects automatically.
 
-| What                                         | Where                                       |
-| -------------------------------------------- | ------------------------------------------- |
-| Name, email, links, availability, site URL   | `src/data/site.ts`                          |
-| Headline numbers (130+, 25+, 10+)            | `headlineClaims` in `src/data/site.ts`      |
-| Services and their detail pages              | `src/data/services.ts`                      |
-| Case studies                                 | `src/data/caseStudies.ts`                   |
-| Process steps, principles, tools, experience | `src/data/misc.ts`                          |
-| Portrait and logo                            | `src/assets/portrait/`, `src/assets/brand/` |
+| What                                         | Where                                             |
+| -------------------------------------------- | ------------------------------------------------- |
+| Name, email, links, availability, site URL   | `src/data/site.ts`                                |
+| Headline numbers (130+, 25+, 10+)            | `headlineClaims` in `src/data/site.ts`            |
+| Services and their detail pages              | `src/data/services.ts`                            |
+| Projects (generated from your folders)       | `src/assets/Portfolio/` + `npm run projects:sync` |
+| Projects without a folder                    | `scripts/projects.manual.json`                    |
+| Process steps, principles, tools, experience | `src/data/misc.ts`                                |
+| Portrait and logo                            | `src/assets/portrait/`, `src/assets/brand/`       |
 
 ## Claims and numbers
 
 - `headlineClaims` entries are hidden unless `verified: true`. Only flip one on when you can back it
   up if a client asks.
-- Case-study `metrics` are hidden unless `verified: true`. Use `highlights` for descriptive facts
-  about the system (e.g. "3-stage reminders") and `metrics` for outcomes (e.g. "40% fewer no-shows").
-- The homepage credibility strip is otherwise derived from the data itself (years since 2020, number
-  of case studies, countries of projects marked `status: "client"`).
+- Project pages show only what your own documents say. Don't add results or metrics that aren't
+  in them.
 
-## Case studies
+## Projects
 
-- `status`: set to `"client"`, `"internal"` or `"concept"` only when you know it. Leave it out and no
-  badge is shown.
-- `role`: one sentence on what you did ("Sole engineer — architecture, build and handover"). Shown as
-  a "My role" section when present.
-- `featured: true` puts a project on the homepage and first in the list (keep it to about six).
-- `services`: which service pages the project appears on.
+The projects page, each `/projects/<slug>/` page, the service pages and the homepage's featured
+work are all built from the tool-wise folders in `src/assets/Portfolio/`:
 
-### Adding real screenshots
-
-1. Put images in `public/case-media/<slug>/` (WebP, about 1600px wide, no personal data, no
-   browser bookmarks bar).
-2. For every image wider than 900px, also save an 800px-wide copy next to it named
-   `<name>-800.webp` (e.g. `01.webp` → `01-800.webp`). Cards and galleries load this smaller copy;
-   the export fails with a clear message if one is missing.
-3. Reference them in the case study:
-
-```ts
-screenshots: [
-  {
-    src: "/case-media/<slug>/01.webp",
-    alt: "What the screenshot shows",
-    width: 1600,
-    height: 900,
-    caption: "Optional caption",
-  },
-],
+```
+src/assets/Portfolio/
+  n8n/<Project name>/        description (.docx, .md, .txt or .json) + screenshots
+  Make.com/<Project name>/
+  zapier/<Project name>/
+  Voice Agent/<Project name>/
+  Custom Code/<Project name>/
+  GHL/                       a flat folder becomes one showcase project
+  AI Voices/                 skipped (the voice samples on the site use their own files)
 ```
 
-The first screenshot is also used as that page's social-share image. Never use placeholder or stock
-images here — when a project has no screenshots, the page simply shows its workflow diagram.
+After adding or changing a folder, run:
 
-### Adding a walkthrough video
-
-```ts
-video: { kind: "embed", src: "https://www.youtube-nocookie.com/embed/<id>", title: "Walkthrough" },
-// or a file in public/case-media/<slug>/
-video: { kind: "file", src: "/case-media/<slug>/demo.mp4", title: "Walkthrough", poster: "/case-media/<slug>/01.webp" },
+```bash
+npm run projects:sync
 ```
+
+It prints a report (folder, tool, document found, images used/excluded) and writes:
+
+- `public/projects/<slug>/` — responsive WebP copies of the images (480 / 960 / 1600 px wide).
+  Your originals are never modified. The cover is a file named `cover.*` if present, otherwise the
+  first image alphabetically.
+- `src/data/projects.generated.ts` — the list (title, tool, excerpt, cover, featured, order…).
+- `src/data/project-details/<slug>.json` — the full text and gallery, loaded per page.
+
+The document's wording is kept as written (only obvious typos are fixed). Don't edit the generated
+files by hand; change the folder or the settings and sync again.
+
+### Settings and privacy: `scripts/projects.config.json`
+
+Keys are `"<tool folder>/<project folder>"`. Every field is optional:
+
+- `title`, `slug`, `order`, `featured: true` (homepage, first in lists; keep it to about six),
+  `services` (which service pages show it), `toolsUsed`;
+- `legacySlugs`: old `/case/<slug>` URLs that should forward to this project;
+- `excludeImages`: file names to leave out. **Use it for any screenshot that shows a client's name,
+  email, phone number or other personal data**;
+- `replace`: text replacements, e.g. `{ "for Jane Doe using": "for a client using" }`, to keep
+  names private;
+- `crop`: `{ "top": 140 }` trims pixels (e.g. a browser bar) off every image;
+- `description: "ignore"` when the folder's document belongs to another project.
+
+`toolFolders` maps folder names to tools, and `skipFolders` lists folders to ignore.
+
+`src/assets/Portfolio/` holds your raw materials (some with private details), so keep it out of
+git; only the processed images in `public/projects/` are published.
 
 ## Links
 

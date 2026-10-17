@@ -1,0 +1,211 @@
+{
+ "slug": "ai-powered-real-estate-deal-lifecycle-automation",
+ "tags": [
+  "Zapier",
+  "HubSpot",
+  "OpenAI",
+  "Airtable",
+  "Gmail",
+  "Google Calendar",
+  "Xero",
+  "Webhooks"
+ ],
+ "overview": [
+  "Built an automated real estate workflow that manages the journey from property inquiry through qualification, property matching, viewings, offers, contracts, closing, and commission tracking."
+ ],
+ "sections": [
+  {
+   "heading": "Lead Capture & Qualification",
+   "blocks": [
+    {
+     "p": "The workflow:"
+    },
+    {
+     "list": [
+      "Captures property inquiries through webhooks, websites, ads, and property portals",
+      "Finds or creates the contact in HubSpot",
+      "Collects buyer, seller, or renter requirements",
+      "Analyzes the inquiry",
+      "Assigns a lead score and priority",
+      "Routes the contact to the appropriate workflow"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Client Routing",
+   "blocks": [
+    {
+     "p": "The system separates clients into:"
+    },
+    {
+     "list": [
+      "Buyers",
+      "Sellers",
+      "Renters"
+     ]
+    },
+    {
+     "p": "Each client type follows its own process based on their requirements."
+    }
+   ]
+  },
+  {
+   "heading": "Buyer & Rental Matching",
+   "blocks": [
+    {
+     "p": "For buyers and renters, the system matches available properties using:"
+    },
+    {
+     "list": [
+      "Budget",
+      "Location",
+      "Property type",
+      "Bedrooms",
+      "Amenities",
+      "Timeline"
+     ]
+    },
+    {
+     "p": "Matching properties are stored and retrieved from Airtable before being sent to the client."
+    }
+   ]
+  },
+  {
+   "heading": "Seller Workflow",
+   "blocks": [
+    {
+     "p": "Seller information includes:"
+    },
+    {
+     "list": [
+      "Property address",
+      "Property type",
+      "Bedrooms",
+      "Bathrooms",
+      "Estimated value",
+      "Selling timeline"
+     ]
+    },
+    {
+     "p": "The system creates or updates the seller opportunity in HubSpot and notifies the assigned agent."
+    }
+   ]
+  },
+  {
+   "heading": "Property Communication",
+   "blocks": [
+    {
+     "p": "Personalized property emails include:"
+    },
+    {
+     "list": [
+      "Matching properties",
+      "Property details",
+      "Client requirements",
+      "Pricing information",
+      "Viewing options"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Viewing Automation",
+   "blocks": [
+    {
+     "p": "When a client wants to view a property:"
+    },
+    {
+     "list": [
+      "Creates a Google Calendar event",
+      "Sends booking confirmation",
+      "Sends a 24 hour reminder",
+      "Sends a 1 hour reminder"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Post Viewing Workflow",
+   "blocks": [
+    {
+     "p": "After the viewing, the agent records:"
+    },
+    {
+     "list": [
+      "Client interest",
+      "Offer potential",
+      "Main objections",
+      "Price concerns",
+      "Property fit",
+      "Next action"
+     ]
+    },
+    {
+     "p": "The information is then routed into the appropriate follow up process."
+    }
+   ]
+  },
+  {
+   "heading": "Offer & Closing",
+   "blocks": [
+    {
+     "p": "For interested clients:"
+    }
+   ]
+  },
+  {
+   "heading": "Viewing → Offer → Deal → Contract → E Signature → Closing",
+   "blocks": [
+    {
+     "p": "The system updates the CRM and notifies the agent throughout the process."
+    }
+   ]
+  },
+  {
+   "heading": "Commission Management",
+   "blocks": [
+    {
+     "p": "After closing:"
+    },
+    {
+     "list": [
+      "Calculates the commission",
+      "Creates the required invoice",
+      "Updates commission information",
+      "Records the completed transaction"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A complete real estate automation system that connects property inquiries, client qualification, property matching, viewings, follow ups, offers, contracts, closing, and commission tracking into one streamlined workflow."
+ ],
+ "images": [
+  {
+   "src": "/projects/ai-powered-real-estate-deal-lifecycle-automation/01-960.webp",
+   "srcSet": "/projects/ai-powered-real-estate-deal-lifecycle-automation/01-480.webp 480w, /projects/ai-powered-real-estate-deal-lifecycle-automation/01-960.webp 960w, /projects/ai-powered-real-estate-deal-lifecycle-automation/01-1024.webp 1024w",
+   "full": "/projects/ai-powered-real-estate-deal-lifecycle-automation/01-1024.webp",
+   "width": 1024,
+   "height": 1536,
+   "alt": "AI Powered Real Estate Deal Lifecycle Automation: 1 (1)"
+  },
+  {
+   "src": "/projects/ai-powered-real-estate-deal-lifecycle-automation/02-960.webp",
+   "srcSet": "/projects/ai-powered-real-estate-deal-lifecycle-automation/02-480.webp 480w, /projects/ai-powered-real-estate-deal-lifecycle-automation/02-960.webp 960w, /projects/ai-powered-real-estate-deal-lifecycle-automation/02-1600.webp 1600w",
+   "full": "/projects/ai-powered-real-estate-deal-lifecycle-automation/02-1600.webp",
+   "width": 1600,
+   "height": 750,
+   "alt": "AI Powered Real Estate Deal Lifecycle Automation: 1 (2)"
+  },
+  {
+   "src": "/projects/ai-powered-real-estate-deal-lifecycle-automation/03-960.webp",
+   "srcSet": "/projects/ai-powered-real-estate-deal-lifecycle-automation/03-480.webp 480w, /projects/ai-powered-real-estate-deal-lifecycle-automation/03-960.webp 960w, /projects/ai-powered-real-estate-deal-lifecycle-automation/03-1600.webp 1600w",
+   "full": "/projects/ai-powered-real-estate-deal-lifecycle-automation/03-1600.webp",
+   "width": 1600,
+   "height": 750,
+   "alt": "AI Powered Real Estate Deal Lifecycle Automation: 1 (3)"
+  }
+ ]
+}

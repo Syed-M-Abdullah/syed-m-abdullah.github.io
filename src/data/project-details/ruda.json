@@ -1,0 +1,222 @@
+{
+ "slug": "ruda",
+ "tags": [
+  "Property Management",
+  "Applications",
+  "Payments",
+  "Offerings",
+  "User Management",
+  "Role Permissions"
+ ],
+ "overview": [
+  "Built a centralized administrative management system for Ravi Urban Development Authority (RUDA) to manage property operations, applications, offerings, payment plans, users, and internal administration.",
+  "The platform provides a single dashboard for monitoring key operational data and managing different administrative workflows."
+ ],
+ "sections": [
+  {
+   "heading": "Main Modules",
+   "blocks": [
+    {
+     "p": "The system includes:"
+    },
+    {
+     "list": [
+      "Dashboard and application statistics",
+      "Property Setup",
+      "Ballot Management",
+      "Society Management",
+      "Property Management",
+      "Offering Management",
+      "Payment Verification",
+      "Announcements",
+      "Reports",
+      "System Administration"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Dashboard",
+   "blocks": [
+    {
+     "p": "The main dashboard provides an overview of:"
+    },
+    {
+     "list": [
+      "Total applicants",
+      "Local Pakistani applicants",
+      "Overseas Pakistani applicants",
+      "POC holders",
+      "Total applications",
+      "Unverified applications",
+      "Accepted applications",
+      "Rejected applications",
+      "Payment totals by payment method"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Property Management",
+   "blocks": [
+    {
+     "p": "The system includes tools for managing and exporting virtual property records."
+    },
+    {
+     "p": "Administrators can filter properties by:"
+    },
+    {
+     "list": [
+      "Offering",
+      "Nature",
+      "Size"
+     ]
+    },
+    {
+     "p": "Selected properties can then be exported directly from the system."
+    }
+   ]
+  },
+  {
+   "heading": "Offering Management",
+   "blocks": [
+    {
+     "p": "The offering section allows administrators to review available offerings and make decisions using:"
+    },
+    {
+     "list": [
+      "Offering title",
+      "Start date",
+      "End date",
+      "Scheme",
+      "Recommend",
+      "Not Recommend"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Payment Plan Management",
+   "blocks": [
+    {
+     "p": "The payment plan module allows administrators to configure:"
+    },
+    {
+     "list": [
+      "Payment types",
+      "Down payments",
+      "Installments",
+      "Recurring payments",
+      "Payment duration",
+      "Percentage based payments",
+      "Amounts in Rupees",
+      "Amounts in Dollars",
+      "Payment remarks"
+     ]
+    },
+    {
+     "p": "Payment components can also be added, edited, removed, and reviewed through the payment plan table."
+    }
+   ]
+  },
+  {
+   "heading": "User & Role Management",
+   "blocks": [
+    {
+     "p": "The system includes role based access management where administrators can control:"
+    },
+    {
+     "list": [
+      "User roles",
+      "Departments",
+      "Designations",
+      "Account status",
+      "Module access",
+      "Create permissions",
+      "Edit permissions",
+      "Remove permissions",
+      "Print permissions"
+     ]
+    },
+    {
+     "p": "This allows different users to have different levels of access across the system."
+    }
+   ]
+  },
+  {
+   "heading": "Key Features",
+   "blocks": [
+    {
+     "list": [
+      "Centralized administration",
+      "Application status tracking",
+      "Applicant classification",
+      "Payment monitoring",
+      "Property filtering and export",
+      "Offering recommendations",
+      "Payment plan configuration",
+      "User management",
+      "Role based permissions",
+      "Search and filtering",
+      "Structured data tables",
+      "Dashboard reporting"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A centralized administrative platform that brings property management, application processing, payment administration, offering management, and user access control into one system.",
+  "The dashboard gives administrators a clear view of operational data while dedicated modules provide the tools needed to manage day to day activities."
+ ],
+ "images": [
+  {
+   "src": "/projects/ruda/01-960.webp",
+   "srcSet": "/projects/ruda/01-480.webp 480w, /projects/ruda/01-960.webp 960w, /projects/ruda/01-1600.webp 1600w",
+   "full": "/projects/ruda/01-1600.webp",
+   "width": 1600,
+   "height": 783,
+   "alt": "RUDA, screenshot 1"
+  },
+  {
+   "src": "/projects/ruda/02-960.webp",
+   "srcSet": "/projects/ruda/02-480.webp 480w, /projects/ruda/02-960.webp 960w, /projects/ruda/02-1600.webp 1600w",
+   "full": "/projects/ruda/02-1600.webp",
+   "width": 1600,
+   "height": 783,
+   "alt": "RUDA, screenshot 2"
+  },
+  {
+   "src": "/projects/ruda/03-960.webp",
+   "srcSet": "/projects/ruda/03-480.webp 480w, /projects/ruda/03-960.webp 960w, /projects/ruda/03-1600.webp 1600w",
+   "full": "/projects/ruda/03-1600.webp",
+   "width": 1600,
+   "height": 783,
+   "alt": "RUDA, screenshot 3"
+  },
+  {
+   "src": "/projects/ruda/04-960.webp",
+   "srcSet": "/projects/ruda/04-480.webp 480w, /projects/ruda/04-960.webp 960w, /projects/ruda/04-1600.webp 1600w",
+   "full": "/projects/ruda/04-1600.webp",
+   "width": 1600,
+   "height": 783,
+   "alt": "RUDA, screenshot 4"
+  },
+  {
+   "src": "/projects/ruda/05-960.webp",
+   "srcSet": "/projects/ruda/05-480.webp 480w, /projects/ruda/05-960.webp 960w, /projects/ruda/05-1600.webp 1600w",
+   "full": "/projects/ruda/05-1600.webp",
+   "width": 1600,
+   "height": 783,
+   "alt": "RUDA, screenshot 5"
+  },
+  {
+   "src": "/projects/ruda/06-960.webp",
+   "srcSet": "/projects/ruda/06-480.webp 480w, /projects/ruda/06-960.webp 960w, /projects/ruda/06-1600.webp 1600w",
+   "full": "/projects/ruda/06-1600.webp",
+   "width": 1600,
+   "height": 783,
+   "alt": "RUDA, screenshot 6"
+  }
+ ]
+}

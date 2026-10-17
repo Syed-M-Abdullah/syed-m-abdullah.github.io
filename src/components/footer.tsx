@@ -7,25 +7,25 @@ import { Logo } from "./logo";
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="relative overflow-hidden border-t border-border bg-panel/40">
+    <footer className="band tone-deep cv-auto overflow-hidden [contain-intrinsic-size:auto_460px]">
       <div
         aria-hidden
         className="tech-grid pointer-events-none absolute inset-0 -z-10 opacity-60"
       />
       <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
-          <div>
+          <div data-reveal="up">
             <Link to="/" className="inline-block rounded-lg" aria-label={`${site.name} — home`}>
               <Logo />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              GoHighLevel workflows, n8n automations, API integrations and AI voice and chat systems
-              for agencies and businesses — with custom .NET engineering when a project needs it.
+              Intelligent business systems — automation with n8n, Zapier and Make, GoHighLevel CRM,
+              lead generation, AI content, voice and chat agents, and custom software.
             </p>
             <p className="mt-4 text-sm text-muted-foreground">{site.location}</p>
           </div>
 
-          <FooterCol title="Services">
+          <FooterCol title="Services" index={1}>
             {services.map((s) => (
               <li key={s.slug}>
                 <Link
@@ -39,10 +39,10 @@ export function Footer() {
             ))}
           </FooterCol>
 
-          <FooterCol title="Explore">
+          <FooterCol title="Explore" index={2}>
             {(
               [
-                { to: "/case-studies", label: "Case studies" },
+                { to: "/projects", label: "Projects" },
                 { to: "/process", label: "How I work" },
                 { to: "/about", label: "About" },
                 { to: "/contact", label: "Contact" },
@@ -59,7 +59,7 @@ export function Footer() {
             ))}
           </FooterCol>
 
-          <FooterCol title="Connect">
+          <FooterCol title="Connect" index={3}>
             <li>
               <a
                 href={`mailto:${site.email}`}
@@ -126,9 +126,17 @@ export function Footer() {
   );
 }
 
-function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
+function FooterCol({
+  title,
+  index,
+  children,
+}: {
+  title: string;
+  index: number;
+  children: React.ReactNode;
+}) {
   return (
-    <div>
+    <div data-reveal="up" style={{ "--i": index } as React.CSSProperties}>
       <h2 className="font-heading text-xs font-semibold uppercase tracking-[0.16em] text-foreground">
         {title}
       </h2>

@@ -1,0 +1,69 @@
+{
+ "slug": "seo-content-automation-with-neuronwriter",
+ "tags": [
+  "n8n",
+  "NeuronWriter API",
+  "OpenAI",
+  "Gemini",
+  "Google Sheets"
+ ],
+ "overview": [
+  "Built an automated SEO content system that generates, checks, and improves articles against NeuronWriter guidelines.",
+  "The system takes keywords from Google Sheets, gathers the required SEO information, generates the content, checks the score, and continues refining it until the target score is reached."
+ ],
+ "sections": [
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "p": "The process starts with primary and secondary keywords stored in Google Sheets."
+    },
+    {
+     "p": "The system then:"
+    },
+    {
+     "list": [
+      "Sends keywords to NeuronWriter",
+      "Retrieves SEO guidelines and content requirements",
+      "Generates structured content with the required headings and topic coverage",
+      "Sends the content back for scoring",
+      "Checks the SEO score against the target",
+      "Automatically improves the content when the score is below target",
+      "Saves the final content and SEO data in Google Sheets"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Content Optimization",
+   "blocks": [
+    {
+     "p": "The workflow handles:"
+    },
+    {
+     "list": [
+      "H1 and H2 structure",
+      "Keyword usage",
+      "Semantic topic coverage",
+      "SEO recommendations",
+      "Content refinement",
+      "Score tracking"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A repeatable SEO content pipeline that reduces manual optimization, speeds up content production, and consistently works toward the required NeuronWriter score without having to manually review and revise every article."
+ ],
+ "images": [
+  {
+   "src": "/projects/seo-content-automation-with-neuronwriter/01-960.webp",
+   "srcSet": "/projects/seo-content-automation-with-neuronwriter/01-480.webp 480w, /projects/seo-content-automation-with-neuronwriter/01-960.webp 960w, /projects/seo-content-automation-with-neuronwriter/01-1600.webp 1600w",
+   "full": "/projects/seo-content-automation-with-neuronwriter/01-1600.webp",
+   "width": 1600,
+   "height": 637,
+   "alt": "SEO Content Automation with NeuronWriter: SEO"
+  }
+ ]
+}

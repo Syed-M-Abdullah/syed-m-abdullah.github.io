@@ -1,0 +1,89 @@
+{
+ "slug": "white-label-voice-agents",
+ "tags": [
+  "Agency delivery · GoHighLevel",
+  "Global"
+ ],
+ "overview": [
+  "Inbound and outbound Synthflow voice agents built per client sub-account inside an AI agency's white-labelled GoHighLevel."
+ ],
+ "sections": [
+  {
+   "heading": "The challenge",
+   "blocks": [
+    {
+     "p": "The agency needed voice agents for many client businesses — each with its own sub-account, call flows, booking and CRM updates — delivered under its own brand."
+    }
+   ]
+  },
+  {
+   "heading": "Solution & architecture",
+   "blocks": [
+    {
+     "p": "Inside the agency's white-labelled GoHighLevel (Mavera.ai), each client got a dedicated sub-account with Synthflow voice agents and a standard set of workflows. Inbound setups handle the call, book the appointment and process post-call data; outbound setups run initial calls, booking and post-call updates. Confirmation emails with appointment details and rescheduling links are sent and stored on the contact record. The same pattern was rolled out for a barber shop, beauty and hair salons, a café, a restaurant, a car-rental business, a real-estate agent, a social-media agency and a German-language outbound campaign — each one is written up as its own project below."
+    }
+   ]
+  },
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "list": [
+      "Call in / out",
+      "Synthflow agent",
+      "Book appointment",
+      "Post-call data",
+      "CRM + confirmation"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Key facts",
+   "blocks": [
+    {
+     "list": [
+      "Inbound + outbound — Agent pairs per business",
+      "Per sub-account — Workflows & agents",
+      "White-label — Delivered under agency brand"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [],
+ "images": [
+  {
+   "src": "/case-media/white-label-voice-agents/01-800.webp",
+   "srcSet": "/case-media/white-label-voice-agents/01-800.webp 800w, /case-media/white-label-voice-agents/01.webp 1600w",
+   "full": "/case-media/white-label-voice-agents/01.webp",
+   "width": 1600,
+   "height": 828,
+   "alt": "Synthflow agent list for a café sub-account with inbound and outbound agents"
+  },
+  {
+   "src": "/case-media/white-label-voice-agents/02-800.webp",
+   "srcSet": "/case-media/white-label-voice-agents/02-800.webp 800w, /case-media/white-label-voice-agents/02.webp 1600w",
+   "full": "/case-media/white-label-voice-agents/02.webp",
+   "width": 1600,
+   "height": 727,
+   "alt": "GoHighLevel outbound workflows: initial outbound calls, appointment booked, post outbound called data"
+  },
+  {
+   "src": "/case-media/white-label-voice-agents/03-800.webp",
+   "srcSet": "/case-media/white-label-voice-agents/03-800.webp 800w, /case-media/white-label-voice-agents/03.webp 1600w",
+   "full": "/case-media/white-label-voice-agents/03.webp",
+   "width": 1600,
+   "height": 735,
+   "alt": "GoHighLevel inbound workflows for a restaurant sub-account"
+  },
+  {
+   "src": "/case-media/white-label-voice-agents/04-800.webp",
+   "srcSet": "/case-media/white-label-voice-agents/04-800.webp 800w, /case-media/white-label-voice-agents/04.webp 1600w",
+   "full": "/case-media/white-label-voice-agents/04.webp",
+   "width": 1600,
+   "height": 822,
+   "alt": "Synthflow German outbound assistant agent"
+  }
+ ]
+}

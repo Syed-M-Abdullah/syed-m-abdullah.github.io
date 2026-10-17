@@ -61,13 +61,13 @@ function ProcessPage() {
         }
       />
 
-      <Section className="pt-0 md:pt-0">
+      <Section tone="light">
         <ol className="relative space-y-6 before:absolute before:top-4 before:bottom-4 before:left-[22px] before:w-px before:bg-[linear-gradient(var(--cyan),var(--violet))] before:opacity-40 md:before:left-[30px]">
-          {processSteps.map((p) => (
+          {processSteps.map((p, i) => (
             <li
               key={p.n}
               id={`step-${p.n}`}
-              data-reveal
+              data-reveal={i % 2 ? "right" : "left"}
               className="relative scroll-mt-28 pl-14 md:pl-20"
             >
               <span className="absolute top-0 left-0 grid h-11 w-11 place-items-center rounded-full border border-border bg-panel font-mono text-sm font-semibold text-foreground shadow-[0_0_0_6px_var(--background)] md:h-[60px] md:w-[60px] md:text-base">
@@ -89,11 +89,7 @@ function ProcessPage() {
         </ol>
       </Section>
 
-      <Section
-        eyebrow="Working together"
-        title="Inputs, communication and handover"
-        className="border-y border-border bg-panel/30"
-      >
+      <Section eyebrow="Working together" title="Inputs, communication and handover" tone="sage">
         <div className="grid gap-4 lg:grid-cols-3">
           <Card icon={Inbox} title="What helps me start" items={collaboration.inputs} />
           <Card
@@ -107,7 +103,10 @@ function ProcessPage() {
             items={collaboration.handover}
           />
         </div>
-        <p data-reveal className="mt-8 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+        <p
+          data-reveal="up"
+          className="mt-8 max-w-3xl text-sm leading-relaxed text-muted-foreground"
+        >
           Timelines, communication cadence and any post-launch support are agreed per project in the
           written scope — nothing here is a fixed package.
         </p>
@@ -157,7 +156,7 @@ function Card({
   items: string[];
 }) {
   return (
-    <div data-reveal className="panel-border rounded-3xl p-6">
+    <div data-reveal="zoom" className="panel-border rounded-3xl p-6">
       <Icon size={22} className="text-cyan" aria-hidden />
       <h3 className="mt-4 text-lg font-bold text-foreground">{title}</h3>
       <ul className="mt-4 space-y-2.5">

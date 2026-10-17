@@ -3,13 +3,16 @@ import { ArrowRight, CalendarClock, Globe2, MapPin, Sparkles } from "lucide-reac
 import { site } from "@/data/site";
 import type { ServiceSlug } from "@/data/services";
 import { ButtonAnchor, ButtonLink } from "./button-link";
+import { WhatsAppIcon } from "./floating-actions";
+import { whatsappLink } from "@/lib/whatsapp";
 import { Container } from "./section";
-import { Avatar, Portrait } from "./portrait";
+import { bandClass } from "@/lib/band";
+import { PortraitStanding } from "./portrait";
 
-/** Closing call-to-action used at the bottom of most pages. */
+/** Closing call-to-action: a full-width brand band at the bottom of every page. */
 export function CtaPanel({
-  title = "Let's build a system your team can rely on",
-  body = "Whether you need a GoHighLevel build, an n8n automation, a voice or chat agent, or custom software behind it — tell me what you're trying to fix.",
+  title = "Let's automate the work that slows you down",
+  body = "Tell me what eats your team's time — leads, follow-ups, content or calls. I'll suggest the simplest system that fixes it.",
   service,
   extra,
 }: {
@@ -20,25 +23,16 @@ export function CtaPanel({
   extra?: ReactNode;
 }) {
   return (
-    <section aria-labelledby="cta-title" className="py-16 md:py-24">
+    <section
+      aria-labelledby="cta-title"
+      className={`${bandClass("brand")} cv-auto overflow-hidden pt-16 pb-12 [contain-intrinsic-size:auto_640px] md:pt-24 md:pb-14`}
+    >
+      <div aria-hidden className="aurora opacity-90" />
       <Container>
-        <div
-          data-reveal
-          className="gradient-border relative isolate overflow-hidden rounded-[1.75rem] border border-border bg-panel/80 p-6 sm:p-10 lg:p-14"
-        >
-          <div aria-hidden className="aurora opacity-90" />
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.95fr)_minmax(0,0.8fr)] lg:items-center">
+        <div data-reveal="zoom" className="relative">
+          <span aria-hidden className="cta-sweep" />
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.85fr)_minmax(0,0.85fr)] lg:items-center lg:gap-12">
             <div>
-              <div className="mb-6 flex items-center gap-3 lg:hidden">
-                <Avatar
-                  size={56}
-                  className="h-14 w-14 ring-2 ring-[color-mix(in_oklab,var(--cyan)_45%,transparent)]"
-                />
-                <div className="text-sm">
-                  <div className="font-heading font-semibold text-foreground">{site.name}</div>
-                  <div className="text-muted-foreground">{site.role}</div>
-                </div>
-              </div>
               <h2 id="cta-title" className="text-3xl font-bold text-foreground sm:text-4xl">
                 {title}
               </h2>
@@ -46,23 +40,23 @@ export function CtaPanel({
                 {body}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <ButtonLink to="/contact" search={service ? { service } : undefined} size="lg">
-                  Discuss a Project <ArrowRight size={16} aria-hidden />
-                </ButtonLink>
-                <ButtonAnchor href={site.calendly} external variant="secondary" size="lg">
+                <ButtonAnchor href={site.calendly} external size="lg">
                   <CalendarClock size={16} aria-hidden /> Book a call
                 </ButtonAnchor>
+                <ButtonAnchor href={whatsappLink()} external variant="secondary" size="lg">
+                  <WhatsAppIcon className="h-[18px] w-[18px] text-[#25d366]" /> WhatsApp
+                </ButtonAnchor>
+                <ButtonLink
+                  to="/contact"
+                  search={service ? { service } : undefined}
+                  variant="ghost"
+                  size="lg"
+                  className="px-2"
+                >
+                  Discuss a project <ArrowRight size={16} aria-hidden />
+                </ButtonLink>
               </div>
               {extra}
-            </div>
-            <div className="relative hidden self-end lg:-mb-14 lg:block">
-              <div
-                aria-hidden
-                className="absolute inset-x-[6%] top-[12%] bottom-0 -z-10 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--violet)_40%,transparent),transparent)] blur-2xl"
-              />
-              <div className="[mask-image:linear-gradient(to_bottom,black_88%,transparent)]">
-                <Portrait sizes="360px" />
-              </div>
             </div>
             <ul className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
               <InfoItem
@@ -83,6 +77,16 @@ export function CtaPanel({
                 />
               )}
             </ul>
+            {/* Photo last (after the badges); it stands on the bottom edge of the band. */}
+            <div className="relative mx-auto -mb-12 w-full max-w-[260px] self-end sm:max-w-[300px] md:-mb-14 lg:max-w-[340px]">
+              <div
+                aria-hidden
+                className="absolute inset-x-[2%] top-[8%] bottom-[4%] -z-10 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--violet)_42%,transparent),transparent),radial-gradient(closest-side_at_50%_35%,color-mix(in_oklab,var(--blue)_38%,transparent),transparent)] blur-2xl"
+              />
+              <div className="cta-photo [mask-image:linear-gradient(to_bottom,black_86%,transparent)]">
+                <PortraitStanding />
+              </div>
+            </div>
           </div>
         </div>
       </Container>

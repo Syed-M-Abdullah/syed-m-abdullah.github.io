@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Eyebrow } from "./badges";
 import { Breadcrumbs } from "./breadcrumbs";
 import { Container } from "./section";
+import { bandClass } from "@/lib/band";
 
 type Crumb = Parameters<typeof Breadcrumbs>[0]["items"][number];
 
@@ -26,7 +27,8 @@ export function PageHero({
 }) {
   return (
     <section
-      className={cn("relative isolate overflow-hidden pt-28 pb-14 md:pt-36 md:pb-20", className)}
+      data-pause-offscreen
+      className={cn(bandClass("brand"), "overflow-hidden pt-28 pb-14 md:pt-36 md:pb-20", className)}
     >
       <div aria-hidden className="aurora" />
       <Container>

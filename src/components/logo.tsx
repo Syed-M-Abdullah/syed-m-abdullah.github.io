@@ -1,5 +1,4 @@
 import abLogo from "@/assets/brand/ab-logo.webp";
-import abLogo2x from "@/assets/brand/ab-logo@2x.webp";
 import { cn } from "@/lib/utils";
 
 /** The AB monogram (transparent cut of the official logo). */
@@ -7,7 +6,6 @@ export function LogoMark({ className }: { className?: string }) {
   return (
     <img
       src={abLogo}
-      srcSet={`${abLogo} 1x, ${abLogo2x} 2x`}
       width={179}
       height={120}
       alt=""

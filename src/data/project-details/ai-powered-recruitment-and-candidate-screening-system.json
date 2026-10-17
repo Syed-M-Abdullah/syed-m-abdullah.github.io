@@ -1,0 +1,122 @@
+{
+ "slug": "ai-powered-recruitment-and-candidate-screening-system",
+ "tags": [
+  "Make.com",
+  "Webhooks",
+  "Airtable",
+  "Google Drive",
+  "OpenAI",
+  "Gmail",
+  "Google Calendar",
+  "Slack"
+ ],
+ "overview": [
+  "Built an automated recruitment and candidate screening system for managing job applications from initial submission to interview scheduling.",
+  "The workflow takes a new candidate application and turns it into a structured candidate record, including resume processing, AI analysis, job matching, scoring, screening, interview preparation, notifications, and final recruitment status management."
+ ],
+ "sections": [
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "p": "The system:"
+    },
+    {
+     "list": [
+      "Receives new candidate applications through a webhook",
+      "Checks whether the selected job position is currently open",
+      "Searches existing candidate records to prevent duplicates",
+      "Creates and organizes candidate folders in Google Drive",
+      "Uploads and stores candidate resumes automatically",
+      "Extracts structured information from each resume",
+      "Analyzes experience, education, skills, projects, and qualifications using AI",
+      "Compares candidate profiles against job requirements",
+      "Calculates a weighted candidate matching score",
+      "Routes candidates based on high, medium, or low screening scores",
+      "Creates shortlisted candidate records automatically",
+      "Generates personalized interview questions based on the resume and job role",
+      "Creates an HR interview brief with strengths, concerns, and recommended focus areas",
+      "Sends shortlisted candidate notifications to the HR team through Slack",
+      "Sends interview invitations automatically through Gmail",
+      "Creates interview events and meeting details in Google Calendar",
+      "Updates candidate status after interview scheduling",
+      "Sends medium scoring candidates for manual HR review",
+      "Organizes non shortlisted candidates separately for further review"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Branding & Templates",
+   "blocks": [
+    {
+     "p": "The workflow uses predefined screening, interview, and communication templates throughout the recruitment process."
+    },
+    {
+     "p": "Each template controls:"
+    },
+    {
+     "list": [
+      "Candidate evaluation criteria",
+      "Job matching requirements",
+      "Interview questions",
+      "HR screening summaries",
+      "Email communication"
+     ]
+    },
+    {
+     "p": "This keeps candidate evaluations consistent while allowing every application to be processed according to the selected job role."
+    }
+   ]
+  },
+  {
+   "heading": "Content Management",
+   "blocks": [
+    {
+     "p": "Airtable acts as the central recruitment database and tracking system."
+    },
+    {
+     "p": "Each processed candidate is updated with:"
+    },
+    {
+     "list": [
+      "Resume URL",
+      "AI analysis",
+      "Candidate score",
+      "Job match status",
+      "Interview status"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A complete automated recruitment pipeline that turns a candidate application into a screened, scored, organized, and interview ready candidate profile without requiring HR teams to manually process every resume. The system also keeps candidate records, resumes, screening results, interview details, and recruitment status organized in one workflow."
+ ],
+ "images": [
+  {
+   "src": "/projects/ai-powered-recruitment-and-candidate-screening-system/01-960.webp",
+   "srcSet": "/projects/ai-powered-recruitment-and-candidate-screening-system/01-480.webp 480w, /projects/ai-powered-recruitment-and-candidate-screening-system/01-960.webp 960w, /projects/ai-powered-recruitment-and-candidate-screening-system/01-1600.webp 1600w",
+   "full": "/projects/ai-powered-recruitment-and-candidate-screening-system/01-1600.webp",
+   "width": 1600,
+   "height": 533,
+   "alt": "AI Powered Recruitment & Candidate Screening System: AI Powered Recruitment & Candidate Screening System 1"
+  },
+  {
+   "src": "/projects/ai-powered-recruitment-and-candidate-screening-system/02-960.webp",
+   "srcSet": "/projects/ai-powered-recruitment-and-candidate-screening-system/02-480.webp 480w, /projects/ai-powered-recruitment-and-candidate-screening-system/02-960.webp 960w, /projects/ai-powered-recruitment-and-candidate-screening-system/02-1600.webp 1600w",
+   "full": "/projects/ai-powered-recruitment-and-candidate-screening-system/02-1600.webp",
+   "width": 1600,
+   "height": 900,
+   "alt": "AI Powered Recruitment & Candidate Screening System: AI Powered Recruitment & Candidate Screening System 2"
+  },
+  {
+   "src": "/projects/ai-powered-recruitment-and-candidate-screening-system/03-960.webp",
+   "srcSet": "/projects/ai-powered-recruitment-and-candidate-screening-system/03-480.webp 480w, /projects/ai-powered-recruitment-and-candidate-screening-system/03-960.webp 960w, /projects/ai-powered-recruitment-and-candidate-screening-system/03-1600.webp 1600w",
+   "full": "/projects/ai-powered-recruitment-and-candidate-screening-system/03-1600.webp",
+   "width": 1600,
+   "height": 681,
+   "alt": "AI Powered Recruitment & Candidate Screening System: AI Powered Recruitment & Candidate Screening System 3"
+  }
+ ]
+}

@@ -1,0 +1,144 @@
+{
+ "slug": "ai-powered-field-service-asset-maintenance-and-technician-dispatch-system",
+ "tags": [
+  "Make.com",
+  "Airtable/SmartSuite",
+  "OpenAI/Claude",
+  "Google Drive",
+  "Google Calendar",
+  "Google Maps API",
+  "Twilio",
+  "Slack",
+  "Gmail",
+  "Google Sheets",
+  "Webhooks"
+ ],
+ "overview": [
+  "Built an automated field service and asset maintenance system for managing equipment faults, technician dispatch, repair operations, and preventive maintenance.",
+  "The workflow takes a machine alert or service request and turns it into a complete work order, including fault analysis, risk scoring, technician selection, scheduling, parts management, repair tracking, reporting, and asset health updates."
+ ],
+ "sections": [
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "p": "The system:"
+    },
+    {
+     "list": [
+      "Receives IoT alerts and maintenance requests through webhooks",
+      "Identifies the affected asset and retrieves maintenance history",
+      "Validates alerts and prevents duplicate work orders",
+      "Analyzes equipment faults and probable causes using AI",
+      "Calculates operational risk and assigns incident priority",
+      "Creates structured work orders automatically",
+      "Creates dedicated Google Drive folders for service records and evidence",
+      "Searches qualified technicians based on skills, region, and certification",
+      "Checks technician availability through Google Calendar",
+      "Calculates travel time and ranks technicians automatically",
+      "Generates AI based dispatch recommendations",
+      "Routes critical jobs for supervisor approval when required",
+      "Assigns technicians and creates service appointments",
+      "Sends technician notifications through SMS and site updates through Gmail",
+      "Predicts required replacement parts and checks inventory availability",
+      "Reserves available parts for the assigned work order",
+      "Tracks technician arrival and repair progress",
+      "Processes technician service reports and repair details",
+      "Generates structured AI repair summaries",
+      "Reconciles reserved and actually used parts",
+      "Updates asset health, service history, and next maintenance date",
+      "Generates final maintenance reports automatically",
+      "Monitors assets for upcoming preventive maintenance",
+      "Creates preventive maintenance work orders for assets at risk",
+      "Updates maintenance and technician performance analytics"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Branding & Templates",
+   "blocks": [
+    {
+     "p": "The workflow uses predefined work order, technician notification, service report, and maintenance templates."
+    },
+    {
+     "p": "Each template controls:"
+    },
+    {
+     "list": [
+      "Work order information",
+      "Technician dispatch details",
+      "Site notifications",
+      "Service report structure",
+      "Maintenance recommendations"
+     ]
+    },
+    {
+     "p": "This keeps field service communication and maintenance records consistent across different assets, technicians, and locations."
+    }
+   ]
+  },
+  {
+   "heading": "Content Management",
+   "blocks": [
+    {
+     "p": "Airtable or SmartSuite acts as the central asset, work order, technician, and maintenance tracking system."
+    },
+    {
+     "p": "Each work order is updated with:"
+    },
+    {
+     "list": [
+      "Asset information",
+      "Fault category",
+      "Risk score",
+      "Assigned technician",
+      "Parts status",
+      "Repair progress",
+      "Resolution status",
+      "Asset health",
+      "Next maintenance date"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A complete automated field service pipeline that turns an equipment alert into an analyzed, prioritized, assigned, repaired, documented, and completed work order without requiring maintenance teams to manually coordinate every step.",
+  "The system also keeps technician schedules, service records, parts usage, asset health, preventive maintenance, and operational analytics organized in one workflow."
+ ],
+ "images": [
+  {
+   "src": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-960.webp",
+   "srcSet": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-480.webp 480w, /projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-960.webp 960w, /projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-1600.webp 1600w",
+   "full": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/01-1600.webp",
+   "width": 1600,
+   "height": 566,
+   "alt": "AI Powered Field Service, Asset Maintenance & Technician Dispatch System: AI Powered Field Service, Asset Maintenance & Technician Dispatch System 1"
+  },
+  {
+   "src": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/02-960.webp",
+   "srcSet": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/02-480.webp 480w, /projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/02-960.webp 960w, /projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/02-1600.webp 1600w",
+   "full": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/02-1600.webp",
+   "width": 1600,
+   "height": 900,
+   "alt": "AI Powered Field Service, Asset Maintenance & Technician Dispatch System: AI Powered Field Service, Asset Maintenance & Technician Dispatch System 2"
+  },
+  {
+   "src": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/03-960.webp",
+   "srcSet": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/03-480.webp 480w, /projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/03-960.webp 960w, /projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/03-1600.webp 1600w",
+   "full": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/03-1600.webp",
+   "width": 1600,
+   "height": 900,
+   "alt": "AI Powered Field Service, Asset Maintenance & Technician Dispatch System: AI Powered Field Service, Asset Maintenance & Technician Dispatch System 3"
+  },
+  {
+   "src": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/04-960.webp",
+   "srcSet": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/04-480.webp 480w, /projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/04-960.webp 960w, /projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/04-1600.webp 1600w",
+   "full": "/projects/ai-powered-field-service-asset-maintenance-and-technician-dispatch-system/04-1600.webp",
+   "width": 1600,
+   "height": 900,
+   "alt": "AI Powered Field Service, Asset Maintenance & Technician Dispatch System: AI Powered Field Service, Asset Maintenance & Technician Dispatch System 4"
+  }
+ ]
+}

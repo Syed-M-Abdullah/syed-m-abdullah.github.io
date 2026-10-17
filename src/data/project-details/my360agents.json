@@ -1,0 +1,54 @@
+{
+ "slug": "my360agents",
+ "tags": [
+  "AI Agency",
+  "Global"
+ ],
+ "overview": [
+  "Library of pre-built, industry-specific voice agents with an embeddable inbound-call widget and a live demo."
+ ],
+ "sections": [
+  {
+   "heading": "The challenge",
+   "blocks": [
+    {
+     "p": "The agency needed specialised voice agents for many verticals, plus a way for prospects to try them live on its website."
+    }
+   ]
+  },
+  {
+   "heading": "Solution & architecture",
+   "blocks": [
+    {
+     "p": "Pre-built voice agents for a wide range of industries, deployable per client, packaged with an embeddable inbound-call widget and a live demo on the agency's site. Built with Synthflow, Vapi, ElevenLabs, GoHighLevel and n8n."
+    }
+   ]
+  },
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "list": [
+      "Select industry",
+      "Deploy pre-built agent",
+      "Embed widget",
+      "Live on site"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Key facts",
+   "blocks": [
+    {
+     "list": [
+      "Multi-vertical — Agent library",
+      "1 — Embeddable call widget"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [],
+ "images": []
+}

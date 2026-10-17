@@ -1,0 +1,1077 @@
+[
+  {
+    "slug": "white-label-voice-agents",
+    "title": "White-Label Voice Agents for an AI Agency",
+    "tool": "voice",
+    "tags": ["Agency delivery · GoHighLevel", "Global"],
+    "overview": [
+      "Inbound and outbound Synthflow voice agents built per client sub-account inside an AI agency's white-labelled GoHighLevel."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "The agency needed voice agents for many client businesses — each with its own sub-account, call flows, booking and CRM updates — delivered under its own brand."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "Inside the agency's white-labelled GoHighLevel (Mavera.ai), each client got a dedicated sub-account with Synthflow voice agents and a standard set of workflows. Inbound setups handle the call, book the appointment and process post-call data; outbound setups run initial calls, booking and post-call updates. Confirmation emails with appointment details and rescheduling links are sent and stored on the contact record. The same pattern was rolled out for a barber shop, beauty and hair salons, a café, a restaurant, a car-rental business, a real-estate agent, a social-media agency and a German-language outbound campaign — each one is written up as its own project below."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": [
+              "Call in / out",
+              "Synthflow agent",
+              "Book appointment",
+              "Post-call data",
+              "CRM + confirmation"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": [
+              "Inbound + outbound — Agent pairs per business",
+              "Per sub-account — Workflows & agents",
+              "White-label — Delivered under agency brand"
+            ]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["GoHighLevel", "Synthflow", "Voice agents", "Email automation"],
+    "services": ["voice-ai", "gohighlevel-automation"],
+    "featured": true,
+    "images": [
+      {
+        "file": "/case-media/white-label-voice-agents/01.webp",
+        "width": 1600,
+        "height": 828,
+        "alt": "Synthflow agent list for a café sub-account with inbound and outbound agents"
+      },
+      {
+        "file": "/case-media/white-label-voice-agents/02.webp",
+        "width": 1600,
+        "height": 727,
+        "alt": "GoHighLevel outbound workflows: initial outbound calls, appointment booked, post outbound called data"
+      },
+      {
+        "file": "/case-media/white-label-voice-agents/03.webp",
+        "width": 1600,
+        "height": 735,
+        "alt": "GoHighLevel inbound workflows for a restaurant sub-account"
+      },
+      {
+        "file": "/case-media/white-label-voice-agents/04.webp",
+        "width": 1600,
+        "height": 822,
+        "alt": "Synthflow German outbound assistant agent"
+      }
+    ],
+    "flow": [
+      "Call in / out",
+      "Synthflow agent",
+      "Book appointment",
+      "Post-call data",
+      "CRM + confirmation"
+    ]
+  },
+  {
+    "slug": "zapier-lead-crm-integrations",
+    "title": "Lead & CRM Integrations with Zapier",
+    "tool": "zapier",
+    "tags": ["Sales ops", "Global"],
+    "overview": [
+      "A set of Zaps moving leads from Typeform, Calendly, ManyChat, Yelp and Airtable into Pipedrive, Mailchimp, GoHighLevel and ClickFunnels."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Leads arrived in several tools and were copied into the CRM and email lists by hand, creating duplicates."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "Typeform submissions are cleaned with Code by Zapier, stored in Airtable and created as Pipedrive people and deals with a follow-up email. Calendly bookings check Pipedrive for an existing person and deal before updating or creating, to avoid duplicates. ManyChat contacts sync to Mailchimp. Yelp leads are routed by conditions to a GoHighLevel (LeadConnector) workflow or a Python step. A student-enrolment Zap separates parents and students, syncs Mailchimp and Google Contacts, sends a welcome email, creates a spreadsheet and enrols the student in ClickFunnels."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": [
+              "Form / booking / chat lead",
+              "Clean with code",
+              "Find existing record",
+              "Create or update",
+              "Notify / enrol"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["6 — Production Zaps", "Duplicate-aware — Pipedrive logic"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["Zapier", "Pipedrive", "Typeform", "Calendly", "Mailchimp", "GoHighLevel"],
+    "services": ["workflow-automation"],
+    "featured": false,
+    "images": [
+      {
+        "file": "/case-media/zapier-lead-crm-integrations/01.webp",
+        "width": 1009,
+        "height": 720,
+        "alt": "Zapier Yelp lead routing with paths to LeadConnector and Code by Zapier"
+      },
+      {
+        "file": "/case-media/zapier-lead-crm-integrations/02.webp",
+        "width": 945,
+        "height": 654,
+        "alt": "Zapier Calendly to Pipedrive flow with existing person and deal checks"
+      },
+      {
+        "file": "/case-media/zapier-lead-crm-integrations/03.webp",
+        "width": 1546,
+        "height": 675,
+        "alt": "Zapier student enrolment flow with parent and student paths"
+      },
+      {
+        "file": "/case-media/zapier-lead-crm-integrations/04.webp",
+        "width": 920,
+        "height": 689,
+        "alt": "Zapier Typeform to Airtable and Pipedrive flow with code steps"
+      }
+    ],
+    "flow": [
+      "Form / booking / chat lead",
+      "Clean with code",
+      "Find existing record",
+      "Create or update",
+      "Notify / enrol"
+    ]
+  },
+  {
+    "slug": "tristrum-sales-lettings",
+    "title": "Property-Search Voice Agent — Tristrum Sales & Lettings",
+    "tool": "voice",
+    "tags": ["Real Estate", "United Kingdom"],
+    "overview": [
+      "Inbound voice agent that searches the agency's live property data during the call and books valuations."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Staff searched the Jupix ERP by hand while on the phone to find properties matching each caller's criteria, which slowed calls down and tied up the team."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "A Synthflow voice agent with an ElevenLabs voice handles incoming valuation and property enquiries. During the call it queries the agency's Jupix data through a Firebase / Google Cloud layer, matches listings against what the caller asks for, and books the valuation into the calendar."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Call in", "Query Jupix data", "Match listings", "Book valuation"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["24/7 — Call coverage", "Live — ERP lookups mid-call"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["Synthflow", "ElevenLabs", "Firebase", "GCP", "Jupix ERP"],
+    "services": ["voice-ai"],
+    "featured": false,
+    "images": [],
+    "flow": ["Call in", "Query Jupix data", "Match listings", "Book valuation"]
+  },
+  {
+    "slug": "neo-taxi",
+    "title": "Taxi Booking Voice Agent — NEO Taxi",
+    "tool": "voice",
+    "tags": ["Transport", "Germany"],
+    "overview": [
+      "Voice agent that books taxi rides in a single call and sends the caller a live Google Maps link."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Manual phone dispatch was slow at busy times, and bookings were lost while callers waited."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "The voice agent takes the booking details, confirms pickup and destination, and generates a Google Maps link that is sent to the caller during the conversation. The build combines Synthflow, ElevenLabs, the Google Maps API and GoHighLevel."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Call in", "AI takes booking", "Generate Maps link", "Send to caller"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["1 call — Booking completed", "Live — Maps link sent mid-call"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["Synthflow", "Google Maps API", "GoHighLevel", "ElevenLabs"],
+    "services": ["voice-ai", "gohighlevel-automation"],
+    "featured": false,
+    "images": [],
+    "flow": ["Call in", "AI takes booking", "Generate Maps link", "Send to caller"]
+  },
+  {
+    "slug": "mavera-ai",
+    "title": "AI Outbound Calling Pipeline — Mavera.ai",
+    "tool": "voice",
+    "tags": ["AI Agency", "Global"],
+    "overview": [
+      "Outbound pipeline that sources leads, calls them with an AI agent, books appointments and hands off to GoHighLevel follow-up."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "The agency wanted to grow client acquisition without hiring more SDRs to source and call leads."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "Leads are scraped from LinkedIn and Google Maps with Apify and Apollo, then called by a Synthflow voice agent that qualifies them and books appointments. Leads continue into GoHighLevel follow-up sequences orchestrated with n8n, and follow-up stops automatically once a lead answers."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Scrape leads", "AI calls lead", "Book appointment", "GHL follow-up"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["In + Out — Call coverage", "Auto-stop — Follow-up ends on answer"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["Synthflow", "GoHighLevel", "Apify", "Apollo", "n8n"],
+    "services": ["voice-ai", "gohighlevel-automation", "workflow-automation", "lead-generation"],
+    "featured": false,
+    "images": [],
+    "flow": ["Scrape leads", "AI calls lead", "Book appointment", "GHL follow-up"]
+  },
+  {
+    "slug": "dental-clinic",
+    "title": "Dental Clinic 24/7 Receptionist",
+    "tool": "voice",
+    "tags": ["Healthcare", "United States"],
+    "overview": [
+      "AI receptionist that answers calls around the clock, books dental appointments and runs a three-stage reminder sequence."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Front-desk staff were stretched by booking calls at peak times, and missed appointments were a recurring problem."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "A Vapi voice agent answers calls at any hour and books appointments, with records handed to GoHighLevel. n8n then runs an escalating three-stage reminder sequence before each visit, designed to cut down on no-shows."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Call in", "AI books appointment", "Escalating reminders", "Confirmed visit"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["24/7 — Reception coverage", "3-stage — Reminder sequence"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["Vapi", "GoHighLevel", "n8n"],
+    "services": ["voice-ai", "gohighlevel-automation", "workflow-automation"],
+    "featured": false,
+    "images": [],
+    "flow": ["Call in", "AI books appointment", "Escalating reminders", "Confirmed visit"]
+  },
+  {
+    "slug": "car-rental-fleet",
+    "title": "Car Rental Fleet Sales Agent",
+    "tool": "voice",
+    "tags": ["Fleet Sales", "United States"],
+    "overview": [
+      "Inbound agent that qualifies callers, identifies the decision-maker, dials them and creates the GoHighLevel opportunity."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Fleet sales reps spent hours reaching drivers instead of the owners who make purchasing decisions."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "The ElevenLabs voice agent qualifies each inbound caller and works out who actually owns the decision. It then dials the owner directly, and n8n creates the deal in the GoHighLevel pipeline so reps start from a qualified opportunity."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["AI qualifies caller", "Identify owner", "Auto-dial owner", "Create GHL deal"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["Owner — Hand-off to decision-maker", "Auto — GHL pipeline entry"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["ElevenLabs", "GoHighLevel", "n8n"],
+    "services": ["voice-ai", "gohighlevel-automation", "workflow-automation"],
+    "featured": false,
+    "images": [],
+    "flow": ["AI qualifies caller", "Identify owner", "Auto-dial owner", "Create GHL deal"]
+  },
+  {
+    "slug": "my360agents",
+    "title": "Industry Voice Agent Library — My360Agents.ai",
+    "tool": "voice",
+    "tags": ["AI Agency", "Global"],
+    "overview": [
+      "Library of pre-built, industry-specific voice agents with an embeddable inbound-call widget and a live demo."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "The agency needed specialised voice agents for many verticals, plus a way for prospects to try them live on its website."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "Pre-built voice agents for a wide range of industries, deployable per client, packaged with an embeddable inbound-call widget and a live demo on the agency's site. Built with Synthflow, Vapi, ElevenLabs, GoHighLevel and n8n."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Select industry", "Deploy pre-built agent", "Embed widget", "Live on site"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["Multi-vertical — Agent library", "1 — Embeddable call widget"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["Synthflow", "Vapi", "GoHighLevel", "ElevenLabs", "n8n"],
+    "services": ["voice-ai", "gohighlevel-automation"],
+    "featured": false,
+    "images": [],
+    "flow": ["Select industry", "Deploy pre-built agent", "Embed widget", "Live on site"]
+  },
+  {
+    "slug": "lead-processing-engine",
+    "title": "Lead Processing Engine",
+    "tool": "n8n",
+    "tags": ["B2B Sales", "Global"],
+    "overview": [
+      "n8n pipeline that verifies, classifies, researches and personalises large lead lists in batch."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Cleaning, verifying and personalising large monthly lead lists took the team days of manual work."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "The workflow verifies email addresses with MillionVerifier, classifies each lead's industry, runs AI research with OpenAI and writes personalised copy for every lead, exporting the results to Google Sheets. Four processing modes cover different list types."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Verify emails", "Classify industry", "AI research", "Personalise", "Export"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["4 — Processing modes", "Per lead — Personalised copy"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["n8n", "MillionVerifier", "OpenAI", "Google Sheets"],
+    "services": ["workflow-automation", "lead-generation"],
+    "featured": false,
+    "images": [],
+    "flow": ["Verify emails", "Classify industry", "AI research", "Personalise", "Export"]
+  },
+  {
+    "slug": "linkedin-lead-enrichment",
+    "title": "LinkedIn Lead Enrichment",
+    "tool": "n8n",
+    "tags": ["LinkedIn Ops", "Global"],
+    "overview": [
+      "Three-stage enrichment that turns LinkedIn profile URLs into a sheet of direct email addresses."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Enrichment meant copy-pasting between tools, emails were often missing, and nothing was tracked."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "The workflow collects LinkedIn URLs, enriches them through the SalesQL API, keeps only direct (non-generic) email addresses and stores the results in Google Sheets."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Collect URLs", "SalesQL enrich", "Filter direct emails", "Store in Sheets"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["3-stage — Enrichment", "Direct — Emails only"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["n8n", "SalesQL API", "Google Sheets"],
+    "services": ["workflow-automation", "lead-generation"],
+    "featured": false,
+    "images": [],
+    "flow": ["Collect URLs", "SalesQL enrich", "Filter direct emails", "Store in Sheets"]
+  },
+  {
+    "slug": "cancellation-recovery",
+    "title": "Cancellation Recovery",
+    "tool": "n8n",
+    "tags": ["Scheduling", "Global"],
+    "overview": [
+      "Detects cancelled appointments and offers the slot to a waitlist through an automatic campaign."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Cancelled appointment slots went unfilled because there was no recovery process."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "When a cancellation is detected, the workflow launches a recovery campaign by email (SendGrid and Gmail API), offers the freed slot to people on the waitlist and logs the result."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Detect cancellation", "Recovery campaign", "Refill from waitlist", "Log"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["Auto — Cancellation detection", "Waitlist — Slot refill"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["n8n", "SendGrid", "Gmail API"],
+    "services": ["workflow-automation"],
+    "featured": false,
+    "images": [],
+    "flow": ["Detect cancellation", "Recovery campaign", "Refill from waitlist", "Log"]
+  },
+  {
+    "slug": "crm-sync-dedup",
+    "title": "CRM Sync & Dedup",
+    "tool": "n8n",
+    "tags": ["CRM Ops", "Global"],
+    "overview": [
+      "Uploaded lists are AI-enriched, matched by company domain and created or updated in Zoho CRM."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Manual imports created duplicate records and left CRM data stale."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "Files uploaded to Google Drive are enriched with OpenAI, matched against existing records by company domain, and then either update the existing Zoho record or create a new one — preventing duplicates up front instead of cleaning them up later."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["File upload", "AI enrichment", "Domain-based match", "Create / update CRM"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["Domain-level — Deduplication", "Upsert — Create or update logic"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["n8n", "OpenAI", "Zoho CRM", "Google Drive"],
+    "services": ["workflow-automation"],
+    "featured": false,
+    "images": [],
+    "flow": ["File upload", "AI enrichment", "Domain-based match", "Create / update CRM"]
+  },
+  {
+    "slug": "universal-receptionist-builder",
+    "title": "Universal Receptionist Builder",
+    "tool": "voice",
+    "tags": ["AI Agency Tooling", "Global"],
+    "overview": [
+      "Enter a website URL and the pipeline builds a knowledge base and deploys a receptionist voice agent."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Setting up a receptionist agent for each new client took hours of manual prompting and configuration."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "A one-form setup: the pipeline scrapes the client's website, builds the agent's knowledge base from the content and deploys an ElevenLabs receptionist connected to GoHighLevel."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Enter URL", "Scrape content", "Build knowledge base", "Deploy agent"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["1 form — Setup input", "Auto — Knowledge-base build"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["n8n", "ElevenLabs", "GoHighLevel"],
+    "services": ["voice-ai", "workflow-automation"],
+    "featured": false,
+    "images": [],
+    "flow": ["Enter URL", "Scrape content", "Build knowledge base", "Deploy agent"]
+  },
+  {
+    "slug": "hospital-whatsapp-bot",
+    "title": "Hospital WhatsApp Bot",
+    "tool": "n8n",
+    "tags": ["Healthcare", "Global"],
+    "overview": [
+      "WhatsApp assistant for booking imaging and lab tests, with 48h / 12h / 3h reminders and knowledge-base answers."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Imaging and lab-test bookings and reminders were handled manually, with no automated channel for patients."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "Patients book through WhatsApp; bookings are written to Airtable, reminders go out 48, 12 and 3 hours before the appointment, rescheduling is handled in the chat, and patient questions are answered from a RAG knowledge base."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Book via WhatsApp", "Airtable entry", "Reminders 48h / 12h / 3h", "RAG Q&A"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["3-stage — Reminder cadence", "RAG — Grounded answers"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["n8n", "Airtable", "RAG", "Meta API"],
+    "services": ["ai-chatbots", "workflow-automation"],
+    "featured": false,
+    "images": [],
+    "flow": ["Book via WhatsApp", "Airtable entry", "Reminders 48h / 12h / 3h", "RAG Q&A"]
+  },
+  {
+    "slug": "omnichannel-bot",
+    "title": "Omnichannel Assistant (6 Platforms)",
+    "tool": "n8n",
+    "tags": ["Multi-Platform", "Global"],
+    "overview": [
+      "One AI assistant answering across six messaging platforms, with intent detection and GoHighLevel sync."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "The business needed consistent AI replies on every channel, with conversations synced to the CRM."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "A single assistant (OpenAI with a Pinecone knowledge base) answers on WhatsApp, Instagram, Messenger, Telegram, Slack and Discord. It qualifies leads, detects when a person should take over, and syncs conversations to GoHighLevel through n8n."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": [
+              "Message in (any channel)",
+              "LLM responds",
+              "Qualify",
+              "Escalate on intent",
+              "CRM sync"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["6 — Platforms, one assistant", "Intent — Escalation detection"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["n8n", "OpenAI", "Meta API", "Pinecone", "GoHighLevel"],
+    "services": ["ai-chatbots", "gohighlevel-automation", "workflow-automation"],
+    "featured": false,
+    "images": [],
+    "flow": [
+      "Message in (any channel)",
+      "LLM responds",
+      "Qualify",
+      "Escalate on intent",
+      "CRM sync"
+    ]
+  },
+  {
+    "slug": "linkedin-outreach-bot",
+    "title": "LinkedIn Outreach Bot",
+    "tool": "n8n",
+    "tags": ["Growth Ops", "Global"],
+    "overview": [
+      "Automates connection requests, scores replies with AI and triggers the right CRM follow-up."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "The team sent 30–40 connection requests a day by hand, with no way of prioritising replies."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "The workflow sends connection requests, scores each reply with OpenAI, syncs the graded lead to Zoho CRM and triggers the matching follow-up sequence."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Auto-connect", "AI scores reply", "Sync to CRM", "Trigger follow-up"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["AI — Reply scoring", "Auto — CRM follow-up trigger"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["n8n", "LinkedIn API", "OpenAI", "Zoho CRM"],
+    "services": ["workflow-automation", "lead-generation"],
+    "featured": false,
+    "images": [],
+    "flow": ["Auto-connect", "AI scores reply", "Sync to CRM", "Trigger follow-up"]
+  },
+  {
+    "slug": "social-content-machine",
+    "title": "Social Content Machine",
+    "tool": "n8n",
+    "tags": ["Content", "Global"],
+    "overview": [
+      "Generates posts, captions and hashtags, then schedules and publishes them to Facebook, Instagram and LinkedIn."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Creating and posting content took many hours of manual work every week."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "Posts, captions and hashtags are generated with OpenAI using the brand's voice guidelines, scheduled, and published automatically to three platforms through the Meta and LinkedIn APIs."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Generate post + caption", "Schedule", "Publish to FB / IG / LinkedIn"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["3 — Platforms published", "Brand — Voice guidelines in prompts"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["n8n", "OpenAI", "Meta API", "LinkedIn API"],
+    "services": ["workflow-automation", "ai-content-automation"],
+    "featured": false,
+    "images": [],
+    "flow": ["Generate post + caption", "Schedule", "Publish to FB / IG / LinkedIn"]
+  },
+  {
+    "slug": "ai-ad-creative-pipeline",
+    "title": "AI Ad Creative Pipeline",
+    "tool": "n8n",
+    "tags": ["Performance Marketing", "Global"],
+    "overview": [
+      "Generates ad creatives in three formats, checks them against brand rules and schedules them."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Clients needed a high volume of ad creatives on tight deadlines."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "From a prompt, the pipeline generates creatives in three formats with OpenAI / DALL·E, checks them against brand guidelines, then schedules and posts them through the Meta Ads API with tracking."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Prompt in", "Generate creative", "Brand check", "Schedule & post"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["3 — Creative formats", "Brand — Guideline check"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["n8n", "OpenAI / DALL·E", "Meta Ads API"],
+    "services": ["workflow-automation", "ai-content-automation"],
+    "featured": false,
+    "images": [],
+    "flow": ["Prompt in", "Generate creative", "Brand check", "Schedule & post"]
+  },
+  {
+    "slug": "ahmad-sweets-pos",
+    "title": "Ahmad Sweets POS",
+    "tool": "custom",
+    "tags": ["POS · E-invoicing", "Pakistan"],
+    "overview": [
+      "Multi-location retail POS integrated with Pakistan's FBR invoicing API, with automatic tax calculation."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "A retail chain needed FBR-integrated invoicing across its locations."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "A WinForms POS deployed across multiple retail locations. Each sale authenticates with the FBR API, tax is calculated automatically, and the invoice is generated and reported."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": ["Sale made", "FBR API auth", "Tax calculated", "Invoice generated"]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["FBR — API integration", "Multi-location — Deployment"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["WinForms", "FBR API", "Crystal Reports"],
+    "services": ["custom-software"],
+    "featured": false,
+    "images": [],
+    "flow": ["Sale made", "FBR API auth", "Tax calculated", "Invoice generated"]
+  },
+  {
+    "slug": "order-take-app",
+    "title": "Order Take App",
+    "tool": "custom",
+    "tags": ["Mobile", "Global"],
+    "overview": [
+      "Offline-first field ordering app that stores orders on the device and syncs when the connection returns."
+    ],
+    "sections": [
+      {
+        "heading": "The challenge",
+        "blocks": [
+          {
+            "p": "Field sales reps lost orders when they had no connectivity."
+          }
+        ]
+      },
+      {
+        "heading": "Solution & architecture",
+        "blocks": [
+          {
+            "p": "A Xamarin.Forms app stores orders in SQLite while offline and syncs them to an ASP.NET Web API automatically when the device reconnects."
+          }
+        ]
+      },
+      {
+        "heading": "Workflow",
+        "blocks": [
+          {
+            "list": [
+              "Rep takes order (offline)",
+              "Stored locally",
+              "Device reconnects",
+              "Sync to API"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Key facts",
+        "blocks": [
+          {
+            "list": ["Offline — Order capture", "Auto — Sync on reconnect"]
+          }
+        ]
+      }
+    ],
+    "result": [],
+    "toolsUsed": ["Xamarin.Forms", "ASP.NET Web API", "SQLite"],
+    "services": ["custom-software"],
+    "featured": false,
+    "images": [],
+    "flow": ["Rep takes order (offline)", "Stored locally", "Device reconnects", "Sync to API"]
+  }
+]

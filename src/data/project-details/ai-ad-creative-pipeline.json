@@ -1,0 +1,54 @@
+{
+ "slug": "ai-ad-creative-pipeline",
+ "tags": [
+  "Performance Marketing",
+  "Global"
+ ],
+ "overview": [
+  "Generates ad creatives in three formats, checks them against brand rules and schedules them."
+ ],
+ "sections": [
+  {
+   "heading": "The challenge",
+   "blocks": [
+    {
+     "p": "Clients needed a high volume of ad creatives on tight deadlines."
+    }
+   ]
+  },
+  {
+   "heading": "Solution & architecture",
+   "blocks": [
+    {
+     "p": "From a prompt, the pipeline generates creatives in three formats with OpenAI / DALL·E, checks them against brand guidelines, then schedules and posts them through the Meta Ads API with tracking."
+    }
+   ]
+  },
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "list": [
+      "Prompt in",
+      "Generate creative",
+      "Brand check",
+      "Schedule & post"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Key facts",
+   "blocks": [
+    {
+     "list": [
+      "3 — Creative formats",
+      "Brand — Guideline check"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [],
+ "images": []
+}

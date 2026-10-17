@@ -1,0 +1,111 @@
+{
+ "slug": "automated-agreements-invoices-and-client-document-workflow",
+ "tags": [
+  "Make.com",
+  "Google Sheets",
+  "Google Docs",
+  "Google Drive",
+  "SmartSuite"
+ ],
+ "overview": [
+  "Built an automated document processing system for managing client agreements, invoices, folders, and sales pitch files.",
+  "The workflow takes pending client records and automatically creates the required documents, organizes files, updates processing status, and keeps Google Sheets and SmartSuite synchronized."
+ ],
+ "sections": [
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "p": "The system:"
+    },
+    {
+     "list": [
+      "Receives a processing request through a webhook",
+      "Retrieves pending agreement records from Google Sheets",
+      "Generates agreements automatically from document templates",
+      "Retrieves pending invoice records from Google Sheets",
+      "Generates invoices automatically from predefined templates",
+      "Creates a standardized customer name for file management",
+      "Searches Google Drive for the customer folder",
+      "Creates a new customer folder when required",
+      "Generates the customer sales pitch from a template",
+      "Updates SmartSuite with success or failure status",
+      "Marks processed records in Google Sheets",
+      "Handles existing folders and Google Drive processing errors"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Branding & Templates",
+   "blocks": [
+    {
+     "p": "The workflow uses predefined document and sales pitch templates for automated file creation."
+    },
+    {
+     "p": "Each template controls:"
+    },
+    {
+     "list": [
+      "Customer information",
+      "Agreement content",
+      "Invoice information",
+      "Sales pitch content",
+      "Document structure"
+     ]
+    },
+    {
+     "p": "This keeps generated client documents consistent while reducing manual document preparation."
+    }
+   ]
+  },
+  {
+   "heading": "Content Management",
+   "blocks": [
+    {
+     "p": "Google Sheets acts as the central processing queue and tracking system."
+    },
+    {
+     "p": "Each completed record is updated with:"
+    },
+    {
+     "list": [
+      "Processing status",
+      "Agreement status",
+      "Invoice status",
+      "Customer folder status"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A complete automated document processing pipeline that turns pending client records into organized agreements, invoices, customer folders, and sales pitch files without requiring manual document creation for every client. The system also keeps processing status, client records, and generated files organized in one workflow."
+ ],
+ "images": [
+  {
+   "src": "/projects/automated-agreements-invoices-and-client-document-workflow/01-906.webp",
+   "srcSet": "/projects/automated-agreements-invoices-and-client-document-workflow/01-480.webp 480w, /projects/automated-agreements-invoices-and-client-document-workflow/01-906.webp 906w",
+   "full": "/projects/automated-agreements-invoices-and-client-document-workflow/01-906.webp",
+   "width": 906,
+   "height": 286,
+   "alt": "Automated Agreements Invoices & Client Document Workflow: Automated Agreements Invoices & Client Document Workflow 2"
+  },
+  {
+   "src": "/projects/automated-agreements-invoices-and-client-document-workflow/02-597.webp",
+   "srcSet": "/projects/automated-agreements-invoices-and-client-document-workflow/02-480.webp 480w, /projects/automated-agreements-invoices-and-client-document-workflow/02-597.webp 597w",
+   "full": "/projects/automated-agreements-invoices-and-client-document-workflow/02-597.webp",
+   "width": 597,
+   "height": 319,
+   "alt": "Automated Agreements Invoices & Client Document Workflow: Automated Agreements Invoices & Client Document Workflow 3"
+  },
+  {
+   "src": "/projects/automated-agreements-invoices-and-client-document-workflow/03-816.webp",
+   "srcSet": "/projects/automated-agreements-invoices-and-client-document-workflow/03-480.webp 480w, /projects/automated-agreements-invoices-and-client-document-workflow/03-816.webp 816w",
+   "full": "/projects/automated-agreements-invoices-and-client-document-workflow/03-816.webp",
+   "width": 816,
+   "height": 376,
+   "alt": "Automated Agreements Invoices & Client Document Workflow: Automated Agreements Invoices & Client Document Workflow(1)"
+  }
+ ]
+}

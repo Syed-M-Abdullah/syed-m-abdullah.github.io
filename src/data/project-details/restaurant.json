@@ -1,0 +1,127 @@
+{
+ "slug": "restaurant",
+ "tags": [
+  "GoHighLevel",
+  "Voice Agents",
+  "Inbound & Outbound Automation",
+  "CRM",
+  "Email"
+ ],
+ "overview": [
+  "Built a GoHighLevel automation system for a restaurant to manage inbound leads, outbound follow ups, appointment bookings, and customer communication from one CRM.",
+  "The setup includes separate workflows for inbound and outbound campaigns, dedicated agents, appointment handling, and automated email communication."
+ ],
+ "sections": [
+  {
+   "heading": "CRM & Subaccount Setup",
+   "blocks": [
+    {
+     "p": "The system was organized inside a dedicated restaurant subaccount with separate automation areas for:"
+    },
+    {
+     "list": [
+      "Inbound Agent",
+      "Outbound Agent",
+      "Appointment Booking",
+      "Lead Follow Ups",
+      "Customer Email Communication"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Outbound Automation",
+   "blocks": [
+    {
+     "p": "The outbound setup includes workflows for:"
+    },
+    {
+     "list": [
+      "Initial outbound calls",
+      "Appointment booking",
+      "Post outbound call handling"
+     ]
+    },
+    {
+     "p": "Leads are enrolled into the appropriate workflow and moved through the follow up process based on the outcome of the interaction."
+    }
+   ]
+  },
+  {
+   "heading": "Inbound Automation",
+   "blocks": [
+    {
+     "p": "The inbound setup handles incoming customer interactions and connects them with the appropriate booking and follow up workflows."
+    },
+    {
+     "p": "This allows new inquiries to be processed without relying entirely on manual responses."
+    }
+   ]
+  },
+  {
+   "heading": "Appointment & Email Automation",
+   "blocks": [
+    {
+     "p": "The system also manages appointment related communication through GoHighLevel."
+    },
+    {
+     "p": "Customer records contain contact information and conversation history, while automated emails are used to confirm appointment details and provide the required information to the customer."
+    }
+   ]
+  },
+  {
+   "heading": "Agent Structure",
+   "blocks": [
+    {
+     "p": "Separate inbound and outbound agents were configured within the restaurant subaccount, keeping the two communication processes organized and easier to manage."
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A centralized restaurant lead management system that connects lead generation, inbound and outbound communication, appointment booking, follow ups, and customer emails inside GoHighLevel.",
+  "The setup gives the restaurant a structured process for handling leads and customer interactions from the first contact through appointment confirmation."
+ ],
+ "images": [
+  {
+   "src": "/projects/restaurant/01-960.webp",
+   "srcSet": "/projects/restaurant/01-480.webp 480w, /projects/restaurant/01-960.webp 960w, /projects/restaurant/01-1600.webp 1600w",
+   "full": "/projects/restaurant/01-1600.webp",
+   "width": 1600,
+   "height": 814,
+   "alt": "Restaurant: Restaurant Synthflow"
+  },
+  {
+   "src": "/projects/restaurant/02-960.webp",
+   "srcSet": "/projects/restaurant/02-480.webp 480w, /projects/restaurant/02-960.webp 960w, /projects/restaurant/02-1600.webp 1600w",
+   "full": "/projects/restaurant/02-1600.webp",
+   "width": 1600,
+   "height": 803,
+   "alt": "Restaurant: Restaurant Agents"
+  },
+  {
+   "src": "/projects/restaurant/03-960.webp",
+   "srcSet": "/projects/restaurant/03-480.webp 480w, /projects/restaurant/03-960.webp 960w, /projects/restaurant/03-1600.webp 1600w",
+   "full": "/projects/restaurant/03-1600.webp",
+   "width": 1600,
+   "height": 798,
+   "alt": "Restaurant: Restaurant Inbound"
+  },
+  {
+   "src": "/projects/restaurant/04-960.webp",
+   "srcSet": "/projects/restaurant/04-480.webp 480w, /projects/restaurant/04-960.webp 960w, /projects/restaurant/04-1600.webp 1600w",
+   "full": "/projects/restaurant/04-1600.webp",
+   "width": 1600,
+   "height": 793,
+   "alt": "Restaurant: Restaurant Outbound"
+  },
+  {
+   "src": "/projects/restaurant/05-960.webp",
+   "srcSet": "/projects/restaurant/05-480.webp 480w, /projects/restaurant/05-960.webp 960w, /projects/restaurant/05-1600.webp 1600w",
+   "full": "/projects/restaurant/05-1600.webp",
+   "width": 1600,
+   "height": 790,
+   "alt": "Restaurant: Restaurant Subaccount"
+  }
+ ]
+}

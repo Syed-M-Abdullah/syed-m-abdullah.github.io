@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { prefersReducedMotion } from "@/lib/motion-pref";
 
-const reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const reducedMotion = prefersReducedMotion;
 const finePointer = () => window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
 /**
@@ -121,4 +122,27 @@ export function useCountUp(target: number, duration = 1600) {
     };
   }, [target, duration]);
   return { ref, value };
+}
+
+/**
+ * Pauses the CSS animations of `[data-pause-offscreen]` sections (the heroes) while they are
+ * scrolled out of view, by toggling `data-offscreen` (see styles.css). Saves work on long pages.
+ */
+export function usePauseOffscreen(key?: string) {
+  useEffect(() => {
+    const els = document.querySelectorAll<HTMLElement>("[data-pause-offscreen]");
+    if (!els.length) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        const el = e.target as HTMLElement;
+        if (e.isIntersecting) el.removeAttribute("data-offscreen");
+        else el.setAttribute("data-offscreen", "");
+      });
+    });
+    els.forEach((el) => io.observe(el));
+    return () => {
+      io.disconnect();
+      els.forEach((el) => el.removeAttribute("data-offscreen"));
+    };
+  }, [key]);
 }

@@ -1,0 +1,84 @@
+{
+ "slug": "real-estate",
+ "tags": [
+  "GoHighLevel",
+  "Synthflow",
+  "Voice Agent",
+  "CRM",
+  "Appointment Automation",
+  "Email"
+ ],
+ "overview": [
+  "Built an inbound voice automation system for a real estate client to handle customer calls, collect lead information, book appointments, and manage follow up communication through GoHighLevel. The system connects the voice assistant with the CRM and appointment workflows so that customer information is captured and processed automatically"
+ ],
+ "sections": [
+  {
+   "heading": "Voice Agent",
+   "blocks": [
+    {
+     "p": "A dedicated inbound assistant was configured in Synthflow to handle incoming calls and guide customers through the required conversation."
+    },
+    {
+     "p": "The assistant collects relevant customer information and handles the appointment booking process."
+    }
+   ]
+  },
+  {
+   "heading": "GoHighLevel Setup",
+   "blocks": [
+    {
+     "p": "The client's subaccount is connected with dedicated automation workflows for inbound lead handling."
+    },
+    {
+     "p": "The setup includes:"
+    },
+    {
+     "list": [
+      "Inbound Agent",
+      "Appointment Booked workflow",
+      "Post Inbound Data workflow",
+      "Contact management",
+      "Appointment tracking",
+      "Email communication"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Appointment Automation",
+   "blocks": [
+    {
+     "p": "When an appointment is booked, the system updates the customer record and triggers the required follow up process."
+    },
+    {
+     "p": "The appointment information is used to prepare confirmation communication for the customer."
+    }
+   ]
+  },
+  {
+   "heading": "Email Confirmation",
+   "blocks": [
+    {
+     "p": "An automated appointment confirmation email is sent through GoHighLevel containing:"
+    },
+    {
+     "list": [
+      "Customer name",
+      "Appointment date and time",
+      "Meeting details",
+      "Confirmation information",
+      "Rescheduling instructions"
+     ]
+    },
+    {
+     "p": "The communication is stored directly within the customer record."
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A complete inbound call and appointment system that connects voice conversations, lead capture, CRM updates, appointment booking, and customer confirmation in one workflow.",
+  "This reduces manual handling and provides a structured process from the initial customer call through appointment confirmation."
+ ],
+ "images": []
+}

@@ -1,0 +1,88 @@
+{
+ "slug": "zapier-lead-crm-integrations",
+ "tags": [
+  "Sales ops",
+  "Global"
+ ],
+ "overview": [
+  "A set of Zaps moving leads from Typeform, Calendly, ManyChat, Yelp and Airtable into Pipedrive, Mailchimp, GoHighLevel and ClickFunnels."
+ ],
+ "sections": [
+  {
+   "heading": "The challenge",
+   "blocks": [
+    {
+     "p": "Leads arrived in several tools and were copied into the CRM and email lists by hand, creating duplicates."
+    }
+   ]
+  },
+  {
+   "heading": "Solution & architecture",
+   "blocks": [
+    {
+     "p": "Typeform submissions are cleaned with Code by Zapier, stored in Airtable and created as Pipedrive people and deals with a follow-up email. Calendly bookings check Pipedrive for an existing person and deal before updating or creating, to avoid duplicates. ManyChat contacts sync to Mailchimp. Yelp leads are routed by conditions to a GoHighLevel (LeadConnector) workflow or a Python step. A student-enrolment Zap separates parents and students, syncs Mailchimp and Google Contacts, sends a welcome email, creates a spreadsheet and enrols the student in ClickFunnels."
+    }
+   ]
+  },
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "list": [
+      "Form / booking / chat lead",
+      "Clean with code",
+      "Find existing record",
+      "Create or update",
+      "Notify / enrol"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Key facts",
+   "blocks": [
+    {
+     "list": [
+      "6 — Production Zaps",
+      "Duplicate-aware — Pipedrive logic"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [],
+ "images": [
+  {
+   "src": "/case-media/zapier-lead-crm-integrations/01-800.webp",
+   "srcSet": "/case-media/zapier-lead-crm-integrations/01-800.webp 800w, /case-media/zapier-lead-crm-integrations/01.webp 1009w",
+   "full": "/case-media/zapier-lead-crm-integrations/01.webp",
+   "width": 1009,
+   "height": 720,
+   "alt": "Zapier Yelp lead routing with paths to LeadConnector and Code by Zapier"
+  },
+  {
+   "src": "/case-media/zapier-lead-crm-integrations/02-800.webp",
+   "srcSet": "/case-media/zapier-lead-crm-integrations/02-800.webp 800w, /case-media/zapier-lead-crm-integrations/02.webp 945w",
+   "full": "/case-media/zapier-lead-crm-integrations/02.webp",
+   "width": 945,
+   "height": 654,
+   "alt": "Zapier Calendly to Pipedrive flow with existing person and deal checks"
+  },
+  {
+   "src": "/case-media/zapier-lead-crm-integrations/03-800.webp",
+   "srcSet": "/case-media/zapier-lead-crm-integrations/03-800.webp 800w, /case-media/zapier-lead-crm-integrations/03.webp 1546w",
+   "full": "/case-media/zapier-lead-crm-integrations/03.webp",
+   "width": 1546,
+   "height": 675,
+   "alt": "Zapier student enrolment flow with parent and student paths"
+  },
+  {
+   "src": "/case-media/zapier-lead-crm-integrations/04-800.webp",
+   "srcSet": "/case-media/zapier-lead-crm-integrations/04-800.webp 800w, /case-media/zapier-lead-crm-integrations/04.webp 920w",
+   "full": "/case-media/zapier-lead-crm-integrations/04.webp",
+   "width": 920,
+   "height": 689,
+   "alt": "Zapier Typeform to Airtable and Pipedrive flow with code steps"
+  }
+ ]
+}

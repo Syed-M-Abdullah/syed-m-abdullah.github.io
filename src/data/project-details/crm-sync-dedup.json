@@ -1,0 +1,54 @@
+{
+ "slug": "crm-sync-dedup",
+ "tags": [
+  "CRM Ops",
+  "Global"
+ ],
+ "overview": [
+  "Uploaded lists are AI-enriched, matched by company domain and created or updated in Zoho CRM."
+ ],
+ "sections": [
+  {
+   "heading": "The challenge",
+   "blocks": [
+    {
+     "p": "Manual imports created duplicate records and left CRM data stale."
+    }
+   ]
+  },
+  {
+   "heading": "Solution & architecture",
+   "blocks": [
+    {
+     "p": "Files uploaded to Google Drive are enriched with OpenAI, matched against existing records by company domain, and then either update the existing Zoho record or create a new one — preventing duplicates up front instead of cleaning them up later."
+    }
+   ]
+  },
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "list": [
+      "File upload",
+      "AI enrichment",
+      "Domain-based match",
+      "Create / update CRM"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Key facts",
+   "blocks": [
+    {
+     "list": [
+      "Domain-level — Deduplication",
+      "Upsert — Create or update logic"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [],
+ "images": []
+}

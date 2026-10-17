@@ -1,0 +1,81 @@
+{
+ "slug": "auto-invoice-generation-and-therapy-confirmation-system-message",
+ "tags": [
+  "n8n",
+  "HubSpot",
+  "Google Drive",
+  "Google Sheets",
+  "PDFMonkey",
+  "Google Cloud"
+ ],
+ "overview": [
+  "Built two connected n8n workflows for a healthcare business to automate invoice and therapy confirmation document generation.",
+  "The system pulls relevant deals from HubSpot, collects patient and doctor information, generates the required documents, stores them in Google Drive, and keeps all records synchronized with Google Sheets.",
+  "Automated Therapy Confirmation PDF Workflow.mp4",
+  "Automated HubSpot to SwissQR Invoices Workflow 📄.mp4"
+ ],
+ "sections": [
+  {
+   "heading": "Invoice Automation",
+   "blocks": [
+    {
+     "p": "The invoice workflow runs automatically each morning and processes eligible HubSpot deals based on their stage, doctor, and appointment type."
+    },
+    {
+     "p": "The system:"
+    },
+    {
+     "list": [
+      "Retrieves qualifying deals from HubSpot",
+      "Collects patient and appointment information",
+      "Identifies the appointment type",
+      "Calculates the correct invoice amount",
+      "Selects the appropriate invoice configuration",
+      "Generates a Swiss QR payment code",
+      "Creates the invoice PDF through PDFMonkey",
+      "Uploads the invoice and QR code to Google Drive",
+      "Generates shareable document links",
+      "Records invoice details in Google Sheets",
+      "Maintains unique invoice numbering"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Therapy Confirmation",
+   "blocks": [
+    {
+     "p": "A separate workflow generates therapy confirmation documents for qualifying treatment sessions."
+    },
+    {
+     "p": "It:"
+    },
+    {
+     "list": [
+      "Retrieves completed deals from HubSpot",
+      "Collects patient and doctor information",
+      "Matches doctor details through Google Sheets",
+      "Formats and validates the required information",
+      "Generates the therapy confirmation PDF",
+      "Uploads the document to Google Drive",
+      "Creates a shareable link",
+      "Records the document details in Google Sheets"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Swiss QR Billing",
+   "blocks": [
+    {
+     "p": "The invoice workflow connects with a custom Google Cloud Run API using a .NET Swiss QR library to generate payment QR codes containing the required billing information."
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A reliable document automation system that replaced manual invoice and therapy confirmation work with an automated process from HubSpot data to completed PDFs, Swiss QR billing, cloud storage, and record tracking.",
+  "The system also provides a structured foundation that can be extended to additional document and administrative workflows."
+ ],
+ "images": []
+}

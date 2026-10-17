@@ -11,5 +11,7 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    // src/client.tsx: the default client entry plus one frame of yield before hydration.
+    client: { entry: "client" },
   },
 });

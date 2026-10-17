@@ -1,0 +1,54 @@
+{
+ "slug": "linkedin-outreach-bot",
+ "tags": [
+  "Growth Ops",
+  "Global"
+ ],
+ "overview": [
+  "Automates connection requests, scores replies with AI and triggers the right CRM follow-up."
+ ],
+ "sections": [
+  {
+   "heading": "The challenge",
+   "blocks": [
+    {
+     "p": "The team sent 30–40 connection requests a day by hand, with no way of prioritising replies."
+    }
+   ]
+  },
+  {
+   "heading": "Solution & architecture",
+   "blocks": [
+    {
+     "p": "The workflow sends connection requests, scores each reply with OpenAI, syncs the graded lead to Zoho CRM and triggers the matching follow-up sequence."
+    }
+   ]
+  },
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "list": [
+      "Auto-connect",
+      "AI scores reply",
+      "Sync to CRM",
+      "Trigger follow-up"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Key facts",
+   "blocks": [
+    {
+     "list": [
+      "AI — Reply scoring",
+      "Auto — CRM follow-up trigger"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [],
+ "images": []
+}

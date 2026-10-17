@@ -1,0 +1,74 @@
+{
+ "slug": "case-manager-email-detection-and-routing",
+ "tags": [
+  "Zapier",
+  "Paths",
+  "Gmail",
+  "Sub Zaps",
+  "Email Automation"
+ ],
+ "overview": [
+  "Built an email routing workflow that identifies the assigned case manager and sends the case information to the appropriate person automatically."
+ ],
+ "sections": [
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "p": "The automation:"
+    },
+    {
+     "list": [
+      "Starts from a Sub Zap",
+      "Splits the incoming data into multiple paths",
+      "Checks conditions for the assigned case manager",
+      "Routes each case to the matching email address",
+      "Sends the appropriate email through Gmail",
+      "Returns the result back through the Sub Zap"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Case Manager Routing",
+   "blocks": [
+    {
+     "p": "The workflow includes separate routing paths for:"
+    },
+    {
+     "list": [
+      "Crystal",
+      "Luciani",
+      "Adrian",
+      "Sylvia",
+      "Denise",
+      "Gabriel",
+      "Marcel",
+      "No Case Manager Found"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Email Automation",
+   "blocks": [
+    {
+     "p": "Each path contains its own condition and Gmail action, ensuring case information reaches the correct case manager without manual forwarding."
+    }
+   ]
+  }
+ ],
+ "result": [
+  "An automated case manager detection and email routing system that identifies the correct recipient, sends the case information to them, and handles cases where no case manager is assigned."
+ ],
+ "images": [
+  {
+   "src": "/projects/case-manager-email-detection-and-routing/01-960.webp",
+   "srcSet": "/projects/case-manager-email-detection-and-routing/01-480.webp 480w, /projects/case-manager-email-detection-and-routing/01-960.webp 960w, /projects/case-manager-email-detection-and-routing/01-1600.webp 1600w",
+   "full": "/projects/case-manager-email-detection-and-routing/01-1600.webp",
+   "width": 1600,
+   "height": 770,
+   "alt": "Case Manager Email Detection & Routing: Case Manager"
+  }
+ ]
+}

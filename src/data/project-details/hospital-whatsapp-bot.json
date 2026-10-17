@@ -1,0 +1,54 @@
+{
+ "slug": "hospital-whatsapp-bot",
+ "tags": [
+  "Healthcare",
+  "Global"
+ ],
+ "overview": [
+  "WhatsApp assistant for booking imaging and lab tests, with 48h / 12h / 3h reminders and knowledge-base answers."
+ ],
+ "sections": [
+  {
+   "heading": "The challenge",
+   "blocks": [
+    {
+     "p": "Imaging and lab-test bookings and reminders were handled manually, with no automated channel for patients."
+    }
+   ]
+  },
+  {
+   "heading": "Solution & architecture",
+   "blocks": [
+    {
+     "p": "Patients book through WhatsApp; bookings are written to Airtable, reminders go out 48, 12 and 3 hours before the appointment, rescheduling is handled in the chat, and patient questions are answered from a RAG knowledge base."
+    }
+   ]
+  },
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "list": [
+      "Book via WhatsApp",
+      "Airtable entry",
+      "Reminders 48h / 12h / 3h",
+      "RAG Q&A"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Key facts",
+   "blocks": [
+    {
+     "list": [
+      "3-stage — Reminder cadence",
+      "RAG — Grounded answers"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [],
+ "images": []
+}

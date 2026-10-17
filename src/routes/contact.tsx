@@ -3,6 +3,7 @@ import { CalendarClock, Linkedin, Mail, MapPin, MessageCircle } from "lucide-rea
 import { PageShell } from "@/components/page-shell";
 import { PageHero } from "@/components/page-hero";
 import { Container } from "@/components/section";
+import { bandClass } from "@/lib/band";
 import { ContactForm } from "@/components/contact-form";
 import { site } from "@/data/site";
 import { seo } from "@/lib/seo";
@@ -57,14 +58,17 @@ function ContactPage() {
         }
       />
 
-      <section aria-label="Contact form and details" className="pb-20 md:pb-28">
+      <section
+        aria-label="Contact form and details"
+        className={`${bandClass("light")} pt-12 pb-20 md:pt-16 md:pb-28`}
+      >
         <Container>
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:gap-12">
             <div>
               <ContactForm preselect={service} />
             </div>
 
-            <aside className="space-y-5">
+            <aside data-reveal="right" data-delay="200" className="space-y-5">
               <div className="panel-border rounded-3xl p-6">
                 <h2 className="font-heading text-base font-semibold text-foreground">
                   Prefer a direct route?

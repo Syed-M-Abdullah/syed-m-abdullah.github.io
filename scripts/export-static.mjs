@@ -45,19 +45,20 @@ function copyDir(src, dest) {
  */
 function loadRouteConfig() {
   const code = `import(${JSON.stringify(pathToFileURL(ROUTES_MODULE).href)}).then((m) => {
-    process.stdout.write(JSON.stringify({ routes: m.getStaticRoutes(), siteUrl: m.siteUrl, siteName: m.siteName }));
+    process.stdout.write(JSON.stringify({ routes: m.getStaticRoutes(), redirects: m.getRedirectRoutes?.() ?? [], siteUrl: m.siteUrl, siteName: m.siteName }));
   });`;
   const out = execFileSync(
     process.execPath,
     ["--experimental-strip-types", "--no-warnings", "--input-type=module", "-e", code],
     { cwd: ROOT, encoding: "utf-8" },
   );
-  const { routes, siteUrl, siteName } = JSON.parse(out);
+  const { routes, redirects, siteUrl, siteName } = JSON.parse(out);
   if (!Array.isArray(routes) || routes.length === 0)
     throw new Error("No routes found in routes.ts");
-  const dupes = routes.filter((r, i) => routes.indexOf(r) !== i);
+  const all = [...routes, ...redirects];
+  const dupes = all.filter((r, i) => all.indexOf(r) !== i);
   if (dupes.length) throw new Error(`Duplicate routes: ${dupes.join(", ")}`);
-  return { routes, siteUrl: siteUrl.replace(/\/+$/, ""), siteName };
+  return { routes, redirects, siteUrl: siteUrl.replace(/\/+$/, ""), siteName };
 }
 
 /**
@@ -112,8 +113,8 @@ async function main() {
   log("starting static export for GitHub Pages");
 
   // 1. Route list (fails fast before the slow build if routes.ts is broken)
-  const { routes, siteUrl, siteName } = loadRouteConfig();
-  log(`found ${routes.length} routes for ${siteUrl}`);
+  const { routes, redirects, siteUrl, siteName } = loadRouteConfig();
+  log(`found ${routes.length} routes (+${redirects.length} redirect pages) for ${siteUrl}`);
 
   // 2. Production build
   log("running production build...");
@@ -128,7 +129,8 @@ async function main() {
 
   // 5. Render every route
   const base = "http://localhost:8080";
-  for (const route of routes) {
+  // Redirect pages (old URLs) render like any page but stay out of the sitemap.
+  for (const route of [...routes, ...redirects]) {
     const { status, html } = await render(handler, base + route);
     if (status !== 200) throw new Error(`Failed to render ${route}: HTTP ${status}`);
     if (!/<title>[^<]+<\/title>/.test(html)) throw new Error(`No <title> rendered for ${route}`);
@@ -155,7 +157,7 @@ async function main() {
   );
 
   // 8. Verify output
-  const missing = routes.filter((r) => !fs.existsSync(outputFile(r)));
+  const missing = [...routes, ...redirects].filter((r) => !fs.existsSync(outputFile(r)));
   if (missing.length) throw new Error(`Missing exported pages: ${missing.join(", ")}`);
   const missingImages = missingSrcsetFiles();
   if (missingImages.length) {

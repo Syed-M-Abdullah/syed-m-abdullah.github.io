@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowRight, CalendarClock, Globe2, Mic2, Timer } from "lucide-react";
+import { ArrowRight, CalendarClock } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { formatDuration, voiceSamples, type PlayableVoiceSample } from "@/data/voiceSamples";
 import { site } from "@/data/site";
 import { buttonClass } from "@/lib/button-class";
 import { cn } from "@/lib/utils";
 import { Container, SectionHeading } from "./section";
+import { bandClass, type Tone } from "@/lib/band";
+import { LazyMount } from "./lazy-mount";
+import { prefersReducedMotion } from "@/lib/motion-pref";
 
 /* ------------------------------------------------------------------ shared audio graph */
 
@@ -26,8 +29,8 @@ function analyserFor(audio: HTMLAudioElement): AnalyserNode | null {
     if (!node) {
       const source = audioCtx.createMediaElementSource(audio);
       node = audioCtx.createAnalyser();
-      node.fftSize = 256;
-      node.smoothingTimeConstant = 0.8;
+      node.fftSize = 64;
+      node.smoothingTimeConstant = 0.78;
       source.connect(node);
       node.connect(audioCtx.destination);
       analysers.set(audio, node);
@@ -38,24 +41,21 @@ function analyserFor(audio: HTMLAudioElement): AnalyserNode | null {
   }
 }
 
-const prefersReducedMotion = () =>
-  typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-/** Brand colours from the active theme's CSS variables (so light/dark both work). */
-function themeColors() {
-  const s = getComputedStyle(document.documentElement);
+/** Brand colours from the theme tokens in scope (rows also sit on dark brand bands). */
+function brandColors(el: Element) {
+  const s = getComputedStyle(el);
   const v = (name: string, fallback: string) => s.getPropertyValue(name).trim() || fallback;
+  const fg = v("--foreground", "#0b1224");
+  const onDark = /^#[0-9a-f]{6}$/i.test(fg) && parseInt(fg.slice(1, 3), 16) > 160;
   return {
-    cyan: v("--cyan", "#38bdf8"),
-    blue: v("--blue", "#3b82f6"),
-    violet: v("--violet", "#8b5cf6"),
-    rest: document.documentElement.classList.contains("dark")
-      ? "rgba(170, 182, 204, 0.28)"
-      : "rgba(72, 83, 110, 0.28)",
+    cyan: v("--cyan", "#0369a1"),
+    blue: v("--blue", "#2563eb"),
+    violet: v("--violet", "#7c3aed"),
+    rest: onDark ? "rgba(245, 247, 255, 0.24)" : "rgba(11, 18, 36, 0.2)",
   };
 }
 
-/** Real peaks, decoded from the file itself — used only for samples without pre-computed peaks. */
+/** Real peaks, decoded from the file itself — only for samples without pre-computed peaks. */
 async function decodePeaks(src: string, bars = 120): Promise<number[]> {
   const buf = await (await fetch(src)).arrayBuffer();
   const ctx = new OfflineAudioContext(1, 1, 44100);
@@ -72,18 +72,17 @@ async function decodePeaks(src: string, bars = 120): Promise<number[]> {
   return raw.map((v) => Math.max(0.04, Math.sqrt(v / max)));
 }
 
-/* ------------------------------------------------------------------ player */
+/* ------------------------------------------------------------------ compact player row */
 
-function VoicePlayer({
-  sample,
-  featured = false,
-}: {
-  sample: PlayableVoiceSample;
-  featured?: boolean;
-}) {
+/**
+ * One sample as a compact row (~80px): play button · title + use case · waveform · time.
+ * Waveform scrubbing by click/drag/keys, live mini meter while playing, nothing downloaded
+ * until play (preload="none").
+ */
+function VoiceRow({ sample }: { sample: PlayableVoiceSample }) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const waveRef = useRef<HTMLCanvasElement>(null);
-  const vizRef = useRef<HTMLCanvasElement>(null);
+  const meterRef = useRef<HTMLCanvasElement>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef(0);
   const analyserRef = useRef<AnalyserNode | null>(null);
@@ -108,50 +107,48 @@ function VoicePlayer({
 
   /* ---- drawing */
 
-  const drawWave = useCallback(() => {
-    const canvas = waveRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+  const fit = (canvas: HTMLCanvasElement) => {
     const dpr = window.devicePixelRatio || 1;
     const w = canvas.clientWidth;
     const h = canvas.clientHeight;
-    if (!w || !h) return;
-    if (canvas.width !== Math.round(w * dpr) || canvas.height !== Math.round(h * dpr)) {
-      canvas.width = Math.round(w * dpr);
-      canvas.height = Math.round(h * dpr);
-    }
+    if (!w || !h) return null;
+    if (canvas.width !== Math.round(w * dpr)) canvas.width = Math.round(w * dpr);
+    if (canvas.height !== Math.round(h * dpr)) canvas.height = Math.round(h * dpr);
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return null;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, w, h);
+    return { ctx, w, h };
+  };
 
-    const colors = themeColors();
+  const drawWave = useCallback(() => {
+    const canvas = waveRef.current;
+    if (!canvas) return;
+    const f = fit(canvas);
+    if (!f) return;
+    const { ctx, w, h } = f;
+    const colors = brandColors(canvas);
     const source = peaks ?? [];
-    const step = featured ? 4 : 3.5;
-    const count = Math.max(24, Math.min(source.length || 96, Math.floor(w / step)));
+    const count = Math.max(24, Math.min(source.length || 80, Math.floor(w / 3.5)));
     const barW = Math.max(1.5, w / count - 1.25);
     const values = Array.from({ length: count }, (_, i) => {
-      if (!source.length) return 0.06;
+      if (!source.length) return 0.08;
       const a = Math.floor((i / count) * source.length);
       const b = Math.max(a + 1, Math.floor(((i + 1) / count) * source.length));
       let m = 0;
       for (let j = a; j < b; j++) m = Math.max(m, source[j]);
       return m;
     });
-
     const paint = (fill: string | CanvasGradient) => {
       ctx.fillStyle = fill;
       values.forEach((v, i) => {
-        const bh = Math.max(2, v * (h - 4));
-        const x = (i / count) * w;
-        const y = (h - bh) / 2;
+        const bh = Math.max(2, v * (h - 2));
         ctx.beginPath();
-        ctx.roundRect(x, y, barW, bh, barW / 2);
+        ctx.roundRect((i / count) * w, (h - bh) / 2, barW, bh, barW / 2);
         ctx.fill();
       });
     };
-
     paint(colors.rest);
-    const progress = durationRef.current ? timeRef.current / durationRef.current : 0;
     const grad = ctx.createLinearGradient(0, 0, w, 0);
     grad.addColorStop(0, colors.cyan);
     grad.addColorStop(0.5, colors.blue);
@@ -165,6 +162,7 @@ function VoicePlayer({
       paint(grad);
       ctx.restore();
     }
+    const progress = durationRef.current ? timeRef.current / durationRef.current : 0;
     if (progress > 0) {
       ctx.save();
       ctx.beginPath();
@@ -173,58 +171,34 @@ function VoicePlayer({
       paint(grad);
       ctx.restore();
     }
-  }, [peaks, featured]);
+  }, [peaks]);
 
-  const drawViz = useCallback(
-    (live: boolean) => {
-      const canvas = vizRef.current;
-      if (!canvas) return;
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
-      const dpr = window.devicePixelRatio || 1;
-      const w = canvas.clientWidth;
-      const h = canvas.clientHeight;
-      if (!w || !h) return;
-      if (canvas.width !== Math.round(w * dpr)) canvas.width = Math.round(w * dpr);
-      if (canvas.height !== Math.round(h * dpr)) canvas.height = Math.round(h * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      ctx.clearRect(0, 0, w, h);
-      // Featured card: a wide "stage" with chunkier bars; other cards: a compact meter.
-      const step = featured ? 9 : 6;
-      const barW = featured ? 5 : 3;
-      const bars = Math.floor(w / step);
-      const colors = themeColors();
-      let data: Uint8Array<ArrayBuffer> | null = null;
-      const analyser = analyserRef.current;
-      if (live && analyser) {
-        // Reuse one buffer instead of allocating every frame.
-        if (freqRef.current?.length !== analyser.frequencyBinCount)
-          freqRef.current = new Uint8Array(new ArrayBuffer(analyser.frequencyBinCount));
-        data = freqRef.current;
-        analyser.getByteFrequencyData(data);
-      }
-      ctx.shadowColor = colors.cyan;
-      ctx.shadowBlur = live ? 10 : 0;
-      const grad = ctx.createLinearGradient(0, h, 0, 0);
-      grad.addColorStop(0, colors.blue);
-      grad.addColorStop(1, colors.cyan);
-      ctx.fillStyle = live ? grad : colors.rest;
-      for (let i = 0; i < bars; i++) {
-        // Skip the very lowest bins (mostly rumble) and spread the voice range across the bars.
-        // Voice energy sits in the lower half of the spectrum, so spread that range over the bars.
-        const v = data
-          ? data[Math.min(data.length - 1, 2 + Math.floor((i / bars) * (data.length * 0.5)))] / 255
-          : 0.1 + 0.07 * Math.sin(i / 2.2);
-        const bh = Math.max(3, v * h);
-        ctx.beginPath();
-        ctx.roundRect(i * step + (step - barW) / 2, (h - bh) / 2, barW, bh, barW / 2);
-        ctx.fill();
-      }
-    },
-    [featured],
-  );
+  const drawMeter = useCallback((live: boolean) => {
+    const canvas = meterRef.current;
+    if (!canvas) return;
+    const f = fit(canvas);
+    if (!f) return;
+    const { ctx, w, h } = f;
+    const colors = brandColors(canvas);
+    const analyser = analyserRef.current;
+    let data: Uint8Array<ArrayBuffer> | null = null;
+    if (live && analyser) {
+      if (freqRef.current?.length !== analyser.frequencyBinCount)
+        freqRef.current = new Uint8Array(new ArrayBuffer(analyser.frequencyBinCount));
+      data = freqRef.current;
+      analyser.getByteFrequencyData(data);
+    }
+    ctx.fillStyle = live ? colors.blue : colors.rest;
+    for (let i = 0; i < 4; i++) {
+      const v = data ? data[2 + i * 3] / 255 : 0.25;
+      const bh = Math.max(2, v * h);
+      ctx.beginPath();
+      ctx.roundRect(i * 5, h - bh, 3, bh, 1.5);
+      ctx.fill();
+    }
+  }, []);
 
-  /* ---- animation loop: only runs while this sample plays */
+  /* ---- animation loop: only while this sample plays */
 
   const stopLoop = useCallback(() => {
     cancelAnimationFrame(rafRef.current);
@@ -241,17 +215,15 @@ function VoicePlayer({
         setTime(audio.currentTime);
       }
       drawWave();
-      if (!reduce) drawViz(true);
+      if (!reduce) drawMeter(true);
       rafRef.current = requestAnimationFrame(tick);
     };
     rafRef.current = requestAnimationFrame(tick);
-  }, [drawViz, drawWave, stopLoop]);
+  }, [drawMeter, drawWave, stopLoop]);
 
   useEffect(() => stopLoop, [stopLoop]);
 
-  // Draw when the canvases get a size (the ResizeObserver also fires once the section is first
-  // rendered — it's off-screen work skipped by content-visibility until then) and when the theme
-  // actually flips. Draws are coalesced into one animation frame.
+  // Draw once the canvases get a size (also fires when an off-screen section first renders).
   useEffect(() => {
     let pending = 0;
     const redraw = () => {
@@ -259,27 +231,16 @@ function VoicePlayer({
       pending = requestAnimationFrame(() => {
         pending = 0;
         drawWave();
-        if (!rafRef.current) drawViz(false);
+        if (!rafRef.current) drawMeter(false);
       });
     };
     const ro = new ResizeObserver(redraw);
     if (waveRef.current) ro.observe(waveRef.current);
-    if (vizRef.current) ro.observe(vizRef.current);
-    let dark = document.documentElement.classList.contains("dark");
-    const mo = new MutationObserver(() => {
-      const now = document.documentElement.classList.contains("dark");
-      if (now !== dark) {
-        dark = now;
-        redraw();
-      }
-    });
-    mo.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
     return () => {
       cancelAnimationFrame(pending);
       ro.disconnect();
-      mo.disconnect();
     };
-  }, [drawViz, drawWave]);
+  }, [drawMeter, drawWave]);
 
   useEffect(() => {
     if (!rafRef.current) drawWave();
@@ -291,7 +252,7 @@ function VoicePlayer({
     if (peaks) return;
     decodePeaks(sample.src)
       .then(setPeaks)
-      .catch(() => setPeaks(Array.from({ length: 96 }, () => 0.3)));
+      .catch(() => setPeaks(Array.from({ length: 80 }, () => 0.3)));
   }, [peaks, sample.src]);
 
   /* ---- playback */
@@ -311,10 +272,10 @@ function VoicePlayer({
 
   const seekTo = useCallback((seconds: number) => {
     const audio = audioRef.current;
-    const d = durationRef.current;
-    const t = Math.max(0, Math.min(d, seconds));
+    const t = Math.max(0, Math.min(durationRef.current, seconds));
     setTime(t);
     timeRef.current = t;
+    setStarted(true);
     if (!audio) return;
     if (audio.readyState >= 1) audio.currentTime = t;
     else {
@@ -322,7 +283,6 @@ function VoicePlayer({
       audio.preload = "metadata";
       audio.load();
     }
-    setStarted(true);
   }, []);
 
   useEffect(() => {
@@ -330,7 +290,7 @@ function VoicePlayer({
     if (!audio) return;
     const onPlay = () => {
       setPlaying(true);
-      // Only one sample at a time.
+      // Only one sample at a time, across every player on the page.
       document.querySelectorAll<HTMLAudioElement>("audio[data-voice-sample]").forEach((a) => {
         if (a !== audio && !a.paused) a.pause();
       });
@@ -341,7 +301,7 @@ function VoicePlayer({
       setWaiting(false);
       stopLoop();
       drawWave();
-      drawViz(false);
+      drawMeter(false);
     };
     const onEnded = () => {
       onPause();
@@ -373,7 +333,7 @@ function VoicePlayer({
       audio.removeEventListener("waiting", onWaiting);
       audio.removeEventListener("playing", onPlaying);
     };
-  }, [drawViz, drawWave, startLoop, stopLoop]);
+  }, [drawMeter, drawWave, startLoop, stopLoop]);
 
   /* ---- scrubbing: pointer + keyboard */
 
@@ -382,7 +342,6 @@ function VoicePlayer({
     if (!r || !r.width) return 0;
     return Math.max(0, Math.min(1, (clientX - r.left) / r.width));
   };
-
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (e.button !== 0) return;
     ensurePeaks();
@@ -400,7 +359,6 @@ function VoicePlayer({
     draggingRef.current = false;
     e.currentTarget.releasePointerCapture(e.pointerId);
   };
-
   const onSliderKey = (e: React.KeyboardEvent<HTMLDivElement>) => {
     const d = durationRef.current;
     const t = timeRef.current;
@@ -423,91 +381,48 @@ function VoicePlayer({
     }
   };
 
-  const progress = duration ? time / duration : 0;
-  const active = playing || started;
+  const meta = [sample.useCase, sample.language].filter(Boolean).join(" · ");
 
   return (
     <article
-      className={cn(
-        "voice-card group relative flex h-full flex-col overflow-hidden rounded-3xl p-5 transition-[box-shadow,transform] duration-500 sm:p-6",
-        featured && "lg:p-8",
-        playing && "is-playing",
-      )}
+      className={cn("voice-row group relative rounded-2xl", playing && "is-playing")}
       onPointerEnter={ensurePeaks}
     >
-      <div aria-hidden className="voice-card-glow pointer-events-none absolute inset-0 -z-10" />
       <audio ref={audioRef} src={sample.src} preload="none" data-voice-sample="" aria-hidden />
-
-      <div className="flex items-start justify-between gap-4">
-        <div className="min-w-0">
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-cyan">
-            {sample.useCase}
-          </p>
-          <h3
-            className={cn(
-              "mt-2 font-heading font-bold leading-snug text-foreground",
-              featured ? "text-2xl sm:text-[1.75rem]" : "text-lg",
-            )}
-          >
-            {sample.title}
-          </h3>
-        </div>
-        {!featured && (
-          <canvas ref={vizRef} aria-hidden className="voice-viz h-8 w-[72px] shrink-0" />
-        )}
-      </div>
-
-      {featured && sample.blurb && (
-        <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
-          {sample.blurb}
-        </p>
-      )}
-
-      <ul
-        className="mt-4 flex flex-wrap gap-1.5 text-[12px] text-muted-foreground"
-        aria-label="Sample details"
-      >
-        {sample.language && (
-          <li className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/40 px-2.5 py-1">
-            <Globe2 size={12} aria-hidden /> {sample.language}
-          </li>
-        )}
-        <li className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/40 px-2.5 py-1">
-          <Mic2 size={12} aria-hidden /> {sample.platform ?? "AI voice agent"}
-        </li>
-        <li className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/40 px-2.5 py-1">
-          <Timer size={12} aria-hidden /> {formatDuration(sample.duration)}
-        </li>
-      </ul>
-
-      {featured && (
-        <div className="relative mt-8 flex-1">
-          <canvas ref={vizRef} aria-hidden className="voice-viz h-full min-h-28 w-full" />
-        </div>
-      )}
-
-      <div className={cn("mt-auto flex items-center gap-4", featured ? "pt-6" : "pt-6")}>
+      <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 px-3 py-3.5 sm:gap-4 sm:px-4">
         <button
           type="button"
           onClick={toggle}
           aria-label={`${playing ? "Pause" : "Play"} ${sample.title} sample`}
           className={cn(
-            "voice-play relative grid shrink-0 place-items-center rounded-full text-white",
+            "voice-play relative grid h-11 w-11 shrink-0 place-items-center rounded-full text-white",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-            featured ? "h-16 w-16" : "h-12 w-12",
             playing && "is-playing",
           )}
         >
           {waiting && (
             <span aria-hidden className="voice-play-spinner absolute -inset-1 rounded-full" />
           )}
-          <span aria-hidden className={cn("voice-icon", featured ? "h-5 w-5" : "h-4 w-4")}>
+          <span aria-hidden className="voice-icon h-3.5 w-3.5">
             <span className="voice-icon-a" />
             <span className="voice-icon-b" />
           </span>
         </button>
 
-        <div className="min-w-0 flex-1">
+        <div className="grid min-w-0 gap-1.5 sm:grid-cols-[minmax(0,15.5rem)_minmax(0,1fr)] sm:items-center sm:gap-4">
+          <div className="min-w-0">
+            <p className="truncate font-heading text-[14.5px] font-semibold text-foreground">
+              {sample.title}
+            </p>
+            <p className="flex min-w-0 items-center gap-1.5 text-[12.5px] text-muted-foreground">
+              {sample.featured && (
+                <span className="shrink-0 rounded-full bg-[linear-gradient(110deg,#2563eb,#7c3aed)] px-1.5 py-px text-[10px] font-semibold uppercase tracking-wide text-white">
+                  Featured
+                </span>
+              )}
+              <span className="truncate">{meta}</span>
+            </p>
+          </div>
           <div
             ref={sliderRef}
             role="slider"
@@ -525,89 +440,105 @@ function VoicePlayer({
             onKeyDown={onSliderKey}
             onFocus={ensurePeaks}
             className={cn(
-              "voice-wave relative cursor-pointer touch-none rounded-lg outline-none",
-              "focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-4 focus-visible:ring-offset-background",
-              featured ? "h-20" : "h-12",
-              !active && "is-idle",
+              "voice-wave relative h-7 cursor-pointer touch-none rounded-md outline-none sm:h-9",
+              "focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-panel",
+              !started && "is-idle",
             )}
           >
             <canvas ref={waveRef} aria-hidden className="block h-full w-full" />
           </div>
-          <div className="mt-2 flex justify-between font-mono text-[11px] tabular-nums text-subtle">
-            <span>{formatDuration(time)}</span>
-            <span>
-              {progress > 0 ? "-" : ""}
-              {formatDuration(duration - time)}
-            </span>
-          </div>
+        </div>
+
+        <div className="flex w-12 flex-col items-end gap-1">
+          <canvas
+            ref={meterRef}
+            aria-hidden
+            className={cn(
+              "h-3.5 w-[18px] transition-opacity",
+              playing ? "opacity-100" : "opacity-0",
+            )}
+          />
+          <span className="font-mono text-[11.5px] tabular-nums text-subtle">
+            {formatDuration(started ? time : duration)}
+          </span>
         </div>
       </div>
     </article>
   );
 }
-/* ------------------------------------------------------------------ section */
 
-export function VoiceSamplesSection() {
-  const [first, ...rest] = voiceSamples;
-  if (!first) return null;
+/* ------------------------------------------------------------------ public components */
+
+/**
+ * The compact voice-sample list — one component used on the home page and on the AI Voice
+ * Agents service page. Real estate is first (explicit order in src/data/voiceSamples.ts).
+ */
+export function VoiceSamples({ className }: { className?: string }) {
+  if (!voiceSamples.length) return null;
+  return (
+    <div className={cn("mx-auto grid max-w-5xl gap-3 md:grid-cols-2", className)}>
+      {voiceSamples.map((s, i) => (
+        <div
+          key={s.id}
+          data-reveal={i % 2 ? "right" : "left"}
+          style={{ "--i": Math.floor(i / 2) } as React.CSSProperties}
+          className="min-w-0"
+        >
+          <VoiceRow sample={s} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** Home page section: heading, the compact list and a short call to action. */
+export function VoiceSamplesSection({ tone }: { tone?: Tone }) {
   return (
     <section
       id="voice-demos"
       aria-labelledby="voice-demos-title"
-      className="cv-auto relative scroll-mt-24 py-20 md:py-28"
+      className={cn(
+        "cv-auto relative scroll-mt-24 py-20 [contain-intrinsic-size:auto_700px] md:py-24",
+        tone && bandClass(tone),
+      )}
     >
-      <div aria-hidden className="voice-section-bg pointer-events-none absolute inset-0 -z-10" />
       <Container>
         <SectionHeading
           id="voice-demos-title"
           eyebrow="Hear them live"
+          align="center"
           title={
             <>
               Voice agents that <span className="gradient-text">sound human</span>
             </>
           }
-          intro="Recordings of voice agents I've built, in conversation. Press play — one sample plays at a time, and nothing downloads until you do."
+          intro="Recordings of voice agents I've built, in real conversation. Press play — one plays at a time, and nothing downloads until you do."
         />
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <div className="md:col-span-2 lg:row-span-2" data-reveal>
-            <VoicePlayer sample={first} featured />
-          </div>
-          {rest.map((s) => (
-            <div key={s.id} data-reveal>
-              <VoicePlayer sample={s} />
-            </div>
-          ))}
-          <div
-            data-reveal
-            className="voice-card relative flex flex-col justify-between overflow-hidden rounded-3xl p-6"
-          >
-            <div
-              aria-hidden
-              className="voice-card-glow pointer-events-none absolute inset-0 -z-10"
-            />
-            <div>
-              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-cyan">
-                Your business next
-              </p>
-              <h3 className="mt-2 font-heading text-lg font-bold leading-snug text-foreground">
-                Want an agent like this answering your calls?
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Booking, qualifying, follow-ups — connected to your calendar and CRM.
-              </p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-2">
-              <a href={site.calendly} className={buttonClass("primary", "md")}>
-                <CalendarClock size={15} aria-hidden /> Book a call
-              </a>
-              <Link
-                to="/services/$slug"
-                params={{ slug: "voice-ai" }}
-                className={buttonClass("secondary", "md")}
-              >
-                Voice AI service <ArrowRight size={15} aria-hidden />
-              </Link>
-            </div>
+        <LazyMount className="min-h-[440px] md:min-h-[270px]">
+          <VoiceSamples />
+        </LazyMount>
+        <div
+          data-reveal="up"
+          data-delay="200"
+          className="mx-auto mt-8 flex max-w-5xl flex-col items-center justify-between gap-4 rounded-2xl border border-border bg-panel px-5 py-4 sm:flex-row"
+        >
+          <p className="text-center text-[15px] text-foreground sm:text-left">
+            <span className="font-semibold">Want an agent like this answering your calls?</span>{" "}
+            <span className="text-muted-foreground">
+              Booking, qualifying and follow-ups, connected to your CRM.
+            </span>
+          </p>
+          <div className="flex shrink-0 flex-wrap justify-center gap-2">
+            <a href={site.calendly} className={buttonClass("primary", "md")}>
+              <CalendarClock size={15} aria-hidden /> Book a call
+            </a>
+            <Link
+              to="/services/$slug"
+              params={{ slug: "voice-ai" }}
+              className={buttonClass("secondary", "md")}
+            >
+              Voice AI service <ArrowRight size={15} aria-hidden />
+            </Link>
           </div>
         </div>
       </Container>

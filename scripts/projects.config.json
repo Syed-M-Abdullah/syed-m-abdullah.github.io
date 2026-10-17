@@ -1,0 +1,254 @@
+{
+  "$comment": "Settings for scripts/sync-projects.mjs. Keys are '<tool folder>/<project folder>' (or just the tool folder for a flat folder). All fields optional: title, slug, featured, order, services, legacySlugs (old /case/<slug> URLs that redirect here), excludeImages (file names), description: 'ignore' (when the folder's document belongs to another project), replace (text replacements, e.g. to keep client names private).",
+  "toolFolders": {
+    "custom code": "custom",
+    "ghl": "ghl",
+    "gohighlevel": "ghl",
+    "make.com": "make",
+    "make": "make",
+    "n8n": "n8n",
+    "voice agent": "voice",
+    "voice agents": "voice",
+    "zapier": "zapier"
+  },
+  "skipFolders": ["ai voices"],
+  "replace": {},
+  "projects": {
+    "Custom Code/Hisabdaar": {
+      "legacySlugs": ["hisabdaar"],
+      "services": ["custom-software"],
+      "toolsUsed": ["ASP.NET MVC", "SQL Server", "jQuery", "Bootstrap"]
+    },
+    "Custom Code/Medzah Admin portal": {
+      "toolsUsed": ["ASP.NET MVC 5 / Core", "JWT", "Stripe", "FedEx API"],
+      "crop": {
+        "top": 140
+      },
+      "excludeImages": ["screenshot_78s.jpg", "screenshot_89s.jpg"]
+    },
+    "Custom Code/Medzah Client Portal": {
+      "legacySlugs": ["medzah-ecommerce"],
+      "services": ["custom-software"],
+      "toolsUsed": ["ASP.NET MVC 5 / Core", "JWT", "Stripe", "FedEx API"],
+      "crop": {
+        "top": 140
+      },
+      "excludeImages": ["screenshot_03_48s.jpg", "screenshot_05_92s.jpg"]
+    },
+    "Custom Code/Privont": {
+      "legacySlugs": ["privont"],
+      "services": ["custom-software"],
+      "toolsUsed": ["ASP.NET MVC", "React Native", "JWT", "Follow Up Boss API"],
+      "crop": {
+        "top": 140
+      },
+      "excludeImages": ["screenshot_03_11s.jpg", "screenshot_05_30s.jpg"]
+    },
+    "Custom Code/Restaurant Pos (ZATCA Integrated )": {
+      "legacySlugs": ["ziafat-pos"],
+      "services": ["custom-software"],
+      "featured": true,
+      "toolsUsed": ["WinForms", "ZATCA SDK", "Crystal Reports"],
+      "crop": {
+        "bottom": 22
+      }
+    },
+    "Custom Code/Ruda": {
+      "legacySlugs": ["ruda-erp"],
+      "services": ["custom-software"],
+      "toolsUsed": ["ASP.NET MVC", "ADO.NET", "SQL Server 2022", "React"],
+      "crop": {
+        "top": 140
+      },
+      "excludeImages": ["screenshot_02.jpg"]
+    },
+    "GHL": {
+      "legacySlugs": ["ghl-workflow-library"],
+      "services": ["gohighlevel-automation"],
+      "featured": true,
+      "title": "GoHighLevel Automation Showcase",
+      "overview": [
+        "A set of GoHighLevel workflows covering lead nurturing, appointment management, payment processing and instalment plans.",
+        "Lead nurturing creates or updates the contact, sends a welcome email, then value emails and SMS on a schedule. Appointment workflows confirm bookings by email and SMS and handle reschedules. Payment workflows apply payments, send receipts and track instalments with on-time, overdue and final-reminder branches. Further workflows cover lead generation, follow-up, email campaigns, Facebook posting and SMS campaigns."
+      ],
+      "toolsUsed": ["GoHighLevel", "Workflows", "Email", "SMS", "Payments"]
+    },
+    "Make.com/AI Powered Customer Support SLA & Escalation System": {
+      "legacySlugs": ["make-support-sla"],
+      "services": ["workflow-automation"]
+    },
+    "Make.com/AI Powered Field Service, Asset Maintenance & Technician Dispatch System": {
+      "legacySlugs": ["make-field-service"],
+      "services": ["workflow-automation"]
+    },
+    "Make.com/AI Powered Procurement & Vendor Management System": {
+      "legacySlugs": ["make-procurement"],
+      "services": ["workflow-automation"]
+    },
+    "Make.com/AI Powered Recruitment & Candidate Screening System": {
+      "legacySlugs": ["make-recruitment"],
+      "services": ["workflow-automation"]
+    },
+    "Make.com/Automated Agreements Invoices & Client Document Workflow": {
+      "legacySlugs": ["make-document-generation"],
+      "services": ["workflow-automation"]
+    },
+    "Make.com/Automated Xero POs, Invoices & Bill Attachments from Monday.com": {
+      "legacySlugs": ["make-monday-xero"],
+      "services": ["workflow-automation"],
+      "featured": true
+    },
+    "Make.com/Automated YouTube Content & Scheduling Workflow": {
+      "legacySlugs": ["make-youtube-scheduling"],
+      "services": ["workflow-automation", "ai-content-automation"]
+    },
+    "Make.com/FreightFlow Control Tower": {
+      "legacySlugs": ["freightflow-control-tower"],
+      "services": ["workflow-automation"],
+      "featured": true
+    },
+    "Make.com/GarageFlow 360 – Auto Repair Operations & Customer Retention Automation": {
+      "legacySlugs": ["garageflow-360"],
+      "services": ["workflow-automation"],
+      "excludeImages": ["GarageFlow 360-2.png"]
+    },
+    "Make.com/StockPulse Command Center": {
+      "legacySlugs": ["stockpulse-command-center"],
+      "services": ["workflow-automation"]
+    },
+    "N8n/AI Blog Automation System": {
+      "description": "ignore",
+      "toolsUsed": ["n8n"]
+    },
+    "N8n/Apollo Lead Generation & AI Outreach Automation Workflow Report": {
+      "legacySlugs": ["b2b-outreach-pipeline"],
+      "services": ["workflow-automation", "lead-generation"],
+      "toolsUsed": ["n8n", "Apollo", "Apify", "OpenAI", "Google Sheets", "Zoho CRM"]
+    },
+    "N8n/Auto Generation Website Home page": {
+      "legacySlugs": ["real-estate-deal-pages"],
+      "services": ["workflow-automation"]
+    },
+    "N8n/Auto Invoice Generation & Therapy Confirmation System Message": {
+      "legacySlugs": ["therapy-invoices-swiss-qr"],
+      "services": ["workflow-automation", "custom-software"]
+    },
+    "N8n/Automated Social Media Image & Branding Workflow": {
+      "legacySlugs": ["law-firm-social-graphics"],
+      "services": ["workflow-automation", "ai-content-automation"]
+    },
+    "N8n/Gmail Email Management & Auto Reply Automation": {
+      "legacySlugs": ["gmail-triage-rag"],
+      "services": ["workflow-automation"],
+      "toolsUsed": ["n8n", "Gmail API", "OpenAI", "Pinecone", "JavaScript"]
+    },
+    "N8n/Lead Handling & Appointment Booking Chatbot": {
+      "legacySlugs": ["skin-clinic-chatbot"],
+      "services": ["ai-chatbots", "gohighlevel-automation", "workflow-automation"],
+      "featured": true
+    },
+    "N8n/N8N Shopify Order Processing": {
+      "legacySlugs": ["shopify-financial-automation"],
+      "services": ["workflow-automation"]
+    },
+    "N8n/SEO Content Automation with NeuronWriter": {
+      "legacySlugs": ["seo-pipeline"],
+      "services": ["workflow-automation", "ai-content-automation"]
+    },
+    "N8n/Social Media Content Genration": {
+      "legacySlugs": ["law-firm-legal-reels"],
+      "services": ["workflow-automation", "ai-content-automation"]
+    },
+    "Voice Agent/Barber": {
+      "legacySlugs": ["voice-barber-shop"],
+      "services": ["voice-ai", "gohighlevel-automation"],
+      "excludeImages": ["Barber-message.PNG"]
+    },
+    "Voice Agent/BeautySaloon": {
+      "legacySlugs": ["voice-beauty-salon"],
+      "services": ["voice-ai", "gohighlevel-automation"],
+      "excludeImages": ["BeautySaloon-email.PNG"]
+    },
+    "Voice Agent/Brandy": {
+      "legacySlugs": ["voice-social-agency-inbound"],
+      "services": ["voice-ai", "gohighlevel-automation"],
+      "title": "Social Media Agency Voice Assistant",
+      "excludeImages": ["Brandy-email.PNG"]
+    },
+    "Voice Agent/Cafe": {
+      "legacySlugs": ["voice-cafe"],
+      "services": ["voice-ai", "gohighlevel-automation"],
+      "excludeImages": ["Cafe Email.png"]
+    },
+    "Voice Agent/Dental Clinic": {
+      "legacySlugs": ["voice-german-outbound"],
+      "services": ["voice-ai", "gohighlevel-automation"],
+      "title": "German Outbound Appointment Setter"
+    },
+    "Voice Agent/HairSaloon": {
+      "legacySlugs": ["voice-hair-salon"],
+      "services": ["voice-ai", "gohighlevel-automation"],
+      "excludeImages": ["HairSaloon-email.PNG"]
+    },
+    "Voice Agent/Realestate": {
+      "legacySlugs": ["voice-real-estate-inbound"],
+      "services": ["voice-ai", "gohighlevel-automation"],
+      "excludeImages": ["agent.png", "ghl contact.png", "ghl subacct.png", "synthflow.png"],
+      "replace": {
+        "for Lawrence to handle": "for a real estate client to handle",
+        "The Lawrence subaccount": "The client's subaccount"
+      }
+    },
+    "Voice Agent/Rental Cars": {
+      "legacySlugs": ["voice-car-rental-inbound"],
+      "services": ["voice-ai", "gohighlevel-automation"],
+      "excludeImages": [
+        "Jack Synthflow.png",
+        "JackYewman-email.PNG",
+        "JackYewman-inbound.PNG",
+        "JackYewman-subaccount.PNG"
+      ],
+      "replace": {
+        "for Jack Yewman using": "for a car rental client using",
+        "a dedicated Jack Inbound voice agent": "a dedicated inbound voice agent"
+      }
+    },
+    "Voice Agent/Rental Homes Services": {
+      "legacySlugs": ["elevenlabs-voice-receptionist"],
+      "services": ["voice-ai", "gohighlevel-automation", "workflow-automation"]
+    },
+    "Voice Agent/Resturant": {
+      "legacySlugs": ["voice-restaurant"],
+      "services": ["voice-ai", "gohighlevel-automation"],
+      "excludeImages": ["Resturant Email.png"]
+    },
+    "Zapier/AI Customer Support Escalation & Resolution System": {
+      "legacySlugs": ["zapier-support-escalation"],
+      "services": ["workflow-automation"]
+    },
+    "Zapier/AI Lead Qualification & Sales Automation": {
+      "legacySlugs": ["zapier-lead-qualification"],
+      "services": ["workflow-automation", "lead-generation"]
+    },
+    "Zapier/AI Powered E Commerce Order Recovery & Customer Retention": {
+      "legacySlugs": ["zapier-ecommerce-recovery"],
+      "services": ["workflow-automation"]
+    },
+    "Zapier/AI Powered Real Estate Deal Lifecycle Automation": {
+      "legacySlugs": ["zapier-real-estate-lifecycle"],
+      "services": ["workflow-automation"]
+    },
+    "Zapier/Case Manager Email Detection & Routing": {
+      "legacySlugs": ["zapier-case-manager-routing"],
+      "services": ["workflow-automation"]
+    },
+    "Zapier/CRM & Follow Up Automation": {
+      "legacySlugs": ["zapier-new-lead-ghl"],
+      "services": ["workflow-automation", "gohighlevel-automation"]
+    },
+    "Zapier/Legal Case Email Automation": {
+      "legacySlugs": ["zapier-legal-case-routing"],
+      "services": ["workflow-automation"]
+    }
+  }
+}

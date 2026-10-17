@@ -1,0 +1,146 @@
+{
+ "slug": "ai-powered-customer-support-sla-and-escalation-system",
+ "tags": [
+  "Make.com",
+  "Gmail",
+  "WhatsApp/Twilio",
+  "HubSpot/SmartSuite",
+  "OpenAI/Claude",
+  "Notion",
+  "Slack",
+  "Google Drive",
+  "Google Sheets",
+  "Webhooks"
+ ],
+ "overview": [
+  "Built an automated customer support and SLA management system for handling support requests across multiple communication channels.",
+  "The workflow takes a new customer request and turns it into a structured support ticket, including customer identification, issue classification, priority scoring, knowledge base research, response generation, escalation, SLA tracking, follow ups, and final resolution management."
+ ],
+ "sections": [
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "p": "The system:"
+    },
+    {
+     "list": [
+      "Receives customer support requests from website forms, Gmail, and WhatsApp",
+      "Searches CRM records to identify existing customers",
+      "Creates new customer records when required",
+      "Retrieves previous support tickets and customer history",
+      "Cleans and normalizes incoming customer messages",
+      "Classifies support requests using AI",
+      "Detects issue category, urgency, sentiment, language, and required department",
+      "Identifies critical risks such as security issues, outages, legal complaints, and repeated unresolved problems",
+      "Calculates a weighted priority score for every support request",
+      "Routes tickets based on critical, normal, or low priority levels",
+      "Creates structured support tickets automatically in the CRM",
+      "Creates dedicated Google Drive folders for ticket attachments",
+      "Uploads customer screenshots, PDFs, and supporting documents",
+      "Searches the Notion knowledge base for relevant support information",
+      "Evaluates whether the available knowledge is sufficient for an automated response",
+      "Generates customer responses using AI and available support documentation",
+      "Validates responses before sending them to customers",
+      "Sends replies through Gmail or WhatsApp based on the original communication channel",
+      "Sends uncertain tickets to the support team for human review",
+      "Escalates critical support issues immediately through Slack",
+      "Assigns tickets to the correct support department or agent",
+      "Calculates SLA deadlines according to ticket priority",
+      "Monitors open tickets for approaching SLA deadlines",
+      "Sends SLA warning notifications to the support team",
+      "Sends customer follow ups when responses remain pending",
+      "Closes resolved tickets and generates AI resolution summaries",
+      "Sends customer satisfaction requests after successful resolution",
+      "Updates support analytics and operational records automatically"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Branding & Templates",
+   "blocks": [
+    {
+     "p": "The workflow uses predefined support, escalation, response, and SLA templates throughout the customer service process."
+    },
+    {
+     "p": "Each template controls:"
+    },
+    {
+     "list": [
+      "Customer response format",
+      "Support communication tone",
+      "Escalation rules",
+      "SLA priority requirements",
+      "Follow up messaging"
+     ]
+    },
+    {
+     "p": "This keeps support communication consistent while allowing every ticket to be handled according to its issue type, priority, and customer history."
+    }
+   ]
+  },
+  {
+   "heading": "Content Management",
+   "blocks": [
+    {
+     "p": "HubSpot or SmartSuite acts as the central customer support database and ticket tracking system."
+    },
+    {
+     "p": "Each processed ticket is updated with:"
+    },
+    {
+     "list": [
+      "Customer information",
+      "Issue category",
+      "Priority score",
+      "Support status",
+      "SLA deadline",
+      "Assigned team",
+      "Response history",
+      "Resolution summary",
+      "Customer satisfaction status"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A complete automated customer support pipeline that turns a customer request into an identified, classified, prioritized, assigned, tracked, and resolved support ticket without requiring support teams to manually manage every step.",
+  "The system also keeps customer history, ticket records, attachments, AI responses, SLA deadlines, escalations, resolution summaries, and support analytics organized in one workflow."
+ ],
+ "images": [
+  {
+   "src": "/projects/ai-powered-customer-support-sla-and-escalation-system/01-960.webp",
+   "srcSet": "/projects/ai-powered-customer-support-sla-and-escalation-system/01-480.webp 480w, /projects/ai-powered-customer-support-sla-and-escalation-system/01-960.webp 960w, /projects/ai-powered-customer-support-sla-and-escalation-system/01-1600.webp 1600w",
+   "full": "/projects/ai-powered-customer-support-sla-and-escalation-system/01-1600.webp",
+   "width": 1600,
+   "height": 614,
+   "alt": "AI Powered Customer Support SLA & Escalation System: AI Powered Customer Support SLA & Escalation System 1"
+  },
+  {
+   "src": "/projects/ai-powered-customer-support-sla-and-escalation-system/02-960.webp",
+   "srcSet": "/projects/ai-powered-customer-support-sla-and-escalation-system/02-480.webp 480w, /projects/ai-powered-customer-support-sla-and-escalation-system/02-960.webp 960w, /projects/ai-powered-customer-support-sla-and-escalation-system/02-1600.webp 1600w",
+   "full": "/projects/ai-powered-customer-support-sla-and-escalation-system/02-1600.webp",
+   "width": 1600,
+   "height": 900,
+   "alt": "AI Powered Customer Support SLA & Escalation System: AI Powered Customer Support SLA & Escalation System 2"
+  },
+  {
+   "src": "/projects/ai-powered-customer-support-sla-and-escalation-system/03-960.webp",
+   "srcSet": "/projects/ai-powered-customer-support-sla-and-escalation-system/03-480.webp 480w, /projects/ai-powered-customer-support-sla-and-escalation-system/03-960.webp 960w, /projects/ai-powered-customer-support-sla-and-escalation-system/03-1600.webp 1600w",
+   "full": "/projects/ai-powered-customer-support-sla-and-escalation-system/03-1600.webp",
+   "width": 1600,
+   "height": 900,
+   "alt": "AI Powered Customer Support SLA & Escalation System: AI Powered Customer Support SLA & Escalation System 3"
+  },
+  {
+   "src": "/projects/ai-powered-customer-support-sla-and-escalation-system/04-960.webp",
+   "srcSet": "/projects/ai-powered-customer-support-sla-and-escalation-system/04-480.webp 480w, /projects/ai-powered-customer-support-sla-and-escalation-system/04-960.webp 960w, /projects/ai-powered-customer-support-sla-and-escalation-system/04-1600.webp 1600w",
+   "full": "/projects/ai-powered-customer-support-sla-and-escalation-system/04-1600.webp",
+   "width": 1600,
+   "height": 805,
+   "alt": "AI Powered Customer Support SLA & Escalation System: AI Powered Customer Support SLA & Escalation System 4"
+  }
+ ]
+}

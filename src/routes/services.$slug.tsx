@@ -1,17 +1,25 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { ArrowRight, Check, CheckCircle2, Target } from "lucide-react";
+import { ArrowRight, CalendarClock, Check } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { PageHero } from "@/components/page-hero";
 import { Section } from "@/components/section";
-import { ServiceDiagram } from "@/components/service-diagram";
-import { ServiceIcon } from "@/components/services";
-import { CaseStudyGrid } from "@/components/case-studies";
-import { Faq } from "@/components/faq";
+import { type Tone } from "@/lib/band";
+import { ProjectGrid } from "@/components/projects";
 import { CtaPanel } from "@/components/cta-panel";
 import { ButtonLink } from "@/components/button-link";
-import { Chip } from "@/components/badges";
-import { getService, services, type Service } from "@/data/services";
-import { caseStudiesForService } from "@/data/caseStudies";
+import { Eyebrow } from "@/components/badges";
+import { MaskLines } from "@/components/reveal-text";
+import { DrawLine } from "@/components/process";
+import { automationPositioning, getService, type Service } from "@/data/services";
+import { projectsForService, serviceTool, toolLabels } from "@/data/projects";
+import { site } from "@/data/site";
+import { toolsFor, tools } from "@/data/tools";
+import { buttonClass } from "@/lib/button-class";
+import { ServiceVisual } from "@/components/service-visuals";
+import { VoiceSamples } from "@/components/voice-samples";
+import { LazyMount } from "@/components/lazy-mount";
+import { ToolChip } from "@/components/tech-marquee";
+import { PlatformComparison } from "@/components/platform-comparison";
 import { seo } from "@/lib/seo";
 import { NotFoundPage } from "@/components/not-found";
 
@@ -33,10 +41,24 @@ export const Route = createFileRoute("/services/$slug")({
   notFoundComponent: NotFoundPage,
 });
 
+/** Off-white and sage take turns between brand bands, so no two neighbours share a tone. */
+function toneCycle() {
+  let i = 0;
+  return (): Tone => (i++ % 2 === 0 ? "light" : "sage");
+}
+
+/**
+ * Service page: hero with its own animation → the problem → what I build → (comparison) →
+ * how it works → what you get + tools → related projects → call to action.
+ */
 function ServiceDetail() {
   const { service: s } = Route.useLoaderData();
-  const related = caseStudiesForService(s.slug).slice(0, 3);
-  const others = services.filter((o) => o.slug !== s.slug);
+  const related = projectsForService(s.slug).slice(0, 3);
+  const relatedTool = serviceTool[s.slug];
+  const serviceTools = toolsFor(s.slug);
+  const next = toneCycle();
+  const isVoice = s.slug === "voice-ai";
+  const isAutomation = s.slug === "workflow-automation";
 
   return (
     <PageShell>
@@ -51,205 +73,182 @@ function ServiceDetail() {
         intro={<p>{s.hero.intro}</p>}
         actions={
           <>
-            <ButtonLink to="/contact" search={{ service: s.slug }} size="lg">
-              Discuss your {s.shortTitle} project <ArrowRight size={16} aria-hidden />
+            <a href={site.calendly} data-magnetic className={buttonClass("primary", "lg")}>
+              <CalendarClock size={16} aria-hidden /> Book a Call
+            </a>
+            <ButtonLink to="/contact" search={{ service: s.slug }} variant="secondary" size="lg">
+              Discuss your project <ArrowRight size={16} aria-hidden />
             </ButtonLink>
-            {related.length > 0 && (
-              <ButtonLink to="/case-studies" variant="secondary" size="lg">
-                Related case studies
-              </ButtonLink>
-            )}
           </>
         }
-        aside={
-          <div className="glass rounded-3xl p-6">
-            <div className="flex items-center gap-4">
-              <ServiceIcon slug={s.slug} size="lg" />
-              <div>
-                <div className="font-heading text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                  Service
-                </div>
-                <div className="font-heading text-lg font-bold text-foreground">{s.title}</div>
-              </div>
-            </div>
-            <div className="mt-6 font-heading text-sm font-semibold text-foreground">Best for</div>
-            <ul className="mt-3 space-y-2.5">
-              {s.hero.audience.map((a) => (
-                <li key={a} className="flex gap-2.5 text-[15px] text-muted-foreground">
-                  <Target size={16} className="mt-0.5 shrink-0 text-cyan" aria-hidden />
-                  {a}
-                </li>
-              ))}
-            </ul>
-          </div>
-        }
+        aside={<ServiceVisual slug={s.slug} />}
       />
 
-      {/* What it does + when to use it */}
-      <Section className="pt-2 md:pt-4">
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div data-reveal className="panel-border rounded-3xl p-6 sm:p-8">
-            <h2 className="text-2xl font-bold text-foreground">What this service does</h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">{s.whatItDoes}</p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-2xl border border-border bg-background/50 p-4">
-                <div className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                  Problem
-                </div>
-                <p className="mt-1.5 text-sm leading-relaxed text-foreground">{s.problem}</p>
-              </div>
-              <div className="rounded-2xl border border-[color-mix(in_oklab,var(--cyan)_30%,transparent)] bg-[color-mix(in_oklab,var(--cyan)_6%,transparent)] p-4">
-                <div className="text-xs font-semibold uppercase tracking-[0.14em] text-eyebrow">
-                  Outcome
-                </div>
-                <p className="mt-1.5 text-sm leading-relaxed text-foreground">{s.outcome}</p>
-              </div>
-            </div>
-          </div>
-          <div data-reveal className="panel-border rounded-3xl p-6 sm:p-8">
-            <h2 className="text-2xl font-bold text-foreground">When it's the right fit</h2>
-            <ul className="mt-5 space-y-3.5">
-              {s.whenToUse.map((w) => (
-                <li key={w} className="flex gap-3 text-[15px] leading-relaxed text-foreground">
-                  <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-cyan" aria-hidden />
-                  {w}
+      {isVoice && (
+        <Section
+          id="voice-demos"
+          tone={next()}
+          eyebrow="Hear them live"
+          title="Real voice agent recordings"
+          intro="Press play — one sample plays at a time."
+        >
+          <LazyMount className="min-h-[440px] md:min-h-[270px]">
+            <VoiceSamples />
+          </LazyMount>
+          <ul
+            className="mx-auto mt-6 flex max-w-5xl flex-wrap justify-center gap-2"
+            aria-label="Voice platforms"
+          >
+            {["vapi", "elevenlabs", "synthflow"].map((id) => {
+              const t = tools.find((x) => x.id === id);
+              return t ? (
+                <li key={id}>
+                  <ToolChip tool={t} size="sm" />
                 </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </Section>
+              ) : null;
+            })}
+          </ul>
+        </Section>
+      )}
 
-      {/* Use cases */}
-      <Section eyebrow="Use cases" title="What I typically build" className="pt-0 md:pt-0">
+      {/* The problem — two lines, in the client's words */}
+      <section aria-labelledby="problem-title" className={`band tone-${next()} py-14 md:py-20`}>
+        <div className="mx-auto w-full max-w-4xl px-4 text-center sm:px-6">
+          <div data-reveal="blur-up">
+            <Eyebrow className="mb-4">
+              <span id="problem-title">The problem</span>
+            </Eyebrow>
+          </div>
+          <p
+            data-reveal="mask-lines"
+            data-delay="100"
+            className="text-2xl font-bold leading-snug text-foreground sm:text-[2rem]"
+          >
+            <MaskLines>{s.problem[0]}</MaskLines>
+          </p>
+          <p
+            data-reveal="up"
+            data-delay="400"
+            className="mt-3 text-xl leading-snug text-muted-foreground sm:text-[1.6rem]"
+          >
+            {s.problem[1]}
+          </p>
+        </div>
+      </section>
+
+      <Section tone={next()} eyebrow="What I build" title="Systems that fix it">
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {s.useCases.map((u, i) => (
-            <li key={u.title} data-reveal className="panel-border rounded-3xl p-6">
-              <span className="font-mono text-xs text-muted-foreground">
+          {s.build.map((b, i) => (
+            <li
+              key={b.title}
+              data-reveal={i % 2 ? "right" : "left"}
+              style={{ "--i": i % 3 } as React.CSSProperties}
+              className="panel-border panel-border-hover rounded-3xl p-6"
+            >
+              <span className="font-mono text-xs text-subtle">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-2 text-lg font-bold text-foreground">{u.title}</h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{u.body}</p>
+              <h3 className="mt-2 text-lg font-bold text-foreground">{b.title}</h3>
+              <p className="mt-1.5 text-[15px] leading-relaxed text-muted-foreground">{b.body}</p>
             </li>
           ))}
         </ul>
       </Section>
 
-      {/* Architecture + deliverables */}
-      <Section
-        eyebrow="How it fits together"
-        title="Architecture & deliverables"
-        className="border-y border-border bg-panel/30"
-      >
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
-          <div data-reveal>
-            <ServiceDiagram diagram={s.diagram} />
-          </div>
-          <div data-reveal className="panel-border rounded-3xl p-6 sm:p-7">
-            <h3 className="text-lg font-bold text-foreground">What you receive</h3>
-            <ul className="mt-4 space-y-3">
-              {s.deliverables.map((d) => (
-                <li key={d} className="flex gap-3 text-[15px] leading-relaxed text-foreground">
-                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[color-mix(in_oklab,var(--cyan)_18%,transparent)] text-cyan">
-                    <Check size={12} strokeWidth={3} aria-hidden />
-                  </span>
-                  {d}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </Section>
+      {isAutomation && (
+        <Section
+          id="compare"
+          tone={next()}
+          eyebrow="n8n vs Zapier vs Make"
+          title="Which platform fits your business?"
+          intro={automationPositioning}
+        >
+          <PlatformComparison />
+        </Section>
+      )}
 
-      {/* Integrations */}
-      <Section eyebrow="Tools & integrations" title="What I work with">
-        <div className="grid gap-4 md:grid-cols-3">
-          {s.integrations.map((g) => (
-            <div key={g.group} data-reveal className="panel-border rounded-3xl p-6">
-              <h3 className="font-heading text-base font-semibold text-foreground">{g.group}</h3>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {g.items.map((it) => (
-                  <Chip key={it} className="text-[12.5px] text-foreground">
-                    {it}
-                  </Chip>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Approach */}
       <Section
-        eyebrow="Testing & handover"
-        title="How I make sure it works"
-        className="pt-0 md:pt-0"
+        tone="brand"
+        angle
+        eyebrow="How it works"
+        title="Three steps to a live system"
+        align="center"
       >
-        <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {s.approach.map((a, i) => (
+        <ol className="relative grid gap-5 md:grid-cols-3">
+          <DrawLine className="absolute top-7 right-[16%] left-[16%] hidden w-[68%] md:block" />
+          {s.steps.map((st, i) => (
             <li
-              key={a.title}
-              data-reveal
-              className="relative rounded-3xl border border-border bg-panel/60 p-6"
+              key={st.title}
+              data-reveal="up"
+              style={{ "--i": i * 2 } as React.CSSProperties}
+              className="relative flex flex-col items-center text-center"
             >
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-[linear-gradient(135deg,var(--blue),var(--violet))] font-mono text-xs font-semibold text-white">
+              <span className="relative grid h-14 w-14 place-items-center rounded-full bg-[linear-gradient(135deg,#2563eb,#7c3aed)] font-heading text-lg font-bold text-white shadow-[0_0_0_6px_rgba(99,102,241,0.18),0_14px_30px_-12px_rgba(79,70,229,0.9)]">
                 {i + 1}
               </span>
-              <h3 className="mt-4 text-base font-bold text-foreground">{a.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{a.body}</p>
+              <h3 className="mt-5 text-xl font-bold text-foreground">{st.title}</h3>
+              <p className="mt-2 max-w-xs text-[15px] leading-relaxed text-muted-foreground">
+                {st.body}
+              </p>
             </li>
           ))}
         </ol>
       </Section>
 
-      {/* Related work */}
-      {related.length > 0 && (
-        <Section
-          eyebrow="Related work"
-          title={`${s.shortTitle} case studies`}
-          className="border-t border-border bg-panel/30"
-          action={
-            <ButtonLink to="/case-studies" variant="secondary">
-              All case studies <ArrowRight size={15} aria-hidden />
-            </ButtonLink>
-          }
-        >
-          <CaseStudyGrid studies={related} />
-        </Section>
-      )}
-
-      {/* FAQ */}
-      <Section eyebrow="FAQ" title="Common questions">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
-          <div data-reveal>
-            <p className="text-[15px] leading-relaxed text-muted-foreground">
-              Have a question that isn't here? Ask it in the contact form — there's no obligation.
-            </p>
-            <div className="mt-6">
-              <div className="font-heading text-sm font-semibold text-foreground">
-                Other services
-              </div>
-              <ul className="mt-3 flex flex-wrap gap-2">
-                {others.map((o) => (
-                  <li key={o.slug}>
-                    <ButtonLink
-                      to="/services/$slug"
-                      params={{ slug: o.slug }}
-                      variant="secondary"
-                      size="sm"
-                    >
-                      {o.shortTitle}
-                    </ButtonLink>
+      <Section tone={next()} eyebrow="What you get" title="Outcomes you can count on">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10">
+          <ul className="grid h-fit gap-3 sm:grid-cols-2 lg:grid-cols-1">
+            {s.outcomes.map((o, i) => (
+              <li
+                key={o}
+                data-reveal="left"
+                style={{ "--i": i } as React.CSSProperties}
+                className="flex gap-3 rounded-2xl border border-border bg-panel p-4 text-[15px] leading-snug text-foreground shadow-[var(--shadow-card)]"
+              >
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[color-mix(in_oklab,var(--success)_14%,transparent)] text-success">
+                  <Check size={12} strokeWidth={3} aria-hidden />
+                </span>
+                {o}
+              </li>
+            ))}
+          </ul>
+          {serviceTools.length > 0 && (
+            <div
+              data-reveal="right"
+              data-delay="200"
+              className="panel-border h-fit rounded-3xl p-6 sm:p-7"
+            >
+              <h3 className="text-lg font-bold text-foreground">Tools I use for this</h3>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {serviceTools.map((t) => (
+                  <li key={t.id}>
+                    <ToolChip tool={t} size="sm" />
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
-          <div data-reveal>
-            <Faq items={s.faqs} />
-          </div>
+          )}
         </div>
       </Section>
+
+      {related.length > 0 && (
+        <Section
+          tone={next()}
+          eyebrow="Related work"
+          title={`${s.shortTitle} projects`}
+          action={
+            <a
+              href={relatedTool ? `/projects/?tool=${relatedTool}` : "/projects/"}
+              className={buttonClass("secondary", "md")}
+            >
+              {relatedTool ? `All ${toolLabels[relatedTool]} projects` : "All projects"}{" "}
+              <ArrowRight size={15} aria-hidden />
+            </a>
+          }
+        >
+          <ProjectGrid projects={related} />
+        </Section>
+      )}
 
       <CtaPanel title={s.cta.title} body={s.cta.body} service={s.slug} />
     </PageShell>

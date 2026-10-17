@@ -3,13 +3,16 @@ import { ArrowRight, Linkedin, MapPin } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Container, Section } from "@/components/section";
+import { bandClass } from "@/lib/band";
 import { Eyebrow, Chip } from "@/components/badges";
 import { Portrait } from "@/components/portrait";
 import { Principles } from "@/components/process";
 import { ExperienceTimeline } from "@/components/experience";
 import { CtaPanel } from "@/components/cta-panel";
 import { ButtonAnchor, ButtonLink } from "@/components/button-link";
-import { automationStart, careerStart, toolGroups, yearsSince } from "@/data/misc";
+import { automationStart, careerStart, yearsSince } from "@/data/misc";
+import { toolGroups, toolsInGroup, type ToolGroup } from "@/data/tools";
+import { ToolChip } from "@/components/tech-marquee";
 import { site } from "@/data/site";
 import { jsonLd, personJsonLd, seo } from "@/lib/seo";
 
@@ -38,7 +41,7 @@ function AboutPage() {
   const automationYears = yearsSince(automationStart);
   return (
     <PageShell>
-      <section className="relative isolate overflow-hidden pt-28 pb-14 md:pt-36 md:pb-20">
+      <section className={`${bandClass("brand")} overflow-hidden pt-28 pb-14 md:pt-36 md:pb-20`}>
         <div aria-hidden className="aurora" />
         <Container>
           <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "About" }]} />
@@ -110,13 +113,12 @@ function AboutPage() {
         </Container>
       </section>
 
-      <Section
-        eyebrow="My path"
-        title="From business software to automation"
-        className="pt-4 md:pt-8"
-      >
+      <Section eyebrow="My path" title="From business software to automation" tone="light">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
-          <div data-reveal className="space-y-5 text-[17px] leading-relaxed text-muted-foreground">
+          <div
+            data-reveal="left"
+            className="space-y-5 text-[17px] leading-relaxed text-muted-foreground"
+          >
             <p>
               I started in 2020 as a .NET developer, building the software businesses run on: ERP
               modules, point-of-sale systems, web APIs and mobile apps. That work covered
@@ -135,7 +137,11 @@ function AboutPage() {
               software, and why I can build a custom API when a no-code tool runs out of road.
             </p>
           </div>
-          <div data-reveal className="panel-border h-fit rounded-3xl p-6 sm:p-7">
+          <div
+            data-reveal="right"
+            data-delay="200"
+            className="panel-border h-fit rounded-3xl p-6 sm:p-7"
+          >
             <h3 className="text-lg font-bold text-foreground">Problems I like solving</h3>
             <ul className="mt-4 space-y-3">
               {problems.map((p) => (
@@ -149,11 +155,7 @@ function AboutPage() {
         </div>
       </Section>
 
-      <Section
-        eyebrow="Engineering values"
-        title="How I approach every build"
-        className="border-y border-border bg-panel/30"
-      >
+      <Section eyebrow="Engineering values" title="How I approach every build" tone="sage">
         <Principles />
       </Section>
 
@@ -161,29 +163,36 @@ function AboutPage() {
         eyebrow="Toolkit"
         title="Tools I work with"
         intro="Grouped by what they're used for — not a logo wall."
+        tone="light"
       >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {toolGroups.map((g) => (
-            <div key={g.title} data-reveal className="panel-border rounded-3xl p-6">
-              <h3 className="font-heading text-base font-semibold text-foreground">{g.title}</h3>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {g.items.map((t) => (
-                  <Chip key={t} className="text-[12.5px] text-foreground">
-                    {t}
-                  </Chip>
+        <div className="grid gap-4 lg:grid-cols-2">
+          {(Object.keys(toolGroups) as ToolGroup[]).map((g, i) => (
+            <div
+              key={g}
+              data-reveal={i % 2 ? "right" : "left"}
+              className="panel-border rounded-3xl p-6"
+            >
+              <h3 className="font-heading text-base font-semibold text-foreground">
+                {toolGroups[g]}
+              </h3>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {toolsInGroup(g).map((t) => (
+                  <li key={t.id}>
+                    <ToolChip tool={t} size="sm" />
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>
       </Section>
 
-      <Section eyebrow="Experience" title="Where I've worked" className="pt-0 md:pt-0">
+      <Section eyebrow="Experience" title="Where I've worked" tone="sage">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-          <div data-reveal>
+          <div data-reveal="left">
             <ExperienceTimeline />
           </div>
-          <div data-reveal className="glass h-fit rounded-3xl p-6 sm:p-8">
+          <div data-reveal="right" data-delay="200" className="glass h-fit rounded-3xl p-6 sm:p-8">
             <h3 className="text-lg font-bold text-foreground">Working with me</h3>
             <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
               You work directly with me from the first call to handover — no account managers in

@@ -1,7 +1,9 @@
 import cutout560 from "@/assets/portrait/cutout-560.webp";
 import cutout880 from "@/assets/portrait/cutout-880.webp";
 import cutout1254 from "@/assets/portrait/cutout-1254.webp";
-import cutoutAvatar from "@/assets/portrait/cutout-avatar.webp";
+import standing360 from "@/assets/portrait/standing-360.webp";
+import standing560 from "@/assets/portrait/standing-560.webp";
+import standing840 from "@/assets/portrait/standing-840.webp";
 import { site } from "@/data/site";
 import { cn } from "@/lib/utils";
 
@@ -34,24 +36,26 @@ export function Portrait({
   );
 }
 
-/** Round avatar: cutout portrait on a soft accent backdrop. */
-export function Avatar({ className, size = 56 }: { className?: string; size?: number }) {
+/** Standing, arms-crossed photo (transparent WebP, 2:3) — used in the closing CTA band. */
+export function PortraitStanding({
+  className,
+  sizes = "(min-width: 1024px) 340px, 300px",
+}: {
+  className?: string;
+  sizes?: string;
+}) {
   return (
-    <span
-      className={cn(
-        "relative inline-block shrink-0 overflow-hidden rounded-full bg-[radial-gradient(circle_at_50%_30%,#2a3b5c,#0d131b_70%)] ring-1 ring-white/10",
-        className,
-      )}
-      style={{ width: size, height: size }}
-    >
-      <img
-        src={cutoutAvatar}
-        width={size}
-        height={size}
-        alt={ALT}
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover object-top"
-      />
-    </span>
+    <img
+      src={standing560}
+      srcSet={`${standing360} 360w, ${standing560} 560w, ${standing840} 840w`}
+      sizes={sizes}
+      width={560}
+      height={840}
+      alt={ALT}
+      loading="lazy"
+      decoding="async"
+      className={cn("h-auto w-full select-none", className)}
+      draggable={false}
+    />
   );
 }

@@ -1,0 +1,88 @@
+{
+ "slug": "gmail-email-management-and-auto-reply-automation",
+ "tags": [],
+ "overview": [
+  "An automated Gmail management system built with n8n to organize incoming emails, apply the right labels, route messages to the appropriate team, and prepare replies as drafts.",
+  "The system handles inbox processing automatically while keeping final control over outgoing emails with the team."
+ ],
+ "sections": [
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "p": "The system:"
+    },
+    {
+     "list": [
+      "Monitors incoming Gmail messages",
+      "Checks whether an email has already been processed",
+      "Categorizes emails based on their content and priority",
+      "Applies the appropriate Gmail labels",
+      "Identifies emails that require a response",
+      "Generates draft replies using company information",
+      "Extracts sender details for personalization",
+      "Routes emails to the relevant team member",
+      "Creates properly formatted Gmail drafts with subjects and signatures"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Knowledge & Routing",
+   "blocks": [
+    {
+     "p": "The workflow uses a knowledge base to provide relevant information when preparing replies."
+    },
+    {
+     "p": "Emails are also routed based on their category, ensuring messages reach the appropriate department or team member."
+    }
+   ]
+  },
+  {
+   "heading": "Platforms & Technologies",
+   "blocks": [
+    {
+     "list": [
+      "n8n",
+      "Gmail API",
+      "Pinecone",
+      "JavaScript",
+      "Webhooks",
+      "API integrations"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Key Features",
+   "blocks": [
+    {
+     "list": [
+      "Automated inbox management",
+      "Email classification and labeling",
+      "Duplicate prevention",
+      "Priority based routing",
+      "Draft reply generation",
+      "Knowledge base integration",
+      "Team based email routing",
+      "Human approval before sending",
+      "Automated email processing"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A streamlined email management system that reduces manual inbox work, keeps emails organized, routes messages correctly, and prepares consistent replies while keeping the final sending decision with the team."
+ ],
+ "images": [
+  {
+   "src": "/projects/gmail-email-management-and-auto-reply-automation/01-960.webp",
+   "srcSet": "/projects/gmail-email-management-and-auto-reply-automation/01-480.webp 480w, /projects/gmail-email-management-and-auto-reply-automation/01-960.webp 960w, /projects/gmail-email-management-and-auto-reply-automation/01-1600.webp 1600w",
+   "full": "/projects/gmail-email-management-and-auto-reply-automation/01-1600.webp",
+   "width": 1600,
+   "height": 576,
+   "alt": "Gmail Email Management & Auto Reply Automation: Gmail Email Management & Auto Reply Automation"
+  }
+ ]
+}

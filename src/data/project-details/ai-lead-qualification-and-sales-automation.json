@@ -1,0 +1,203 @@
+{
+ "slug": "ai-lead-qualification-and-sales-automation",
+ "tags": [
+  "Zapier",
+  "Webhooks",
+  "HubSpot",
+  "OpenAI",
+  "Clearbit",
+  "Slack",
+  "Mailchimp",
+  "Calendly",
+  "Xero"
+ ],
+ "overview": [
+  "Built an end to end lead management and sales automation system that captures leads, enriches their information, scores their potential, routes them to the right workflow, and manages follow up through the sales process."
+ ],
+ "sections": [
+  {
+   "heading": "Lead Capture & Enrichment",
+   "blocks": [
+    {
+     "p": "The workflow:"
+    },
+    {
+     "list": [
+      "Captures leads through webhooks, forms, ads, and other sources",
+      "Finds or creates the contact in HubSpot",
+      "Enriches lead and company information",
+      "Collects industry, company size, job role, location, and other details",
+      "Sends the collected information for lead evaluation"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Lead Qualification",
+   "blocks": [
+    {
+     "p": "The system evaluates each lead based on:"
+    },
+    {
+     "list": [
+      "Company fit",
+      "Decision maker status",
+      "Budget",
+      "Urgency",
+      "Service requirements",
+      "Engagement"
+     ]
+    },
+    {
+     "p": "Leads receive a score and are classified as:"
+    }
+   ]
+  },
+  {
+   "heading": "Hot → Warm → Cold → Enterprise",
+   "blocks": []
+  },
+  {
+   "heading": "Automated Routing",
+   "blocks": [
+    {
+     "p": "Each lead follows a different workflow based on its qualification:"
+    }
+   ]
+  },
+  {
+   "heading": "Hot Leads",
+   "blocks": [
+    {
+     "list": [
+      "Updates the CRM",
+      "Creates a sales opportunity",
+      "Sends a personalized email",
+      "Notifies the sales team in Slack",
+      "Provides a booking option",
+      "Creates a sales follow up task"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Warm Leads",
+   "blocks": [
+    {
+     "list": [
+      "Adds the lead to a nurture campaign",
+      "Sends targeted follow up emails",
+      "Tracks engagement",
+      "Reassesses the lead as engagement increases"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Cold Leads",
+   "blocks": [
+    {
+     "list": [
+      "Adds the lead to a long term nurture campaign",
+      "Sends scheduled educational content",
+      "Moves the lead back into sales when engagement increases"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Enterprise Leads",
+   "blocks": [
+    {
+     "list": [
+      "Creates a high priority opportunity",
+      "Alerts sales leadership",
+      "Generates an account brief",
+      "Routes the lead to the appropriate sales team"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Sales Follow-Up",
+   "blocks": [
+    {
+     "p": "The system manages the sales process after qualification:"
+    },
+    {
+     "list": [
+      "Meeting booking",
+      "Follow up reminders",
+      "Proposal creation",
+      "E signature",
+      "Payment tracking",
+      "Invoice creation",
+      "Customer onboarding"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Engagement Tracking",
+   "blocks": [
+    {
+     "p": "Lead scores can change based on customer activity such as:"
+    },
+    {
+     "list": [
+      "Email opens",
+      "Link clicks",
+      "Pricing page visits",
+      "Meeting bookings",
+      "Other tracked interactions"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A complete lead management system that connects lead capture, enrichment, qualification, routing, nurturing, sales follow up, proposals, payments, and onboarding into one automated workflow."
+ ],
+ "images": [
+  {
+   "src": "/projects/ai-lead-qualification-and-sales-automation/01-960.webp",
+   "srcSet": "/projects/ai-lead-qualification-and-sales-automation/01-480.webp 480w, /projects/ai-lead-qualification-and-sales-automation/01-960.webp 960w, /projects/ai-lead-qualification-and-sales-automation/01-1600.webp 1600w",
+   "full": "/projects/ai-lead-qualification-and-sales-automation/01-1600.webp",
+   "width": 1600,
+   "height": 750,
+   "alt": "AI Lead Qualification & Sales Automation: 1 (1)"
+  },
+  {
+   "src": "/projects/ai-lead-qualification-and-sales-automation/02-960.webp",
+   "srcSet": "/projects/ai-lead-qualification-and-sales-automation/02-480.webp 480w, /projects/ai-lead-qualification-and-sales-automation/02-960.webp 960w, /projects/ai-lead-qualification-and-sales-automation/02-1600.webp 1600w",
+   "full": "/projects/ai-lead-qualification-and-sales-automation/02-1600.webp",
+   "width": 1600,
+   "height": 752,
+   "alt": "AI Lead Qualification & Sales Automation: 1 (2)"
+  },
+  {
+   "src": "/projects/ai-lead-qualification-and-sales-automation/03-960.webp",
+   "srcSet": "/projects/ai-lead-qualification-and-sales-automation/03-480.webp 480w, /projects/ai-lead-qualification-and-sales-automation/03-960.webp 960w, /projects/ai-lead-qualification-and-sales-automation/03-1600.webp 1600w",
+   "full": "/projects/ai-lead-qualification-and-sales-automation/03-1600.webp",
+   "width": 1600,
+   "height": 753,
+   "alt": "AI Lead Qualification & Sales Automation: 1 (3)"
+  },
+  {
+   "src": "/projects/ai-lead-qualification-and-sales-automation/04-960.webp",
+   "srcSet": "/projects/ai-lead-qualification-and-sales-automation/04-480.webp 480w, /projects/ai-lead-qualification-and-sales-automation/04-960.webp 960w, /projects/ai-lead-qualification-and-sales-automation/04-1600.webp 1600w",
+   "full": "/projects/ai-lead-qualification-and-sales-automation/04-1600.webp",
+   "width": 1600,
+   "height": 571,
+   "alt": "AI Lead Qualification & Sales Automation: 1 (4)"
+  },
+  {
+   "src": "/projects/ai-lead-qualification-and-sales-automation/05-960.webp",
+   "srcSet": "/projects/ai-lead-qualification-and-sales-automation/05-480.webp 480w, /projects/ai-lead-qualification-and-sales-automation/05-960.webp 960w, /projects/ai-lead-qualification-and-sales-automation/05-1312.webp 1312w",
+   "full": "/projects/ai-lead-qualification-and-sales-automation/05-1312.webp",
+   "width": 1312,
+   "height": 1199,
+   "alt": "AI Lead Qualification & Sales Automation: Leadd Qualify"
+  }
+ ]
+}

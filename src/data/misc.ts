@@ -176,55 +176,6 @@ export const collaboration = {
   ],
 };
 
-export const toolGroups: { title: string; items: string[] }[] = [
-  {
-    title: "CRM & automation",
-    items: ["GoHighLevel", "n8n", "Make.com", "Zapier", "Zoho CRM", "Follow Up Boss", "Airtable"],
-  },
-  {
-    title: "Voice & conversational AI",
-    items: [
-      "Vapi",
-      "Synthflow",
-      "ElevenLabs",
-      "OpenAI",
-      "Pinecone (RAG)",
-      "WhatsApp (Meta API)",
-      "Telegram",
-    ],
-  },
-  {
-    title: "APIs, data & enrichment",
-    items: [
-      "REST APIs",
-      "Webhooks",
-      "Google Workspace APIs",
-      "Shopify API",
-      "Apify",
-      "Apollo",
-      "SendGrid",
-    ],
-  },
-  {
-    title: ".NET & engineering",
-    items: [
-      "ASP.NET MVC",
-      "ASP.NET Core",
-      "Web API",
-      "SQL Server",
-      "ADO.NET",
-      "Xamarin",
-      "WinForms",
-      "Azure",
-      "Git",
-    ],
-  },
-  {
-    title: "Payments & e-invoicing",
-    items: ["Stripe API", "FedEx API", "FBR API", "ZATCA SDK", "JWT", "Crystal Reports"],
-  },
-];
-
 export const careerStart = new Date("2020-06-01");
 export const automationStart = new Date("2024-08-01");
 

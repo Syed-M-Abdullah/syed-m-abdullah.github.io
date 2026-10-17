@@ -1,0 +1,54 @@
+{
+ "slug": "order-take-app",
+ "tags": [
+  "Mobile",
+  "Global"
+ ],
+ "overview": [
+  "Offline-first field ordering app that stores orders on the device and syncs when the connection returns."
+ ],
+ "sections": [
+  {
+   "heading": "The challenge",
+   "blocks": [
+    {
+     "p": "Field sales reps lost orders when they had no connectivity."
+    }
+   ]
+  },
+  {
+   "heading": "Solution & architecture",
+   "blocks": [
+    {
+     "p": "A Xamarin.Forms app stores orders in SQLite while offline and syncs them to an ASP.NET Web API automatically when the device reconnects."
+    }
+   ]
+  },
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "list": [
+      "Rep takes order (offline)",
+      "Stored locally",
+      "Device reconnects",
+      "Sync to API"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Key facts",
+   "blocks": [
+    {
+     "list": [
+      "Offline — Order capture",
+      "Auto — Sync on reconnect"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [],
+ "images": []
+}

@@ -1,94 +1,51 @@
-import { useEffect, useRef } from "react";
 import abLogo from "@/assets/brand/ab-logo.webp";
-import abLogo2x from "@/assets/brand/ab-logo@2x.webp";
+import { site } from "@/data/site";
 
-const SEEN_KEY = "ab-loader-seen";
-const MIN_MS = 1200;
-const MAX_MS = 3000;
+const MIN_MS = 1300;
+const MAX_MS = 2200;
 
 /**
- * Runs while the HTML is still being parsed (before the hero is painted) and decides whether
- * this visit gets the loader: only the first full page load of the home page per session.
- * Client-side navigation never runs it, so the loader never replays. A JS failsafe clears it
- * after 4.5s even if the app bundle never starts.
+ * The whole loader runs from this inline script, while the HTML is still being parsed — it
+ * never waits for the app's JavaScript, so it lifts on time even on slow phones.
+ *
+ * - Shown on every reload and every fresh visit (no same-site referrer), on any page. Plain
+ *   links between pages of the site and back/forward skip it; client-side navigation never
+ *   runs it.
+ * - Leaves once the page is parsed and fonts are ready, after at least 1.3s and at most 2.2s
+ *   (it does not wait for every script and image).
+ * - State lives on <html> (classes and data-loader-p), which React does not manage, so
+ *   hydration never sees a changed attribute.
  */
-const bootScript = `(function(){var d=document.documentElement;try{if(sessionStorage.getItem("${SEEN_KEY}")==="1"){d.setAttribute("data-ready","");return}}catch(e){}d.classList.add("loader-on","loader-lock","anim-ready-pending");setTimeout(function(){d.classList.remove("loader-lock","loader-on","anim-ready-pending");d.setAttribute("data-ready","");try{sessionStorage.setItem("${SEEN_KEY}","1")}catch(e){}},${MAX_MS + 1500})})();`;
+const bootScript = `(function(){
+var d=document.documentElement;
+var n=performance.getEntriesByType&&performance.getEntriesByType("navigation")[0];
+var t=n&&n.type;var r=document.referrer;var inside=r&&r.indexOf(location.origin)===0;
+if(t==="back_forward"||(t!=="reload"&&inside)){d.setAttribute("data-ready","");return}
+var reduce=!d.classList.contains("force-motion")&&window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+d.classList.add("loader-on","loader-lock","anim-ready-pending");
+function p(v){d.setAttribute("data-loader-p",v)}p(35);
+var done=false,loaded=false,fonts=false,min=false;
+function finish(){if(done)return;done=true;p(100);setTimeout(function(){
+d.classList.add("loader-exit");d.classList.remove("loader-lock");
+setTimeout(function(){d.setAttribute("data-ready","")},reduce?150:320);
+setTimeout(function(){d.classList.remove("loader-on","loader-exit","anim-ready-pending");d.removeAttribute("data-loader-p")},900)},200)}
+function check(){if(loaded&&fonts&&min)finish()}
+setTimeout(function(){min=true;check()},Math.max(0,${MIN_MS}-performance.now()));
+setTimeout(finish,Math.max(0,${MAX_MS}-performance.now()));
+function ready(){loaded=true;p(90);check()}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){fonts=true;p(70);check()});
+})();`.replace(/\n/g, "");
 
 /**
- * Full-screen preloader for the first visit: logo reveal, animated ring and a progress bar on
- * the site's aurora background. Leaves when the window has loaded and fonts are ready, after at
- * least 1.2s and at most 3s, with a curtain lift (a quick fade under reduced motion). The hero's
- * entrance animations start as the curtain lifts.
+ * Full-screen brand preloader: the AB mark draws in with a ring, the name rises, a progress
+ * bar fills, then the curtain lifts into the page (a soft fade under reduced motion). The
+ * hero's entrance animations start as the curtain lifts (html[data-ready]).
  */
 export function PageLoader() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    const el = ref.current;
-    if (!el) return;
-    if (!root.classList.contains("loader-on")) {
-      root.setAttribute("data-ready", "");
-      return;
-    }
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const minMs = reduce ? 300 : MIN_MS;
-    let finished = false;
-    const timers: number[] = [];
-    const setProgress = (p: number) => el.style.setProperty("--p", String(p));
-    setProgress(0.35);
-
-    const finish = () => {
-      if (finished) return;
-      finished = true;
-      setProgress(1);
-      try {
-        sessionStorage.setItem(SEEN_KEY, "1");
-      } catch {
-        /* private mode: the loader may show again next visit, which is harmless */
-      }
-      timers.push(
-        window.setTimeout(
-          () => {
-            el.classList.add("is-exiting");
-            root.classList.remove("loader-lock");
-            // Start the hero's entrance as the curtain is lifting, so nothing plays unseen.
-            timers.push(
-              window.setTimeout(() => root.setAttribute("data-ready", ""), reduce ? 0 : 320),
-            );
-            timers.push(
-              window.setTimeout(
-                () => {
-                  root.classList.remove("loader-on", "anim-ready-pending");
-                },
-                reduce ? 260 : 900,
-              ),
-            );
-          },
-          reduce ? 0 : 220,
-        ),
-      );
-    };
-
-    const loaded =
-      document.readyState === "complete"
-        ? Promise.resolve()
-        : new Promise<void>((r) => window.addEventListener("load", () => r(), { once: true }));
-    const fonts = (document.fonts?.ready ?? Promise.resolve()).then(() => setProgress(0.7));
-    void loaded.then(() => setProgress(0.9));
-    const minDelay = new Promise<void>((r) =>
-      timers.push(window.setTimeout(r, Math.max(0, minMs - performance.now()))),
-    );
-    void Promise.all([loaded, fonts, minDelay]).then(finish);
-    timers.push(window.setTimeout(finish, Math.max(0, MAX_MS - performance.now())));
-
-    return () => timers.forEach((t) => window.clearTimeout(t));
-  }, []);
-
   return (
     <>
       <script dangerouslySetInnerHTML={{ __html: bootScript }} suppressHydrationWarning />
-      <div ref={ref} className="page-loader" role="status" aria-live="polite">
+      <div className="page-loader on-dark" role="status" aria-live="polite">
         <div aria-hidden className="page-loader-bg" />
         <div className="page-loader-inner">
           <div className="page-loader-mark" aria-hidden>
@@ -106,12 +63,18 @@ export function PageLoader() {
             </svg>
             <img
               src={abLogo}
-              srcSet={`${abLogo} 1x, ${abLogo2x} 2x`}
               width={179}
               height={120}
               alt=""
+              fetchPriority="high"
               className="page-loader-logo"
             />
+          </div>
+          <div aria-hidden className="page-loader-text">
+            <span className="page-loader-name">{site.name}</span>
+            <span className="page-loader-tag">
+              AI Automation &amp; Intelligent Business Systems
+            </span>
           </div>
           <div className="page-loader-bar" aria-hidden>
             <span />

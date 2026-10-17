@@ -30,8 +30,10 @@ That's it — after that, every push to `main` deploys automatically. You can fo
 
 `scripts/export-static.mjs`:
 
-- reads the page list from `src/data/routes.ts` (static pages, every service page and every case
-  study — add a service or case study to the data files and it's exported automatically);
+- reads the page list from `src/data/routes.ts` (static pages, every service page and every
+  project — add a service or sync a project and it's exported automatically);
+- renders small forwarding pages for the old `/case-studies` and `/case/<slug>` URLs (kept out of
+  the sitemap);
 - renders each route to `<route>/index.html`, failing the build if any page doesn't render;
 - renders a branded `404.html` (GitHub Pages serves it for unknown URLs);
 - writes `sitemap.xml` and `robots.txt` using `site.url` from `src/data/site.ts`.

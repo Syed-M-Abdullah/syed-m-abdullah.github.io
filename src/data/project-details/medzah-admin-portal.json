@@ -1,0 +1,229 @@
+{
+ "slug": "medzah-admin-portal",
+ "tags": [
+  "Product Management",
+  "Order Management",
+  "Reporting",
+  "User Roles",
+  "Permissions",
+  "Messaging"
+ ],
+ "overview": [
+  "MEDZAH is a web based administration platform built for managing medical products, orders, users, reports, permissions, and internal communication from one centralized system."
+ ],
+ "sections": [
+  {
+   "heading": "Main Modules",
+   "blocks": [
+    {
+     "list": [
+      "Dashboard",
+      "Products",
+      "Categories",
+      "Sizes",
+      "Units",
+      "Price Points",
+      "Orders",
+      "Reports",
+      "Roles",
+      "Manage Users",
+      "Edit Profile",
+      "Messaging"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Dashboard",
+   "blocks": [
+    {
+     "p": "The dashboard gives administrators a quick view of business activity:"
+    },
+    {
+     "list": [
+      "Total users",
+      "Approved users",
+      "Pending users",
+      "Blocked users",
+      "Total orders",
+      "Pending orders",
+      "Shipped orders",
+      "Total products",
+      "Order analytics",
+      "Recent system activity"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Product Management",
+   "blocks": [
+    {
+     "p": "Administrators can create and manage medical products with:"
+    },
+    {
+     "list": [
+      "Product categories",
+      "Product descriptions and overview",
+      "Active or inactive status",
+      "Units of measurement",
+      "Product sizes",
+      "Product variants",
+      "Additional product attributes",
+      "Rich text content"
+     ]
+    },
+    {
+     "p": "The product structure allows different sizes, units, and specifications to be maintained for individual products."
+    }
+   ]
+  },
+  {
+   "heading": "Order Management",
+   "blocks": [
+    {
+     "p": "The Orders module provides a centralized view of customer orders with:"
+    },
+    {
+     "list": [
+      "Order number",
+      "Order date",
+      "Purchase order number",
+      "Customer",
+      "Order cost",
+      "Order status",
+      "Search",
+      "Date filtering",
+      "Status filtering",
+      "Order preview"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Reporting",
+   "blocks": [
+    {
+     "p": "The system includes Customer Wise Order List reporting with filters for:"
+    },
+    {
+     "list": [
+      "Date range",
+      "Customer",
+      "Order number",
+      "Order status",
+      "Payment status"
+     ]
+    },
+    {
+     "p": "Reports can be generated and printed for administrative use."
+    }
+   ]
+  },
+  {
+   "heading": "Role & Permission Management",
+   "blocks": [
+    {
+     "p": "The platform includes detailed role based access control."
+    },
+    {
+     "p": "Administrators can control permissions for individual modules and actions such as:"
+    },
+    {
+     "list": [
+      "View",
+      "New",
+      "Edit",
+      "Delete",
+      "Report access"
+     ]
+    },
+    {
+     "p": "This allows different users to receive access according to their responsibilities."
+    }
+   ]
+  },
+  {
+   "heading": "User Management",
+   "blocks": [
+    {
+     "p": "Administrators can monitor and manage user accounts based on their status:"
+    },
+    {
+     "list": [
+      "Approved",
+      "Pending",
+      "Blocked"
+     ]
+    },
+    {
+     "p": "The system also provides user administration and profile management."
+    }
+   ]
+  },
+  {
+   "heading": "Messaging",
+   "blocks": [
+    {
+     "p": "An integrated messaging module allows users and operators to communicate within the platform."
+    },
+    {
+     "list": [
+      "Message history",
+      "Replies",
+      "Rich text messages",
+      "File attachments",
+      "Multiple attachments",
+      "Subject and message content"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Activity Monitoring",
+   "blocks": [
+    {
+     "p": "The dashboard includes an activity section showing events such as user registrations, administrator activity, product updates, and other system actions."
+    }
+   ]
+  }
+ ],
+ "result": [
+  "MEDZAH brings medical product management, customer orders, reporting, user administration, permissions, analytics, and communication into one organized platform.",
+  "The result is a centralized administration system that gives the business better control over its products, orders, users, and day to day operations."
+ ],
+ "images": [
+  {
+   "src": "/projects/medzah-admin-portal/01-960.webp",
+   "srcSet": "/projects/medzah-admin-portal/01-480.webp 480w, /projects/medzah-admin-portal/01-960.webp 960w, /projects/medzah-admin-portal/01-1600.webp 1600w",
+   "full": "/projects/medzah-admin-portal/01-1600.webp",
+   "width": 1600,
+   "height": 783,
+   "alt": "Medzah Admin Portal: 8s"
+  },
+  {
+   "src": "/projects/medzah-admin-portal/02-960.webp",
+   "srcSet": "/projects/medzah-admin-portal/02-480.webp 480w, /projects/medzah-admin-portal/02-960.webp 960w, /projects/medzah-admin-portal/02-1600.webp 1600w",
+   "full": "/projects/medzah-admin-portal/02-1600.webp",
+   "width": 1600,
+   "height": 783,
+   "alt": "Medzah Admin Portal: 20s"
+  },
+  {
+   "src": "/projects/medzah-admin-portal/03-960.webp",
+   "srcSet": "/projects/medzah-admin-portal/03-480.webp 480w, /projects/medzah-admin-portal/03-960.webp 960w, /projects/medzah-admin-portal/03-1600.webp 1600w",
+   "full": "/projects/medzah-admin-portal/03-1600.webp",
+   "width": 1600,
+   "height": 783,
+   "alt": "Medzah Admin Portal: 35s"
+  },
+  {
+   "src": "/projects/medzah-admin-portal/04-960.webp",
+   "srcSet": "/projects/medzah-admin-portal/04-480.webp 480w, /projects/medzah-admin-portal/04-960.webp 960w, /projects/medzah-admin-portal/04-1600.webp 1600w",
+   "full": "/projects/medzah-admin-portal/04-1600.webp",
+   "width": 1600,
+   "height": 783,
+   "alt": "Medzah Admin Portal: 50s"
+  }
+ ]
+}

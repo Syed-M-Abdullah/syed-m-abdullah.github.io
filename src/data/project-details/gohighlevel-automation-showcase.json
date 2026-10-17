@@ -1,0 +1,100 @@
+{
+ "slug": "gohighlevel-automation-showcase",
+ "tags": [],
+ "overview": [
+  "A set of GoHighLevel workflows covering lead nurturing, appointment management, payment processing and instalment plans.",
+  "Lead nurturing creates or updates the contact, sends a welcome email, then value emails and SMS on a schedule. Appointment workflows confirm bookings by email and SMS and handle reschedules. Payment workflows apply payments, send receipts and track instalments with on-time, overdue and final-reminder branches. Further workflows cover lead generation, follow-up, email campaigns, Facebook posting and SMS campaigns."
+ ],
+ "sections": [],
+ "result": [],
+ "images": [
+  {
+   "src": "/projects/gohighlevel-automation-showcase/01-736.webp",
+   "srcSet": "/projects/gohighlevel-automation-showcase/01-480.webp 480w, /projects/gohighlevel-automation-showcase/01-736.webp 736w",
+   "full": "/projects/gohighlevel-automation-showcase/01-736.webp",
+   "width": 736,
+   "height": 877,
+   "alt": "GoHighLevel Automation Showcase: Appointment Booking"
+  },
+  {
+   "src": "/projects/gohighlevel-automation-showcase/02-960.webp",
+   "srcSet": "/projects/gohighlevel-automation-showcase/02-480.webp 480w, /projects/gohighlevel-automation-showcase/02-960.webp 960w, /projects/gohighlevel-automation-showcase/02-1600.webp 1600w",
+   "full": "/projects/gohighlevel-automation-showcase/02-1600.webp",
+   "width": 1600,
+   "height": 724,
+   "alt": "GoHighLevel Automation Showcase: Appointment Confirmation"
+  },
+  {
+   "src": "/projects/gohighlevel-automation-showcase/03-960.webp",
+   "srcSet": "/projects/gohighlevel-automation-showcase/03-480.webp 480w, /projects/gohighlevel-automation-showcase/03-960.webp 960w, /projects/gohighlevel-automation-showcase/03-1556.webp 1556w",
+   "full": "/projects/gohighlevel-automation-showcase/03-1556.webp",
+   "width": 1556,
+   "height": 800,
+   "alt": "GoHighLevel Automation Showcase: Customer Follow Up"
+  },
+  {
+   "src": "/projects/gohighlevel-automation-showcase/04-677.webp",
+   "srcSet": "/projects/gohighlevel-automation-showcase/04-480.webp 480w, /projects/gohighlevel-automation-showcase/04-677.webp 677w",
+   "full": "/projects/gohighlevel-automation-showcase/04-677.webp",
+   "width": 677,
+   "height": 882,
+   "alt": "GoHighLevel Automation Showcase: Email Campaign"
+  },
+  {
+   "src": "/projects/gohighlevel-automation-showcase/05-960.webp",
+   "srcSet": "/projects/gohighlevel-automation-showcase/05-480.webp 480w, /projects/gohighlevel-automation-showcase/05-960.webp 960w, /projects/gohighlevel-automation-showcase/05-1034.webp 1034w",
+   "full": "/projects/gohighlevel-automation-showcase/05-1034.webp",
+   "width": 1034,
+   "height": 1521,
+   "alt": "GoHighLevel Automation Showcase: Facebook"
+  },
+  {
+   "src": "/projects/gohighlevel-automation-showcase/06-714.webp",
+   "srcSet": "/projects/gohighlevel-automation-showcase/06-480.webp 480w, /projects/gohighlevel-automation-showcase/06-714.webp 714w",
+   "full": "/projects/gohighlevel-automation-showcase/06-714.webp",
+   "width": 714,
+   "height": 740,
+   "alt": "GoHighLevel Automation Showcase: Lead Followup"
+  },
+  {
+   "src": "/projects/gohighlevel-automation-showcase/07-592.webp",
+   "srcSet": "/projects/gohighlevel-automation-showcase/07-480.webp 480w, /projects/gohighlevel-automation-showcase/07-592.webp 592w",
+   "full": "/projects/gohighlevel-automation-showcase/07-592.webp",
+   "width": 592,
+   "height": 806,
+   "alt": "GoHighLevel Automation Showcase: Lead Generation"
+  },
+  {
+   "src": "/projects/gohighlevel-automation-showcase/08-596.webp",
+   "srcSet": "/projects/gohighlevel-automation-showcase/08-480.webp 480w, /projects/gohighlevel-automation-showcase/08-596.webp 596w",
+   "full": "/projects/gohighlevel-automation-showcase/08-596.webp",
+   "width": 596,
+   "height": 865,
+   "alt": "GoHighLevel Automation Showcase: Lead Nurturing"
+  },
+  {
+   "src": "/projects/gohighlevel-automation-showcase/09-960.webp",
+   "srcSet": "/projects/gohighlevel-automation-showcase/09-480.webp 480w, /projects/gohighlevel-automation-showcase/09-960.webp 960w, /projects/gohighlevel-automation-showcase/09-1030.webp 1030w",
+   "full": "/projects/gohighlevel-automation-showcase/09-1030.webp",
+   "width": 1030,
+   "height": 1526,
+   "alt": "GoHighLevel Automation Showcase: Payment Automation"
+  },
+  {
+   "src": "/projects/gohighlevel-automation-showcase/10-960.webp",
+   "srcSet": "/projects/gohighlevel-automation-showcase/10-480.webp 480w, /projects/gohighlevel-automation-showcase/10-960.webp 960w, /projects/gohighlevel-automation-showcase/10-1033.webp 1033w",
+   "full": "/projects/gohighlevel-automation-showcase/10-1033.webp",
+   "width": 1033,
+   "height": 1522,
+   "alt": "GoHighLevel Automation Showcase: Payment Installment"
+  },
+  {
+   "src": "/projects/gohighlevel-automation-showcase/11-960.webp",
+   "srcSet": "/projects/gohighlevel-automation-showcase/11-480.webp 480w, /projects/gohighlevel-automation-showcase/11-960.webp 960w, /projects/gohighlevel-automation-showcase/11-1600.webp 1600w",
+   "full": "/projects/gohighlevel-automation-showcase/11-1600.webp",
+   "width": 1600,
+   "height": 682,
+   "alt": "GoHighLevel Automation Showcase: Sms Campaign 1"
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "slug": "neo-taxi",
+ "tags": [
+  "Transport",
+  "Germany"
+ ],
+ "overview": [
+  "Voice agent that books taxi rides in a single call and sends the caller a live Google Maps link."
+ ],
+ "sections": [
+  {
+   "heading": "The challenge",
+   "blocks": [
+    {
+     "p": "Manual phone dispatch was slow at busy times, and bookings were lost while callers waited."
+    }
+   ]
+  },
+  {
+   "heading": "Solution & architecture",
+   "blocks": [
+    {
+     "p": "The voice agent takes the booking details, confirms pickup and destination, and generates a Google Maps link that is sent to the caller during the conversation. The build combines Synthflow, ElevenLabs, the Google Maps API and GoHighLevel."
+    }
+   ]
+  },
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "list": [
+      "Call in",
+      "AI takes booking",
+      "Generate Maps link",
+      "Send to caller"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Key facts",
+   "blocks": [
+    {
+     "list": [
+      "1 call — Booking completed",
+      "Live — Maps link sent mid-call"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [],
+ "images": []
+}

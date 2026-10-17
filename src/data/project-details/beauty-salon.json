@@ -1,0 +1,129 @@
+{
+ "slug": "beauty-salon",
+ "tags": [
+  "GoHighLevel",
+  "Synthflow",
+  "Voice Agents",
+  "CRM",
+  "Inbound & Outbound Automation",
+  "Email"
+ ],
+ "overview": [
+  "Built a GoHighLevel automation system for a beauty salon to manage inbound and outbound customer calls, appointment booking, follow ups, and customer communication.",
+  "The setup connects GoHighLevel with Synthflow and organizes the complete customer journey inside the CRM."
+ ],
+ "sections": [
+  {
+   "heading": "Subaccount Setup",
+   "blocks": [
+    {
+     "p": "A dedicated Beauty Salon subaccount was configured with separate workflows for:"
+    },
+    {
+     "list": [
+      "Inbound calls",
+      "Outbound calls",
+      "Appointment booking",
+      "Post call data",
+      "Customer follow ups"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Inbound Automation",
+   "blocks": [
+    {
+     "p": "The inbound setup handles incoming customer calls and routes them through the appropriate workflow."
+    },
+    {
+     "p": "It includes:"
+    },
+    {
+     "list": [
+      "Inbound voice agent",
+      "Appointment booking",
+      "Post call data handling",
+      "CRM updates"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Outbound Automation",
+   "blocks": [
+    {
+     "p": "The outbound setup manages customer calls through a dedicated voice agent and separate workflows."
+    },
+    {
+     "p": "The process includes:"
+    },
+    {
+     "list": [
+      "Initial outbound calls",
+      "Appointment booking",
+      "Post call data processing",
+      "CRM updates"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Appointment & Email Automation",
+   "blocks": [
+    {
+     "p": "Once an appointment is booked, the customer information is updated in GoHighLevel and the required communication is triggered."
+    },
+    {
+     "p": "Email communication is also managed directly through the CRM, keeping customer details and follow up activity organized."
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A centralized beauty salon automation system connecting inbound calls, outbound calls, appointment booking, follow ups, and customer communication inside GoHighLevel.",
+  "The setup reduces manual lead handling and provides a structured process for managing customer interactions from the initial call through appointment booking."
+ ],
+ "images": [
+  {
+   "src": "/projects/beauty-salon/01-960.webp",
+   "srcSet": "/projects/beauty-salon/01-480.webp 480w, /projects/beauty-salon/01-960.webp 960w, /projects/beauty-salon/01-1600.webp 1600w",
+   "full": "/projects/beauty-salon/01-1600.webp",
+   "width": 1600,
+   "height": 839,
+   "alt": "Beauty Salon: Beauty Salon Synthflow"
+  },
+  {
+   "src": "/projects/beauty-salon/02-960.webp",
+   "srcSet": "/projects/beauty-salon/02-480.webp 480w, /projects/beauty-salon/02-960.webp 960w, /projects/beauty-salon/02-1600.webp 1600w",
+   "full": "/projects/beauty-salon/02-1600.webp",
+   "width": 1600,
+   "height": 853,
+   "alt": "Beauty Salon: BeautySaloon Agents"
+  },
+  {
+   "src": "/projects/beauty-salon/03-960.webp",
+   "srcSet": "/projects/beauty-salon/03-480.webp 480w, /projects/beauty-salon/03-960.webp 960w, /projects/beauty-salon/03-1600.webp 1600w",
+   "full": "/projects/beauty-salon/03-1600.webp",
+   "width": 1600,
+   "height": 851,
+   "alt": "Beauty Salon: BeautySaloon Inbound"
+  },
+  {
+   "src": "/projects/beauty-salon/04-960.webp",
+   "srcSet": "/projects/beauty-salon/04-480.webp 480w, /projects/beauty-salon/04-960.webp 960w, /projects/beauty-salon/04-1600.webp 1600w",
+   "full": "/projects/beauty-salon/04-1600.webp",
+   "width": 1600,
+   "height": 850,
+   "alt": "Beauty Salon: BeautySaloon Outbound"
+  },
+  {
+   "src": "/projects/beauty-salon/05-960.webp",
+   "srcSet": "/projects/beauty-salon/05-480.webp 480w, /projects/beauty-salon/05-960.webp 960w, /projects/beauty-salon/05-1600.webp 1600w",
+   "full": "/projects/beauty-salon/05-1600.webp",
+   "width": 1600,
+   "height": 851,
+   "alt": "Beauty Salon: BeautySaloon Subaccount"
+  }
+ ]
+}

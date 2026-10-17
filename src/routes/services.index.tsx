@@ -12,9 +12,9 @@ import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/services/")({
   head: () =>
     seo({
-      title: "GoHighLevel, n8n & Voice AI Services",
+      title: "Business Automation & AI Services",
       description:
-        "GoHighLevel automation, n8n workflows and API integrations, AI voice agents, AI chatbots and custom .NET software — what each service solves and what you receive.",
+        "Business automation with n8n, Zapier and Make, GoHighLevel CRM, lead generation, AI content to WordPress, voice and chat agents and custom .NET software.",
       path: "/services",
     }),
   component: ServicesPage,
@@ -39,8 +39,6 @@ const audiences = [
 ];
 
 function ServicesPage() {
-  const primary = services.filter((s) => s.tier === "primary");
-  const supporting = services.filter((s) => s.tier === "supporting");
   return (
     <PageShell>
       <PageHero
@@ -51,13 +49,13 @@ function ServicesPage() {
             Choose the system <span className="gradient-text">you need built</span>
           </>
         }
-        intro="Each service starts from a business problem, not a tool. If you're not sure which one fits, describe the problem and I'll point you in the right direction."
+        intro="Each service starts from a business problem, not a tool. Not sure which fits? Describe the problem and I'll point you in the right direction."
         actions={
           <>
             <ButtonLink to="/contact" size="lg">
               Discuss a Project <ArrowRight size={16} aria-hidden />
             </ButtonLink>
-            <ButtonLink to="/case-studies" variant="secondary" size="lg">
+            <ButtonLink to="/projects" variant="secondary" size="lg">
               See related work
             </ButtonLink>
           </>
@@ -92,21 +90,10 @@ function ServicesPage() {
         }
       />
 
-      <Section className="pt-4 md:pt-6">
+      <Section tone="light">
         <div className="space-y-5">
-          {primary.map((s, i) => (
+          {services.map((s, i) => (
             <ServiceChooserCard key={s.slug} service={s} index={i} />
-          ))}
-        </div>
-        <div className="mt-14 mb-5 flex items-center gap-4">
-          <span className="font-heading text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-            Supporting capability
-          </span>
-          <span aria-hidden className="h-px flex-1 bg-border" />
-        </div>
-        <div className="space-y-5">
-          {supporting.map((s) => (
-            <ServiceChooserCard key={s.slug} service={s} index={services.indexOf(s)} />
           ))}
         </div>
       </Section>
@@ -115,18 +102,26 @@ function ServicesPage() {
         eyebrow="Who I work with"
         title="Agency delivery, white-label or direct"
         intro="Most of my work is with agencies that need dependable implementation — under their brand or alongside their team."
-        className="border-t border-border bg-panel/30"
+        tone="sage"
       >
         <ul className="grid gap-4 md:grid-cols-3">
-          {audiences.map((a) => (
-            <li key={a.title} data-reveal className="panel-border rounded-3xl p-6">
+          {audiences.map((a, i) => (
+            <li
+              key={a.title}
+              data-reveal="zoom"
+              style={{ "--i": i } as React.CSSProperties}
+              className="panel-border rounded-3xl p-6"
+            >
               <a.icon size={22} className="text-cyan" aria-hidden />
               <h3 className="mt-4 text-lg font-bold text-foreground">{a.title}</h3>
               <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{a.body}</p>
             </li>
           ))}
         </ul>
-        <p data-reveal className="mt-8 max-w-3xl text-[15px] leading-relaxed text-muted-foreground">
+        <p
+          data-reveal="up"
+          className="mt-8 max-w-3xl text-[15px] leading-relaxed text-muted-foreground"
+        >
           <strong className="font-semibold text-foreground">How white-label works:</strong> I build
           inside the accounts you or your client provide, follow your naming and handover
           conventions, and we agree up front whether I speak to your client directly or only through

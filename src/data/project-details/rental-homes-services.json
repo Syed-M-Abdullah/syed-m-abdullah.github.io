@@ -1,0 +1,86 @@
+{
+ "slug": "rental-homes-services",
+ "tags": [],
+ "overview": [
+  "Built an inbound voice receptionist for Coastal Home & Estate Management to handle customer calls, collect caller information, answer common questions, and assist with appointment booking.",
+  "The system connects ElevenLabs with n8n and GoHighLevel to move caller information directly into the CRM."
+ ],
+ "sections": [
+  {
+   "heading": "Coastal Home & Estate Management",
+   "blocks": [
+    {
+     "p": "ElevenLabs | n8n | GoHighLevel | Voice Automation | CRM | Appointment Booking"
+    }
+   ]
+  },
+  {
+   "heading": "Voice Receptionist",
+   "blocks": [
+    {
+     "p": "Configured a dedicated voice receptionist named Olivia to handle incoming calls."
+    },
+    {
+     "p": "The receptionist can:"
+    },
+    {
+     "list": [
+      "Answer inbound calls",
+      "Understand the caller’s request",
+      "Provide information about company services",
+      "Collect customer details",
+      "Handle appointment requests",
+      "Pass information to the CRM"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Automation Workflow",
+   "blocks": [
+    {
+     "p": "The complete process works through:"
+    },
+    {
+     "p": "Inbound Call↓ElevenLabs Voice Receptionist↓Caller Information↓n8n Automation↓GoHighLevel CRM↓Contact Update↓Appointment Booking"
+    }
+   ]
+  },
+  {
+   "heading": "CRM & Appointment Automation",
+   "blocks": [
+    {
+     "p": "n8n processes the information collected during the call and sends it to GoHighLevel."
+    },
+    {
+     "p": "The system can maintain:"
+    },
+    {
+     "list": [
+      "Customer information",
+      "Lead details",
+      "Appointment information",
+      "Call related data"
+     ]
+    },
+    {
+     "p": "Appointment requests are also connected to the booking process, reducing the need for manual scheduling and data entry."
+    }
+   ]
+  }
+ ],
+ "result": [
+  "A complete inbound call automation system that connects customer calls, information capture, appointment booking, and CRM updates in one workflow.",
+  "The setup reduces repetitive receptionist work, speeds up lead handling, and keeps customer information organized automatically."
+ ],
+ "images": [
+  {
+   "src": "/projects/rental-homes-services/01-960.webp",
+   "srcSet": "/projects/rental-homes-services/01-480.webp 480w, /projects/rental-homes-services/01-960.webp 960w, /projects/rental-homes-services/01-1600.webp 1600w",
+   "full": "/projects/rental-homes-services/01-1600.webp",
+   "width": 1600,
+   "height": 728,
+   "alt": "Rental Homes Services: Elevenlabs Inbound Agent"
+  }
+ ]
+}

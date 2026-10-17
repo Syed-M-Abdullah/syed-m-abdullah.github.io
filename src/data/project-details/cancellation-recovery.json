@@ -1,0 +1,54 @@
+{
+ "slug": "cancellation-recovery",
+ "tags": [
+  "Scheduling",
+  "Global"
+ ],
+ "overview": [
+  "Detects cancelled appointments and offers the slot to a waitlist through an automatic campaign."
+ ],
+ "sections": [
+  {
+   "heading": "The challenge",
+   "blocks": [
+    {
+     "p": "Cancelled appointment slots went unfilled because there was no recovery process."
+    }
+   ]
+  },
+  {
+   "heading": "Solution & architecture",
+   "blocks": [
+    {
+     "p": "When a cancellation is detected, the workflow launches a recovery campaign by email (SendGrid and Gmail API), offers the freed slot to people on the waitlist and logs the result."
+    }
+   ]
+  },
+  {
+   "heading": "Workflow",
+   "blocks": [
+    {
+     "list": [
+      "Detect cancellation",
+      "Recovery campaign",
+      "Refill from waitlist",
+      "Log"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Key facts",
+   "blocks": [
+    {
+     "list": [
+      "Auto — Cancellation detection",
+      "Waitlist — Slot refill"
+     ]
+    }
+   ]
+  }
+ ],
+ "result": [],
+ "images": []
+}

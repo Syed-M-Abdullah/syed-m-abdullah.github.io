@@ -1,797 +1,661 @@
 // Keep this file free of value imports: scripts/export-static.mjs loads it with Node's
 // TypeScript type-stripping to build the static route list and sitemap.
+//
+// Copy rules (busy business owners, plain English): headings ≤ 8 words, card lines ≤ 20 words,
+// at most 3 bullets per card. No outcome numbers unless they are verified.
 
 export type ServiceSlug =
-  "gohighlevel-automation" | "workflow-automation" | "voice-ai" | "ai-chatbots" | "custom-software";
-
-export type ServiceDiagram =
-  | { kind: "flow"; title: string; steps: { label: string; detail: string }[] }
-  | {
-      kind: "hub";
-      title: string;
-      inputs: string[];
-      hub: { label: string; detail: string };
-      outputs: string[];
-    }
-  | { kind: "layers"; title: string; layers: { label: string; items: string[] }[] };
+  | "workflow-automation"
+  | "gohighlevel-automation"
+  | "lead-generation"
+  | "ai-content-automation"
+  | "voice-ai"
+  | "ai-chatbots"
+  | "custom-software";
 
 export type Service = {
   slug: ServiceSlug;
+  /** Full name: mega-menu, cards and the services page. */
   title: string;
+  /** Short name: breadcrumbs, footer links and the contact form. */
   shortTitle: string;
-  /** Primary agency services are listed first; supporting capabilities after. */
-  tier: "primary" | "supporting";
-  eyebrow: string;
+  /** One-line outcome for cards and menus (≤ 20 words). */
   tagline: string;
-  problem: string;
-  outcome: string;
-  tools: string[];
-  hero: { title: string; intro: string; audience: string[] };
-  whatItDoes: string;
-  whenToUse: string[];
-  useCases: { title: string; body: string }[];
-  deliverables: string[];
-  diagram: ServiceDiagram;
-  integrations: { group: string; items: string[] }[];
-  approach: { title: string; body: string }[];
-  faqs: { q: string; a: string }[];
+  /** Up to three short bullets for the home services grid. */
+  bullets: string[];
+  /** Small label above the page title (usually the main tools). */
+  eyebrow: string;
+  hero: { title: string; intro: string };
+  /** The pain in two short lines, in the client's words. */
+  problem: [string, string];
+  /** "What I build": the systems this service covers. */
+  build: { title: string; body: string }[];
+  /** "How it works": three steps from first call to live system. */
+  steps: [Step, Step, Step];
+  /** "What you get": outcomes, described without invented numbers. */
+  outcomes: string[];
   cta: { title: string; body: string };
   meta: { title: string; description: string };
 };
 
+type Step = { title: string; body: string };
+
 export const services: Service[] = [
-  // Order = display order everywhere (home, nav, footer, contact form). AI voice leads.
+  {
+    slug: "workflow-automation",
+    title: "Business Automation",
+    shortTitle: "Business Automation",
+    tagline:
+      "Connect your apps and remove manual work with n8n, Zapier or Make — built to keep running.",
+    bullets: [
+      "Lead routing, CRM sync and reporting",
+      "AI steps that sort, summarise and draft",
+      "Error alerts, retries and clear handover",
+    ],
+    eyebrow: "n8n · Zapier · Make",
+    hero: {
+      title: "Automate the busywork between your apps",
+      intro:
+        "I build workflows that move data, trigger follow-ups and run AI steps across your tools. I implement on all three platforms and recommend the right one for your budget, team and volume.",
+    },
+    problem: [
+      "Your team copies data between apps, inboxes and spreadsheets every day.",
+      "Automations break quietly, and nobody notices until a lead or invoice is lost.",
+    ],
+    build: [
+      {
+        title: "Lead capture & routing",
+        body: "Form, ad and inbox leads cleaned, de-duplicated and sent to the right person.",
+      },
+      {
+        title: "CRM & app sync",
+        body: "Contacts, deals and orders kept in step across your CRM, sheets and tools.",
+      },
+      {
+        title: "Documents & finance",
+        body: "Invoices, agreements and reports generated, sent and filed automatically.",
+      },
+      {
+        title: "AI inside your workflows",
+        body: "Classify emails, summarise calls and draft replies with OpenAI or Claude.",
+      },
+      {
+        title: "Alerts & daily summaries",
+        body: "Updates in Slack or email, so your team sees problems before customers do.",
+      },
+      {
+        title: "Custom API integrations",
+        body: "Webhooks and custom code wherever a ready-made connector doesn't exist.",
+      },
+    ],
+    steps: [
+      {
+        title: "Map the process",
+        body: "We walk through the manual steps and choose the right platform together.",
+      },
+      {
+        title: "Build and test",
+        body: "I build the workflow and test it against real, messy data.",
+      },
+      {
+        title: "Launch and hand over",
+        body: "Go live with monitoring, alerts and a short guide for your team.",
+      },
+    ],
+    outcomes: [
+      "Repetitive copy-paste work taken off your team",
+      "Leads and data moving between apps without missed steps",
+      "Alerts when something fails, before customers notice",
+      "Documentation your team can follow and adjust",
+    ],
+    cta: {
+      title: "Not sure which platform fits?",
+      body: "Tell me what you want automated. I'll recommend n8n, Zapier or Make — and explain why.",
+    },
+    meta: {
+      title: "Business Automation with n8n, Zapier & Make",
+      description:
+        "Business process automation with n8n, Zapier and Make.com — lead routing, CRM sync, documents and AI steps, plus an honest comparison of the three platforms.",
+    },
+  },
+  {
+    slug: "gohighlevel-automation",
+    title: "GoHighLevel Automation & CRM",
+    shortTitle: "GoHighLevel & CRM",
+    tagline:
+      "Pipelines, follow-ups and calendars in GoHighLevel, set up so every lead gets a reply.",
+    bullets: [
+      "Lead capture into clean pipelines",
+      "SMS, email and WhatsApp follow-up",
+      "Booking, reminders and no-show recovery",
+    ],
+    eyebrow: "For agencies & service businesses",
+    hero: {
+      title: "A GoHighLevel CRM that follows up for you",
+      intro:
+        "I set up and repair GoHighLevel accounts: pipelines, workflows, calendars and integrations. Every lead gets a fast reply and a clear next step, without anyone chasing it.",
+    },
+    problem: [
+      "Leads sit in the CRM without a reply, or get stuck between stages.",
+      "Workflows are half-finished, and follow-up depends on someone remembering.",
+    ],
+    build: [
+      {
+        title: "Pipelines & lead stages",
+        body: "Clear stages with automatic moves, owners and tasks for your team.",
+      },
+      {
+        title: "Follow-up sequences",
+        body: "SMS, email and WhatsApp nurtures that stop as soon as the lead replies.",
+      },
+      {
+        title: "Calendars & reminders",
+        body: "Booking links, reminders, rescheduling and no-show follow-up.",
+      },
+      {
+        title: "AI voice & chat in GHL",
+        body: "Agents that answer, qualify and book straight into your calendar.",
+      },
+      {
+        title: "Payments & invoices",
+        body: "Payment links, instalments and receipts tied to each contact.",
+      },
+      {
+        title: "Snapshots for agencies",
+        body: "Reusable sub-account builds you can roll out to every client.",
+      },
+    ],
+    steps: [
+      {
+        title: "Audit the account",
+        body: "I review your pipelines, workflows and lead sources, and find the gaps.",
+      },
+      {
+        title: "Rebuild and connect",
+        body: "Stages, automations and integrations, tested on real lead journeys.",
+      },
+      {
+        title: "Walk through and hand over",
+        body: "A recorded walkthrough and notes on how every workflow works.",
+      },
+    ],
+    outcomes: [
+      "Every new lead gets a reply and an owner",
+      "Follow-up runs on schedule until the lead responds",
+      "Fewer missed appointments, with reminders and easy rescheduling",
+      "A setup your team understands and can maintain",
+    ],
+    cta: {
+      title: "Want your GoHighLevel account fixed?",
+      body: "Share what's set up today and where leads get stuck. I'll suggest a clear fix plan.",
+    },
+    meta: {
+      title: "GoHighLevel Automation & CRM Setup",
+      description:
+        "GoHighLevel CRM setup and automation — pipelines, follow-up workflows, calendars, AI agents and integrations for agencies and service businesses.",
+    },
+  },
+  {
+    slug: "lead-generation",
+    title: "Lead Generation Systems",
+    shortTitle: "Lead Generation",
+    tagline:
+      "Find, enrich and contact the right prospects automatically, then sync replies and bookings to your CRM.",
+    bullets: [
+      "Prospect lists from Apollo.io, LinkedIn and Maps",
+      "Verified emails before any outreach",
+      "Personalised sequences synced to your CRM",
+    ],
+    eyebrow: "Apify · Apollo.io · CRM sync",
+    hero: {
+      title: "Find and reach the right prospects automatically",
+      intro:
+        "I build lead systems that scrape and enrich prospects, verify contact details, write personalised outreach and sync every reply and booking to your CRM.",
+    },
+    problem: [
+      "Building prospect lists by hand takes hours, and the data goes stale fast.",
+      "Outreach feels generic, replies get lost, and nobody knows which leads are warm.",
+    ],
+    build: [
+      {
+        title: "Prospect scraping",
+        body: "Targeted lists from Apollo.io, LinkedIn and Google Maps using Apify.",
+      },
+      {
+        title: "Enrichment & verification",
+        body: "Company data added and emails verified before anyone is contacted.",
+      },
+      {
+        title: "AI personalisation",
+        body: "Opening lines and sequences written from each prospect's profile.",
+      },
+      {
+        title: "CRM sync",
+        body: "Leads, replies and stages pushed to GoHighLevel, HubSpot or Zoho.",
+      },
+      {
+        title: "Outreach sequences",
+        body: "Multi-step email follow-up that stops automatically on a reply.",
+      },
+      {
+        title: "Booking hand-off",
+        body: "Interested leads get a calendar link, or a call from a voice agent.",
+      },
+    ],
+    steps: [
+      {
+        title: "Define your ideal customer",
+        body: "Industries, roles, locations and the buying signals that matter.",
+      },
+      {
+        title: "Build the pipeline",
+        body: "Scraping, enrichment, verification and outreach, tested on a small batch.",
+      },
+      {
+        title: "Run and refine",
+        body: "Scheduled runs, clean data in your CRM and a simple progress view.",
+      },
+    ],
+    outcomes: [
+      "Fresh, verified prospect lists without manual research",
+      "Personalised outreach at a steady, safe volume",
+      "Every reply and booking tracked in your CRM",
+      "A repeatable system you own and can scale",
+    ],
+    cta: {
+      title: "Ready for a steadier lead flow?",
+      body: "Tell me who your ideal customer is. I'll map a lead system around them.",
+    },
+    meta: {
+      title: "Automated Lead Generation Systems",
+      description:
+        "Automated lead generation with Apify, Apollo.io and n8n — prospect scraping, enrichment, email verification, AI-personalised outreach and CRM sync.",
+    },
+  },
+  {
+    slug: "ai-content-automation",
+    title: "AI Content & Blog Automation",
+    shortTitle: "AI Content & Blogs",
+    tagline:
+      "From keyword research to a published WordPress post — researched, written in your voice and reviewed.",
+    bullets: [
+      "Topic and keyword research",
+      "Brand-voice drafts with a review step",
+      "SEO, featured image and scheduled publishing",
+    ],
+    eyebrow: "Research → Write → Publish",
+    hero: {
+      title: "From keyword to published post, automated",
+      intro:
+        "I build AI content pipelines that research topics, draft articles in your brand voice, wait for your approval, handle the SEO and publish to WordPress on schedule.",
+    },
+    problem: [
+      "Your blog is out of date because writing takes time nobody has.",
+      "AI drafts sound generic, miss facts and still need hours of formatting.",
+    ],
+    build: [
+      {
+        title: "Topic & keyword research",
+        body: "Ideas and keywords pulled from search data and competitor content.",
+      },
+      {
+        title: "Article research",
+        body: "Sources gathered and summarised before a single word is drafted.",
+      },
+      {
+        title: "Brand-voice drafting",
+        body: "Drafts written to your tone, structure and do-and-don't rules.",
+      },
+      {
+        title: "Review checkpoint",
+        body: "You approve, edit or reject each draft before anything goes live.",
+      },
+      {
+        title: "SEO & featured image",
+        body: "Meta tags, headings, internal links and a generated featured image.",
+      },
+      {
+        title: "WordPress auto-publishing",
+        body: "Posts formatted and scheduled in WordPress, with categories and tags.",
+      },
+    ],
+    steps: [
+      {
+        title: "Set the strategy",
+        body: "Topics, keywords, tone and the sources the pipeline may use.",
+      },
+      {
+        title: "Build the pipeline",
+        body: "Research, drafting, review and publishing steps, tested on real posts.",
+      },
+      {
+        title: "Publish on schedule",
+        body: "Drafts arrive for review; approved posts go live automatically.",
+      },
+    ],
+    outcomes: [
+      "A consistent publishing schedule without a writing team",
+      "Articles grounded in research, not generic AI text",
+      "Full control: nothing publishes without your approval",
+      "SEO basics handled on every post",
+    ],
+    cta: {
+      title: "Want your blog publishing on schedule?",
+      body: "Share your site and topics. I'll outline a pipeline from research to WordPress.",
+    },
+    meta: {
+      title: "AI Content & Blog Automation for WordPress",
+      description:
+        "AI blog automation — keyword and article research, brand-voice drafting, a human review step, SEO and scheduled publishing to WordPress.",
+    },
+  },
   {
     slug: "voice-ai",
     title: "AI Voice Agents",
     shortTitle: "Voice AI",
-    tier: "primary",
-    eyebrow: "For businesses that can't answer every call",
-    tagline: "Inbound and outbound voice agents connected to your calendar and CRM.",
-    problem:
-      "Missed calls after hours, staff tied up with repetitive questions, and leads that go cold before anyone calls back.",
-    outcome:
-      "A voice agent that answers, qualifies, books and hands off — writing each call's outcome back to your CRM.",
-    tools: ["Vapi", "Synthflow", "ElevenLabs", "GoHighLevel", "n8n"],
-    hero: {
-      title: "Voice agents that do real work during the call",
-      intro:
-        "I build inbound and outbound AI voice agents with Vapi, Synthflow and ElevenLabs — connected to calendars, CRMs and live business data, so the agent can check availability, look up records and book appointments while the caller is still on the line.",
-      audience: [
-        "Agencies selling AI receptionists to local businesses",
-        "Clinics, real-estate and service businesses with high call volume",
-        "Sales teams running outbound qualification",
-      ],
-    },
-    whatItDoes:
-      "A useful voice agent is mostly integration work. The conversation design matters, but so do the lookups it makes mid-call, the data it writes afterwards and what happens when it can't help. I design the call flow, connect the tools, and set explicit rules for when to transfer to a person.",
-    whenToUse: [
-      "Calls go unanswered outside business hours or at peak times",
-      "Most calls are bookings, FAQs or qualification questions",
-      "Staff look things up in another system while on the phone",
-      "You want outbound follow-up calls on new or stale leads",
-      "You're an agency packaging AI receptionists for several clients",
-    ],
-    useCases: [
-      {
-        title: "24/7 receptionist",
-        body: "Answers common questions, books appointments into the calendar and triggers confirmations and reminders.",
-      },
-      {
-        title: "Live data lookups mid-call",
-        body: "Queries an ERP or property database during the call and matches results to what the caller is asking for.",
-      },
-      {
-        title: "Booking with live links",
-        body: "Completes a booking and sends the caller a confirmation or live Google Maps link during the conversation.",
-      },
-      {
-        title: "Outbound qualification",
-        body: "Calls new leads, qualifies them, books appointments and hands off to CRM follow-up.",
-      },
-      {
-        title: "Routing to the decision-maker",
-        body: "Identifies who the caller is, connects the person who can decide, and creates the CRM opportunity.",
-      },
-      {
-        title: "Agent templates for agencies",
-        body: "Industry-specific agents and an embeddable call widget for agencies serving several verticals.",
-      },
-    ],
-    deliverables: [
-      "Call flow and script design, including fallback paths",
-      "Agent configured in Vapi, Synthflow or ElevenLabs",
-      "Calendar, CRM and data integrations",
-      "Human transfer and escalation rules",
-      "Call outcome logging to your CRM or a sheet",
-      "Test call scenarios and a handover walkthrough",
-    ],
-    diagram: {
-      kind: "flow",
-      title: "Anatomy of an inbound call",
-      steps: [
-        { label: "Answer", detail: "Greets the caller and identifies what they need" },
-        { label: "Look up", detail: "Checks calendar, CRM or business data mid-call" },
-        { label: "Act", detail: "Books, reschedules or answers from the knowledge base" },
-        { label: "Escalate", detail: "Transfers to a person when the rules say so" },
-        { label: "Log", detail: "Writes the outcome and next step to the CRM" },
-        { label: "Follow up", detail: "Triggers SMS / email confirmations or reminders" },
-      ],
-    },
-    integrations: [
-      { group: "Voice platforms", items: ["Vapi", "Synthflow", "ElevenLabs", "Custom LLM flows"] },
-      {
-        group: "CRM & scheduling",
-        items: ["GoHighLevel", "Google Calendar", "Zoho CRM", "Follow Up Boss"],
-      },
-      {
-        group: "Data & logic",
-        items: ["n8n", "Webhooks", "REST APIs", "Google Maps API", "Firebase / GCP"],
-      },
-    ],
-    approach: [
-      {
-        title: "Script the edge cases",
-        body: "Unclear requests, wrong numbers, frustrated callers and out-of-scope questions get a defined path rather than improvisation.",
-      },
-      {
-        title: "Test calls before go-live",
-        body: "We run realistic call scenarios together and adjust prompts, voice and timing before real customers hear it.",
-      },
-      {
-        title: "Explicit escalation",
-        body: "You decide when the agent should transfer or take a message, and those rules are written into the configuration.",
-      },
-      {
-        title: "Outcomes logged from day one",
-        body: "Every call's outcome is recorded, so you can see what the agent handles and where it hands off.",
-      },
-    ],
-    faqs: [
-      {
-        q: "Which voice platform do you use?",
-        a: "Mainly Vapi, Synthflow and ElevenLabs. The right choice depends on the integrations you need, voice quality, latency and per-minute cost — I'll recommend one after discovery.",
-      },
-      {
-        q: "Will callers know they're speaking to an AI?",
-        a: "That's your decision, and disclosure rules vary by country and industry. Many businesses disclose it up front; I'll build whichever approach you choose and recommend you confirm local requirements.",
-      },
-      {
-        q: "What happens when the agent can't help?",
-        a: "It follows the escalation rules we define — transfer to a person, take a message or book a callback — and logs what happened.",
-      },
-      {
-        q: "Can the agent use our existing phone number?",
-        a: "Usually, through call forwarding or by connecting the number to the voice platform. The exact setup depends on your telephony provider.",
-      },
-      {
-        q: "Do you build agents for agencies to resell?",
-        a: "Yes. I can build and maintain agents for your clients under your agency's brand.",
-      },
-    ],
-    cta: {
-      title: "Thinking about an AI receptionist or outbound agent?",
-      body: "Tell me what callers usually need and which systems the agent should use. I'll outline the call flow.",
-    },
-    meta: {
-      title: "AI Voice Agents (Vapi, Synthflow, ElevenLabs)",
-      description:
-        "Inbound and outbound AI voice agents that book appointments, look up live data mid-call and log outcomes to your CRM — built with Vapi, Synthflow and ElevenLabs.",
-    },
-  },
-  {
-    slug: "workflow-automation",
-    title: "Workflow Automation — n8n, Make.com & Zapier",
-    shortTitle: "n8n · Make · Zapier",
-    tier: "primary",
-    eyebrow: "For teams whose tools don't talk to each other",
     tagline:
-      "n8n, Make.com and Zapier workflows that move data between your tools — with error handling built in.",
-    problem:
-      "Copy-paste between CRM, sheets, inboxes and apps — or fragile automations that fail silently.",
-    outcome:
-      "Production workflows with retries, deduplication and alerts, on the platform that fits your team — plus custom API integrations where no connector exists.",
-    tools: ["n8n", "Make.com", "Zapier", "REST APIs", "OpenAI"],
+      "Inbound and outbound voice agents that answer, qualify and book appointments, day or night.",
+    bullets: [
+      "24/7 call answering and booking",
+      "Live lookups in your CRM or calendar",
+      "Outbound calls that follow up new leads",
+    ],
+    eyebrow: "Vapi · ElevenLabs · Synthflow",
     hero: {
-      title: "Automations that keep working when the data gets messy",
+      title: "Voice agents that answer, qualify and book",
       intro:
-        "I build workflows in n8n, Make.com and Zapier that capture and route leads, sync CRMs, generate documents, process orders and run support, finance and operations processes end to end. The difference between a demo and a production workflow is what happens on bad input, rate limits and duplicate records — so that's where the engineering time goes.",
-      audience: [
-        "Agencies automating delivery across several clients",
-        "Sales, support and ops teams working out of spreadsheets",
-        "E-commerce, finance and service businesses with multi-step processes",
-      ],
+        "I build AI voice agents connected to your calendar, CRM and business data, so callers get answers and appointments while they're still on the line.",
     },
-    whatItDoes:
-      "An automation platform sits between your systems and handles the work nobody should do by hand: receiving webhooks and form submissions, transforming data, calling APIs, applying AI where it helps, routing by rules, and writing results back where your team works. I pick the platform that suits the job — n8n for complex logic and self-hosting, Make.com for visual multi-branch scenarios, Zapier for quick, maintainable integrations your team can own — and write direct API integrations when a tool has no connector.",
-    whenToUse: [
-      "The same data is typed into two or more systems by hand",
-      "Leads need capturing, enriching, scoring or routing before they reach the CRM",
-      "Documents, invoices or purchase orders are created manually from data you already have",
-      "An existing Zapier or Make scenario has grown too complex to trust",
-      "Support tickets, orders or requests need routing and follow-up by rules and deadlines",
+    problem: [
+      "Calls go unanswered after hours or whenever the team is busy.",
+      "Staff spend the day on repeat questions, and new leads go cold.",
     ],
-    useCases: [
+    build: [
       {
-        title: "Lead capture, scoring & routing",
-        body: "Forms, ads, Calendly, Typeform or Yelp leads enriched, scored and routed into GoHighLevel, HubSpot, Pipedrive or Zoho — duplicate-aware.",
+        title: "24/7 AI receptionist",
+        body: "Answers every call, handles common questions and takes messages.",
       },
       {
-        title: "Finance & document automation",
-        body: "Purchase orders, invoices and bills synced between Monday.com and Xero; agreements and invoices generated from templates; Swiss QR invoices from HubSpot.",
+        title: "Appointment booking",
+        body: "Checks live availability and books straight into your calendar.",
       },
       {
-        title: "Support desks with SLAs",
-        body: "Tickets classified by AI, prioritised, routed to the right team, escalated in Slack and tracked against SLA deadlines.",
+        title: "Outbound follow-up",
+        body: "Calls new leads quickly and qualifies them with your questions.",
       },
       {
-        title: "Operations control systems",
-        body: "Field service dispatch, procurement approvals, inventory replenishment and shipment tracking run as connected, auditable workflows.",
+        title: "Live data lookups",
+        body: "Pulls order, listing or account details during the call.",
       },
       {
-        title: "Inbox triage with RAG drafts",
-        body: "Classify incoming email, route it to the right person and draft a reply from your knowledge base for a person to approve.",
+        title: "Smart call transfer",
+        body: "Hands the call to the right person when a human is needed.",
       },
       {
-        title: "Content & publishing pipelines",
-        body: "Branded social graphics, short-form video, SEO articles and YouTube uploads generated, checked and scheduled automatically.",
+        title: "CRM call logging",
+        body: "Summary, outcome and next step written back after every call.",
       },
     ],
-    deliverables: [
-      "A workflow map agreed before building",
-      "Workflows with clear naming, notes and routers you can follow",
-      "Error branches, retries and alerts for failed runs",
-      "Matching / deduplication wherever records are created",
-      "Custom API and webhook integrations where needed",
-      "Handover documentation, with credentials owned by you",
-    ],
-    diagram: {
-      kind: "hub",
-      title: "How an integration workflow is structured",
-      inputs: ["Webhooks & forms", "CRM events", "Email inbox", "Schedules", "Files & sheets"],
-      hub: {
-        label: "n8n · Make · Zapier",
-        detail:
-          "Validate → transform → enrich → dedupe → route, with an error branch at each external call",
-      },
-      outputs: [
-        "CRM create / update",
-        "Team notifications",
-        "Documents & invoices",
-        "AI drafts for review",
-        "Third-party APIs",
-      ],
-    },
-    integrations: [
+    steps: [
       {
-        group: "Automation platforms",
-        items: ["n8n", "Make.com", "Zapier", "Webhooks", "REST APIs"],
+        title: "Script the calls",
+        body: "We define what the agent says, asks and must never do.",
       },
       {
-        group: "CRM, finance & data",
-        items: [
-          "GoHighLevel",
-          "HubSpot",
-          "Pipedrive",
-          "Zoho CRM",
-          "Airtable",
-          "SmartSuite",
-          "Monday.com",
-          "Xero",
-          "Shopify",
-          "Google Sheets",
-        ],
+        title: "Build and connect",
+        body: "Voice, knowledge and integrations, tested on real call scenarios.",
       },
       {
-        group: "AI & content",
-        items: [
-          "OpenAI",
-          "Claude",
-          "Gemini",
-          "Pinecone (RAG)",
-          "Apollo",
-          "Apify",
-          "PDFMonkey",
-          "JSON2Video",
-        ],
-      },
-      {
-        group: "Messaging & support",
-        items: ["Gmail", "Slack", "Twilio", "WhatsApp", "Zendesk", "Mailchimp", "DocuSign"],
+        title: "Go live and tune",
+        body: "Launch on your number, then refine from real call recordings.",
       },
     ],
-    approach: [
-      {
-        title: "Design for failure",
-        body: "Every workflow has a plan for bad input, API errors and rate limits: retries where safe, error branches, and a notification when a person needs to look.",
-      },
-      {
-        title: "Safe to re-run",
-        body: "Records are matched before they're created, so re-running a workflow after a failure doesn't create duplicates.",
-      },
-      {
-        title: "Tested with realistic data",
-        body: "I test with representative samples — anonymised where needed — including missing fields, odd formats and duplicates.",
-      },
-      {
-        title: "Errors where your team works",
-        body: "Failures surface where people already look — a Slack alert or a comment on the Monday.com item — instead of hiding in the automation tool.",
-      },
-    ],
-    faqs: [
-      {
-        q: "n8n, Make.com or Zapier — which should we use?",
-        a: "It depends on the logic, volume and who will maintain it. Zapier is quickest for straightforward integrations your team can own, Make.com handles visual multi-branch scenarios well, and n8n suits complex logic, AI agents and self-hosting. I'll recommend one after discovery — or work in the platform you already use.",
-      },
-      {
-        q: "Can you take over automations someone else built?",
-        a: "Yes. I review and document what they do first, then recommend whether to repair, refactor or rebuild.",
-      },
-      {
-        q: "How are API keys and credentials handled?",
-        a: "Credentials live in your accounts and your automation platform's credential store, not in shared documents, and access can be revoked when the project ends.",
-      },
-      {
-        q: "Do you work white-label for agencies?",
-        a: "Yes. I can build inside your clients' tools under your agency's name, with communication handled the way you prefer.",
-      },
+    outcomes: [
+      "Every call answered, including nights and weekends",
+      "Appointments booked without staff on the phone",
+      "Leads contacted while they're still interested",
+      "Call summaries in your CRM, ready for follow-up",
     ],
     cta: {
-      title: "Have a process that's still done by hand?",
-      body: "Describe the tools involved and where the data needs to go. I'll sketch how I'd automate it.",
+      title: "Want to hear it on your use case?",
+      body: "Tell me how calls reach you today. I'll suggest the simplest agent that handles them.",
     },
     meta: {
-      title: "Workflow Automation with n8n, Make.com & Zapier",
+      title: "AI Voice Agents for Bookings & Lead Qualification",
       description:
-        "Production workflows in n8n, Make.com and Zapier — lead routing, CRM sync, finance and document automation, support desks and operations systems with retries, deduplication and alerts.",
+        "Inbound and outbound AI voice agents built with Vapi, ElevenLabs and Synthflow — connected to your calendar and CRM. Hear real recordings.",
     },
   },
   {
     slug: "ai-chatbots",
     title: "WhatsApp & Chat AI Agents",
     shortTitle: "Chat AI Agents",
-    tier: "primary",
-    eyebrow: "For businesses answering the same messages all day",
-    tagline: "WhatsApp, Instagram, Messenger and web assistants that qualify, book and hand off.",
-    problem:
-      "Messages across WhatsApp, Instagram and the website get slow or inconsistent replies, and conversations never reach the CRM.",
-    outcome:
-      "One assistant across your channels, grounded in your own knowledge base, syncing qualified conversations to the CRM.",
-    tools: ["WhatsApp API", "OpenAI", "Pinecone", "n8n", "Airtable"],
-    hero: {
-      title: "Chat assistants grounded in your business — not generic answers",
-      intro:
-        "I build conversational assistants for WhatsApp, Instagram, Facebook Messenger, Telegram, Slack, Discord and websites. They answer from your own knowledge base, qualify leads, book appointments and hand the conversation to a person when it needs one.",
-      audience: [
-        "Clinics and service businesses booking over WhatsApp",
-        "Agencies offering chat automation to their clients",
-        "Teams supporting customers across several messaging channels",
-      ],
-    },
-    whatItDoes:
-      "The language model is the easy part. The work is in grounding answers in your content, deciding what the assistant should never answer, connecting it to booking and CRM tools, and making the hand-off to a person smooth. I build the conversation logic in n8n so it stays visible and editable rather than hidden in a black box.",
-    whenToUse: [
-      "Most inbound messages are FAQs, booking requests or pricing questions",
-      "You're active on several channels and replies are inconsistent",
-      "Bookings and reminders are handled manually over WhatsApp",
-      "Conversations should create or update CRM records",
-      "You want answers drawn from your documents, not the open internet",
+    tagline:
+      "AI assistants on WhatsApp, Instagram and your website that answer from your knowledge and book leads.",
+    bullets: [
+      "WhatsApp, Instagram, Messenger and web chat",
+      "Answers grounded in your own documents",
+      "Lead qualification and human hand-off",
     ],
-    useCases: [
+    eyebrow: "WhatsApp · Instagram · Website",
+    hero: {
+      title: "Chat agents that reply instantly, on every channel",
+      intro:
+        "I build AI chat assistants that answer from your own knowledge base, qualify leads, book appointments and pass the conversation to a person when needed.",
+    },
+    problem: [
+      "Messages pile up across WhatsApp, Instagram and the website.",
+      "Replies are slow or inconsistent, and conversations never reach the CRM.",
+    ],
+    build: [
       {
-        title: "WhatsApp booking & reminders",
-        body: "Customers book through WhatsApp, with a multi-stage reminder cadence and reschedule handling in the chat.",
+        title: "WhatsApp booking assistant",
+        body: "Answers questions, offers available times and sends reminders.",
       },
       {
-        title: "Omnichannel assistant",
-        body: "One assistant answering across WhatsApp, Instagram, Messenger, Telegram, Slack and Discord, with CRM sync.",
+        title: "Omnichannel inbox agent",
+        body: "One assistant across WhatsApp, Instagram, Messenger and web chat.",
       },
       {
-        title: "Knowledge-base answers (RAG)",
-        body: "Answers retrieved from your documents through a vector store such as Pinecone, with clear limits on scope.",
+        title: "Knowledge-base answers",
+        body: "Replies grounded in your documents, prices and policies.",
       },
       {
         title: "Lead qualification",
-        body: "Asks the qualifying questions, scores the lead and triggers the right CRM workflow.",
+        body: "Asks the right questions and tags hot leads in your CRM.",
       },
       {
-        title: "Human escalation",
-        body: "Hands the conversation to your team when intent, sentiment or a keyword says a person should take over.",
+        title: "Human hand-off",
+        body: "Escalates to your team with the full conversation attached.",
       },
     ],
-    deliverables: [
-      "Conversation design: intents, guardrails and tone",
-      "Knowledge-base ingestion and retrieval setup",
-      "Channel connections (Meta API, Telegram, Slack and others)",
-      "CRM, calendar and Airtable / Sheets integration",
-      "Escalation and human hand-off rules",
-      "A test conversation set and handover documentation",
-    ],
-    diagram: {
-      kind: "hub",
-      title: "One assistant, many channels",
-      inputs: ["WhatsApp", "Instagram", "Messenger", "Telegram", "Website chat", "Slack / Discord"],
-      hub: {
-        label: "Conversation engine",
-        detail: "LLM + your knowledge base (RAG), with intent detection and guardrails",
-      },
-      outputs: [
-        "Grounded answer",
-        "Book or reschedule",
-        "Qualify & score lead",
-        "CRM create / update",
-        "Escalate to a person",
-      ],
-    },
-    integrations: [
+    steps: [
       {
-        group: "Channels",
-        items: [
-          "WhatsApp (Meta API)",
-          "Instagram",
-          "Facebook Messenger",
-          "Telegram",
-          "Slack",
-          "Discord",
-        ],
+        title: "Collect the knowledge",
+        body: "FAQs, services, prices and policies the agent is allowed to use.",
       },
-      { group: "AI & knowledge", items: ["OpenAI", "Pinecone (RAG)", "Custom LLM flows"] },
       {
-        group: "Business systems",
-        items: ["GoHighLevel", "Airtable", "Google Sheets", "Google Calendar", "Zoho CRM", "n8n"],
+        title: "Build and connect",
+        body: "Channels, CRM and booking wired up and tested with real questions.",
+      },
+      {
+        title: "Launch and improve",
+        body: "Go live, review conversations and refine the answers.",
       },
     ],
-    approach: [
-      {
-        title: "Decide what it must not say",
-        body: "Out-of-scope topics, pricing rules and sensitive boundaries are written down and tested, not left to the model.",
-      },
-      {
-        title: "Grounded answers",
-        body: "Responses come from your approved content. When the knowledge base doesn't cover a question, the assistant says so or escalates.",
-      },
-      {
-        title: "A conversation test set",
-        body: "Realistic questions — including awkward ones — are used to check behaviour before launch and after every change.",
-      },
-      {
-        title: "Visible logic",
-        body: "Flows live in n8n, so your team can see and adjust the logic without rebuilding the assistant.",
-      },
-    ],
-    faqs: [
-      {
-        q: "Which channels can the assistant run on?",
-        a: "WhatsApp (through Meta's API), Instagram, Facebook Messenger, Telegram, Slack, Discord and website chat. Some channels need business verification on Meta's side, which I can guide you through.",
-      },
-      {
-        q: "How do you stop it making things up?",
-        a: "By grounding answers in your knowledge base, limiting scope in its instructions, and testing against a set of difficult questions. When it doesn't know, it should say so or hand off.",
-      },
-      {
-        q: "Can it book appointments?",
-        a: "Yes, when connected to your calendar or booking tool. It can also send reminders and handle reschedules.",
-      },
-      {
-        q: "Where does customer data end up?",
-        a: "In tools you own, such as your CRM or Airtable. We agree what is stored, and where, before building.",
-      },
+    outcomes: [
+      "Instant replies, any time of day",
+      "Consistent answers that match your policies",
+      "Qualified conversations synced to your CRM",
+      "Your team steps in only when it matters",
     ],
     cta: {
-      title: "Want one assistant across your messaging channels?",
-      body: "Tell me which channels you use and what customers usually ask. I'll suggest a sensible first scope.",
+      title: "Answering the same messages all day?",
+      body: "Send me the questions you get most. I'll outline an agent that handles them.",
     },
     meta: {
-      title: "AI Chatbots for WhatsApp, Instagram & Web",
+      title: "WhatsApp & AI Chat Agents",
       description:
-        "AI chat assistants for WhatsApp, Instagram, Messenger and websites — grounded in your knowledge base, connected to booking and CRM, with human hand-off.",
-    },
-  },
-  {
-    slug: "gohighlevel-automation",
-    title: "GoHighLevel Automation",
-    shortTitle: "GoHighLevel",
-    tier: "primary",
-    eyebrow: "For agencies & GHL service providers",
-    tagline: "CRM builds, pipelines and workflows your clients can actually run.",
-    problem:
-      "Sub-accounts with half-finished workflows, leads that stall between stages, and follow-up that depends on someone remembering.",
-    outcome:
-      "A documented GoHighLevel setup — pipelines, workflows, calendars and integrations — tested against real lead scenarios.",
-    tools: ["Workflows", "Pipelines", "Payments", "Synthflow", "Zapier"],
-    hero: {
-      title: "GoHighLevel builds that hold up after handover",
-      intro:
-        "I implement and repair GoHighLevel systems for agencies and their clients: lead capture, pipelines, follow-up workflows, calendars and the integrations around them. You get a setup your team understands — not a maze of triggers nobody wants to touch.",
-      audience: [
-        "Marketing agencies delivering GoHighLevel to clients",
-        "GHL consultants who need implementation capacity",
-        "Businesses moving their sales process into GoHighLevel",
-      ],
-    },
-    whatItDoes:
-      "GoHighLevel is powerful because it combines CRM, calendars, messaging and automation in one place — and fragile for the same reason. I design the pipeline stages and workflow logic first, then build them with naming, tags and custom fields that stay consistent across sub-accounts. When native features stop short, I extend them with webhooks, n8n or direct API calls.",
-    whenToUse: [
-      "You're onboarding a client and want their sub-account built properly from day one",
-      "Existing workflows overlap, double-send messages, or nobody is sure which one fires",
-      "Leads arrive from forms, ads, calls and chat but don't land in the right pipeline stage",
-      "You want voice or chat AI connected to GoHighLevel calendars and contacts",
-      "Data needs to move between GoHighLevel and a tool it doesn't integrate with natively",
-    ],
-    useCases: [
-      {
-        title: "Lead capture to booked appointment",
-        body: "Forms, funnels and inbound calls create or update the contact, place the opportunity in the right stage and trigger follow-up until the lead books or opts out.",
-      },
-      {
-        title: "Lead nurturing with reply detection",
-        body: "Welcome, value and offer emails and SMS on a schedule, waiting for engagement and branching the moment a lead replies.",
-      },
-      {
-        title: "Reminders & rescheduling",
-        body: "Reminder and reschedule flows tied to GoHighLevel calendars, so the team isn't chasing confirmations by hand.",
-      },
-      {
-        title: "AI voice & chat inside GHL",
-        body: "Voice agents and chatbots that read and write contacts, book into calendars and create pipeline opportunities.",
-      },
-      {
-        title: "White-label sub-account builds",
-        body: "Voice agents, appointment and post-call workflows set up per client sub-account inside an agency's white-labelled GoHighLevel.",
-      },
-      {
-        title: "Payments & instalments",
-        body: "Payment processing, receipts, instalment schedules, due-date reminders and overdue handling inside GoHighLevel.",
-      },
-    ],
-    deliverables: [
-      "Pipeline and stage design agreed before building",
-      "Workflows with clear names, triggers and exit conditions",
-      "Custom fields, tags and calendar configuration",
-      "Integrations via webhooks, n8n or APIs where native features stop",
-      "Test runs with sample contacts for each main path",
-      "Handover notes: what each workflow does and how to change it safely",
-    ],
-    diagram: {
-      kind: "flow",
-      title: "Typical lead lifecycle in GoHighLevel",
-      steps: [
-        {
-          label: "Capture",
-          detail: "Form, funnel, ad, call or chat creates or updates the contact",
-        },
-        { label: "Qualify", detail: "Tags and custom fields set; rules or AI assess intent" },
-        { label: "Pipeline", detail: "Opportunity placed in the right stage with an owner" },
-        { label: "Follow up", detail: "SMS / email cadence that stops on reply or booking" },
-        { label: "Book", detail: "Calendar booking, reminders and reschedule handling" },
-        { label: "Report", detail: "Stage changes feed reporting and connected tools" },
-      ],
-    },
-    integrations: [
-      {
-        group: "Inside GoHighLevel",
-        items: [
-          "Workflows",
-          "Pipelines",
-          "Calendars",
-          "Custom fields & tags",
-          "Forms & funnels",
-          "Marketplace apps",
-        ],
-      },
-      {
-        group: "Automation & AI",
-        items: ["n8n", "Make.com", "Zapier", "OpenAI", "Vapi", "Synthflow", "ElevenLabs"],
-      },
-      {
-        group: "Data & messaging",
-        items: ["Webhooks", "REST APIs", "Google Sheets", "Google Calendar", "WhatsApp (Meta API)"],
-      },
-    ],
-    approach: [
-      {
-        title: "Map before building",
-        body: "We agree the pipeline stages, lead sources and what should happen at each step before I change anything in the sub-account.",
-      },
-      {
-        title: "Test with real scenarios",
-        body: "Each main path — new lead, reply, booking, no-show, opt-out — is run with test contacts so you can watch it behave.",
-      },
-      {
-        title: "Guardrails against double-sends",
-        body: "Workflows get explicit entry and exit conditions so a contact isn't enrolled in two sequences at once.",
-      },
-      {
-        title: "A handover your team can use",
-        body: "Notes on what each workflow does, which fields it depends on, and what's safe to edit later.",
-      },
-    ],
-    faqs: [
-      {
-        q: "Can you work inside my clients' sub-accounts under my agency's brand?",
-        a: "Yes. White-label delivery is a common setup: I work in the sub-accounts you give me access to, and we agree up front how client communication is handled — through you, or directly if you prefer.",
-      },
-      {
-        q: "Do you fix existing GoHighLevel setups or only build new ones?",
-        a: "Both. For an existing account I start by mapping what's there — workflows, triggers, tags — so we fix the cause rather than adding another workflow on top.",
-      },
-      {
-        q: "What access do you need?",
-        a: "Usually user access to the relevant sub-account(s), plus any connected tools such as calendars, phone numbers or n8n. Credentials stay in your accounts.",
-      },
-      {
-        q: "What if GoHighLevel can't do something natively?",
-        a: "That's where webhooks, n8n or a small custom API come in. I'll tell you when a workaround inside GoHighLevel is reasonable and when the logic is better moved outside it.",
-      },
-      {
-        q: "How is pricing worked out?",
-        a: "It depends on scope. After a discovery conversation I outline what I'd build and give an estimate, so you can decide before any work starts.",
-      },
-    ],
-    cta: {
-      title: "Need a GoHighLevel build you can hand to a client?",
-      body: "Tell me about the account, the lead sources and what should happen to each lead. I'll suggest a structure.",
-    },
-    meta: {
-      title: "GoHighLevel Automation for Agencies",
-      description:
-        "GoHighLevel pipelines, workflows, calendars and integrations built and documented for agencies and their clients — tested against real lead scenarios.",
+        "AI chat agents for WhatsApp, Instagram, Messenger and websites — grounded in your knowledge base, with lead qualification, booking and human hand-off.",
     },
   },
   {
     slug: "custom-software",
-    title: "Custom ERP, POS & Web Platforms",
+    title: "Custom Software, ERP/POS & Web Platforms",
     shortTitle: "Custom Software",
-    tier: "supporting",
-    eyebrow: "Supporting capability · full-stack .NET",
-    tagline: "ERP, POS, APIs and integrations for when off-the-shelf tools stop short.",
-    problem:
-      "Your process doesn't fit a SaaS tool, an integration needs a real backend, or invoicing must meet e-invoicing requirements.",
-    outcome:
-      "Production .NET applications and APIs — ERP / POS modules, integrations and e-invoicing — on ASP.NET and SQL Server.",
-    tools: ["ASP.NET Core", "SQL Server", "Web APIs", "JWT", "Azure"],
-    hero: {
-      title: "Custom software for when automation tools aren't enough",
-      intro:
-        "Before automation, I spent years building business software in .NET — ERP and POS systems, web APIs, e-commerce and mobile apps. That background is why my automations are engineered rather than improvised, and it means I can build the custom backend a project sometimes needs.",
-      audience: [
-        "Agencies whose automation projects need a custom API or backend",
-        "Businesses that need ERP, POS or internal tools",
-        "Teams adding e-invoicing to existing systems",
-      ],
-    },
-    whatItDoes:
-      "I build and extend ASP.NET MVC and ASP.NET Core applications on SQL Server: business modules, secure web APIs, reporting, and integrations with payment, shipping and e-invoicing APIs. Projects range from a single integration service to complete ERP and POS systems.",
-    whenToUse: [
-      "An automation needs logic or storage that doesn't belong in a no-code tool",
-      "You need a secure API for a mobile app, portal or partner integration",
-      "Your ERP or POS needs new modules or integrations",
-      "Invoices must be reported to a tax authority's e-invoicing system",
-      "An existing .NET application needs maintenance or new features",
+    tagline:
+      "Custom .NET applications, ERP and POS systems and web platforms when off-the-shelf tools don't fit.",
+    bullets: [
+      "ERP and POS with e-invoicing",
+      "Secure web APIs and integrations",
+      "Web and mobile platforms",
     ],
-    useCases: [
+    eyebrow: "ASP.NET · SQL Server · React",
+    hero: {
+      title: "Custom software when automation isn't enough",
+      intro:
+        "Before automation, I spent years building business software in .NET — ERP and POS systems, APIs, e-commerce and mobile apps. I build the custom backend a project needs.",
+    },
+    problem: [
+      "Your process doesn't fit any off-the-shelf tool you've tried.",
+      "An integration needs a real backend, or invoicing must meet e-invoicing rules.",
+    ],
+    build: [
       {
         title: "ERP modules",
-        body: "Inventory, multi-warehouse, manufacturing, HR, payroll and financial statements.",
+        body: "Inventory, accounts, sales and reporting built around your process.",
       },
       {
         title: "POS with e-invoicing",
-        body: "Point-of-sale systems integrated with Saudi Arabia's ZATCA Phase 2 and Pakistan's FBR e-invoicing.",
+        body: "Point-of-sale systems that meet ZATCA and FBR e-invoicing requirements.",
       },
       {
         title: "Secure web APIs",
-        body: "JWT-secured ASP.NET APIs for web apps, mobile apps and partner integrations.",
+        body: "ASP.NET APIs with authentication, logging and documentation.",
       },
       {
         title: "E-commerce backends",
-        body: "Stripe payments and FedEx shipping behind a responsive storefront.",
+        body: "Catalogue, checkout, payments and shipping integrations.",
       },
       {
-        title: "Offline-first mobile",
-        body: "Xamarin field apps that keep working without connectivity and sync when back online.",
-      },
-      {
-        title: "CRM-connected platforms",
-        body: "Platforms that sync leads from CRMs such as Follow Up Boss and automate messaging.",
+        title: "Web & mobile apps",
+        body: "React and React Native front ends on a reliable .NET backend.",
       },
     ],
-    deliverables: [
-      "Requirements and data model agreed before development",
-      "ASP.NET MVC / ASP.NET Core application or API",
-      "SQL Server schema, migrations and reports",
-      "Third-party and e-invoicing API integrations",
-      "Testing against agreed scenarios",
-      "Deployment support and technical documentation",
-    ],
-    diagram: {
-      kind: "layers",
-      title: "Typical application architecture",
-      layers: [
-        {
-          label: "Clients",
-          items: ["Web app", "Mobile app", "POS terminal", "Automation workflows"],
-        },
-        {
-          label: "API layer",
-          items: ["ASP.NET Core / Web API", "JWT authentication", "Validation & logging"],
-        },
-        {
-          label: "Business logic",
-          items: ["Inventory & orders", "Invoicing & tax rules", "Reporting"],
-        },
-        {
-          label: "Data & integrations",
-          items: ["SQL Server", "Stripe / FedEx", "FBR / ZATCA e-invoicing", "CRM & webhooks"],
-        },
-      ],
-    },
-    integrations: [
+    steps: [
       {
-        group: ".NET & data",
-        items: [
-          "ASP.NET MVC",
-          "ASP.NET Core",
-          "Web API",
-          "ADO.NET",
-          "SQL Server",
-          "Crystal Reports",
-        ],
+        title: "Scope the system",
+        body: "Requirements, data model and a phased plan with clear milestones.",
       },
       {
-        group: "Apps & platforms",
-        items: ["Xamarin", "WinForms", "React", "React Native", "Azure"],
+        title: "Build in phases",
+        body: "Working releases you can test early, not one big reveal.",
       },
       {
-        group: "Integrations",
-        items: ["Stripe API", "FedEx API", "FBR API", "ZATCA SDK", "JWT", "REST APIs"],
+        title: "Deploy and support",
+        body: "Deployment, documentation and handover to your team.",
       },
     ],
-    approach: [
-      {
-        title: "Model the data first",
-        body: "Entities, relationships and reporting needs are agreed before screens are built, because they're the hardest thing to change later.",
-      },
-      {
-        title: "Small, reviewable releases",
-        body: "Work is delivered in increments you can test, rather than one large drop at the end.",
-      },
-      {
-        title: "Specifications drive compliance work",
-        body: "For e-invoicing, the tax authority's published specifications define the build, and testing uses their sandbox environments where they're available.",
-      },
-      {
-        title: "Code another developer can pick up",
-        body: "Consistent structure, meaningful naming and documentation, so you're not locked in to me.",
-      },
-    ],
-    faqs: [
-      {
-        q: "Is custom software your main focus?",
-        a: "My main focus today is automation for agencies, but .NET development is where I started and still practise. Many automation projects benefit from it — for example when a workflow needs its own API or database.",
-      },
-      {
-        q: "What have you built for FBR and ZATCA?",
-        a: "E-invoicing integrations inside POS software: FBR's API for a multi-location retail POS in Pakistan, and ZATCA Phase 2 invoicing with QR codes for a restaurant POS in Saudi Arabia. These are technical integrations with the authorities' systems — they don't imply any endorsement by those authorities.",
-      },
-      {
-        q: "Can you work on an existing .NET codebase?",
-        a: "Yes. I review the code and architecture first, then we agree what to change, in what order, and how it will be tested.",
-      },
-      {
-        q: "Do you build front-ends too?",
-        a: "Yes — ASP.NET MVC views, and I've worked with React and React Native front-ends on top of .NET APIs.",
-      },
+    outcomes: [
+      "Software shaped around your process, not the other way round",
+      "Integrations that automation tools can't handle alone",
+      "Compliant invoicing where your market requires it",
+      "Clean code and documentation that you own",
     ],
     cta: {
-      title: "Need a backend, API or business system?",
-      body: "Describe the process and the systems involved. I'll tell you honestly whether custom software is the right answer.",
+      title: "Need something built from scratch?",
+      body: "Describe the process and the systems involved. I'll suggest a scope and approach.",
     },
     meta: {
-      title: "Custom ERP, POS & Web Platforms in .NET",
+      title: "Custom ERP, POS & .NET Software Development",
       description:
-        "ASP.NET and SQL Server development: ERP and POS modules, secure web APIs, Stripe / FedEx integrations and FBR / ZATCA e-invoicing integrations.",
+        "Custom .NET software — ERP modules, POS with ZATCA and FBR e-invoicing, secure APIs, e-commerce backends and web and mobile platforms.",
     },
   },
 ];
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
+
+/* ------------------------------------------------------------------------------------------
+   n8n vs Zapier vs Make — shown on the Business Automation page (full table) and the home
+   page (teaser). Pricing models as published by each platform; plans change, so the page
+   says pricing is confirmed during scoping. Keep every cell under 12 words.
+   ------------------------------------------------------------------------------------------ */
+
+export const automationPositioning =
+  "I implement on all three and recommend the right one for your budget, team and volume.";
+
+export type AutomationPlatformId = "zapier" | "make" | "n8n";
+
+export const comparisonPlatforms: { id: AutomationPlatformId; name: string; summary: string }[] = [
+  { id: "zapier", name: "Zapier", summary: "Fastest to set up for simple automations." },
+  { id: "make", name: "Make", summary: "Visual and affordable for complex logic." },
+  { id: "n8n", name: "n8n", summary: "Most flexible for AI, scale and data control." },
+];
+
+export const comparisonRows: { label: string; cells: Record<AutomationPlatformId, string> }[] = [
+  {
+    label: "Best for",
+    cells: {
+      zapier: "Quick, simple app-to-app automations",
+      make: "Complex visual workflows at a fair price",
+      n8n: "Advanced, AI-heavy, high-volume or data-sensitive work",
+    },
+  },
+  {
+    label: "Pricing model",
+    cells: {
+      zapier: "Per task — every action step counts",
+      make: "Per operation — every module run counts",
+      n8n: "Per workflow run on Cloud; steps don't add cost",
+    },
+  },
+  {
+    label: "Cost as volume grows",
+    cells: {
+      zapier: "Rises fastest with long, multi-step workflows",
+      make: "Moderate; grows with operations used",
+      n8n: "Lowest at scale; self-hosted has no per-run fee",
+    },
+  },
+  {
+    label: "Hosting & data control",
+    cells: {
+      zapier: "Cloud only",
+      make: "Cloud only",
+      n8n: "Cloud, or self-hosted on your own server",
+    },
+  },
+  {
+    label: "AI & custom code",
+    cells: {
+      zapier: "AI steps plus JavaScript or Python code steps",
+      make: "AI modules and flexible data functions",
+      n8n: "AI agent nodes plus full JavaScript and Python",
+    },
+  },
+  {
+    label: "App integrations",
+    cells: {
+      zapier: "Largest ready-made app library",
+      make: "Large library plus flexible HTTP requests",
+      n8n: "Fewer ready-made apps; connects to any API",
+    },
+  },
+  {
+    label: "Learning curve",
+    cells: {
+      zapier: "Easiest to start",
+      make: "Moderate — visual but detailed",
+      n8n: "Steepest, and the most flexible",
+    },
+  },
+  {
+    label: "When I recommend it",
+    cells: {
+      zapier: "Small teams that need quick wins",
+      make: "Growing teams with complex logic and tight budgets",
+      n8n: "AI agents, high volume or strict data requirements",
+    },
+  },
+];

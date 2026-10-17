@@ -1,20 +1,28 @@
+import { Fragment } from "react";
 import { Link } from "@tanstack/react-router";
 import {
+  ArrowRight,
   ArrowUpRight,
-  BarChart3,
+  Check,
   Code2,
+  Magnet,
   MessagesSquare,
   Mic,
-  Share2,
+  Newspaper,
+  SquareKanban,
+  Workflow,
   type LucideIcon,
 } from "lucide-react";
 import { services, type Service, type ServiceSlug } from "@/data/services";
+import { tools, type Tool } from "@/data/tools";
 import { cn } from "@/lib/utils";
-import { Chip } from "./badges";
+import { ToolChip, ToolLogo } from "./tech-marquee";
 
 const serviceIcons: Record<ServiceSlug, LucideIcon> = {
-  "gohighlevel-automation": BarChart3,
-  "workflow-automation": Share2,
+  "workflow-automation": Workflow,
+  "gohighlevel-automation": SquareKanban,
+  "lead-generation": Magnet,
+  "ai-content-automation": Newspaper,
   "voice-ai": Mic,
   "ai-chatbots": MessagesSquare,
   "custom-software": Code2,
@@ -22,12 +30,28 @@ const serviceIcons: Record<ServiceSlug, LucideIcon> = {
 
 /** Icon gradients differ per service so cards are easy to tell apart. */
 const serviceAccents: Record<ServiceSlug, string> = {
-  "gohighlevel-automation": "from-[#6366f1] to-[#8b5cf6]",
   "workflow-automation": "from-[#f97362] to-[#ec4899]",
+  "gohighlevel-automation": "from-[#6366f1] to-[#8b5cf6]",
+  "lead-generation": "from-[#f59e0b] to-[#f97316]",
+  "ai-content-automation": "from-[#a855f7] to-[#d946ef]",
   "voice-ai": "from-[#2563eb] to-[#38bdf8]",
-  "ai-chatbots": "from-[#0ea5e9] to-[#14b8a6]",
-  "custom-software": "from-[#10b981] to-[#0ea5e9]",
+  "ai-chatbots": "from-[#10b981] to-[#14b8a6]",
+  "custom-software": "from-[#0ea5e9] to-[#6366f1]",
 };
+
+/** The few tools shown on each service card (the full list lives on the service page). */
+const cardToolIds: Record<ServiceSlug, string[]> = {
+  "workflow-automation": ["n8n", "zapier", "make", "openai"],
+  "gohighlevel-automation": ["gohighlevel", "twilio", "calendly"],
+  "lead-generation": ["apollo", "apify", "hubspot"],
+  "ai-content-automation": ["openai", "claude", "wordpress"],
+  "voice-ai": ["vapi", "elevenlabs", "synthflow"],
+  "ai-chatbots": ["whatsapp", "openai", "pinecone"],
+  "custom-software": ["aspnetcore", "sqlserver", "react"],
+};
+
+const cardTools = (slug: ServiceSlug) =>
+  cardToolIds[slug].map((id) => tools.find((t) => t.id === id)).filter((t): t is Tool => !!t);
 
 export function ServiceIcon({
   slug,
@@ -55,7 +79,7 @@ export function ServiceIcon({
 export function ServiceChooserCard({ service, index }: { service: Service; index: number }) {
   return (
     <article
-      data-reveal
+      data-reveal={index % 2 ? "right" : "left"}
       className="panel-border relative grid gap-6 rounded-3xl p-6 sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] lg:gap-10"
     >
       <div>
@@ -68,33 +92,49 @@ export function ServiceChooserCard({ service, index }: { service: Service; index
         <h2 className="mt-5 text-2xl font-bold text-foreground sm:text-[1.75rem]">
           {service.title}
         </h2>
-        <p className="mt-2 text-sm text-eyebrow">{service.eyebrow}</p>
+        <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{service.tagline}</p>
       </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="rounded-2xl border border-border bg-background/50 p-5">
           <div className="font-heading text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
             The problem
           </div>
-          <p className="mt-2 text-[15px] leading-relaxed text-foreground">{service.problem}</p>
+          <p className="mt-2 text-[15px] leading-relaxed text-foreground">
+            {service.problem.join(" ")}
+          </p>
         </div>
         <div className="rounded-2xl border border-[color-mix(in_oklab,var(--cyan)_30%,transparent)] bg-[color-mix(in_oklab,var(--cyan)_6%,transparent)] p-5">
           <div className="font-heading text-xs font-semibold uppercase tracking-[0.14em] text-eyebrow">
             What you get
           </div>
-          <p className="mt-2 text-[15px] leading-relaxed text-foreground">{service.outcome}</p>
+          <ul className="mt-2 space-y-1.5">
+            {service.outcomes.slice(0, 3).map((o) => (
+              <li key={o} className="flex gap-2 text-[14.5px] leading-snug text-foreground">
+                <Check
+                  size={15}
+                  strokeWidth={2.5}
+                  className="mt-0.5 shrink-0 text-cyan"
+                  aria-hidden
+                />
+                {o}
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="flex flex-wrap items-center justify-between gap-4 sm:col-span-2">
-          <div className="flex flex-wrap gap-1.5">
-            {service.tools.map((t) => (
-              <Chip key={t}>{t}</Chip>
+          <ul className="flex flex-wrap gap-1.5" aria-label="Main tools">
+            {cardTools(service.slug).map((t) => (
+              <li key={t.id}>
+                <ToolChip tool={t} size="sm" />
+              </li>
             ))}
-          </div>
+          </ul>
           <Link
             to="/services/$slug"
             params={{ slug: service.slug }}
             className="group inline-flex items-center gap-1.5 font-heading text-sm font-semibold text-foreground hover:text-cyan"
           >
-            View {service.shortTitle} details
+            Explore {service.shortTitle}
             <ArrowUpRight
               size={16}
               aria-hidden
@@ -107,168 +147,197 @@ export function ServiceChooserCard({ service, index }: { service: Service; index
   );
 }
 
-/**
- * Small signature animation for each service. Purely decorative: static by default and
- * animated only while its card is hovered or focused (see .svc-motion in styles.css).
- */
-function ServiceMotion({ slug }: { slug: ServiceSlug }) {
-  const base = "svc-motion pointer-events-none flex h-10 items-end";
-  switch (slug) {
-    case "gohighlevel-automation": // pipeline stages filling up
-      return (
-        <span aria-hidden className={cn(base, "gap-1")}>
-          {[0.45, 0.7, 0.55, 0.9].map((h, i) => (
-            <span
-              key={i}
-              className="w-2 origin-bottom rounded-sm bg-[linear-gradient(to_top,var(--violet),var(--blue-light))]"
-              style={{
-                height: `${h * 100}%`,
-                animation: `bar-rise 1.6s ease-in-out ${i * 0.15}s infinite`,
-              }}
-            />
-          ))}
-        </span>
-      );
-    case "workflow-automation": // a pulse moving through connected nodes
-      return (
-        <span aria-hidden className={cn(base, "w-24 items-center")}>
-          <span className="relative h-px w-full bg-[color-mix(in_oklab,var(--cyan)_40%,transparent)]">
-            {[0, 50, 100].map((x) => (
-              <span
-                key={x}
-                className="absolute top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan bg-panel"
-                style={{ left: `${x}%` }}
-              />
-            ))}
-            <span
-              className="absolute top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan shadow-[0_0_10px_var(--cyan)]"
-              style={{ animation: "dot-travel 1.8s linear infinite" }}
-            />
-          </span>
-        </span>
-      );
-    case "voice-ai": // voice waveform
-      return (
-        <span aria-hidden className={cn(base, "items-center gap-[3px]")}>
-          {[0.4, 0.75, 1, 0.6, 0.85, 0.45, 0.7].map((h, i) => (
-            <span
-              key={i}
-              className="w-[3px] rounded-full bg-[linear-gradient(to_top,var(--blue),var(--cyan))]"
-              style={{
-                height: `${h * 100}%`,
-                animation: `wave 1.1s ease-in-out ${i * 0.09}s infinite`,
-              }}
-            />
-          ))}
-        </span>
-      );
-    case "ai-chatbots": // typing indicator in a chat bubble
-      return (
-        <span aria-hidden className={cn(base, "items-center")}>
-          <span className="flex items-center gap-1 rounded-2xl rounded-bl-sm border border-border bg-panel-2 px-3 py-2">
-            {[0, 1, 2].map((i) => (
-              <span
-                key={i}
-                className="h-1.5 w-1.5 rounded-full bg-cyan"
-                style={{ animation: `typing 1.2s ease-in-out ${i * 0.15}s infinite` }}
-              />
-            ))}
-          </span>
-        </span>
-      );
-    case "custom-software": // code lines with a blinking caret
-      return (
-        <span aria-hidden className={cn(base, "w-20 flex-col items-start justify-center gap-1.5")}>
-          {[0.9, 0.6, 0.75].map((w, i) => (
-            <span
-              key={i}
-              className="h-1 origin-left rounded-full bg-[color-mix(in_oklab,var(--success,#10b981)_70%,var(--cyan))]"
-              style={{
-                width: `${w * 100}%`,
-                animation: `line-grow 1.8s ease-out ${i * 0.2}s infinite`,
-              }}
-            />
-          ))}
-          <span
-            className="h-3 w-[2px] bg-foreground"
-            style={{ animation: "caret 1s steps(1) infinite" }}
-          />
-        </span>
-      );
-  }
-}
-
-/** Compact card used on the homepage. */
-export function ServiceCard({
-  service,
-  className,
-  index = 0,
-  tilt = false,
-}: {
-  service: Service;
-  className?: string;
-  index?: number;
-  /** Subtle 3D tilt toward the cursor (lib/motion.ts). */
-  tilt?: boolean;
-}) {
+/** n8n · Zapier · Make tiles with a data pulse running through them (featured card only). */
+function PlatformStrip() {
+  const ids = ["n8n", "zapier", "make"];
+  const list = ids.map((id) => tools.find((t) => t.id === id)).filter((t): t is Tool => !!t);
   return (
-    <Link
-      to="/services/$slug"
-      params={{ slug: service.slug }}
-      data-reveal
-      data-tilt={tilt || undefined}
-      style={{ transitionDelay: `${index * 80}ms` }}
-      className={cn(
-        "group beam-card panel-border panel-border-hover relative flex flex-col rounded-3xl p-6 sm:p-7",
-        className,
-      )}
-    >
-      <div className="flex items-start justify-between gap-4">
-        <span className="transition duration-300 group-hover:-translate-y-0.5 group-hover:drop-shadow-[0_10px_18px_color-mix(in_oklab,var(--blue)_45%,transparent)]">
-          <ServiceIcon slug={service.slug} />
-        </span>
-        <div className="flex items-center gap-3">
-          {service.tier === "supporting" && (
-            <span className="rounded-full border border-border px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
-              Supporting capability
-            </span>
-          )}
-          <ServiceMotion slug={service.slug} />
-        </div>
-      </div>
-      <h3 className="mt-5 text-xl font-bold text-foreground">{service.title}</h3>
-      <p className="mt-2.5 text-[15px] leading-relaxed text-muted-foreground">{service.tagline}</p>
-      <div className="mt-5 flex flex-wrap gap-1.5">
-        {service.tools.slice(0, 4).map((t) => (
-          <Chip key={t}>{t}</Chip>
-        ))}
-      </div>
-      <span className="mt-auto flex items-center justify-between gap-1.5 pt-6 font-heading text-sm font-semibold text-foreground">
-        Explore service
-        <span className="grid h-9 w-9 place-items-center rounded-full border border-border text-cyan transition duration-300 group-hover:border-transparent group-hover:bg-[linear-gradient(110deg,#2563eb_0%,#4f46e5_55%,#7c3aed_100%)] group-hover:text-white">
-          <ArrowUpRight
-            size={16}
-            aria-hidden
-            className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-          />
-        </span>
+    <div aria-hidden className="bento-platforms">
+      <span className="bento-platforms-line">
+        <span className="bento-platforms-pulse" />
       </span>
-    </Link>
+      {list.map((t) => (
+        <span key={t.id} className="bento-platform">
+          <span className="grid h-11 w-11 place-items-center rounded-2xl bg-white shadow-[0_10px_24px_-12px_rgba(0,0,0,0.6)]">
+            <ToolLogo tool={t} size={24} />
+          </span>
+          <span className="font-heading text-[12px] font-semibold text-muted-foreground">
+            {t.name}
+          </span>
+        </span>
+      ))}
+    </div>
   );
 }
 
-/** Homepage services grid: three primary services on top, two on the second row. */
-export function ServicesGrid({ tilt = false }: { tilt?: boolean }) {
+const exampleFlows = [
+  ["New form lead", "CRM + owner", "Slack alert"],
+  ["Paid order", "Invoice", "Accounting"],
+  ["Customer email", "AI summary", "Draft reply"],
+];
+
+/** A few everyday workflows, so the featured card shows what "automation" means in practice. */
+function ExampleFlows() {
   return (
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-6 lg:gap-5">
+    <div className="mt-7 hidden sm:block">
+      <div className="font-mono text-[10.5px] uppercase tracking-[0.16em] text-subtle">
+        Example workflows
+      </div>
+      <ul className="mt-3 space-y-2">
+        {exampleFlows.map((flow) => (
+          <li key={flow[0]} className="flex flex-wrap items-center gap-1.5">
+            {flow.map((step, i) => (
+              <Fragment key={step}>
+                <span className="rounded-full border border-border bg-[rgba(255,255,255,0.05)] px-2.5 py-1 font-heading text-[12.5px] font-semibold text-foreground/90">
+                  {step}
+                </span>
+                {i < flow.length - 1 && (
+                  <>
+                    <ArrowRight size={13} aria-hidden className="text-subtle" />
+                    <span className="sr-only">then</span>
+                  </>
+                )}
+              </Fragment>
+            ))}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/** Reveal direction per card: the right column slides in from the right, rows rise. */
+const bentoReveal: Record<ServiceSlug, string> = {
+  "workflow-automation": "zoom",
+  "gohighlevel-automation": "right",
+  "lead-generation": "right",
+  "ai-content-automation": "up",
+  "voice-ai": "up",
+  "ai-chatbots": "up",
+  "custom-software": "up",
+};
+
+const bentoLayout: Record<ServiceSlug, string> = {
+  "workflow-automation": "md:col-span-2 lg:col-span-7 lg:row-span-2",
+  "gohighlevel-automation": "lg:col-span-5",
+  "lead-generation": "lg:col-span-5",
+  "ai-content-automation": "md:col-span-2 lg:col-span-4",
+  "voice-ai": "lg:col-span-4",
+  "ai-chatbots": "lg:col-span-4",
+  "custom-software": "md:col-span-2 lg:col-span-12",
+};
+
+/**
+ * One bento card. The title link stretches over the whole card (one tab stop, valid HTML);
+ * the featured card also has its own "compare platforms" link above that layer.
+ */
+function BentoCard({ service, index }: { service: Service; index: number }) {
+  const featured = service.slug === "workflow-automation";
+  const wide = service.slug === "custom-software";
+  return (
+    <div
+      data-reveal={featured ? "zoom" : bentoReveal[service.slug]}
+      className={cn("bento-cell min-w-0", bentoLayout[service.slug])}
+      style={{ "--i": index } as React.CSSProperties}
+    >
+      <article
+        className={cn(
+          "bento-card beam-card group flex h-full flex-col p-6 sm:p-7",
+          featured && "is-featured lg:p-9",
+          wide && "lg:flex-row lg:items-center lg:gap-10 lg:py-7",
+        )}
+      >
+        <div className={cn("flex items-start justify-between gap-4", wide && "lg:shrink-0")}>
+          <ServiceIcon slug={service.slug} size={featured ? "lg" : "md"} />
+          {featured && (
+            <span className="rounded-full border border-[color-mix(in_oklab,var(--cyan)_40%,transparent)] bg-[color-mix(in_oklab,var(--cyan)_12%,transparent)] px-3 py-1 font-heading text-[11.5px] font-semibold text-eyebrow">
+              Most requested
+            </span>
+          )}
+        </div>
+
+        <div className={cn("min-w-0", wide ? "mt-5 lg:mt-0 lg:w-[34%] lg:shrink-0" : "mt-5")}>
+          <h3
+            className={cn(
+              "font-bold text-foreground",
+              featured ? "text-2xl sm:text-[2rem]" : "text-xl",
+            )}
+          >
+            <Link
+              to="/services/$slug"
+              params={{ slug: service.slug }}
+              className="rounded-md after:absolute after:inset-0 after:z-[1] after:rounded-[inherit] focus-visible:outline-none"
+            >
+              {service.title}
+            </Link>
+          </h3>
+          <p
+            className={cn(
+              "mt-2.5 leading-relaxed text-muted-foreground",
+              featured ? "max-w-xl text-base sm:text-[17px]" : "text-[15px]",
+            )}
+          >
+            {service.tagline}
+          </p>
+        </div>
+
+        {featured && <PlatformStrip />}
+        {featured && <ExampleFlows />}
+
+        <ul className={cn("space-y-2", wide ? "mt-5 lg:mt-0 lg:flex-1" : "mt-5")}>
+          {service.bullets.slice(0, 3).map((b) => (
+            <li key={b} className="flex gap-2.5 text-[14.5px] leading-snug text-foreground/90">
+              <span className="mt-0.5 grid h-[18px] w-[18px] shrink-0 place-items-center rounded-full bg-[color-mix(in_oklab,var(--cyan)_18%,transparent)] text-cyan">
+                <Check size={11} strokeWidth={3} aria-hidden />
+              </span>
+              {b}
+            </li>
+          ))}
+        </ul>
+
+        {featured && (
+          <a
+            href="/services/workflow-automation/#compare"
+            className="relative z-[2] mt-5 inline-flex w-fit items-center gap-1.5 rounded-md font-heading text-[13.5px] font-semibold text-eyebrow hover:underline"
+          >
+            Compare n8n, Zapier &amp; Make <ArrowRight size={14} aria-hidden />
+          </a>
+        )}
+
+        <div
+          className={cn(
+            "flex flex-wrap items-end justify-between gap-4 pt-6",
+            wide ? "lg:shrink-0 lg:flex-col lg:items-end lg:pt-0" : "mt-auto",
+          )}
+        >
+          <ul className="flex flex-wrap gap-1.5" aria-label={`Tools for ${service.shortTitle}`}>
+            {cardTools(service.slug).map((t) => (
+              <li key={t.id}>
+                <ToolChip tool={t} size="xs" />
+              </li>
+            ))}
+          </ul>
+          <span
+            aria-hidden
+            className="flex items-center gap-2 font-heading text-sm font-semibold text-foreground"
+          >
+            Explore
+            <span className="bento-arrow grid h-9 w-9 place-items-center rounded-full border border-border text-cyan">
+              <ArrowUpRight size={16} />
+            </span>
+          </span>
+        </div>
+      </article>
+    </div>
+  );
+}
+
+/** Home services: premium bento grid, automation first and featured. */
+export function ServicesBento() {
+  return (
+    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-12 lg:gap-5">
       {services.map((s, i) => (
-        <ServiceCard
-          key={s.slug}
-          service={s}
-          index={i}
-          tilt={tilt}
-          className={cn(i < 3 ? "lg:col-span-2" : "lg:col-span-3", i === 4 && "md:col-span-2")}
-        />
+        <BentoCard key={s.slug} service={s} index={i} />
       ))}
     </div>
   );
