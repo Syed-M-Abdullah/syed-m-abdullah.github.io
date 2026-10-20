@@ -1,53 +1,43 @@
 {
- "slug": "social-content-machine",
- "tags": [
-  "Content",
-  "Global"
- ],
- "overview": [
-  "Generates posts, captions and hashtags, then schedules and publishes them to Facebook, Instagram and LinkedIn."
- ],
- "sections": [
-  {
-   "heading": "The challenge",
-   "blocks": [
+  "slug": "social-content-machine",
+  "tags": ["Content", "Global"],
+  "overview": [
+    "Generates posts, captions and hashtags, then schedules and publishes them to Facebook, Instagram and LinkedIn."
+  ],
+  "sections": [
     {
-     "p": "Creating and posting content took many hours of manual work every week."
-    }
-   ]
-  },
-  {
-   "heading": "Solution & architecture",
-   "blocks": [
+      "heading": "The challenge",
+      "blocks": [
+        {
+          "p": "Creating and posting content took many hours of manual work every week."
+        }
+      ]
+    },
     {
-     "p": "Posts, captions and hashtags are generated with OpenAI using the brand's voice guidelines, scheduled, and published automatically to three platforms through the Meta and LinkedIn APIs."
-    }
-   ]
-  },
-  {
-   "heading": "Workflow",
-   "blocks": [
+      "heading": "Solution & architecture",
+      "blocks": [
+        {
+          "p": "Posts, captions and hashtags are generated with OpenAI using the brand's voice guidelines, scheduled, and published automatically to three platforms through the Meta and LinkedIn APIs."
+        }
+      ]
+    },
     {
-     "list": [
-      "Generate post + caption",
-      "Schedule",
-      "Publish to FB / IG / LinkedIn"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Key facts",
-   "blocks": [
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "list": ["Generate post + caption", "Schedule", "Publish to FB / IG / LinkedIn"]
+        }
+      ]
+    },
     {
-     "list": [
-      "3 — Platforms published",
-      "Brand — Voice guidelines in prompts"
-     ]
+      "heading": "Key facts",
+      "blocks": [
+        {
+          "list": ["3, Platforms published", "Brand, Voice guidelines in prompts"]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [],
- "images": []
+  ],
+  "result": [],
+  "images": []
 }

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Inbox, MessagesSquare, PackageCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { PageHero } from "@/components/page-hero";
 import { Section } from "@/components/section";
@@ -11,9 +11,9 @@ import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/process")({
   head: () =>
     seo({
-      title: "How I Work — From Discovery to Handover",
+      title: "How I Work, From First Call to Handover",
       description:
-        "A six-step delivery process — discovery, architecture, build, real-world testing, deployment and handover — plus what I need from you and what you get.",
+        "My six-step delivery process: discovery, architecture, build, testing on real data, deployment and handover. What I need from you and what you get at each step.",
       path: "/process",
     }),
   component: ProcessPage,
@@ -24,26 +24,21 @@ function ProcessPage() {
     <PageShell>
       <PageHero
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Process" }]}
-        eyebrow="How I work"
-        title={
-          <>
-            A delivery process <span className="gradient-text">without surprises</span>
-          </>
-        }
+        title="A delivery process without surprises"
         intro={
           <p>
             Most automation projects go wrong in the gaps: unclear scope, untested edge cases and a
-            handover nobody can follow. This is how I close those gaps — step by step, with what I
+            handover nobody can follow. This is how I close those gaps, step by step, with what I
             need from you and what you get at each stage.
           </p>
         }
         actions={
-          <ButtonLink to="/contact" size="lg">
+          <ButtonLink to="/contact/" size="lg">
             Start with a discovery call <ArrowRight size={16} aria-hidden />
           </ButtonLink>
         }
         aside={
-          <ol className="glass rounded-3xl p-5" aria-label="Process steps">
+          <ol className="panel-border rounded-3xl p-5" aria-label="Process steps">
             {processSteps.map((p) => (
               <li key={p.n}>
                 <a
@@ -89,26 +84,18 @@ function ProcessPage() {
         </ol>
       </Section>
 
-      <Section eyebrow="Working together" title="Inputs, communication and handover" tone="sage">
-        <div className="grid gap-4 lg:grid-cols-3">
-          <Card icon={Inbox} title="What helps me start" items={collaboration.inputs} />
-          <Card
-            icon={MessagesSquare}
-            title="How we communicate"
-            items={collaboration.communication}
-          />
-          <Card
-            icon={PackageCheck}
-            title="What you receive at handover"
-            items={collaboration.handover}
-          />
+      <Section title="Inputs, communication and handover" tone="sage">
+        <div className="grid gap-x-10 gap-y-8 lg:grid-cols-3">
+          <Column title="What helps me start" items={collaboration.inputs} />
+          <Column title="How we communicate" items={collaboration.communication} />
+          <Column title="What you receive at handover" items={collaboration.handover} />
         </div>
         <p
           data-reveal="up"
           className="mt-8 max-w-3xl text-sm leading-relaxed text-muted-foreground"
         >
           Timelines, communication cadence and any post-launch support are agreed per project in the
-          written scope — nothing here is a fixed package.
+          written scope. Nothing here is a fixed package.
         </p>
       </Section>
 
@@ -146,19 +133,13 @@ function List({ title, items, accent }: { title: string; items: string[]; accent
   );
 }
 
-function Card({
-  icon: Icon,
-  title,
-  items,
-}: {
-  icon: typeof Inbox;
-  title: string;
-  items: string[];
-}) {
+function Column({ title, items }: { title: string; items: string[] }) {
   return (
-    <div data-reveal="zoom" className="panel-border rounded-3xl p-6">
-      <Icon size={22} className="text-cyan" aria-hidden />
-      <h3 className="mt-4 text-lg font-bold text-foreground">{title}</h3>
+    <div
+      data-reveal="up"
+      className="border-t-2 border-[color-mix(in_oklab,var(--eyebrow)_45%,transparent)] pt-5"
+    >
+      <h3 className="text-lg font-bold text-foreground">{title}</h3>
       <ul className="mt-4 space-y-2.5">
         {items.map((i) => (
           <li key={i} className="flex gap-2.5 text-[15px] leading-relaxed text-muted-foreground">

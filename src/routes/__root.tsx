@@ -48,11 +48,11 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { title: `${site.name} — AI Automation & Intelligent Business Systems` },
+      { title: `${site.name}, AI Automation Engineer` },
       {
         name: "description",
         content:
-          "Business automation with n8n, Zapier and Make, GoHighLevel CRM, lead generation, AI content, voice and chat agents — plus custom .NET software.",
+          "Business automation with n8n, Zapier and Make, GoHighLevel CRM, lead generation, AI content, voice and chat agents, and custom .NET software.",
       },
       { name: "author", content: site.name },
       { name: "theme-color", content: "#0b1433" },

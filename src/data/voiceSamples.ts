@@ -54,7 +54,7 @@ const samples: VoiceSample[] = [
     duration: 188.9,
     featured: true,
     blurb:
-      "A full UK property call, start to finish — listen for how naturally the agent handles the conversation.",
+      "A full UK property call, start to finish. Listen for how naturally the agent handles the conversation.",
     peaks: [
       0.97, 0.96, 0.76, 0.74, 0.63, 0.69, 0.69, 0.6, 0.58, 0.04, 0.87, 0.93, 0.85, 0.89, 0.87, 0.87,
       0.66, 0.04, 0.79, 0.52, 0.69, 0.38, 0.04, 0.88, 0.71, 0.83, 0.88, 0.61, 0.71, 0.53, 0.21,
@@ -70,7 +70,7 @@ const samples: VoiceSample[] = [
     id: "clinic-demo",
     file: "clinic-demo.m4a",
     source: "Clinic Demo.mp4",
-    title: "Clinic Receptionist — Full Demo",
+    title: "Clinic Receptionist: Full Demo",
     useCase: "Healthcare clinic",
     duration: 123.3,
     peaks: [
@@ -124,7 +124,7 @@ const samples: VoiceSample[] = [
     id: "clinic-voice-agent",
     file: "clinic-voice-agent.m4a",
     source: "AI Voice Agent Clinic.mp4",
-    title: "Clinic Voice Agent — Short Call",
+    title: "Clinic Voice Agent: Short Call",
     useCase: "Healthcare clinic",
     duration: 55.5,
     peaks: [

@@ -1,84 +1,78 @@
 {
- "slug": "social-media-content-generation",
- "tags": [
-  "n8n",
-  "Gemini",
-  "JSON2Video",
-  "Google Sheets",
-  "JavaScript"
- ],
- "overview": [
-  "Built an automated content system for producing branded legal reels for Facebook and Instagram.",
-  "The workflow takes an approved content idea and turns it into a complete short form video with the script, visuals, captions, hashtags, and branding handled automatically."
- ],
- "sections": [
-  {
-   "heading": "Workflow",
-   "blocks": [
+  "slug": "social-media-content-generation",
+  "tags": ["n8n", "Gemini", "JSON2Video", "Google Sheets", "JavaScript"],
+  "overview": [
+    "Built an automated content system for producing branded legal reels for Facebook and Instagram.",
+    "The workflow takes an approved content idea and turns it into a complete short form video with the script, visuals, captions, hashtags, and branding handled automatically."
+  ],
+  "sections": [
     {
-     "p": "The system:"
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "p": "The system:"
+        },
+        {
+          "list": [
+            "Retrieves approved content ideas from Google Sheets",
+            "Generates the reel script and scene structure",
+            "Creates the required video scenes",
+            "Formats scenes for vertical social media content",
+            "Combines the scenes into one video",
+            "Adds branding, logo, text overlays, transitions, and music",
+            "Generates the caption and hashtags",
+            "Updates the content status",
+            "Stores the finished video reference in Google Sheets"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Retrieves approved content ideas from Google Sheets",
-      "Generates the reel script and scene structure",
-      "Creates the required video scenes",
-      "Formats scenes for vertical social media content",
-      "Combines the scenes into one video",
-      "Adds branding, logo, text overlays, transitions, and music",
-      "Generates the caption and hashtags",
-      "Updates the content status",
-      "Stores the finished video reference in Google Sheets"
-     ]
+      "heading": "Content Generation",
+      "blocks": [
+        {
+          "p": "Each reel includes:"
+        },
+        {
+          "list": [
+            "Scene by scene structure",
+            "Visual directions",
+            "Text overlays",
+            "Social media caption",
+            "Relevant hashtags"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Content Generation",
-   "blocks": [
+  ],
+  "result": [
+    "A complete content production workflow that turns an approved idea into a branded, social media ready legal reel with minimal manual editing.",
+    "The system makes it easier to produce consistent content at scale while keeping the entire process organized in one workflow."
+  ],
+  "images": [
     {
-     "p": "Each reel includes:"
+      "src": "/projects/social-media-content-generation/01-960.webp",
+      "srcSet": "/projects/social-media-content-generation/01-480.webp 480w, /projects/social-media-content-generation/01-960.webp 960w, /projects/social-media-content-generation/01-1600.webp 1600w",
+      "full": "/projects/social-media-content-generation/01-1600.webp",
+      "width": 1600,
+      "height": 797,
+      "alt": "Social Media Content Generation: Google Sheet"
     },
     {
-     "list": [
-      "Scene by scene structure",
-      "Visual directions",
-      "Text overlays",
-      "Social media caption",
-      "Relevant hashtags"
-     ]
+      "src": "/projects/social-media-content-generation/02-960.webp",
+      "srcSet": "/projects/social-media-content-generation/02-480.webp 480w, /projects/social-media-content-generation/02-960.webp 960w, /projects/social-media-content-generation/02-1600.webp 1600w",
+      "full": "/projects/social-media-content-generation/02-1600.webp",
+      "width": 1600,
+      "height": 775,
+      "alt": "Social Media Content Generation: Instagram"
+    },
+    {
+      "src": "/projects/social-media-content-generation/03-960.webp",
+      "srcSet": "/projects/social-media-content-generation/03-480.webp 480w, /projects/social-media-content-generation/03-960.webp 960w, /projects/social-media-content-generation/03-1600.webp 1600w",
+      "full": "/projects/social-media-content-generation/03-1600.webp",
+      "width": 1600,
+      "height": 797,
+      "alt": "Social Media Content Generation: Reel Generation"
     }
-   ]
-  }
- ],
- "result": [
-  "A complete content production workflow that turns an approved idea into a branded, social media ready legal reel with minimal manual editing.",
-  "The system makes it easier to produce consistent content at scale while keeping the entire process organized in one workflow."
- ],
- "images": [
-  {
-   "src": "/projects/social-media-content-generation/01-960.webp",
-   "srcSet": "/projects/social-media-content-generation/01-480.webp 480w, /projects/social-media-content-generation/01-960.webp 960w, /projects/social-media-content-generation/01-1600.webp 1600w",
-   "full": "/projects/social-media-content-generation/01-1600.webp",
-   "width": 1600,
-   "height": 797,
-   "alt": "Social Media Content Generation: Google Sheet"
-  },
-  {
-   "src": "/projects/social-media-content-generation/02-960.webp",
-   "srcSet": "/projects/social-media-content-generation/02-480.webp 480w, /projects/social-media-content-generation/02-960.webp 960w, /projects/social-media-content-generation/02-1600.webp 1600w",
-   "full": "/projects/social-media-content-generation/02-1600.webp",
-   "width": 1600,
-   "height": 775,
-   "alt": "Social Media Content Generation: Instagram"
-  },
-  {
-   "src": "/projects/social-media-content-generation/03-960.webp",
-   "srcSet": "/projects/social-media-content-generation/03-480.webp 480w, /projects/social-media-content-generation/03-960.webp 960w, /projects/social-media-content-generation/03-1600.webp 1600w",
-   "full": "/projects/social-media-content-generation/03-1600.webp",
-   "width": 1600,
-   "height": 797,
-   "alt": "Social Media Content Generation: Reel Generation"
-  }
- ]
+  ]
 }

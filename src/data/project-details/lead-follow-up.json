@@ -1,0 +1,19 @@
+{
+  "slug": "lead-follow-up",
+  "tags": [],
+  "overview": [
+    "Creates or updates the opportunity, then sends up to three SMS messages, waiting 24 hours for a reply after each one. A reply updates the opportunity and ends the sequence; no reply moves the lead to the next message."
+  ],
+  "sections": [],
+  "result": [],
+  "images": [
+    {
+      "src": "/projects/lead-follow-up/01-714.webp",
+      "srcSet": "/projects/lead-follow-up/01-480.webp 480w, /projects/lead-follow-up/01-714.webp 714w",
+      "full": "/projects/lead-follow-up/01-714.webp",
+      "width": 714,
+      "height": 740,
+      "alt": "Lead Follow-Up: Lead Follow-Up"
+    }
+  ]
+}

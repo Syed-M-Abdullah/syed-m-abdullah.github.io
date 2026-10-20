@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Building2, Handshake, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { PageHero } from "@/components/page-hero";
 import { Section } from "@/components/section";
@@ -12,9 +12,9 @@ import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/services/")({
   head: () =>
     seo({
-      title: "Business Automation & AI Services",
+      title: "Services: Automation, CRM, Voice AI and Custom Software",
       description:
-        "Business automation with n8n, Zapier and Make, GoHighLevel CRM, lead generation, AI content to WordPress, voice and chat agents and custom .NET software.",
+        "Seven services: business automation with n8n, Zapier and Make, GoHighLevel CRM, lead generation, AI content for WordPress, voice agents, chat agents and custom .NET software.",
       path: "/services",
     }),
   component: ServicesPage,
@@ -22,19 +22,16 @@ export const Route = createFileRoute("/services/")({
 
 const audiences = [
   {
-    icon: Building2,
     title: "Marketing & AI agencies",
-    body: "Implementation capacity for client projects — CRM builds, automations and AI agents delivered to your standard.",
+    body: "Implementation capacity for client projects: CRM builds, automations and AI agents delivered to your standard.",
   },
   {
-    icon: Handshake,
     title: "GHL providers & consultants",
     body: "A technical partner for the integrations, workflows and edge cases that slow your team down.",
   },
   {
-    icon: Users,
     title: "Businesses",
-    body: "Direct projects to automate sales, booking, support and operations — or build the software behind them.",
+    body: "Direct projects to automate sales, booking, support and operations, or to build the software behind them.",
   },
 ];
 
@@ -43,33 +40,28 @@ function ServicesPage() {
     <PageShell>
       <PageHero
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Services" }]}
-        eyebrow="Services"
-        title={
-          <>
-            Choose the system <span className="gradient-text">you need built</span>
-          </>
-        }
+        title="Choose the system you need built"
         intro="Each service starts from a business problem, not a tool. Not sure which fits? Describe the problem and I'll point you in the right direction."
         actions={
           <>
-            <ButtonLink to="/contact" size="lg">
+            <ButtonLink to="/contact/" size="lg">
               Discuss a Project <ArrowRight size={16} aria-hidden />
             </ButtonLink>
-            <ButtonLink to="/projects" variant="secondary" size="lg">
+            <ButtonLink to="/projects/" variant="secondary" size="lg">
               See related work
             </ButtonLink>
           </>
         }
         aside={
-          <nav aria-label="Jump to a service" className="glass rounded-3xl p-5">
-            <div className="mb-3 font-heading text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+          <nav aria-label="Jump to a service" className="panel-border rounded-3xl p-5">
+            <h2 className="mb-3 px-2 font-heading text-[14px] font-semibold text-muted-foreground">
               Jump to a service
-            </div>
+            </h2>
             <ul className="space-y-1.5">
               {services.map((s) => (
                 <li key={s.slug}>
                   <Link
-                    to="/services/$slug"
+                    to="/services/$slug/"
                     params={{ slug: s.slug }}
                     className="group flex items-center gap-3 rounded-2xl p-2 transition hover:bg-panel-2/70"
                   >
@@ -99,21 +91,19 @@ function ServicesPage() {
       </Section>
 
       <Section
-        eyebrow="Who I work with"
         title="Agency delivery, white-label or direct"
-        intro="Most of my work is with agencies that need dependable implementation — under their brand or alongside their team."
+        intro="Most of my work is with agencies that need dependable implementation, under their brand or alongside their team."
         tone="sage"
       >
-        <ul className="grid gap-4 md:grid-cols-3">
+        <ul className="grid gap-x-10 gap-y-8 md:grid-cols-3">
           {audiences.map((a, i) => (
             <li
               key={a.title}
-              data-reveal="zoom"
+              data-reveal="up"
               style={{ "--i": i } as React.CSSProperties}
-              className="panel-border rounded-3xl p-6"
+              className="border-t-2 border-[color-mix(in_oklab,var(--eyebrow)_45%,transparent)] pt-5"
             >
-              <a.icon size={22} className="text-cyan" aria-hidden />
-              <h3 className="mt-4 text-lg font-bold text-foreground">{a.title}</h3>
+              <h3 className="text-lg font-bold text-foreground">{a.title}</h3>
               <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{a.body}</p>
             </li>
           ))}
@@ -131,7 +121,7 @@ function ServicesPage() {
 
       <CtaPanel
         title="Not sure which service fits?"
-        body="Describe the problem in a few sentences — the tools involved and what should happen. I'll suggest the simplest system that solves it."
+        body="Describe the problem in a few sentences: the tools involved and what should happen. I'll suggest the simplest system that solves it."
       />
     </PageShell>
   );

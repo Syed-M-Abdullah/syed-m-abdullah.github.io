@@ -1,111 +1,100 @@
 {
- "slug": "auto-generation-website-home-page",
- "tags": [
-  "n8n",
-  "Dynamic Forms",
-  "Google Sheets",
-  "Webhooks"
- ],
- "overview": [
-  "Built an automated system for creating deal specific landing pages for real estate investment opportunities.",
-  "The system collects structured deal information, generates a dedicated landing page, stores the deal data, and distributes the opportunity to investors or internal teams."
- ],
- "sections": [
-  {
-   "heading": "Deal Intake",
-   "blocks": [
+  "slug": "auto-generation-website-home-page",
+  "tags": ["n8n", "Dynamic Forms", "Google Sheets", "Webhooks"],
+  "overview": [
+    "Built an automated system for creating deal specific landing pages for real estate investment opportunities.",
+    "The system collects structured deal information, generates a dedicated landing page, stores the deal data, and distributes the opportunity to investors or internal teams."
+  ],
+  "sections": [
     {
-     "p": "The system supports five investment strategies:"
+      "heading": "Deal Intake",
+      "blocks": [
+        {
+          "p": "The system supports five investment strategies:"
+        },
+        {
+          "list": ["BRRR", "BTL", "HMO", "FLIP", "Rent to Rent"]
+        },
+        {
+          "p": "Each strategy has its own dynamic form and captures the relevant property and financial information, including:"
+        },
+        {
+          "list": [
+            "Property details",
+            "Purchase price",
+            "Property type",
+            "Bedrooms and bathrooms",
+            "Rental and resale projections",
+            "Investment figures",
+            "Deal notes"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "BRRR",
-      "BTL",
-      "HMO",
-      "FLIP",
-      "Rent to Rent"
-     ]
+      "heading": "Landing Page Generation",
+      "blocks": [
+        {
+          "p": "Once a deal is submitted, the system:"
+        },
+        {
+          "list": [
+            "Creates a unique Deal ID",
+            "Generates a dedicated landing page",
+            "Populates the page with the submitted deal information",
+            "Creates a shareable URL",
+            "Presents the opportunity in a consistent format for investors"
+          ]
+        }
+      ]
     },
     {
-     "p": "Each strategy has its own dynamic form and captures the relevant property and financial information, including:"
-    },
-    {
-     "list": [
-      "Property details",
-      "Purchase price",
-      "Property type",
-      "Bedrooms and bathrooms",
-      "Rental and resale projections",
-      "Investment figures",
-      "Deal notes"
-     ]
+      "heading": "Data & Distribution",
+      "blocks": [
+        {
+          "p": "All submitted deals are stored in Google Sheets for tracking and management."
+        },
+        {
+          "p": "New deals can then be automatically shared with investors, partners, or internal teams through connected notification and communication channels."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Landing Page Generation",
-   "blocks": [
+  ],
+  "result": [
+    "A scalable deal publishing system that removes manual landing page creation, standardizes deal presentation, keeps deal information organized, and allows new investment opportunities to be published and shared quickly."
+  ],
+  "images": [
     {
-     "p": "Once a deal is submitted, the system:"
+      "src": "/projects/auto-generation-website-home-page/01-960.webp",
+      "srcSet": "/projects/auto-generation-website-home-page/01-480.webp 480w, /projects/auto-generation-website-home-page/01-960.webp 960w, /projects/auto-generation-website-home-page/01-1600.webp 1600w",
+      "full": "/projects/auto-generation-website-home-page/01-1600.webp",
+      "width": 1600,
+      "height": 773,
+      "alt": "Auto Generation Website Home Page: BRRR Form Workflow"
     },
     {
-     "list": [
-      "Creates a unique Deal ID",
-      "Generates a dedicated landing page",
-      "Populates the page with the submitted deal information",
-      "Creates a shareable URL",
-      "Presents the opportunity in a consistent format for investors"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Data & Distribution",
-   "blocks": [
-    {
-     "p": "All submitted deals are stored in Google Sheets for tracking and management."
+      "src": "/projects/auto-generation-website-home-page/02-960.webp",
+      "srcSet": "/projects/auto-generation-website-home-page/02-480.webp 480w, /projects/auto-generation-website-home-page/02-960.webp 960w, /projects/auto-generation-website-home-page/02-1600.webp 1600w",
+      "full": "/projects/auto-generation-website-home-page/02-1600.webp",
+      "width": 1600,
+      "height": 740,
+      "alt": "Auto Generation Website Home Page: BTL Form Worrkflow"
     },
     {
-     "p": "New deals can then be automatically shared with investors, partners, or internal teams through connected notification and communication channels."
+      "src": "/projects/auto-generation-website-home-page/03-960.webp",
+      "srcSet": "/projects/auto-generation-website-home-page/03-480.webp 480w, /projects/auto-generation-website-home-page/03-960.webp 960w, /projects/auto-generation-website-home-page/03-1600.webp 1600w",
+      "full": "/projects/auto-generation-website-home-page/03-1600.webp",
+      "width": 1600,
+      "height": 729,
+      "alt": "Auto Generation Website Home Page: Flip Form Wrokflow"
+    },
+    {
+      "src": "/projects/auto-generation-website-home-page/04-960.webp",
+      "srcSet": "/projects/auto-generation-website-home-page/04-480.webp 480w, /projects/auto-generation-website-home-page/04-960.webp 960w, /projects/auto-generation-website-home-page/04-1600.webp 1600w",
+      "full": "/projects/auto-generation-website-home-page/04-1600.webp",
+      "width": 1600,
+      "height": 742,
+      "alt": "Auto Generation Website Home Page: HMO Form Workflow"
     }
-   ]
-  }
- ],
- "result": [
-  "A scalable deal publishing system that removes manual landing page creation, standardizes deal presentation, keeps deal information organized, and allows new investment opportunities to be published and shared quickly."
- ],
- "images": [
-  {
-   "src": "/projects/auto-generation-website-home-page/01-960.webp",
-   "srcSet": "/projects/auto-generation-website-home-page/01-480.webp 480w, /projects/auto-generation-website-home-page/01-960.webp 960w, /projects/auto-generation-website-home-page/01-1600.webp 1600w",
-   "full": "/projects/auto-generation-website-home-page/01-1600.webp",
-   "width": 1600,
-   "height": 773,
-   "alt": "Auto Generation Website Home Page: BRRR Form Workflow"
-  },
-  {
-   "src": "/projects/auto-generation-website-home-page/02-960.webp",
-   "srcSet": "/projects/auto-generation-website-home-page/02-480.webp 480w, /projects/auto-generation-website-home-page/02-960.webp 960w, /projects/auto-generation-website-home-page/02-1600.webp 1600w",
-   "full": "/projects/auto-generation-website-home-page/02-1600.webp",
-   "width": 1600,
-   "height": 740,
-   "alt": "Auto Generation Website Home Page: BTL Form Worrkflow"
-  },
-  {
-   "src": "/projects/auto-generation-website-home-page/03-960.webp",
-   "srcSet": "/projects/auto-generation-website-home-page/03-480.webp 480w, /projects/auto-generation-website-home-page/03-960.webp 960w, /projects/auto-generation-website-home-page/03-1600.webp 1600w",
-   "full": "/projects/auto-generation-website-home-page/03-1600.webp",
-   "width": 1600,
-   "height": 729,
-   "alt": "Auto Generation Website Home Page: Flip Form Wrokflow"
-  },
-  {
-   "src": "/projects/auto-generation-website-home-page/04-960.webp",
-   "srcSet": "/projects/auto-generation-website-home-page/04-480.webp 480w, /projects/auto-generation-website-home-page/04-960.webp 960w, /projects/auto-generation-website-home-page/04-1600.webp 1600w",
-   "full": "/projects/auto-generation-website-home-page/04-1600.webp",
-   "width": 1600,
-   "height": 742,
-   "alt": "Auto Generation Website Home Page: HMO Form Workflow"
-  }
- ]
+  ]
 }

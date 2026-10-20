@@ -1,0 +1,19 @@
+{
+  "slug": "automated-appointment-management",
+  "tags": [],
+  "overview": [
+    "Runs when a customer books an appointment. It creates or updates the contact, confirms the booking by email and SMS, checks that the contact and appointment are valid, and handles reschedules on their own branch."
+  ],
+  "sections": [],
+  "result": [],
+  "images": [
+    {
+      "src": "/projects/automated-appointment-management/01-736.webp",
+      "srcSet": "/projects/automated-appointment-management/01-480.webp 480w, /projects/automated-appointment-management/01-736.webp 736w",
+      "full": "/projects/automated-appointment-management/01-736.webp",
+      "width": 736,
+      "height": 877,
+      "alt": "Automated Appointment Management: Appointment Booking"
+    }
+  ]
+}

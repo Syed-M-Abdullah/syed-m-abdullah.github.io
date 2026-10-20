@@ -1,0 +1,19 @@
+{
+  "slug": "lead-nurturing-automation",
+  "tags": [],
+  "overview": [
+    "Starts from a lead form. It creates or updates the contact, sends a welcome email, then value emails and SMS on a schedule. It waits for the lead to engage and sends an offer or case study email when they reply."
+  ],
+  "sections": [],
+  "result": [],
+  "images": [
+    {
+      "src": "/projects/lead-nurturing-automation/01-596.webp",
+      "srcSet": "/projects/lead-nurturing-automation/01-480.webp 480w, /projects/lead-nurturing-automation/01-596.webp 596w",
+      "full": "/projects/lead-nurturing-automation/01-596.webp",
+      "width": 596,
+      "height": 865,
+      "alt": "Lead Nurturing Automation: Lead Nurturing"
+    }
+  ]
+}

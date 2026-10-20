@@ -1,151 +1,151 @@
 {
- "slug": "stockpulse-command-center",
- "tags": [
-  "Make.com",
-  "Shopify/WooCommerce",
-  "Airtable/SmartSuite",
-  "Google Sheets",
-  "OpenAI/Claude",
-  "Slack",
-  "Gmail",
-  "Google Drive",
-  "ERP/API",
-  "Webhooks"
- ],
- "overview": [
-  "Built an automated multi location inventory and replenishment management system for preventing stockouts, reducing overstock, and improving warehouse inventory decisions.",
-  "The workflow takes new sales orders and automatically updates inventory, calculates stock health, predicts replenishment needs, manages warehouse transfers, creates supplier orders, tracks deliveries, and monitors slow moving inventory."
- ],
- "sections": [
-  {
-   "heading": "Workflow",
-   "blocks": [
+  "slug": "stockpulse-command-center",
+  "tags": [
+    "Make.com",
+    "Shopify/WooCommerce",
+    "Airtable/SmartSuite",
+    "Google Sheets",
+    "OpenAI/Claude",
+    "Slack",
+    "Gmail",
+    "Google Drive",
+    "ERP/API",
+    "Webhooks"
+  ],
+  "overview": [
+    "Built an automated multi location inventory and replenishment management system for preventing stockouts, reducing overstock, and improving warehouse inventory decisions.",
+    "The workflow takes new sales orders and automatically updates inventory, calculates stock health, predicts replenishment needs, manages warehouse transfers, creates supplier orders, tracks deliveries, and monitors slow moving inventory."
+  ],
+  "sections": [
     {
-     "p": "The system:"
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "p": "The system:"
+        },
+        {
+          "list": [
+            "Receives new sales orders from Shopify or WooCommerce",
+            "Normalizes order data from different sales channels",
+            "Finds product and warehouse inventory records automatically",
+            "Updates available stock after every completed sale",
+            "Calculates inventory health, daily demand, and estimated days remaining",
+            "Routes products based on healthy, reorder, critical, or out of stock conditions",
+            "Logs inventory events and stock risk data in Google Sheets",
+            "Searches other warehouses when inventory becomes critically low",
+            "Calculates transferable stock without affecting source warehouse safety levels",
+            "Selects the most suitable warehouse for internal stock transfers",
+            "Creates and tracks warehouse transfer requests automatically",
+            "Sends stock transfer approvals through Slack",
+            "Retrieves supplier information when external replenishment is required",
+            "Analyzes historical sales and demand trends",
+            "Generates demand forecasts and stockout probability",
+            "Calculates recommended reorder quantities using safety stock, lead time, MOQ, and incoming inventory",
+            "Creates replenishment requests automatically",
+            "Routes high value replenishment orders for manager and finance approval",
+            "Creates supplier replenishment orders after approval",
+            "Sends confirmed stock orders to suppliers through Gmail",
+            "Creates Google Drive folders for supplier and shipment documentation",
+            "Receives supplier confirmations and expected delivery information",
+            "Calculates delivery risk against projected stockout dates",
+            "Generates alternative inventory actions when supplier deliveries are delayed",
+            "Sends critical stockout alerts to the operations team",
+            "Reconciles received stock against supplier orders",
+            "Updates warehouse inventory after successful receiving",
+            "Detects damaged, partial, or incorrect deliveries",
+            "Updates supplier performance using delivery and order accuracy data",
+            "Scans inventory weekly for slow moving, excess, and dead stock",
+            "Generates redistribution recommendations across warehouse locations",
+            "Updates inventory analytics and operational reporting automatically"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Receives new sales orders from Shopify or WooCommerce",
-      "Normalizes order data from different sales channels",
-      "Finds product and warehouse inventory records automatically",
-      "Updates available stock after every completed sale",
-      "Calculates inventory health, daily demand, and estimated days remaining",
-      "Routes products based on healthy, reorder, critical, or out of stock conditions",
-      "Logs inventory events and stock risk data in Google Sheets",
-      "Searches other warehouses when inventory becomes critically low",
-      "Calculates transferable stock without affecting source warehouse safety levels",
-      "Selects the most suitable warehouse for internal stock transfers",
-      "Creates and tracks warehouse transfer requests automatically",
-      "Sends stock transfer approvals through Slack",
-      "Retrieves supplier information when external replenishment is required",
-      "Analyzes historical sales and demand trends",
-      "Generates demand forecasts and stockout probability",
-      "Calculates recommended reorder quantities using safety stock, lead time, MOQ, and incoming inventory",
-      "Creates replenishment requests automatically",
-      "Routes high value replenishment orders for manager and finance approval",
-      "Creates supplier replenishment orders after approval",
-      "Sends confirmed stock orders to suppliers through Gmail",
-      "Creates Google Drive folders for supplier and shipment documentation",
-      "Receives supplier confirmations and expected delivery information",
-      "Calculates delivery risk against projected stockout dates",
-      "Generates alternative inventory actions when supplier deliveries are delayed",
-      "Sends critical stockout alerts to the operations team",
-      "Reconciles received stock against supplier orders",
-      "Updates warehouse inventory after successful receiving",
-      "Detects damaged, partial, or incorrect deliveries",
-      "Updates supplier performance using delivery and order accuracy data",
-      "Scans inventory weekly for slow moving, excess, and dead stock",
-      "Generates redistribution recommendations across warehouse locations",
-      "Updates inventory analytics and operational reporting automatically"
-     ]
+      "heading": "Branding & Templates",
+      "blocks": [
+        {
+          "p": "The workflow uses predefined replenishment, transfer, supplier communication, and inventory alert templates."
+        },
+        {
+          "p": "Each template controls:"
+        },
+        {
+          "list": [
+            "Stock transfer requests",
+            "Replenishment approvals",
+            "Supplier order communication",
+            "Inventory risk alerts",
+            "Warehouse receiving notifications"
+          ]
+        },
+        {
+          "p": "This keeps inventory operations consistent across different warehouses, products, suppliers, and sales channels."
+        }
+      ]
+    },
+    {
+      "heading": "Content Management",
+      "blocks": [
+        {
+          "p": "Airtable or SmartSuite acts as the central inventory, supplier, warehouse, transfer, and replenishment tracking system."
+        },
+        {
+          "p": "Each inventory record is updated with:"
+        },
+        {
+          "list": [
+            "Current stock",
+            "Reorder point",
+            "Stock risk",
+            "Warehouse location",
+            "Supplier information",
+            "Transfer status",
+            "Replenishment status",
+            "Incoming inventory",
+            "Supplier performance",
+            "Inventory health"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Branding & Templates",
-   "blocks": [
+  ],
+  "result": [
+    "A complete automated inventory management pipeline that turns every sales transaction into an updated, monitored, forecasted, replenished, and optimized inventory operation without requiring teams to manually track stock across multiple warehouses.",
+    "The system also keeps inventory levels, warehouse transfers, supplier orders, delivery risks, slow moving stock, supplier performance, and stock analytics organized in one workflow."
+  ],
+  "images": [
     {
-     "p": "The workflow uses predefined replenishment, transfer, supplier communication, and inventory alert templates."
+      "src": "/projects/stockpulse-command-center/01-960.webp",
+      "srcSet": "/projects/stockpulse-command-center/01-480.webp 480w, /projects/stockpulse-command-center/01-960.webp 960w, /projects/stockpulse-command-center/01-1600.webp 1600w",
+      "full": "/projects/stockpulse-command-center/01-1600.webp",
+      "width": 1600,
+      "height": 535,
+      "alt": "StockPulse Command Center: StockPulse Command Center 1"
     },
     {
-     "p": "Each template controls:"
+      "src": "/projects/stockpulse-command-center/02-960.webp",
+      "srcSet": "/projects/stockpulse-command-center/02-480.webp 480w, /projects/stockpulse-command-center/02-960.webp 960w, /projects/stockpulse-command-center/02-1600.webp 1600w",
+      "full": "/projects/stockpulse-command-center/02-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "StockPulse Command Center: StockPulse Command Center 2"
     },
     {
-     "list": [
-      "Stock transfer requests",
-      "Replenishment approvals",
-      "Supplier order communication",
-      "Inventory risk alerts",
-      "Warehouse receiving notifications"
-     ]
+      "src": "/projects/stockpulse-command-center/03-960.webp",
+      "srcSet": "/projects/stockpulse-command-center/03-480.webp 480w, /projects/stockpulse-command-center/03-960.webp 960w, /projects/stockpulse-command-center/03-1600.webp 1600w",
+      "full": "/projects/stockpulse-command-center/03-1600.webp",
+      "width": 1600,
+      "height": 650,
+      "alt": "StockPulse Command Center: StockPulse Command Center 3"
     },
     {
-     "p": "This keeps inventory operations consistent across different warehouses, products, suppliers, and sales channels."
+      "src": "/projects/stockpulse-command-center/04-960.webp",
+      "srcSet": "/projects/stockpulse-command-center/04-480.webp 480w, /projects/stockpulse-command-center/04-960.webp 960w, /projects/stockpulse-command-center/04-1600.webp 1600w",
+      "full": "/projects/stockpulse-command-center/04-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "StockPulse Command Center: StockPulse Command Center 4"
     }
-   ]
-  },
-  {
-   "heading": "Content Management",
-   "blocks": [
-    {
-     "p": "Airtable or SmartSuite acts as the central inventory, supplier, warehouse, transfer, and replenishment tracking system."
-    },
-    {
-     "p": "Each inventory record is updated with:"
-    },
-    {
-     "list": [
-      "Current stock",
-      "Reorder point",
-      "Stock risk",
-      "Warehouse location",
-      "Supplier information",
-      "Transfer status",
-      "Replenishment status",
-      "Incoming inventory",
-      "Supplier performance",
-      "Inventory health"
-     ]
-    }
-   ]
-  }
- ],
- "result": [
-  "A complete automated inventory management pipeline that turns every sales transaction into an updated, monitored, forecasted, replenished, and optimized inventory operation without requiring teams to manually track stock across multiple warehouses.",
-  "The system also keeps inventory levels, warehouse transfers, supplier orders, delivery risks, slow moving stock, supplier performance, and stock analytics organized in one workflow."
- ],
- "images": [
-  {
-   "src": "/projects/stockpulse-command-center/01-960.webp",
-   "srcSet": "/projects/stockpulse-command-center/01-480.webp 480w, /projects/stockpulse-command-center/01-960.webp 960w, /projects/stockpulse-command-center/01-1600.webp 1600w",
-   "full": "/projects/stockpulse-command-center/01-1600.webp",
-   "width": 1600,
-   "height": 535,
-   "alt": "StockPulse Command Center: StockPulse Command Center 1"
-  },
-  {
-   "src": "/projects/stockpulse-command-center/02-960.webp",
-   "srcSet": "/projects/stockpulse-command-center/02-480.webp 480w, /projects/stockpulse-command-center/02-960.webp 960w, /projects/stockpulse-command-center/02-1600.webp 1600w",
-   "full": "/projects/stockpulse-command-center/02-1600.webp",
-   "width": 1600,
-   "height": 900,
-   "alt": "StockPulse Command Center: StockPulse Command Center 2"
-  },
-  {
-   "src": "/projects/stockpulse-command-center/03-960.webp",
-   "srcSet": "/projects/stockpulse-command-center/03-480.webp 480w, /projects/stockpulse-command-center/03-960.webp 960w, /projects/stockpulse-command-center/03-1600.webp 1600w",
-   "full": "/projects/stockpulse-command-center/03-1600.webp",
-   "width": 1600,
-   "height": 650,
-   "alt": "StockPulse Command Center: StockPulse Command Center 3"
-  },
-  {
-   "src": "/projects/stockpulse-command-center/04-960.webp",
-   "srcSet": "/projects/stockpulse-command-center/04-480.webp 480w, /projects/stockpulse-command-center/04-960.webp 960w, /projects/stockpulse-command-center/04-1600.webp 1600w",
-   "full": "/projects/stockpulse-command-center/04-1600.webp",
-   "width": 1600,
-   "height": 900,
-   "alt": "StockPulse Command Center: StockPulse Command Center 4"
-  }
- ]
+  ]
 }

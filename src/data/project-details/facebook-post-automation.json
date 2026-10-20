@@ -1,0 +1,20 @@
+{
+  "slug": "facebook-post-automation",
+  "tags": [],
+  "overview": [
+    "A new row in the post list triggers it through a webhook. AI writes the post and caption, generates an image and matches the post to the right Facebook page, then the workflow publishes it and records the outcome.",
+    "If publishing fails, an admin is notified and the post is retried up to three times, with separate branches for missing assets, AI or publishing errors and invalid pages."
+  ],
+  "sections": [],
+  "result": [],
+  "images": [
+    {
+      "src": "/projects/facebook-post-automation/01-960.webp",
+      "srcSet": "/projects/facebook-post-automation/01-480.webp 480w, /projects/facebook-post-automation/01-960.webp 960w, /projects/facebook-post-automation/01-1034.webp 1034w",
+      "full": "/projects/facebook-post-automation/01-1034.webp",
+      "width": 1034,
+      "height": 1521,
+      "alt": "Facebook Post Automation: Facebook"
+    }
+  ]
+}

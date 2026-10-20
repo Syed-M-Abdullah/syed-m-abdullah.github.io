@@ -2,20 +2,28 @@ import { useEffect, useRef, useState } from "react";
 import {
   BarChart3,
   BellRing,
+  Bot,
   CalendarCheck,
   Check,
+  ContactRound,
   MessageCircle,
+  MessageSquareText,
   PenLine,
   PhoneMissed,
   Search,
+  Sheet,
   Star,
   UserCheck,
+  Webhook,
+  type LucideIcon,
 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import type { ServiceSlug } from "@/data/services";
+import { getProject, type ProjectSummary } from "@/data/projects";
 import { tools } from "@/data/tools";
 import { useCountUp } from "@/lib/motion";
 import { prefersReducedMotion } from "@/lib/motion-pref";
-import { ToolLogo } from "./tech-marquee";
+import { ToolLogo } from "./tool-logo";
 
 /**
  * One hero animation per service — SVG/CSS only, decorative (aria-hidden), and static under
@@ -25,7 +33,6 @@ import { ToolLogo } from "./tech-marquee";
 function Panel({ children, label }: { children: React.ReactNode; label?: string }) {
   return (
     <div aria-hidden className="relative mx-auto w-full max-w-[520px]">
-      <div className="hero-visual-glow absolute -inset-8 -z-10" />
       <div className="wf-panel on-dark relative overflow-hidden rounded-[1.75rem]">
         <div className="hero-visual-grid absolute inset-0 -z-10" />
         <div className="relative">{children}</div>
@@ -107,15 +114,16 @@ function VoiceVisual() {
   );
 }
 
-/* ---- Business Automation: node graph with data pulses */
+/* ---- Business Automation: node graph with data pulses. Each node draws its icon (the boxes
+   used to hold only a coloured square, which read as missing icons). */
 function WorkflowVisual() {
-  const nodes = [
-    { x: 40, y: 150, label: "Webhook", color: "#ea4b71" },
-    { x: 170, y: 150, label: "AI agent", color: "#7c3aed" },
-    { x: 300, y: 60, label: "CRM", color: "#2563eb" },
-    { x: 300, y: 150, label: "Sheets", color: "#16a34a" },
-    { x: 300, y: 240, label: "Slack", color: "#f59e0b" },
-    { x: 430, y: 150, label: "Done", color: "#10b981" },
+  const nodes: { x: number; y: number; label: string; color: string; Icon: LucideIcon }[] = [
+    { x: 40, y: 150, label: "Webhook", color: "#ea4b71", Icon: Webhook },
+    { x: 170, y: 150, label: "AI agent", color: "#7c3aed", Icon: Bot },
+    { x: 300, y: 60, label: "CRM", color: "#2563eb", Icon: ContactRound },
+    { x: 300, y: 150, label: "Sheets", color: "#16a34a", Icon: Sheet },
+    { x: 300, y: 240, label: "Slack", color: "#d97706", Icon: MessageSquareText },
+    { x: 430, y: 150, label: "Done", color: "#059669", Icon: Check },
   ];
   const edges = [
     "M100 150 L170 150",
@@ -144,15 +152,13 @@ function WorkflowVisual() {
         {nodes.map((n, i) => (
           <g key={n.label} className="flow-node" style={{ animationDelay: `${-i * 0.35}s` }}>
             <rect x={n.x} y={n.y - 30} width="60" height="60" rx="16" className="flow-node-box" />
-            <rect x={n.x + 18} y={n.y - 12} width="24" height="24" rx="7" fill={n.color} />
+            <rect x={n.x + 13} y={n.y - 17} width="34" height="34" rx="10" fill={n.color} />
+            <n.Icon x={n.x + 21} y={n.y - 9} width={18} height={18} color="#fff" strokeWidth={2} />
             <text x={n.x + 30} y={n.y + 48} textAnchor="middle" className="flow-node-sub">
               {n.label}
             </text>
           </g>
         ))}
-        <g transform="translate(460 150)">
-          <path d="M-6 0 L-2 4 L6 -4" stroke="#fff" strokeWidth="2.5" fill="none" />
-        </g>
       </svg>
       <PlatformChips ids={["n8n", "zapier", "make"]} />
     </Panel>
@@ -278,8 +284,8 @@ function PipelineVisual() {
 /* ---- WhatsApp & Chat AI Agents: chat thread with typing indicator */
 function ChatVisual() {
   const msgs = [
-    { from: "user", text: "Hi! Can I book a consultation for Saturday?" },
-    { from: "bot", text: "Of course. I have 10:00 or 14:30 on Saturday — which suits you?" },
+    { from: "user", text: "Hi, can I book a consultation for Saturday?" },
+    { from: "bot", text: "Of course. I have 10:00 or 14:30 on Saturday. Which suits you?" },
     { from: "user", text: "14:30 please" },
     { from: "bot", text: "Booked for Saturday 14:30. A confirmation is on its way." },
   ];
@@ -545,6 +551,58 @@ function DashboardVisual() {
   );
 }
 
+/* ---- Custom Software: real screens from two delivered systems (not a mock dashboard). */
+const screenSlugs = ["restaurant-pos-zatca-integrated", "hisabdaar"];
+function ScreensVisual() {
+  const shots = screenSlugs
+    .map((s) => getProject(s))
+    .filter((p): p is ProjectSummary => !!p?.cover);
+  if (!shots.length) return <DashboardVisual />;
+  const [main, second] = shots;
+  return (
+    <figure className="relative mx-auto w-full max-w-[540px] pb-14 sm:pb-16">
+      <Link
+        to="/projects/$slug/"
+        params={{ slug: main.slug }}
+        className="block overflow-hidden rounded-2xl border border-white/15 bg-white shadow-[0_30px_60px_-30px_rgba(0,0,0,0.8)]"
+      >
+        <img
+          src={main.cover!.src}
+          srcSet={main.cover!.srcSet}
+          sizes="(min-width: 1024px) 540px, 92vw"
+          alt={main.cover!.alt}
+          width={main.cover!.width}
+          height={main.cover!.height}
+          fetchPriority="high"
+          className="aspect-[16/10] w-full object-cover object-top"
+        />
+      </Link>
+      {second && (
+        <Link
+          to="/projects/$slug/"
+          params={{ slug: second.slug }}
+          className="absolute right-[-4%] bottom-0 block w-[56%] overflow-hidden rounded-xl border border-white/20 bg-white shadow-[0_24px_50px_-24px_rgba(0,0,0,0.85)]"
+        >
+          <img
+            src={second.cover!.src}
+            srcSet={second.cover!.srcSet}
+            sizes="(min-width: 1024px) 300px, 50vw"
+            alt={second.cover!.alt}
+            width={second.cover!.width}
+            height={second.cover!.height}
+            loading="lazy"
+            className="aspect-[16/10] w-full object-cover object-top"
+          />
+        </Link>
+      )}
+      <figcaption className="absolute bottom-0 left-0 max-w-[40%] text-[12.5px] leading-snug text-muted-foreground">
+        Real screens: {main.title}
+        {second ? ` and ${second.title}` : ""}
+      </figcaption>
+    </figure>
+  );
+}
+
 export function ServiceVisual({ slug }: { slug: ServiceSlug }) {
   switch (slug) {
     case "voice-ai":
@@ -560,7 +618,7 @@ export function ServiceVisual({ slug }: { slug: ServiceSlug }) {
     case "ai-chatbots":
       return <ChatVisual />;
     case "custom-software":
-      return <DashboardVisual />;
+      return <ScreensVisual />;
     default:
       return null;
   }

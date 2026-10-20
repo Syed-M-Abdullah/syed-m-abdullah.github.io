@@ -1,139 +1,139 @@
 {
- "slug": "garageflow-360-auto-repair-operations-and-customer-retention-automation",
- "tags": [
-  "Make.com",
-  "WhatsApp Business",
-  "Airtable/SmartSuite",
-  "Google Calendar",
-  "Google Drive",
-  "OpenAI/Claude",
-  "Gmail",
-  "Slack",
-  "Google Sheets",
-  "Webhooks"
- ],
- "overview": [
-  "Built an automated workshop management system for handling customer inquiries, vehicle appointments, inspections, repair estimates, parts coordination, technician assignments, repair tracking, and customer retention.",
-  "The workflow takes a new customer inquiry and turns it into a complete repair lifecycle, from booking and vehicle check-in to estimate approval, repair completion, pickup notification, service reminders, and review follow-ups."
- ],
- "sections": [
-  {
-   "heading": "Workflow",
-   "blocks": [
+  "slug": "garageflow-360-auto-repair-operations-and-customer-retention-automation",
+  "tags": [
+    "Make.com",
+    "WhatsApp Business",
+    "Airtable/SmartSuite",
+    "Google Calendar",
+    "Google Drive",
+    "OpenAI/Claude",
+    "Gmail",
+    "Slack",
+    "Google Sheets",
+    "Webhooks"
+  ],
+  "overview": [
+    "Built an automated workshop management system for handling customer inquiries, vehicle appointments, inspections, repair estimates, parts coordination, technician assignments, repair tracking, and customer retention.",
+    "The workflow takes a new customer inquiry and turns it into a complete repair lifecycle, from booking and vehicle check-in to estimate approval, repair completion, pickup notification, service reminders, and review follow-ups."
+  ],
+  "sections": [
     {
-     "p": "The system:"
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "p": "The system:"
+        },
+        {
+          "list": [
+            "Receives customer inquiries through WhatsApp or website forms",
+            "Searches existing customer and vehicle records automatically",
+            "Retrieves previous vehicle service and repair history",
+            "Creates new service requests and repair orders",
+            "Checks workshop availability and sends appointment options",
+            "Creates confirmed appointments in Google Calendar",
+            "Sends automatic appointment reminders to customers",
+            "Records vehicle check-in details, mileage, condition, and photos",
+            "Creates dedicated Google Drive folders for each repair order",
+            "Searches and assigns technicians based on skill, availability, and workload",
+            "Processes technician inspection reports using AI",
+            "Creates structured customer-friendly inspection summaries",
+            "Calculates repair estimates including parts and labor",
+            "Sends digital estimates for customer approval",
+            "Follows up automatically when an estimate remains unanswered",
+            "Generates required parts lists from approved repair work",
+            "Checks workshop parts inventory before purchasing",
+            "Searches and compares local parts suppliers when stock is unavailable",
+            "Creates and sends supplier parts orders automatically",
+            "Tracks delayed, partial, damaged, or incorrect parts deliveries",
+            "Sends proactive repair-delay updates to customers",
+            "Tracks repair progress and technician completion",
+            "Routes completed repairs through quality control",
+            "Generates final service summaries and repair reports",
+            "Updates complete vehicle service history automatically",
+            "Sends ready-for-pickup notifications through WhatsApp",
+            "Sends future maintenance reminders and customer review requests",
+            "Detects dormant customers for re-engagement campaigns",
+            "Updates workshop performance analytics in Google Sheets"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Receives customer inquiries through WhatsApp or website forms",
-      "Searches existing customer and vehicle records automatically",
-      "Retrieves previous vehicle service and repair history",
-      "Creates new service requests and repair orders",
-      "Checks workshop availability and sends appointment options",
-      "Creates confirmed appointments in Google Calendar",
-      "Sends automatic appointment reminders to customers",
-      "Records vehicle check-in details, mileage, condition, and photos",
-      "Creates dedicated Google Drive folders for each repair order",
-      "Searches and assigns technicians based on skill, availability, and workload",
-      "Processes technician inspection reports using AI",
-      "Creates structured customer-friendly inspection summaries",
-      "Calculates repair estimates including parts and labor",
-      "Sends digital estimates for customer approval",
-      "Follows up automatically when an estimate remains unanswered",
-      "Generates required parts lists from approved repair work",
-      "Checks workshop parts inventory before purchasing",
-      "Searches and compares local parts suppliers when stock is unavailable",
-      "Creates and sends supplier parts orders automatically",
-      "Tracks delayed, partial, damaged, or incorrect parts deliveries",
-      "Sends proactive repair-delay updates to customers",
-      "Tracks repair progress and technician completion",
-      "Routes completed repairs through quality control",
-      "Generates final service summaries and repair reports",
-      "Updates complete vehicle service history automatically",
-      "Sends ready-for-pickup notifications through WhatsApp",
-      "Sends future maintenance reminders and customer review requests",
-      "Detects dormant customers for re-engagement campaigns",
-      "Updates workshop performance analytics in Google Sheets"
-     ]
+      "heading": "Branding & Templates",
+      "blocks": [
+        {
+          "p": "The workflow uses predefined workshop communication, estimate, service report, and reminder templates."
+        },
+        {
+          "p": "Each template controls:"
+        },
+        {
+          "list": [
+            "Appointment communication",
+            "Repair estimate format",
+            "Parts and supplier requests",
+            "Customer repair updates",
+            "Service reminders"
+          ]
+        },
+        {
+          "p": "This keeps workshop communication consistent across customers, vehicles, technicians, and repair orders."
+        }
+      ]
+    },
+    {
+      "heading": "Content Management",
+      "blocks": [
+        {
+          "p": "Airtable or SmartSuite acts as the central customer, vehicle, repair order, technician, and parts tracking system."
+        },
+        {
+          "p": "Each repair order is updated with:"
+        },
+        {
+          "list": [
+            "Customer information",
+            "Vehicle details",
+            "Technician assignment",
+            "Estimate status",
+            "Parts status",
+            "Repair status",
+            "Pickup status",
+            "Final cost",
+            "Next service date"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Branding & Templates",
-   "blocks": [
+  ],
+  "result": [
+    "A complete automated auto repair workflow that turns a customer inquiry into an appointed, inspected, approved, repaired, documented, and completed vehicle service without requiring workshop staff to manually coordinate every step.",
+    "The system also keeps customer records, vehicle history, repair estimates, parts orders, technician activity, service reminders, reviews, and workshop analytics organized in one workflow."
+  ],
+  "images": [
     {
-     "p": "The workflow uses predefined workshop communication, estimate, service report, and reminder templates."
+      "src": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-960.webp",
+      "srcSet": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-480.webp 480w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-960.webp 960w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-1600.webp 1600w",
+      "full": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-1600.webp",
+      "width": 1600,
+      "height": 726,
+      "alt": "GarageFlow 360: Auto Repair Operations & Customer Retention Automation: GarageFlow 360 1"
     },
     {
-     "p": "Each template controls:"
+      "src": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/02-960.webp",
+      "srcSet": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/02-480.webp 480w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/02-960.webp 960w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/02-1600.webp 1600w",
+      "full": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/02-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "GarageFlow 360: Auto Repair Operations & Customer Retention Automation: GarageFlow 360 3"
     },
     {
-     "list": [
-      "Appointment communication",
-      "Repair estimate format",
-      "Parts and supplier requests",
-      "Customer repair updates",
-      "Service reminders"
-     ]
-    },
-    {
-     "p": "This keeps workshop communication consistent across customers, vehicles, technicians, and repair orders."
+      "src": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/03-960.webp",
+      "srcSet": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/03-480.webp 480w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/03-960.webp 960w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/03-1600.webp 1600w",
+      "full": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/03-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "GarageFlow 360: Auto Repair Operations & Customer Retention Automation: GarageFlow 360 4"
     }
-   ]
-  },
-  {
-   "heading": "Content Management",
-   "blocks": [
-    {
-     "p": "Airtable or SmartSuite acts as the central customer, vehicle, repair order, technician, and parts tracking system."
-    },
-    {
-     "p": "Each repair order is updated with:"
-    },
-    {
-     "list": [
-      "Customer information",
-      "Vehicle details",
-      "Technician assignment",
-      "Estimate status",
-      "Parts status",
-      "Repair status",
-      "Pickup status",
-      "Final cost",
-      "Next service date"
-     ]
-    }
-   ]
-  }
- ],
- "result": [
-  "A complete automated auto repair workflow that turns a customer inquiry into an appointed, inspected, approved, repaired, documented, and completed vehicle service without requiring workshop staff to manually coordinate every step.",
-  "The system also keeps customer records, vehicle history, repair estimates, parts orders, technician activity, service reminders, reviews, and workshop analytics organized in one workflow."
- ],
- "images": [
-  {
-   "src": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-960.webp",
-   "srcSet": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-480.webp 480w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-960.webp 960w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-1600.webp 1600w",
-   "full": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-1600.webp",
-   "width": 1600,
-   "height": 726,
-   "alt": "GarageFlow 360 – Auto Repair Operations & Customer Retention Automation: GarageFlow 360 1"
-  },
-  {
-   "src": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/02-960.webp",
-   "srcSet": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/02-480.webp 480w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/02-960.webp 960w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/02-1600.webp 1600w",
-   "full": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/02-1600.webp",
-   "width": 1600,
-   "height": 900,
-   "alt": "GarageFlow 360 – Auto Repair Operations & Customer Retention Automation: GarageFlow 360 3"
-  },
-  {
-   "src": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/03-960.webp",
-   "srcSet": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/03-480.webp 480w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/03-960.webp 960w, /projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/03-1600.webp 1600w",
-   "full": "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/03-1600.webp",
-   "width": 1600,
-   "height": 900,
-   "alt": "GarageFlow 360 – Auto Repair Operations & Customer Retention Automation: GarageFlow 360 4"
-  }
- ]
+  ]
 }

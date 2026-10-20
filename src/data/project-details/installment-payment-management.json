@@ -1,0 +1,19 @@
+{
+  "slug": "installment-payment-management",
+  "tags": [],
+  "overview": [
+    "Runs when an instalment payment arrives. It creates or updates the contact, generates the instalment schedule and confirms the first payment by email and SMS. Each due date is tracked with on-time, overdue and final-reminder branches."
+  ],
+  "sections": [],
+  "result": [],
+  "images": [
+    {
+      "src": "/projects/installment-payment-management/01-960.webp",
+      "srcSet": "/projects/installment-payment-management/01-480.webp 480w, /projects/installment-payment-management/01-960.webp 960w, /projects/installment-payment-management/01-1033.webp 1033w",
+      "full": "/projects/installment-payment-management/01-1033.webp",
+      "width": 1033,
+      "height": 1522,
+      "alt": "Installment Payment Management: Payment Installment"
+    }
+  ]
+}

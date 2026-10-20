@@ -1,0 +1,19 @@
+{
+  "slug": "sms-campaign-router",
+  "tags": [],
+  "overview": [
+    "Several campaign triggers feed one router that splits contacts into five branches, each sending its own SMS."
+  ],
+  "sections": [],
+  "result": [],
+  "images": [
+    {
+      "src": "/projects/sms-campaign-router/01-960.webp",
+      "srcSet": "/projects/sms-campaign-router/01-480.webp 480w, /projects/sms-campaign-router/01-960.webp 960w, /projects/sms-campaign-router/01-1600.webp 1600w",
+      "full": "/projects/sms-campaign-router/01-1600.webp",
+      "width": 1600,
+      "height": 682,
+      "alt": "SMS Campaign Router: SMS Campaign 1"
+    }
+  ]
+}

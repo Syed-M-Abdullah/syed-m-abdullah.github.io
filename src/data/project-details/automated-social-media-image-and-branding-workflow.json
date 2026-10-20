@@ -1,103 +1,91 @@
 {
- "slug": "automated-social-media-image-and-branding-workflow",
- "tags": [
-  "n8n",
-  "Claude",
-  "Gemini",
-  "Browserless",
-  "Google Sheets",
-  "Google Drive"
- ],
- "overview": [
-  "Built an automated image production system for a law firm’s social media content.",
-  "The workflow takes an approved content idea and turns it into a finished branded social media graphic, including the image, text, description, hashtags, branding, and final file management."
- ],
- "sections": [
-  {
-   "heading": "Workflow",
-   "blocks": [
+  "slug": "automated-social-media-image-and-branding-workflow",
+  "tags": ["n8n", "Claude", "Gemini", "Browserless", "Google Sheets", "Google Drive"],
+  "overview": [
+    "Built an automated image production system for a law firm’s social media content.",
+    "The workflow takes an approved content idea and turns it into a finished branded social media graphic, including the image, text, description, hashtags, branding, and final file management."
+  ],
+  "sections": [
     {
-     "p": "The system:"
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "p": "The system:"
+        },
+        {
+          "list": [
+            "Retrieves pending content ideas from Google Sheets",
+            "Generates the image prompt, headline, description, and hashtags",
+            "Checks the generated content against predefined requirements",
+            "Creates the image using Google Gemini",
+            "Selects from 12 branded templates automatically",
+            "Adds the firm’s logo, text, colors, and layout",
+            "Renders the final design as a 1080 × 1080 PNG",
+            "Uploads the finished graphic to Google Drive",
+            "Removes temporary files after processing",
+            "Updates Google Sheets with the final image, description, hashtags, and status"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Retrieves pending content ideas from Google Sheets",
-      "Generates the image prompt, headline, description, and hashtags",
-      "Checks the generated content against predefined requirements",
-      "Creates the image using Google Gemini",
-      "Selects from 12 branded templates automatically",
-      "Adds the firm’s logo, text, colors, and layout",
-      "Renders the final design as a 1080 × 1080 PNG",
-      "Uploads the finished graphic to Google Drive",
-      "Removes temporary files after processing",
-      "Updates Google Sheets with the final image, description, hashtags, and status"
-     ]
+      "heading": "Branding & Templates",
+      "blocks": [
+        {
+          "p": "The workflow automatically rotates between 12 branded templates based on the content schedule."
+        },
+        {
+          "p": "Each template controls:"
+        },
+        {
+          "list": [
+            "Logo placement",
+            "Image positioning",
+            "Text overlays",
+            "Brand styling",
+            "Layout"
+          ]
+        },
+        {
+          "p": "This keeps the content visually consistent while avoiding repetitive designs."
+        }
+      ]
+    },
+    {
+      "heading": "Content Management",
+      "blocks": [
+        {
+          "p": "Google Sheets acts as the central content queue and tracking system."
+        },
+        {
+          "p": "Each completed post is updated with:"
+        },
+        {
+          "list": ["Description", "Hashtags", "Final image URL", "Review status"]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Branding & Templates",
-   "blocks": [
+  ],
+  "result": [
+    "A complete automated design pipeline that turns a content idea into a branded, review ready social media graphic without requiring manual image creation or editing for every post.",
+    "The system also keeps content, assets, and approval status organized in one workflow."
+  ],
+  "images": [
     {
-     "p": "The workflow automatically rotates between 12 branded templates based on the content schedule."
+      "src": "/projects/automated-social-media-image-and-branding-workflow/01-960.webp",
+      "srcSet": "/projects/automated-social-media-image-and-branding-workflow/01-480.webp 480w, /projects/automated-social-media-image-and-branding-workflow/01-960.webp 960w, /projects/automated-social-media-image-and-branding-workflow/01-1600.webp 1600w",
+      "full": "/projects/automated-social-media-image-and-branding-workflow/01-1600.webp",
+      "width": 1600,
+      "height": 769,
+      "alt": "Automated Social Media Image & Branding Workflow, screenshot 1"
     },
     {
-     "p": "Each template controls:"
-    },
-    {
-     "list": [
-      "Logo placement",
-      "Image positioning",
-      "Text overlays",
-      "Brand styling",
-      "Layout"
-     ]
-    },
-    {
-     "p": "This keeps the content visually consistent while avoiding repetitive designs."
+      "src": "/projects/automated-social-media-image-and-branding-workflow/02-960.webp",
+      "srcSet": "/projects/automated-social-media-image-and-branding-workflow/02-480.webp 480w, /projects/automated-social-media-image-and-branding-workflow/02-960.webp 960w, /projects/automated-social-media-image-and-branding-workflow/02-1600.webp 1600w",
+      "full": "/projects/automated-social-media-image-and-branding-workflow/02-1600.webp",
+      "width": 1600,
+      "height": 784,
+      "alt": "Automated Social Media Image & Branding Workflow, screenshot 2"
     }
-   ]
-  },
-  {
-   "heading": "Content Management",
-   "blocks": [
-    {
-     "p": "Google Sheets acts as the central content queue and tracking system."
-    },
-    {
-     "p": "Each completed post is updated with:"
-    },
-    {
-     "list": [
-      "Description",
-      "Hashtags",
-      "Final image URL",
-      "Review status"
-     ]
-    }
-   ]
-  }
- ],
- "result": [
-  "A complete automated design pipeline that turns a content idea into a branded, review ready social media graphic without requiring manual image creation or editing for every post.",
-  "The system also keeps content, assets, and approval status organized in one workflow."
- ],
- "images": [
-  {
-   "src": "/projects/automated-social-media-image-and-branding-workflow/01-960.webp",
-   "srcSet": "/projects/automated-social-media-image-and-branding-workflow/01-480.webp 480w, /projects/automated-social-media-image-and-branding-workflow/01-960.webp 960w, /projects/automated-social-media-image-and-branding-workflow/01-1600.webp 1600w",
-   "full": "/projects/automated-social-media-image-and-branding-workflow/01-1600.webp",
-   "width": 1600,
-   "height": 769,
-   "alt": "Automated Social Media Image & Branding Workflow, screenshot 1"
-  },
-  {
-   "src": "/projects/automated-social-media-image-and-branding-workflow/02-960.webp",
-   "srcSet": "/projects/automated-social-media-image-and-branding-workflow/02-480.webp 480w, /projects/automated-social-media-image-and-branding-workflow/02-960.webp 960w, /projects/automated-social-media-image-and-branding-workflow/02-1600.webp 1600w",
-   "full": "/projects/automated-social-media-image-and-branding-workflow/02-1600.webp",
-   "width": 1600,
-   "height": 784,
-   "alt": "Automated Social Media Image & Branding Workflow, screenshot 2"
-  }
- ]
+  ]
 }

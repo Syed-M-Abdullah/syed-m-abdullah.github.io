@@ -1,94 +1,87 @@
 {
- "slug": "automated-youtube-content-and-scheduling-workflow",
- "tags": [
-  "Make.com",
-  "YouTube",
-  "Google Drive",
-  "Google Sheets",
-  "Airtable",
-  "AI"
- ],
- "overview": [
-  "Built a fully automated YouTube content system that handles video uploads, SEO content generation, validation, scheduling, and publishing through Make.com.",
-  "The workflow takes a video with basic content details and automatically prepares and schedules it for YouTube without requiring manual uploads or YouTube Studio work."
- ],
- "sections": [
-  {
-   "heading": "Workflow",
-   "blocks": [
+  "slug": "automated-youtube-content-and-scheduling-workflow",
+  "tags": ["Make.com", "YouTube", "Google Drive", "Google Sheets", "Airtable", "AI"],
+  "overview": [
+    "Built a fully automated YouTube content system that handles video uploads, SEO content generation, validation, scheduling, and publishing through Make.com.",
+    "The workflow takes a video with basic content details and automatically prepares and schedules it for YouTube without requiring manual uploads or YouTube Studio work."
+  ],
+  "sections": [
     {
-     "p": "The system:"
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "p": "The system:"
+        },
+        {
+          "list": [
+            "Retrieves video files and content details from Google Drive, Google Sheets, or Airtable",
+            "Generates YouTube titles using AI",
+            "Creates SEO friendly video descriptions",
+            "Generates relevant hashtags",
+            "Validates title length, description structure, and hashtag limits",
+            "Stops or alerts the workflow when content does not meet the required criteria",
+            "Uploads videos automatically to YouTube",
+            "Applies the generated metadata and visibility settings",
+            "Schedules videos with predefined publishing gaps",
+            "Queues multiple videos for future publishing",
+            "Logs the completed process and results"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Retrieves video files and content details from Google Drive, Google Sheets, or Airtable",
-      "Generates YouTube titles using AI",
-      "Creates SEO friendly video descriptions",
-      "Generates relevant hashtags",
-      "Validates title length, description structure, and hashtag limits",
-      "Stops or alerts the workflow when content does not meet the required criteria",
-      "Uploads videos automatically to YouTube",
-      "Applies the generated metadata and visibility settings",
-      "Schedules videos with predefined publishing gaps",
-      "Queues multiple videos for future publishing",
-      "Logs the completed process and results"
-     ]
+      "heading": "Content & Scheduling",
+      "blocks": [
+        {
+          "p": "The workflow automatically prepares each video for publishing and schedules content in advance."
+        },
+        {
+          "p": "Videos can be queued with predefined intervals such as every 7 to 10 days, allowing weeks or months of content to be scheduled at once."
+        },
+        {
+          "p": "The same automation can also branch into additional actions such as Instagram Reels publishing, Slack or email notifications, and Google Sheets reporting."
+        }
+      ]
+    },
+    {
+      "heading": "Content Management",
+      "blocks": [
+        {
+          "p": "The workflow uses Google Drive, Google Sheets, or Airtable as the central content source."
+        },
+        {
+          "p": "Each video can include:"
+        },
+        {
+          "list": [
+            "Video file",
+            "Topic",
+            "Keywords",
+            "Publishing schedule",
+            "Generated title",
+            "SEO description",
+            "Hashtags",
+            "Publishing status"
+          ]
+        },
+        {
+          "p": "This keeps the complete YouTube content pipeline organized and easy to manage."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Content & Scheduling",
-   "blocks": [
+  ],
+  "result": [
+    "A complete automated YouTube publishing pipeline that handles content preparation, SEO, validation, uploading, and scheduling with minimal manual work.",
+    "The system makes it possible to prepare and queue weeks or months of YouTube content in advance while keeping the entire publishing process organized through automation."
+  ],
+  "images": [
     {
-     "p": "The workflow automatically prepares each video for publishing and schedules content in advance."
-    },
-    {
-     "p": "Videos can be queued with predefined intervals such as every 7 to 10 days, allowing weeks or months of content to be scheduled at once."
-    },
-    {
-     "p": "The same automation can also branch into additional actions such as Instagram Reels publishing, Slack or email notifications, and Google Sheets reporting."
+      "src": "/projects/automated-youtube-content-and-scheduling-workflow/01-960.webp",
+      "srcSet": "/projects/automated-youtube-content-and-scheduling-workflow/01-480.webp 480w, /projects/automated-youtube-content-and-scheduling-workflow/01-960.webp 960w, /projects/automated-youtube-content-and-scheduling-workflow/01-1080.webp 1080w",
+      "full": "/projects/automated-youtube-content-and-scheduling-workflow/01-1080.webp",
+      "width": 1080,
+      "height": 270,
+      "alt": "Automated YouTube Content & Scheduling Workflow: Automated YouTube Content & Scheduling Workflow"
     }
-   ]
-  },
-  {
-   "heading": "Content Management",
-   "blocks": [
-    {
-     "p": "The workflow uses Google Drive, Google Sheets, or Airtable as the central content source."
-    },
-    {
-     "p": "Each video can include:"
-    },
-    {
-     "list": [
-      "Video file",
-      "Topic",
-      "Keywords",
-      "Publishing schedule",
-      "Generated title",
-      "SEO description",
-      "Hashtags",
-      "Publishing status"
-     ]
-    },
-    {
-     "p": "This keeps the complete YouTube content pipeline organized and easy to manage."
-    }
-   ]
-  }
- ],
- "result": [
-  "A complete automated YouTube publishing pipeline that handles content preparation, SEO, validation, uploading, and scheduling with minimal manual work.",
-  "The system makes it possible to prepare and queue weeks or months of YouTube content in advance while keeping the entire publishing process organized through automation."
- ],
- "images": [
-  {
-   "src": "/projects/automated-youtube-content-and-scheduling-workflow/01-960.webp",
-   "srcSet": "/projects/automated-youtube-content-and-scheduling-workflow/01-480.webp 480w, /projects/automated-youtube-content-and-scheduling-workflow/01-960.webp 960w, /projects/automated-youtube-content-and-scheduling-workflow/01-1080.webp 1080w",
-   "full": "/projects/automated-youtube-content-and-scheduling-workflow/01-1080.webp",
-   "width": 1080,
-   "height": 270,
-   "alt": "Automated YouTube Content & Scheduling Workflow: Automated YouTube Content & Scheduling Workflow"
-  }
- ]
+  ]
 }

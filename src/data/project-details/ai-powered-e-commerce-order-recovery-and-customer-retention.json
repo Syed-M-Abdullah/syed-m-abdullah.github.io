@@ -1,191 +1,191 @@
 {
- "slug": "ai-powered-e-commerce-order-recovery-and-customer-retention",
- "tags": [
-  "Zapier",
-  "Shopify",
-  "WooCommerce",
-  "HubSpot",
-  "OpenAI",
-  "Stripe",
-  "Slack",
-  "Gmail",
-  "Zendesk",
-  "Airtable"
- ],
- "overview": [
-  "Built an automated e commerce workflow that monitors customer orders and identifies opportunities for payment recovery, abandoned cart recovery, delivery issue handling, customer retention, and upselling."
- ],
- "sections": [
-  {
-   "heading": "Customer Analysis",
-   "blocks": [
+  "slug": "ai-powered-e-commerce-order-recovery-and-customer-retention",
+  "tags": [
+    "Zapier",
+    "Shopify",
+    "WooCommerce",
+    "HubSpot",
+    "OpenAI",
+    "Stripe",
+    "Slack",
+    "Gmail",
+    "Zendesk",
+    "Airtable"
+  ],
+  "overview": [
+    "Built an automated e commerce workflow that monitors customer orders and identifies opportunities for payment recovery, abandoned cart recovery, delivery issue handling, customer retention, and upselling."
+  ],
+  "sections": [
     {
-     "p": "The system checks:"
+      "heading": "Customer Analysis",
+      "blocks": [
+        {
+          "p": "The system checks:"
+        },
+        {
+          "list": [
+            "Customer history",
+            "Order value",
+            "Lifetime value",
+            "Purchase frequency",
+            "Average order value",
+            "Refund history",
+            "Recent engagement",
+            "Customer risk"
+          ]
+        },
+        {
+          "p": "Customers are scored and routed into the appropriate workflow."
+        }
+      ]
     },
     {
-     "list": [
-      "Customer history",
-      "Order value",
-      "Lifetime value",
-      "Purchase frequency",
-      "Average order value",
-      "Refund history",
-      "Recent engagement",
-      "Customer risk"
-     ]
+      "heading": "VIP Customer Flow",
+      "blocks": [
+        {
+          "p": "High value customers are automatically:"
+        },
+        {
+          "list": [
+            "Marked as VIP in HubSpot",
+            "Sent to the customer success team through Slack",
+            "Sent personalized thank you messages",
+            "Added to loyalty and cross sell opportunities"
+          ]
+        }
+      ]
     },
     {
-     "p": "Customers are scored and routed into the appropriate workflow."
+      "heading": "Abandoned Cart Recovery",
+      "blocks": [
+        {
+          "p": "The workflow:"
+        },
+        {
+          "list": [
+            "Detects abandoned checkouts",
+            "Waits 30 minutes",
+            "Checks whether the order was completed",
+            "Sends a recovery email if the purchase was not completed",
+            "Waits and checks again",
+            "Sends additional follow up when required"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Payment Recovery",
+      "blocks": [
+        {
+          "p": "For failed payments:"
+        },
+        {
+          "list": [
+            "Checks the payment status",
+            "Retrieves payment information",
+            "Sends payment recovery emails",
+            "Rechecks the payment",
+            "Alerts the finance team when payment remains unsuccessful"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Delivery & Refund Handling",
+      "blocks": [
+        {
+          "p": "Delivery problems are routed based on customer value and issue type."
+        },
+        {
+          "p": "The system can:"
+        },
+        {
+          "list": [
+            "Detect delayed or failed deliveries",
+            "Notify customer success for VIP customers",
+            "Send delivery updates",
+            "Create Zendesk tickets",
+            "Analyze refund reasons",
+            "Route billing, shipping, or product issues"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Customer Retention",
+      "blocks": [
+        {
+          "p": "Customer feedback is analyzed to identify:"
+        },
+        {
+          "list": [
+            "Customer sentiment",
+            "Churn risk",
+            "Main complaints",
+            "Customer value",
+            "Recommended recovery action"
+          ]
+        },
+        {
+          "p": "High value customers with high churn risk are escalated to customer success for personalized recovery."
+        }
+      ]
+    },
+    {
+      "heading": "Upselling & Reviews",
+      "blocks": [
+        {
+          "p": "After a successful purchase:"
+        },
+        {
+          "list": [
+            "Analyzes purchased products",
+            "Identifies related products",
+            "Sends personalized recommendations",
+            "Requests customer reviews after delivery",
+            "Routes negative feedback into a recovery workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Reporting",
+      "blocks": [
+        {
+          "p": "Important customer and order events are stored in Airtable, including:"
+        },
+        {
+          "list": [
+            "Customer",
+            "Order value",
+            "Customer score",
+            "Issue type",
+            "Recovery action",
+            "Customer status"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "VIP Customer Flow",
-   "blocks": [
+  ],
+  "result": [
+    "A complete e commerce automation system that connects order monitoring, abandoned cart recovery, payment recovery, delivery issues, refunds, customer retention, upselling, and review management into one workflow."
+  ],
+  "images": [
     {
-     "p": "High value customers are automatically:"
+      "src": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-960.webp",
+      "srcSet": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-480.webp 480w, /projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-960.webp 960w, /projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-1600.webp 1600w",
+      "full": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-1600.webp",
+      "width": 1600,
+      "height": 751,
+      "alt": "AI Powered E-Commerce Order Recovery & Customer Retention: AI Powered E-Commerce Order Recovery & Customer Retention (1)"
     },
     {
-     "list": [
-      "Marked as VIP in HubSpot",
-      "Sent to the customer success team through Slack",
-      "Sent personalized thank you messages",
-      "Added to loyalty and cross sell opportunities"
-     ]
+      "src": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/02-960.webp",
+      "srcSet": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/02-480.webp 480w, /projects/ai-powered-e-commerce-order-recovery-and-customer-retention/02-960.webp 960w, /projects/ai-powered-e-commerce-order-recovery-and-customer-retention/02-1600.webp 1600w",
+      "full": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/02-1600.webp",
+      "width": 1600,
+      "height": 750,
+      "alt": "AI Powered E-Commerce Order Recovery & Customer Retention: AI Powered E-Commerce Order Recovery & Customer Retention (2)"
     }
-   ]
-  },
-  {
-   "heading": "Abandoned Cart Recovery",
-   "blocks": [
-    {
-     "p": "The workflow:"
-    },
-    {
-     "list": [
-      "Detects abandoned checkouts",
-      "Waits 30 minutes",
-      "Checks whether the order was completed",
-      "Sends a recovery email if the purchase was not completed",
-      "Waits and checks again",
-      "Sends additional follow up when required"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Payment Recovery",
-   "blocks": [
-    {
-     "p": "For failed payments:"
-    },
-    {
-     "list": [
-      "Checks the payment status",
-      "Retrieves payment information",
-      "Sends payment recovery emails",
-      "Rechecks the payment",
-      "Alerts the finance team when payment remains unsuccessful"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Delivery & Refund Handling",
-   "blocks": [
-    {
-     "p": "Delivery problems are routed based on customer value and issue type."
-    },
-    {
-     "p": "The system can:"
-    },
-    {
-     "list": [
-      "Detect delayed or failed deliveries",
-      "Notify customer success for VIP customers",
-      "Send delivery updates",
-      "Create Zendesk tickets",
-      "Analyze refund reasons",
-      "Route billing, shipping, or product issues"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Customer Retention",
-   "blocks": [
-    {
-     "p": "Customer feedback is analyzed to identify:"
-    },
-    {
-     "list": [
-      "Customer sentiment",
-      "Churn risk",
-      "Main complaints",
-      "Customer value",
-      "Recommended recovery action"
-     ]
-    },
-    {
-     "p": "High value customers with high churn risk are escalated to customer success for personalized recovery."
-    }
-   ]
-  },
-  {
-   "heading": "Upselling & Reviews",
-   "blocks": [
-    {
-     "p": "After a successful purchase:"
-    },
-    {
-     "list": [
-      "Analyzes purchased products",
-      "Identifies related products",
-      "Sends personalized recommendations",
-      "Requests customer reviews after delivery",
-      "Routes negative feedback into a recovery workflow"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Reporting",
-   "blocks": [
-    {
-     "p": "Important customer and order events are stored in Airtable, including:"
-    },
-    {
-     "list": [
-      "Customer",
-      "Order value",
-      "Customer score",
-      "Issue type",
-      "Recovery action",
-      "Customer status"
-     ]
-    }
-   ]
-  }
- ],
- "result": [
-  "A complete e commerce automation system that connects order monitoring, abandoned cart recovery, payment recovery, delivery issues, refunds, customer retention, upselling, and review management into one workflow."
- ],
- "images": [
-  {
-   "src": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-960.webp",
-   "srcSet": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-480.webp 480w, /projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-960.webp 960w, /projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-1600.webp 1600w",
-   "full": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/01-1600.webp",
-   "width": 1600,
-   "height": 751,
-   "alt": "AI Powered E-Commerce Order Recovery & Customer Retention: AI Powered E-Commerce Order Recovery & Customer Retention (1)"
-  },
-  {
-   "src": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/02-960.webp",
-   "srcSet": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/02-480.webp 480w, /projects/ai-powered-e-commerce-order-recovery-and-customer-retention/02-960.webp 960w, /projects/ai-powered-e-commerce-order-recovery-and-customer-retention/02-1600.webp 1600w",
-   "full": "/projects/ai-powered-e-commerce-order-recovery-and-customer-retention/02-1600.webp",
-   "width": 1600,
-   "height": 750,
-   "alt": "AI Powered E-Commerce Order Recovery & Customer Retention: AI Powered E-Commerce Order Recovery & Customer Retention (2)"
-  }
- ]
+  ]
 }

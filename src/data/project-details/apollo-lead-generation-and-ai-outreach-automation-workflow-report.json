@@ -1,125 +1,125 @@
 {
- "slug": "apollo-lead-generation-and-ai-outreach-automation-workflow-report",
- "tags": [],
- "overview": [
-  "An automated outbound lead generation system built with n8n, Apollo, Apify, Google Sheets, and Zoho CRM.",
-  "The system collects targeted leads, enriches their profiles, validates the data, creates personalized outreach sequences, and syncs qualified leads with the CRM."
- ],
- "sections": [
-  {
-   "heading": "Workflow 1: Lead Discovery",
-   "blocks": [
+  "slug": "apollo-lead-generation-and-ai-outreach-automation-workflow-report",
+  "tags": [],
+  "overview": [
+    "An automated outbound lead generation system built with n8n, Apollo, Apify, Google Sheets, and Zoho CRM.",
+    "The system collects targeted leads, enriches their profiles, validates the data, creates personalized outreach sequences, and syncs qualified leads with the CRM."
+  ],
+  "sections": [
     {
-     "p": "The process starts with a simple form where the user enters the target job title and location."
+      "heading": "Workflow 1: Lead Discovery",
+      "blocks": [
+        {
+          "p": "The process starts with a simple form where the user enters the target job title and location."
+        },
+        {
+          "p": "The workflow then:"
+        },
+        {
+          "list": [
+            "Searches Apollo using the selected criteria",
+            "Processes multiple pages of results",
+            "Extracts lead names, job titles, and LinkedIn profiles",
+            "Removes leads without LinkedIn profiles",
+            "Stores qualified leads in Google Sheets",
+            "Prevents duplicate records using the LinkedIn URL",
+            "Automatically starts the enrichment workflow when complete"
+          ]
+        }
+      ]
     },
     {
-     "p": "The workflow then:"
+      "heading": "Workflow 2: Lead Enrichment & CRM",
+      "blocks": [
+        {
+          "p": "The second workflow takes the collected LinkedIn profiles and enriches the lead data through Apify."
+        },
+        {
+          "p": "It then:"
+        },
+        {
+          "list": [
+            "Retrieves additional contact and company information",
+            "Validates business email, name, company, size, and location",
+            "Removes incomplete records",
+            "Stores qualified leads in Google Sheets",
+            "Creates a personalized five email outreach sequence",
+            "Structures the email content for CRM use",
+            "Pushes complete lead records into Zoho CRM",
+            "Clears temporary data after successful completion"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Searches Apollo using the selected criteria",
-      "Processes multiple pages of results",
-      "Extracts lead names, job titles, and LinkedIn profiles",
-      "Removes leads without LinkedIn profiles",
-      "Stores qualified leads in Google Sheets",
-      "Prevents duplicate records using the LinkedIn URL",
-      "Automatically starts the enrichment workflow when complete"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Workflow 2: Lead Enrichment & CRM",
-   "blocks": [
-    {
-     "p": "The second workflow takes the collected LinkedIn profiles and enriches the lead data through Apify."
+      "heading": "CRM Data",
+      "blocks": [
+        {
+          "p": "Each qualified lead is added to Zoho CRM with:"
+        },
+        {
+          "list": [
+            "Name",
+            "Company",
+            "Email",
+            "Industry",
+            "Job Title",
+            "Company Size",
+            "Company Location",
+            "Initial Email",
+            "Follow-Up Emails",
+            "Email Subjects"
+          ]
+        }
+      ]
     },
     {
-     "p": "It then:"
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "p": "User Input↓Apollo Search↓Lead Collection↓LinkedIn Validation↓Google Sheets↓Profile Enrichment↓Lead Validation↓Personalized Outreach↓Zoho CRM↓Data Cleanup"
+        }
+      ]
     },
     {
-     "list": [
-      "Retrieves additional contact and company information",
-      "Validates business email, name, company, size, and location",
-      "Removes incomplete records",
-      "Stores qualified leads in Google Sheets",
-      "Creates a personalized five email outreach sequence",
-      "Structures the email content for CRM use",
-      "Pushes complete lead records into Zoho CRM",
-      "Clears temporary data after successful completion"
-     ]
+      "heading": "Key Features",
+      "blocks": [
+        {
+          "list": [
+            "Automated lead discovery",
+            "Multi page Apollo searches",
+            "LinkedIn profile enrichment",
+            "Lead validation",
+            "Duplicate prevention",
+            "Personalized email sequences",
+            "Google Sheets integration",
+            "Zoho CRM integration",
+            "Batch processing",
+            "Automated data cleanup"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "CRM Data",
-   "blocks": [
+  ],
+  "result": [
+    "A complete outbound prospecting system that moves leads from Apollo search to enriched CRM records and ready to use outreach with minimal manual work."
+  ],
+  "images": [
     {
-     "p": "Each qualified lead is added to Zoho CRM with:"
+      "src": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-960.webp",
+      "srcSet": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-480.webp 480w, /projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-960.webp 960w, /projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-1600.webp 1600w",
+      "full": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-1600.webp",
+      "width": 1600,
+      "height": 737,
+      "alt": "Apollo Lead Generation & AI Outreach Automation Workflow Report: Apollo 1"
     },
     {
-     "list": [
-      "Name",
-      "Company",
-      "Email",
-      "Industry",
-      "Job Title",
-      "Company Size",
-      "Company Location",
-      "Initial Email",
-      "Follow-Up Emails",
-      "Email Subjects"
-     ]
+      "src": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/02-960.webp",
+      "srcSet": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/02-480.webp 480w, /projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/02-960.webp 960w, /projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/02-1600.webp 1600w",
+      "full": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/02-1600.webp",
+      "width": 1600,
+      "height": 756,
+      "alt": "Apollo Lead Generation & AI Outreach Automation Workflow Report: Apollo 2"
     }
-   ]
-  },
-  {
-   "heading": "Workflow",
-   "blocks": [
-    {
-     "p": "User Input↓Apollo Search↓Lead Collection↓LinkedIn Validation↓Google Sheets↓Profile Enrichment↓Lead Validation↓Personalized Outreach↓Zoho CRM↓Data Cleanup"
-    }
-   ]
-  },
-  {
-   "heading": "Key Features",
-   "blocks": [
-    {
-     "list": [
-      "Automated lead discovery",
-      "Multi page Apollo searches",
-      "LinkedIn profile enrichment",
-      "Lead validation",
-      "Duplicate prevention",
-      "Personalized email sequences",
-      "Google Sheets integration",
-      "Zoho CRM integration",
-      "Batch processing",
-      "Automated data cleanup"
-     ]
-    }
-   ]
-  }
- ],
- "result": [
-  "A complete outbound prospecting system that moves leads from Apollo search to enriched CRM records and ready to use outreach with minimal manual work."
- ],
- "images": [
-  {
-   "src": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-960.webp",
-   "srcSet": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-480.webp 480w, /projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-960.webp 960w, /projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-1600.webp 1600w",
-   "full": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/01-1600.webp",
-   "width": 1600,
-   "height": 737,
-   "alt": "Apollo Lead Generation & AI Outreach Automation Workflow Report: Apollo 1"
-  },
-  {
-   "src": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/02-960.webp",
-   "srcSet": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/02-480.webp 480w, /projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/02-960.webp 960w, /projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/02-1600.webp 1600w",
-   "full": "/projects/apollo-lead-generation-and-ai-outreach-automation-workflow-report/02-1600.webp",
-   "width": 1600,
-   "height": 756,
-   "alt": "Apollo Lead Generation & AI Outreach Automation Workflow Report: Apollo 2"
-  }
- ]
+  ]
 }

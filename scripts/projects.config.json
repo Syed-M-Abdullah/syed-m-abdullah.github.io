@@ -1,5 +1,5 @@
 {
-  "$comment": "Settings for scripts/sync-projects.mjs. Keys are '<tool folder>/<project folder>' (or just the tool folder for a flat folder). All fields optional: title, slug, featured, order, services, legacySlugs (old /case/<slug> URLs that redirect here), excludeImages (file names), description: 'ignore' (when the folder's document belongs to another project), replace (text replacements, e.g. to keep client names private).",
+  "$comment": "Settings for scripts/sync-projects.mjs. Keys are '<tool folder>/<project folder>', or '<tool folder>/<file name without extension and trailing number>' for loose files (see the sync report). 'retired' maps old project URLs to where they now forward. All fields optional: title, slug, featured, order, services, legacySlugs (old /case/<slug> URLs that redirect here), excludeImages (file names), description: 'ignore' (when the folder's document belongs to another project), replace (text replacements, e.g. to keep client names private).",
   "toolFolders": {
     "custom code": "custom",
     "ghl": "ghl",
@@ -61,17 +61,6 @@
         "top": 140
       },
       "excludeImages": ["screenshot_02.jpg"]
-    },
-    "GHL": {
-      "legacySlugs": ["ghl-workflow-library"],
-      "services": ["gohighlevel-automation"],
-      "featured": true,
-      "title": "GoHighLevel Automation Showcase",
-      "overview": [
-        "A set of GoHighLevel workflows covering lead nurturing, appointment management, payment processing and instalment plans.",
-        "Lead nurturing creates or updates the contact, sends a welcome email, then value emails and SMS on a schedule. Appointment workflows confirm bookings by email and SMS and handle reschedules. Payment workflows apply payments, send receipts and track instalments with on-time, overdue and final-reminder branches. Further workflows cover lead generation, follow-up, email campaigns, Facebook posting and SMS campaigns."
-      ],
-      "toolsUsed": ["GoHighLevel", "Workflows", "Email", "SMS", "Payments"]
     },
     "Make.com/AI Powered Customer Support SLA & Escalation System": {
       "legacySlugs": ["make-support-sla"],
@@ -249,6 +238,106 @@
     "Zapier/Legal Case Email Automation": {
       "legacySlugs": ["zapier-legal-case-routing"],
       "services": ["workflow-automation"]
+    },
+    "GHL/Appointment Booking M": {
+      "services": ["gohighlevel-automation"],
+      "title": "Automated Appointment Management",
+      "featured": true,
+      "order": 1,
+      "overview": [
+        "Runs when a customer books an appointment. It creates or updates the contact, confirms the booking by email and SMS, checks that the contact and appointment are valid, and handles reschedules on their own branch."
+      ],
+      "toolsUsed": ["GoHighLevel", "Calendars", "Email", "SMS"]
+    },
+    "GHL/Lead Nurturing M": {
+      "services": ["gohighlevel-automation"],
+      "title": "Lead Nurturing Automation",
+      "order": 2,
+      "overview": [
+        "Starts from a lead form. It creates or updates the contact, sends a welcome email, then value emails and SMS on a schedule. It waits for the lead to engage and sends an offer or case study email when they reply."
+      ],
+      "toolsUsed": ["GoHighLevel", "Forms", "Email", "SMS"]
+    },
+    "GHL/Payment Installment M": {
+      "services": ["gohighlevel-automation"],
+      "title": "Installment Payment Management",
+      "order": 3,
+      "overview": [
+        "Runs when an instalment payment arrives. It creates or updates the contact, generates the instalment schedule and confirms the first payment by email and SMS. Each due date is tracked with on-time, overdue and final-reminder branches."
+      ],
+      "toolsUsed": ["GoHighLevel", "Payments", "Email", "SMS"]
+    },
+    "GHL/Payment Automation M": {
+      "services": ["gohighlevel-automation"],
+      "title": "Automated Payment Processing",
+      "order": 4,
+      "overview": [
+        "Runs when a payment is received. It updates the customer and payment records, applies the payment to the invoice or subscription, branches on success or failure and sends the customer a receipt."
+      ],
+      "toolsUsed": ["GoHighLevel", "Payments", "Email"]
+    },
+    "GHL/Facebook M": {
+      "services": ["gohighlevel-automation", "ai-content-automation"],
+      "title": "Facebook Post Automation",
+      "order": 5,
+      "overview": [
+        "A new row in the post list triggers it through a webhook. AI writes the post and caption, generates an image and matches the post to the right Facebook page, then the workflow publishes it and records the outcome.",
+        "If publishing fails, an admin is notified and the post is retried up to three times, with separate branches for missing assets, AI or publishing errors and invalid pages."
+      ],
+      "toolsUsed": ["GoHighLevel", "Webhooks", "AI", "Facebook"]
+    },
+    "GHL/Email Compaign M": {
+      "services": ["gohighlevel-automation"],
+      "title": "Newsletter Subscriber Onboarding",
+      "order": 6,
+      "overview": [
+        "Starts when a contact gets the newsletter subscriber tag. It checks the address can receive email, sends a welcome email and, two days later, an educational email. It then checks whether that email was opened and stops for contacts who unsubscribe."
+      ],
+      "toolsUsed": ["GoHighLevel", "Email", "Tags"]
+    },
+    "GHL/Lead Followup": {
+      "services": ["gohighlevel-automation"],
+      "order": 7,
+      "overview": [
+        "Creates or updates the opportunity, then sends up to three SMS messages, waiting 24 hours for a reply after each one. A reply updates the opportunity and ends the sequence; no reply moves the lead to the next message."
+      ],
+      "toolsUsed": ["GoHighLevel", "Opportunities", "SMS"]
+    },
+    "GHL/Lead Generation M": {
+      "services": ["gohighlevel-automation"],
+      "title": "Lead Generation Workflow",
+      "order": 8,
+      "overview": [
+        "Starts from a lead form submission. It creates the contact, sends a welcome email, then a value email and an SMS follow-up, and two days later an offer or case study email. It checks whether the lead engaged before the final step."
+      ],
+      "toolsUsed": ["GoHighLevel", "Forms", "Email", "SMS"]
+    },
+    "GHL/appointment confirmation": {
+      "services": ["gohighlevel-automation"],
+      "order": 9,
+      "overview": ["Confirms each booking with a sequence of email and SMS messages."],
+      "toolsUsed": ["GoHighLevel", "Calendars", "Email", "SMS"]
+    },
+    "GHL/customer follow up": {
+      "services": ["gohighlevel-automation"],
+      "order": 10,
+      "overview": [
+        "A customer follow-up sequence of email and SMS messages, with waits between the steps."
+      ],
+      "toolsUsed": ["GoHighLevel", "Email", "SMS"]
+    },
+    "GHL/sms campaign": {
+      "services": ["gohighlevel-automation"],
+      "title": "SMS Campaign Router",
+      "order": 11,
+      "overview": [
+        "Several campaign triggers feed one router that splits contacts into five branches, each sending its own SMS."
+      ],
+      "toolsUsed": ["GoHighLevel", "SMS"]
     }
+  },
+  "retired": {
+    "/projects/gohighlevel-automation-showcase": "/projects/?tool=ghl",
+    "/case/ghl-workflow-library": "/projects/?tool=ghl"
   }
 }

@@ -1,54 +1,43 @@
 {
- "slug": "dental-clinic",
- "tags": [
-  "Healthcare",
-  "United States"
- ],
- "overview": [
-  "AI receptionist that answers calls around the clock, books dental appointments and runs a three-stage reminder sequence."
- ],
- "sections": [
-  {
-   "heading": "The challenge",
-   "blocks": [
+  "slug": "dental-clinic",
+  "tags": ["Healthcare", "United States"],
+  "overview": [
+    "AI receptionist that answers calls around the clock, books dental appointments and runs a three-stage reminder sequence."
+  ],
+  "sections": [
     {
-     "p": "Front-desk staff were stretched by booking calls at peak times, and missed appointments were a recurring problem."
-    }
-   ]
-  },
-  {
-   "heading": "Solution & architecture",
-   "blocks": [
+      "heading": "The challenge",
+      "blocks": [
+        {
+          "p": "Front-desk staff were stretched by booking calls at peak times, and missed appointments were a recurring problem."
+        }
+      ]
+    },
     {
-     "p": "A Vapi voice agent answers calls at any hour and books appointments, with records handed to GoHighLevel. n8n then runs an escalating three-stage reminder sequence before each visit, designed to cut down on no-shows."
-    }
-   ]
-  },
-  {
-   "heading": "Workflow",
-   "blocks": [
+      "heading": "Solution & architecture",
+      "blocks": [
+        {
+          "p": "A Vapi voice agent answers calls at any hour and books appointments, with records handed to GoHighLevel. n8n then runs an escalating three-stage reminder sequence before each visit, designed to cut down on no-shows."
+        }
+      ]
+    },
     {
-     "list": [
-      "Call in",
-      "AI books appointment",
-      "Escalating reminders",
-      "Confirmed visit"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Key facts",
-   "blocks": [
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "list": ["Call in", "AI books appointment", "Escalating reminders", "Confirmed visit"]
+        }
+      ]
+    },
     {
-     "list": [
-      "24/7 — Reception coverage",
-      "3-stage — Reminder sequence"
-     ]
+      "heading": "Key facts",
+      "blocks": [
+        {
+          "list": ["24/7, Reception coverage", "3-stage, Reminder sequence"]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [],
- "images": []
+  ],
+  "result": [],
+  "images": []
 }

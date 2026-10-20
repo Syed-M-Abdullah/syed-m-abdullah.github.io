@@ -49,7 +49,9 @@ npm run export:github
 ```
 
 Then serve `.output/github/` with any static file server to check it. GitHub Pages redirects
-`/about` to `/about/`, so canonical URLs and the sitemap use the trailing-slash form.
+`/about` to `/about/`, so internal links (the router uses `trailingSlash: "always"`), canonical
+URLs and the sitemap all use the trailing-slash form. Every page is pre-rendered to its own
+`index.html`, so direct links and refreshes work without a single-page-app 404 workaround.
 
 ## Contact form
 

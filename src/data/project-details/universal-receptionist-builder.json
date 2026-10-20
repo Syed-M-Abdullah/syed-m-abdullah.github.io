@@ -1,54 +1,43 @@
 {
- "slug": "universal-receptionist-builder",
- "tags": [
-  "AI Agency Tooling",
-  "Global"
- ],
- "overview": [
-  "Enter a website URL and the pipeline builds a knowledge base and deploys a receptionist voice agent."
- ],
- "sections": [
-  {
-   "heading": "The challenge",
-   "blocks": [
+  "slug": "universal-receptionist-builder",
+  "tags": ["AI Agency Tooling", "Global"],
+  "overview": [
+    "Enter a website URL and the pipeline builds a knowledge base and deploys a receptionist voice agent."
+  ],
+  "sections": [
     {
-     "p": "Setting up a receptionist agent for each new client took hours of manual prompting and configuration."
-    }
-   ]
-  },
-  {
-   "heading": "Solution & architecture",
-   "blocks": [
+      "heading": "The challenge",
+      "blocks": [
+        {
+          "p": "Setting up a receptionist agent for each new client took hours of manual prompting and configuration."
+        }
+      ]
+    },
     {
-     "p": "A one-form setup: the pipeline scrapes the client's website, builds the agent's knowledge base from the content and deploys an ElevenLabs receptionist connected to GoHighLevel."
-    }
-   ]
-  },
-  {
-   "heading": "Workflow",
-   "blocks": [
+      "heading": "Solution & architecture",
+      "blocks": [
+        {
+          "p": "A one-form setup: the pipeline scrapes the client's website, builds the agent's knowledge base from the content and deploys an ElevenLabs receptionist connected to GoHighLevel."
+        }
+      ]
+    },
     {
-     "list": [
-      "Enter URL",
-      "Scrape content",
-      "Build knowledge base",
-      "Deploy agent"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Key facts",
-   "blocks": [
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "list": ["Enter URL", "Scrape content", "Build knowledge base", "Deploy agent"]
+        }
+      ]
+    },
     {
-     "list": [
-      "1 form — Setup input",
-      "Auto — Knowledge-base build"
-     ]
+      "heading": "Key facts",
+      "blocks": [
+        {
+          "list": ["1 form, Setup input", "Auto, Knowledge-base build"]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [],
- "images": []
+  ],
+  "result": [],
+  "images": []
 }

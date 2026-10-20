@@ -1,0 +1,19 @@
+{
+  "slug": "automated-payment-processing",
+  "tags": [],
+  "overview": [
+    "Runs when a payment is received. It updates the customer and payment records, applies the payment to the invoice or subscription, branches on success or failure and sends the customer a receipt."
+  ],
+  "sections": [],
+  "result": [],
+  "images": [
+    {
+      "src": "/projects/automated-payment-processing/01-960.webp",
+      "srcSet": "/projects/automated-payment-processing/01-480.webp 480w, /projects/automated-payment-processing/01-960.webp 960w, /projects/automated-payment-processing/01-1030.webp 1030w",
+      "full": "/projects/automated-payment-processing/01-1030.webp",
+      "width": 1030,
+      "height": 1526,
+      "alt": "Automated Payment Processing: Payment Automation"
+    }
+  ]
+}

@@ -32,9 +32,24 @@ src/assets/Portfolio/
   zapier/<Project name>/
   Voice Agent/<Project name>/
   Custom Code/<Project name>/
-  GHL/                       a flat folder becomes one showcase project
+  GHL/<files>                loose files are split into separate projects (see below)
   AI Voices/                 skipped (the voice samples on the site use their own files)
 ```
+
+### Loose files (no subfolder)
+
+Files placed directly in a tool folder are split into projects, never merged into one:
+
+1. a description file and the images that share its name are one project
+   (`Dental.md` + `Dental 1.png` + `Dental-2.png`);
+2. images whose names differ only by a trailing number are one project
+   (`sms campaign 1.png`, `sms campaign 2.png`);
+3. every other image is its own project.
+
+Subfolders and loose files can be mixed in the same tool folder. The sync report lists names that
+look related but were kept apart (for example "Lead Followup" and "Lead Nurturing"); rename them
+`<name> 1`, `<name> 2` if they belong together. A trailing single capital letter in a file name
+("Facebook M") is ignored in the title.
 
 After adding or changing a folder, run:
 
@@ -55,7 +70,9 @@ files by hand; change the folder or the settings and sync again.
 
 ### Settings and privacy: `scripts/projects.config.json`
 
-Keys are `"<tool folder>/<project folder>"`. Every field is optional:
+Keys are `"<tool folder>/<project folder>"`, or `"<tool folder>/<file name>"` for a loose file (the
+name without its extension and trailing number, as shown in the sync report). Every field is
+optional:
 
 - `title`, `slug`, `order`, `featured: true` (homepage, first in lists; keep it to about six),
   `services` (which service pages show it), `toolsUsed`;
@@ -65,7 +82,12 @@ Keys are `"<tool folder>/<project folder>"`. Every field is optional:
 - `replace`: text replacements, e.g. `{ "for Jane Doe using": "for a client using" }`, to keep
   names private;
 - `crop`: `{ "top": 140 }` trims pixels (e.g. a browser bar) off every image;
-- `description: "ignore"` when the folder's document belongs to another project.
+- `description: "ignore"` when the folder's document belongs to another project;
+- `overview`: a description to use when the project has no document.
+
+`retired` maps project URLs that no longer exist to where they should forward, e.g.
+`"/projects/gohighlevel-automation-showcase": "/projects/?tool=ghl"`. The sync warns when a
+project URL disappears without an entry here.
 
 `toolFolders` maps folder names to tools, and `skipFolders` lists folders to ignore.
 

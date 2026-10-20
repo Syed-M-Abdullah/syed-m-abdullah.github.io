@@ -8,15 +8,22 @@ import { CtaPanel } from "@/components/cta-panel";
 import { ButtonAnchor } from "@/components/button-link";
 import { Chip } from "@/components/badges";
 import { WhatsAppIcon } from "@/components/floating-actions";
-import { ToolChip } from "@/components/tech-marquee";
+import { ToolChip } from "@/components/tool-logo";
 import { CoverFallback, ToolBadge } from "@/components/projects";
 import { NotFoundPage } from "@/components/not-found";
-import { getProject, projects, type ProjectDetail, type ProjectSummary } from "@/data/projects";
+import {
+  getProject,
+  projects,
+  retiredUrls,
+  type ProjectDetail,
+  type ProjectSummary,
+} from "@/data/projects";
+import { ForwardPage } from "@/components/redirect-page";
 import { tools } from "@/data/tools";
 import { site } from "@/data/site";
 import { bandClass, type Tone } from "@/lib/band";
 import { whatsappLink } from "@/lib/whatsapp";
-import { seo } from "@/lib/seo";
+import { forwardHead, seo } from "@/lib/seo";
 
 // One small chunk per project: only this page's text and gallery are downloaded.
 const detailModules = import.meta.glob<ProjectDetail>("../data/project-details/*.json", {
@@ -25,20 +32,27 @@ const detailModules = import.meta.glob<ProjectDetail>("../data/project-details/*
 
 const Lightbox = lazy(() => import("@/components/lightbox"));
 
+type ProjectData =
+  | { kind: "project"; project: ProjectSummary; detail: ProjectDetail }
+  | { kind: "forward"; forward: string };
+
 export const Route = createFileRoute("/projects/$slug")({
-  loader: async ({ params }): Promise<{ project: ProjectSummary; detail: ProjectDetail }> => {
+  loader: async ({ params }): Promise<ProjectData> => {
+    const forward = retiredUrls[`/projects/${params.slug}`];
+    if (forward) return { kind: "forward", forward };
     const project = getProject(params.slug);
     const load = detailModules[`../data/project-details/${params.slug}.json`];
     if (!project || !load) throw notFound();
-    return { project, detail: await load() };
+    return { kind: "project", project, detail: await load() };
   },
   head: ({ loaderData, params }) => {
+    if (loaderData?.kind === "forward") return forwardHead(loaderData.forward, "Projects");
     if (!loaderData)
       return seo({ title: "Project not found", description: "", path: "/projects", noindex: true });
     const { project } = loaderData;
     return seo({
       title: project.title,
-      description: project.excerpt || `${project.title} — a project by ${site.name}.`,
+      description: project.excerpt || `${project.title}, a project by ${site.name}.`,
       path: `/projects/${params.slug}`,
       type: "article",
       ...(project.cover
@@ -86,7 +100,12 @@ function ToolsUsed({ project }: { project: ProjectSummary }) {
 }
 
 function ProjectPage() {
-  const { project: p, detail } = Route.useLoaderData();
+  const data = Route.useLoaderData();
+  if (data.kind === "forward") return <ForwardPage to={data.forward} label="see the projects" />;
+  return <ProjectView project={data.project} detail={data.detail} />;
+}
+
+function ProjectView({ project: p, detail }: { project: ProjectSummary; detail: ProjectDetail }) {
   const [open, setOpen] = useState<number | null>(null);
   const next = toneCycle();
   const i = projects.findIndex((x) => x.slug === p.slug);
@@ -101,14 +120,13 @@ function ProjectPage() {
       {/* Hero */}
       <section
         data-pause-offscreen
-        className={`${bandClass("brand")} overflow-hidden pt-28 pb-14 md:pt-36 md:pb-20`}
+        className={`${bandClass("brand")} overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20`}
       >
-        <div aria-hidden className="aurora" />
         <Container>
           <Breadcrumbs
             items={[
               { label: "Home", to: "/" },
-              { label: "Projects", to: "/projects" },
+              { label: "Projects", to: "/projects/" },
               { label: p.title },
             ]}
           />
@@ -134,10 +152,6 @@ function ProjectPage() {
               </div>
             </div>
             <div className="relative">
-              <div
-                aria-hidden
-                className="absolute -inset-6 -z-10 rounded-[2rem] bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--blue)_35%,transparent),transparent)] blur-2xl"
-              />
               {p.cover ? (
                 <button
                   type="button"
@@ -171,7 +185,7 @@ function ProjectPage() {
       </section>
 
       {/* Overview + tools */}
-      <Section tone={next()} eyebrow="Overview" title="What this project does">
+      <Section tone={next()} title="What this project does">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] lg:gap-12">
           <div className="space-y-4 text-[16.5px] leading-relaxed text-muted-foreground">
             {(restOverview.length ? restOverview : [intro]).map((t, n) => (
@@ -203,7 +217,7 @@ function ProjectPage() {
 
       {/* What was built */}
       {(detail.sections.length > 0 || detail.result.length > 0) && (
-        <Section tone={next()} eyebrow="What was built" title="How it was put together">
+        <Section tone={next()} title="How it was put together">
           <div className="grid gap-4 md:grid-cols-2">
             {detail.sections.map((s, n) => (
               <article
@@ -239,11 +253,9 @@ function ProjectPage() {
             {detail.result.length > 0 && (
               <article
                 data-reveal="zoom"
-                className="gradient-border rounded-3xl border border-border bg-panel p-6 shadow-[var(--shadow-card)] md:col-span-2"
+                className="rounded-3xl border border-border bg-panel p-6 shadow-[var(--shadow-card)] md:col-span-2"
               >
-                <h3 className="font-heading text-[13px] font-semibold uppercase tracking-[0.14em] text-eyebrow">
-                  Result
-                </h3>
+                <h3 className="font-heading text-[15px] font-semibold text-eyebrow">Result</h3>
                 <div className="mt-3 space-y-2 text-[16px] leading-relaxed text-foreground">
                   {detail.result.map((r) => (
                     <p key={r}>{r}</p>
@@ -257,12 +269,7 @@ function ProjectPage() {
 
       {/* Gallery */}
       {images.length > 1 && (
-        <Section
-          tone={next()}
-          eyebrow="Gallery"
-          title="Screenshots"
-          intro="Select an image to view it full size."
-        >
+        <Section tone={next()} title="Screenshots" intro="Select an image to view it full size.">
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {images.map((img, n) => (
               <li key={img.src} data-reveal="wipe" style={{ "--i": n % 3 } as React.CSSProperties}>
@@ -300,7 +307,7 @@ function ProjectPage() {
             ].map(({ label, project, Icon }, n) => (
               <Link
                 key={label}
-                to="/projects/$slug"
+                to="/projects/$slug/"
                 params={{ slug: project.slug }}
                 data-reveal={n ? "right" : "left"}
                 className={`group panel-border panel-border-hover flex items-center gap-4 rounded-3xl p-5 ${n ? "sm:flex-row-reverse sm:text-right" : ""}`}

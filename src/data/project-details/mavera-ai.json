@@ -1,54 +1,43 @@
 {
- "slug": "mavera-ai",
- "tags": [
-  "AI Agency",
-  "Global"
- ],
- "overview": [
-  "Outbound pipeline that sources leads, calls them with an AI agent, books appointments and hands off to GoHighLevel follow-up."
- ],
- "sections": [
-  {
-   "heading": "The challenge",
-   "blocks": [
+  "slug": "mavera-ai",
+  "tags": ["AI Agency", "Global"],
+  "overview": [
+    "Outbound pipeline that sources leads, calls them with an AI agent, books appointments and hands off to GoHighLevel follow-up."
+  ],
+  "sections": [
     {
-     "p": "The agency wanted to grow client acquisition without hiring more SDRs to source and call leads."
-    }
-   ]
-  },
-  {
-   "heading": "Solution & architecture",
-   "blocks": [
+      "heading": "The challenge",
+      "blocks": [
+        {
+          "p": "The agency wanted to grow client acquisition without hiring more SDRs to source and call leads."
+        }
+      ]
+    },
     {
-     "p": "Leads are scraped from LinkedIn and Google Maps with Apify and Apollo, then called by a Synthflow voice agent that qualifies them and books appointments. Leads continue into GoHighLevel follow-up sequences orchestrated with n8n, and follow-up stops automatically once a lead answers."
-    }
-   ]
-  },
-  {
-   "heading": "Workflow",
-   "blocks": [
+      "heading": "Solution & architecture",
+      "blocks": [
+        {
+          "p": "Leads are scraped from LinkedIn and Google Maps with Apify and Apollo, then called by a Synthflow voice agent that qualifies them and books appointments. Leads continue into GoHighLevel follow-up sequences orchestrated with n8n, and follow-up stops automatically once a lead answers."
+        }
+      ]
+    },
     {
-     "list": [
-      "Scrape leads",
-      "AI calls lead",
-      "Book appointment",
-      "GHL follow-up"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Key facts",
-   "blocks": [
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "list": ["Scrape leads", "AI calls lead", "Book appointment", "GHL follow-up"]
+        }
+      ]
+    },
     {
-     "list": [
-      "In + Out — Call coverage",
-      "Auto-stop — Follow-up ends on answer"
-     ]
+      "heading": "Key facts",
+      "blocks": [
+        {
+          "list": ["In + Out, Call coverage", "Auto-stop, Follow-up ends on answer"]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [],
- "images": []
+  ],
+  "result": [],
+  "images": []
 }

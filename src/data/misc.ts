@@ -12,7 +12,7 @@ export const processSteps: ProcessStep[] = [
     n: "01",
     title: "Discovery & requirements",
     summary: "Understand the goal, the current setup and what “done” looks like.",
-    body: "We talk through the business problem, the tools you already use and the people affected. I ask about edge cases early — what happens when data is missing, a lead replies at midnight, or an API is down.",
+    body: "We talk through the business problem, the tools you already use and the people affected. I ask about edge cases early: what happens when data is missing, a lead replies at midnight, or an API is down.",
     youProvide: [
       "A short description of the problem and the goal",
       "Which tools and accounts are involved",
@@ -44,7 +44,7 @@ export const processSteps: ProcessStep[] = [
     n: "03",
     title: "Build & integration",
     summary: "Implement in small, reviewable pieces inside your accounts.",
-    body: "I build in your accounts — or a staging copy where the tools allow it — in increments you can see. Naming, notes and structure stay consistent so the system remains understandable as it grows.",
+    body: "I build in your accounts, or in a staging copy where the tools allow it, in increments you can see. Naming, notes and structure stay consistent so the system remains understandable as it grows.",
     youProvide: [
       "Access to the required accounts and tools",
       "Answers to questions as they come up",
@@ -57,7 +57,7 @@ export const processSteps: ProcessStep[] = [
   {
     n: "04",
     title: "Testing & edge cases",
-    summary: "Prove it works on realistic data — including the awkward cases.",
+    summary: "Prove it works on realistic data, including the awkward cases.",
     body: "Each main path is tested with realistic data, then the edge cases: duplicates, missing fields, odd formats, API errors and timeouts. Error handling, retries and alerts are checked, not assumed.",
     youProvide: ["Help defining realistic test scenarios", "Time to try it yourself before launch"],
     youGet: ["The test scenarios and their results", "Fixes for anything that fails"],
@@ -111,7 +111,7 @@ export const principles = [
   },
   {
     title: "You own everything",
-    body: "Workflows, code, sub-accounts and credentials live in your accounts — nothing is held back.",
+    body: "Workflows, code, sub-accounts and credentials live in your accounts. Nothing is held back.",
   },
   {
     title: "Built for the unhappy path",
@@ -123,7 +123,7 @@ export const principles = [
   },
   {
     title: "Documented handover",
-    body: "Plain-language notes and a walkthrough, so your team — or another developer — can maintain it.",
+    body: "Plain-language notes and a walkthrough, so your team or another developer can maintain it.",
   },
   {
     title: "White-label ready",
@@ -131,26 +131,27 @@ export const principles = [
   },
 ];
 
+/** Home page FAQ: answered only from what the site already says (no prices or timelines). */
 export const homeFaqs = [
   {
-    q: "Do you work white-label with agencies?",
-    a: "Yes. Much of my work is delivered inside agencies' own GoHighLevel and automation accounts, under their brand. We agree up front whether I speak to the end client or only to you.",
+    q: "Which platform should I use: n8n, Zapier or Make?",
+    a: "It depends on your budget, team and volume. Zapier is the fastest to set up for simple automations. Make is visual and affordable for complex logic. n8n is the most flexible for AI, high volume and data control. I build on all three and recommend one after we look at your process.",
   },
   {
-    q: "Which platforms do you build on?",
-    a: "GoHighLevel, n8n, Make.com and Zapier for automation; Synthflow, Vapi and ElevenLabs for voice agents; OpenAI, Claude and Gemini for AI steps; and ASP.NET with SQL Server when a project needs custom software.",
+    q: "Can you work with the tools I already use?",
+    a: "Yes. I build inside your own accounts, such as your CRM, GoHighLevel, Google Sheets or inbox, and connect them through their APIs. Where no ready-made connector exists, I write the webhook or custom code.",
   },
   {
-    q: "How does a project start?",
-    a: "With a short call or message about the problem. I come back with questions, then a written scope and estimate. Work starts only once you've agreed to it.",
+    q: "How does a project work?",
+    a: "Four steps: discovery, architecture, build and test, then deployment and handover. You get a written scope before any work starts, see working pieces as they are ready, and get documentation and a walkthrough at the end.",
   },
   {
-    q: "What happens after launch?",
-    a: "You get documentation and a walkthrough of the build. Ongoing support, changes and new phases can be scoped separately, so you only commit to what you need.",
+    q: "Which industries have you worked with?",
+    a: "Clinics, salons and barbers, restaurants and cafes, real estate, car and home rentals, logistics, auto repair, legal, e-commerce and recruitment, among others. The projects page has examples for each tool.",
   },
   {
-    q: "Where are you based, and how do time zones work?",
-    a: "I'm in Multan, Pakistan and work remotely with clients in different time zones. We agree overlap hours and how updates are shared at the start of each project.",
+    q: "How do I start?",
+    a: "Book a 30-minute call or send a short message about the problem. I come back with questions, then a written scope and estimate. Work starts only once you have agreed to it.",
   },
 ];
 

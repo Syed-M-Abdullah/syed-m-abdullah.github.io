@@ -1,98 +1,94 @@
 {
- "slug": "german-outbound-appointment-setter",
- "tags": [
-  "GoHighLevel",
-  "Synthflow",
-  "Voice Agent",
-  "CRM",
-  "Outbound Calling",
-  "Appointment Booking"
- ],
- "overview": [
-  "Built an outbound calling system for Jobilla using GoHighLevel and Synthflow.",
-  "The setup connects the voice agent with GoHighLevel workflows to manage outbound calls, appointment booking, and post call data inside the CRM."
- ],
- "sections": [
-  {
-   "heading": "Voice Agent Setup",
-   "blocks": [
+  "slug": "german-outbound-appointment-setter",
+  "tags": [
+    "GoHighLevel",
+    "Synthflow",
+    "Voice Agent",
+    "CRM",
+    "Outbound Calling",
+    "Appointment Booking"
+  ],
+  "overview": [
+    "Built an outbound calling system for Jobilla using GoHighLevel and Synthflow.",
+    "The setup connects the voice agent with GoHighLevel workflows to manage outbound calls, appointment booking, and post call data inside the CRM."
+  ],
+  "sections": [
     {
-     "p": "A dedicated Jobilla German Outbound Assistant was configured in Synthflow for outbound customer communication."
+      "heading": "Voice Agent Setup",
+      "blocks": [
+        {
+          "p": "A dedicated Jobilla German Outbound Assistant was configured in Synthflow for outbound customer communication."
+        },
+        {
+          "p": "The agent is connected to the Jobilla GoHighLevel setup and handles the initial calling process."
+        }
+      ]
     },
     {
-     "p": "The agent is connected to the Jobilla GoHighLevel setup and handles the initial calling process."
+      "heading": "GoHighLevel Workflows",
+      "blocks": [
+        {
+          "p": "The outbound system is organized into separate workflows:"
+        },
+        {
+          "list": ["VA Initial Outbound Calls", "Appointment Booked", "Post Outbound Called Data"]
+        },
+        {
+          "p": "Each workflow handles a specific stage of the outbound process and keeps the lead information updated in the CRM."
+        }
+      ]
+    },
+    {
+      "heading": "Outbound Call Flow",
+      "blocks": [
+        {
+          "p": "The process works through:"
+        },
+        {
+          "p": "Lead↓Initial Outbound Call↓Appointment Booking↓Post Call Data↓CRM Update"
+        },
+        {
+          "p": "This keeps the calling and appointment process structured and ensures the result of each interaction is recorded."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "GoHighLevel Workflows",
-   "blocks": [
+  ],
+  "result": [
+    "A structured outbound calling system that connects voice calls, appointment booking, and CRM updates in one workflow.",
+    "The setup reduces manual calling and follow up work while keeping lead activity organized inside GoHighLevel."
+  ],
+  "images": [
     {
-     "p": "The outbound system is organized into separate workflows:"
+      "src": "/projects/german-outbound-appointment-setter/01-960.webp",
+      "srcSet": "/projects/german-outbound-appointment-setter/01-480.webp 480w, /projects/german-outbound-appointment-setter/01-960.webp 960w, /projects/german-outbound-appointment-setter/01-1600.webp 1600w",
+      "full": "/projects/german-outbound-appointment-setter/01-1600.webp",
+      "width": 1600,
+      "height": 789,
+      "alt": "German Outbound Appointment Setter: Jobilla Agent"
     },
     {
-     "list": [
-      "VA Initial Outbound Calls",
-      "Appointment Booked",
-      "Post Outbound Called Data"
-     ]
+      "src": "/projects/german-outbound-appointment-setter/02-960.webp",
+      "srcSet": "/projects/german-outbound-appointment-setter/02-480.webp 480w, /projects/german-outbound-appointment-setter/02-960.webp 960w, /projects/german-outbound-appointment-setter/02-1600.webp 1600w",
+      "full": "/projects/german-outbound-appointment-setter/02-1600.webp",
+      "width": 1600,
+      "height": 791,
+      "alt": "German Outbound Appointment Setter: Jobilla Outbound"
     },
     {
-     "p": "Each workflow handles a specific stage of the outbound process and keeps the lead information updated in the CRM."
+      "src": "/projects/german-outbound-appointment-setter/03-960.webp",
+      "srcSet": "/projects/german-outbound-appointment-setter/03-480.webp 480w, /projects/german-outbound-appointment-setter/03-960.webp 960w, /projects/german-outbound-appointment-setter/03-1600.webp 1600w",
+      "full": "/projects/german-outbound-appointment-setter/03-1600.webp",
+      "width": 1600,
+      "height": 798,
+      "alt": "German Outbound Appointment Setter: Jobilla Subaccount"
+    },
+    {
+      "src": "/projects/german-outbound-appointment-setter/04-960.webp",
+      "srcSet": "/projects/german-outbound-appointment-setter/04-480.webp 480w, /projects/german-outbound-appointment-setter/04-960.webp 960w, /projects/german-outbound-appointment-setter/04-1600.webp 1600w",
+      "full": "/projects/german-outbound-appointment-setter/04-1600.webp",
+      "width": 1600,
+      "height": 822,
+      "alt": "German Outbound Appointment Setter: Jobilla Synthflow"
     }
-   ]
-  },
-  {
-   "heading": "Outbound Call Flow",
-   "blocks": [
-    {
-     "p": "The process works through:"
-    },
-    {
-     "p": "Lead↓Initial Outbound Call↓Appointment Booking↓Post Call Data↓CRM Update"
-    },
-    {
-     "p": "This keeps the calling and appointment process structured and ensures the result of each interaction is recorded."
-    }
-   ]
-  }
- ],
- "result": [
-  "A structured outbound calling system that connects voice calls, appointment booking, and CRM updates in one workflow.",
-  "The setup reduces manual calling and follow up work while keeping lead activity organized inside GoHighLevel."
- ],
- "images": [
-  {
-   "src": "/projects/german-outbound-appointment-setter/01-960.webp",
-   "srcSet": "/projects/german-outbound-appointment-setter/01-480.webp 480w, /projects/german-outbound-appointment-setter/01-960.webp 960w, /projects/german-outbound-appointment-setter/01-1600.webp 1600w",
-   "full": "/projects/german-outbound-appointment-setter/01-1600.webp",
-   "width": 1600,
-   "height": 789,
-   "alt": "German Outbound Appointment Setter: Jobilla Agent"
-  },
-  {
-   "src": "/projects/german-outbound-appointment-setter/02-960.webp",
-   "srcSet": "/projects/german-outbound-appointment-setter/02-480.webp 480w, /projects/german-outbound-appointment-setter/02-960.webp 960w, /projects/german-outbound-appointment-setter/02-1600.webp 1600w",
-   "full": "/projects/german-outbound-appointment-setter/02-1600.webp",
-   "width": 1600,
-   "height": 791,
-   "alt": "German Outbound Appointment Setter: Jobilla Outbound"
-  },
-  {
-   "src": "/projects/german-outbound-appointment-setter/03-960.webp",
-   "srcSet": "/projects/german-outbound-appointment-setter/03-480.webp 480w, /projects/german-outbound-appointment-setter/03-960.webp 960w, /projects/german-outbound-appointment-setter/03-1600.webp 1600w",
-   "full": "/projects/german-outbound-appointment-setter/03-1600.webp",
-   "width": 1600,
-   "height": 798,
-   "alt": "German Outbound Appointment Setter: Jobilla Subaccount"
-  },
-  {
-   "src": "/projects/german-outbound-appointment-setter/04-960.webp",
-   "srcSet": "/projects/german-outbound-appointment-setter/04-480.webp 480w, /projects/german-outbound-appointment-setter/04-960.webp 960w, /projects/german-outbound-appointment-setter/04-1600.webp 1600w",
-   "full": "/projects/german-outbound-appointment-setter/04-1600.webp",
-   "width": 1600,
-   "height": 822,
-   "alt": "German Outbound Appointment Setter: Jobilla Synthflow"
-  }
- ]
+  ]
 }

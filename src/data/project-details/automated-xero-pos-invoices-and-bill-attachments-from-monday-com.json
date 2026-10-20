@@ -1,115 +1,111 @@
 {
- "slug": "automated-xero-pos-invoices-and-bill-attachments-from-monday-com",
- "tags": [
-  "Make.com",
-  "Monday.com",
-  "Xero"
- ],
- "overview": [
-  "Built an automated finance workflow that connects Monday.com with Xero to automate purchase orders, client invoices, supplier invoices, and bill attachments.",
-  "The workflow removes manual data entry between Monday.com and Xero by automatically creating financial documents, transferring PDF files, matching supplier invoices with the correct bills, and keeping both systems synchronized."
- ],
- "sections": [
-  {
-   "heading": "Workflow",
-   "blocks": [
+  "slug": "automated-xero-pos-invoices-and-bill-attachments-from-monday-com",
+  "tags": ["Make.com", "Monday.com", "Xero"],
+  "overview": [
+    "Built an automated finance workflow that connects Monday.com with Xero to automate purchase orders, client invoices, supplier invoices, and bill attachments.",
+    "The workflow removes manual data entry between Monday.com and Xero by automatically creating financial documents, transferring PDF files, matching supplier invoices with the correct bills, and keeping both systems synchronized."
+  ],
+  "sections": [
     {
-     "p": "The system:"
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "p": "The system:"
+        },
+        {
+          "list": [
+            "Creates a Purchase Order in Xero when a PO is approved in Monday.com",
+            "Transfers all PO line items from Monday.com into Xero",
+            "Downloads the generated Purchase Order PDF",
+            "Creates the corresponding Bill in Xero automatically",
+            "Creates client invoices in Xero using invoice details stored in Monday.com",
+            "Attaches the generated invoice PDF back to the relevant Monday.com item",
+            "Emails the completed invoice directly to the client",
+            "Allows employees to upload supplier invoice PDFs through Monday.com",
+            "Finds the matching Bill in Xero using the Purchase Order reference",
+            "Attaches the supplier invoice PDF to the correct Bill in Xero",
+            "Adds a comment to the Monday.com item when an automation fails"
+          ]
+        },
+        {
+          "p": "This allows the entire process to run without users needing to manually enter information into Xero or open Make.com to monitor every transaction."
+        }
+      ]
     },
     {
-     "list": [
-      "Creates a Purchase Order in Xero when a PO is approved in Monday.com",
-      "Transfers all PO line items from Monday.com into Xero",
-      "Downloads the generated Purchase Order PDF",
-      "Creates the corresponding Bill in Xero automatically",
-      "Creates client invoices in Xero using invoice details stored in Monday.com",
-      "Attaches the generated invoice PDF back to the relevant Monday.com item",
-      "Emails the completed invoice directly to the client",
-      "Allows employees to upload supplier invoice PDFs through Monday.com",
-      "Finds the matching Bill in Xero using the Purchase Order reference",
-      "Attaches the supplier invoice PDF to the correct Bill in Xero",
-      "Adds a comment to the Monday.com item when an automation fails"
-     ]
+      "heading": "Purchase Orders & Invoices",
+      "blocks": [
+        {
+          "p": "The workflow automatically handles the complete Purchase Order and client invoice process."
+        },
+        {
+          "p": "When a Purchase Order is approved in Monday.com, Make.com creates the corresponding Purchase Order in Xero with all required line items and then creates the related Bill."
+        },
+        {
+          "p": "For client invoices, the invoice information stored in Monday.com is transferred to Xero automatically. The generated PDF is then attached back to Monday.com and the invoice is emailed directly to the client."
+        }
+      ]
     },
     {
-     "p": "This allows the entire process to run without users needing to manually enter information into Xero or open Make.com to monitor every transaction."
+      "heading": "Supplier Invoice Management",
+      "blocks": [
+        {
+          "p": "Supplier invoices are handled through Monday.com."
+        },
+        {
+          "p": "When an employee uploads a supplier invoice PDF, the workflow identifies the related Bill in Xero using the Purchase Order reference and automatically attaches the supplier document to the correct Bill."
+        },
+        {
+          "p": "This keeps supplier documentation connected to the correct financial record without requiring manual file uploads inside Xero."
+        }
+      ]
+    },
+    {
+      "heading": "Error Handling & Automation",
+      "blocks": [
+        {
+          "p": "The workflow includes automated error handling to make the process easier to manage."
+        },
+        {
+          "p": "If something goes wrong during processing, the relevant Monday.com item is automatically flagged with a comment explaining the issue."
+        },
+        {
+          "p": "This means the team can identify failed transactions directly from Monday.com instead of having to open Make.com and manually inspect the scenario."
+        },
+        {
+          "p": "The Purchase Order, client invoice, and supplier invoice workflows have been fully tested and are running in production."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Purchase Orders & Invoices",
-   "blocks": [
+  ],
+  "result": [
+    "A complete automated finance workflow that connects Monday.com and Xero and removes repetitive manual work from Purchase Orders, client invoices, supplier invoices, and bill attachments.",
+    "The system keeps financial records and supporting documents synchronized while providing automated error reporting directly inside Monday.com."
+  ],
+  "images": [
     {
-     "p": "The workflow automatically handles the complete Purchase Order and client invoice process."
+      "src": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-960.webp",
+      "srcSet": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-480.webp 480w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-960.webp 960w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-1080.webp 1080w",
+      "full": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-1080.webp",
+      "width": 1080,
+      "height": 427,
+      "alt": "Automated Xero POs, Invoices & Bill Attachments from Monday.com: Automated Xero POs, Invoices & Bill Attachments from Monday.com(1)"
     },
     {
-     "p": "When a Purchase Order is approved in Monday.com, Make.com creates the corresponding Purchase Order in Xero with all required line items and then creates the related Bill."
+      "src": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/02-960.webp",
+      "srcSet": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/02-480.webp 480w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/02-960.webp 960w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/02-1080.webp 1080w",
+      "full": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/02-1080.webp",
+      "width": 1080,
+      "height": 496,
+      "alt": "Automated Xero POs, Invoices & Bill Attachments from Monday.com: Automated Xero POs, Invoices & Bill Attachments from Monday.com(2)"
     },
     {
-     "p": "For client invoices, the invoice information stored in Monday.com is transferred to Xero automatically. The generated PDF is then attached back to Monday.com and the invoice is emailed directly to the client."
+      "src": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/03-960.webp",
+      "srcSet": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/03-480.webp 480w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/03-960.webp 960w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/03-1080.webp 1080w",
+      "full": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/03-1080.webp",
+      "width": 1080,
+      "height": 669,
+      "alt": "Automated Xero POs, Invoices & Bill Attachments from Monday.com: Automated Xero POs, Invoices & Bill Attachments from Monday.com(3)"
     }
-   ]
-  },
-  {
-   "heading": "Supplier Invoice Management",
-   "blocks": [
-    {
-     "p": "Supplier invoices are handled through Monday.com."
-    },
-    {
-     "p": "When an employee uploads a supplier invoice PDF, the workflow identifies the related Bill in Xero using the Purchase Order reference and automatically attaches the supplier document to the correct Bill."
-    },
-    {
-     "p": "This keeps supplier documentation connected to the correct financial record without requiring manual file uploads inside Xero."
-    }
-   ]
-  },
-  {
-   "heading": "Error Handling & Automation",
-   "blocks": [
-    {
-     "p": "The workflow includes automated error handling to make the process easier to manage."
-    },
-    {
-     "p": "If something goes wrong during processing, the relevant Monday.com item is automatically flagged with a comment explaining the issue."
-    },
-    {
-     "p": "This means the team can identify failed transactions directly from Monday.com instead of having to open Make.com and manually inspect the scenario."
-    },
-    {
-     "p": "The Purchase Order, client invoice, and supplier invoice workflows have been fully tested and are running in production."
-    }
-   ]
-  }
- ],
- "result": [
-  "A complete automated finance workflow that connects Monday.com and Xero and removes repetitive manual work from Purchase Orders, client invoices, supplier invoices, and bill attachments.",
-  "The system keeps financial records and supporting documents synchronized while providing automated error reporting directly inside Monday.com."
- ],
- "images": [
-  {
-   "src": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-960.webp",
-   "srcSet": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-480.webp 480w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-960.webp 960w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-1080.webp 1080w",
-   "full": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/01-1080.webp",
-   "width": 1080,
-   "height": 427,
-   "alt": "Automated Xero POs, Invoices & Bill Attachments from Monday.com: Automated Xero POs, Invoices & Bill Attachments from Monday.com(1)"
-  },
-  {
-   "src": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/02-960.webp",
-   "srcSet": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/02-480.webp 480w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/02-960.webp 960w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/02-1080.webp 1080w",
-   "full": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/02-1080.webp",
-   "width": 1080,
-   "height": 496,
-   "alt": "Automated Xero POs, Invoices & Bill Attachments from Monday.com: Automated Xero POs, Invoices & Bill Attachments from Monday.com(2)"
-  },
-  {
-   "src": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/03-960.webp",
-   "srcSet": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/03-480.webp 480w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/03-960.webp 960w, /projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/03-1080.webp 1080w",
-   "full": "/projects/automated-xero-pos-invoices-and-bill-attachments-from-monday-com/03-1080.webp",
-   "width": 1080,
-   "height": 669,
-   "alt": "Automated Xero POs, Invoices & Bill Attachments from Monday.com: Automated Xero POs, Invoices & Bill Attachments from Monday.com(3)"
-  }
- ]
+  ]
 }

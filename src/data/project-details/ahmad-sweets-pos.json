@@ -1,54 +1,43 @@
 {
- "slug": "ahmad-sweets-pos",
- "tags": [
-  "POS · E-invoicing",
-  "Pakistan"
- ],
- "overview": [
-  "Multi-location retail POS integrated with Pakistan's FBR invoicing API, with automatic tax calculation."
- ],
- "sections": [
-  {
-   "heading": "The challenge",
-   "blocks": [
+  "slug": "ahmad-sweets-pos",
+  "tags": ["POS · E-invoicing", "Pakistan"],
+  "overview": [
+    "Multi-location retail POS integrated with Pakistan's FBR invoicing API, with automatic tax calculation."
+  ],
+  "sections": [
     {
-     "p": "A retail chain needed FBR-integrated invoicing across its locations."
-    }
-   ]
-  },
-  {
-   "heading": "Solution & architecture",
-   "blocks": [
+      "heading": "The challenge",
+      "blocks": [
+        {
+          "p": "A retail chain needed FBR-integrated invoicing across its locations."
+        }
+      ]
+    },
     {
-     "p": "A WinForms POS deployed across multiple retail locations. Each sale authenticates with the FBR API, tax is calculated automatically, and the invoice is generated and reported."
-    }
-   ]
-  },
-  {
-   "heading": "Workflow",
-   "blocks": [
+      "heading": "Solution & architecture",
+      "blocks": [
+        {
+          "p": "A WinForms POS deployed across multiple retail locations. Each sale authenticates with the FBR API, tax is calculated automatically, and the invoice is generated and reported."
+        }
+      ]
+    },
     {
-     "list": [
-      "Sale made",
-      "FBR API auth",
-      "Tax calculated",
-      "Invoice generated"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Key facts",
-   "blocks": [
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "list": ["Sale made", "FBR API auth", "Tax calculated", "Invoice generated"]
+        }
+      ]
+    },
     {
-     "list": [
-      "FBR — API integration",
-      "Multi-location — Deployment"
-     ]
+      "heading": "Key facts",
+      "blocks": [
+        {
+          "list": ["FBR, API integration", "Multi-location, Deployment"]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [],
- "images": []
+  ],
+  "result": [],
+  "images": []
 }

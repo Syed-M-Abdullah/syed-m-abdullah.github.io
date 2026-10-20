@@ -14,8 +14,8 @@ export const Route = createFileRoute("/projects/")({
     typeof search.tool === "string" ? { tool: search.tool } : {},
   head: () =>
     seo({
-      title: "Projects — Automation, CRM, Voice & Custom Software",
-      description: `${projects.length} projects built with n8n, Make, Zapier, GoHighLevel, AI voice agents and custom .NET software — with screenshots and what was built.`,
+      title: "Projects: Automation, CRM, Voice and Custom Software",
+      description: `${projects.length} projects built with n8n, Make, Zapier, GoHighLevel, AI voice agents and custom .NET software, with screenshots and what was built.`,
       path: "/projects",
     }),
   component: ProjectsPage,
@@ -27,12 +27,7 @@ function ProjectsPage() {
     <PageShell>
       <PageHero
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Projects" }]}
-        eyebrow="Selected work"
-        title={
-          <>
-            Systems I've designed <span className="gradient-text">and built</span>
-          </>
-        }
+        title={<>Systems I've designed and built</>}
         intro={
           <p>
             {projects.length} projects, grouped by the tool they were built with. Open any project

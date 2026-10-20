@@ -1,151 +1,151 @@
 {
- "slug": "freightflow-control-tower",
- "tags": [],
- "overview": [
-  "Built an automated logistics control system for managing shipment booking, carrier selection, pickup coordination, live tracking, delivery exceptions, proof of delivery, and carrier performance.",
-  "The workflow takes a new shipment request and turns it into a complete logistics lifecycle, from carrier sourcing and dispatch to delivery confirmation and operational reporting."
- ],
- "sections": [
-  {
-   "heading": "Workflow",
-   "blocks": [
+  "slug": "freightflow-control-tower",
+  "tags": [],
+  "overview": [
+    "Built an automated logistics control system for managing shipment booking, carrier selection, pickup coordination, live tracking, delivery exceptions, proof of delivery, and carrier performance.",
+    "The workflow takes a new shipment request and turns it into a complete logistics lifecycle, from carrier sourcing and dispatch to delivery confirmation and operational reporting."
+  ],
+  "sections": [
     {
-     "p": "The system:"
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "p": "The system:"
+        },
+        {
+          "list": [
+            "Receives new shipment requests through webhooks or forms",
+            "Validates shipment, customer, route, cargo, and delivery information",
+            "Creates shipment records and dedicated Google Drive folders",
+            "Calculates routes, travel distance, and estimated transit time",
+            "Searches approved carriers based on service region, capacity, equipment, and compliance",
+            "Sends quotation requests to suitable carriers",
+            "Receives, normalizes, and compares carrier quotations",
+            "Calculates carrier scores using price, availability, reliability, damage rate, and on-time performance",
+            "Generates recommended carrier summaries using AI",
+            "Routes shipments for manager approval when required",
+            "Creates confirmed carrier bookings automatically",
+            "Generates shipping documents and sends required documents through DocuSign",
+            "Sends booking confirmations to carriers and customers",
+            "Monitors upcoming pickups and sends driver reminders",
+            "Processes pickup confirmations, delays, failed pickups, and shipment-not-ready conditions",
+            "Retrieves carrier tracking data and recalculates delivery ETA",
+            "Detects at-risk and critically delayed shipments",
+            "Sends customer ETA updates and operations alerts automatically",
+            "Creates structured exception records for delivery problems",
+            "Receives delivery confirmation, signatures, photos, and proof of delivery",
+            "Reconciles expected and delivered shipment quantities",
+            "Routes partial, damaged, or rejected deliveries to claims handling",
+            "Closes successfully delivered shipments",
+            "Generates final shipment summaries and sends POD documents to customers",
+            "Calculates carrier performance after each completed shipment",
+            "Performs weekly audits for late shipments, missing PODs, open exceptions, and claims",
+            "Updates logistics analytics in Google Sheets"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Receives new shipment requests through webhooks or forms",
-      "Validates shipment, customer, route, cargo, and delivery information",
-      "Creates shipment records and dedicated Google Drive folders",
-      "Calculates routes, travel distance, and estimated transit time",
-      "Searches approved carriers based on service region, capacity, equipment, and compliance",
-      "Sends quotation requests to suitable carriers",
-      "Receives, normalizes, and compares carrier quotations",
-      "Calculates carrier scores using price, availability, reliability, damage rate, and on-time performance",
-      "Generates recommended carrier summaries using AI",
-      "Routes shipments for manager approval when required",
-      "Creates confirmed carrier bookings automatically",
-      "Generates shipping documents and sends required documents through DocuSign",
-      "Sends booking confirmations to carriers and customers",
-      "Monitors upcoming pickups and sends driver reminders",
-      "Processes pickup confirmations, delays, failed pickups, and shipment-not-ready conditions",
-      "Retrieves carrier tracking data and recalculates delivery ETA",
-      "Detects at-risk and critically delayed shipments",
-      "Sends customer ETA updates and operations alerts automatically",
-      "Creates structured exception records for delivery problems",
-      "Receives delivery confirmation, signatures, photos, and proof of delivery",
-      "Reconciles expected and delivered shipment quantities",
-      "Routes partial, damaged, or rejected deliveries to claims handling",
-      "Closes successfully delivered shipments",
-      "Generates final shipment summaries and sends POD documents to customers",
-      "Calculates carrier performance after each completed shipment",
-      "Performs weekly audits for late shipments, missing PODs, open exceptions, and claims",
-      "Updates logistics analytics in Google Sheets"
-     ]
+      "heading": "Branding & Templates",
+      "blocks": [
+        {
+          "p": "The workflow uses predefined shipment, carrier, approval, delivery, and exception templates."
+        },
+        {
+          "p": "Each template controls:"
+        },
+        {
+          "list": [
+            "Carrier quote requests",
+            "Booking confirmations",
+            "Shipment documents",
+            "Customer status updates",
+            "Delivery exception alerts"
+          ]
+        },
+        {
+          "p": "This keeps logistics communication consistent across customers, carriers, shipments, and delivery stages."
+        }
+      ]
+    },
+    {
+      "heading": "Content Management",
+      "blocks": [
+        {
+          "p": "Airtable or SmartSuite acts as the central shipment, carrier, exception, and delivery tracking system."
+        },
+        {
+          "p": "Each shipment is updated with:"
+        },
+        {
+          "list": [
+            "Shipment status",
+            "Selected carrier",
+            "Carrier score",
+            "Pickup status",
+            "Current ETA",
+            "Delivery risk",
+            "Exception status",
+            "POD status",
+            "Delivery result",
+            "Carrier performance"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Branding & Templates",
-   "blocks": [
+  ],
+  "result": [
+    "A complete automated logistics pipeline that turns a shipment request into an approved, booked, tracked, delivered, reconciled, and documented shipment without requiring operations teams to manually coordinate every step.",
+    "The system also keeps carrier quotations, pickup activity, live ETA, shipment exceptions, proof of delivery, claims, carrier performance, and logistics analytics organized in one workflow."
+  ],
+  "images": [
     {
-     "p": "The workflow uses predefined shipment, carrier, approval, delivery, and exception templates."
+      "src": "/projects/freightflow-control-tower/01-960.webp",
+      "srcSet": "/projects/freightflow-control-tower/01-480.webp 480w, /projects/freightflow-control-tower/01-960.webp 960w, /projects/freightflow-control-tower/01-1600.webp 1600w",
+      "full": "/projects/freightflow-control-tower/01-1600.webp",
+      "width": 1600,
+      "height": 759,
+      "alt": "FreightFlow Control Tower: FreightFlow Control Tower 1"
     },
     {
-     "p": "Each template controls:"
+      "src": "/projects/freightflow-control-tower/02-960.webp",
+      "srcSet": "/projects/freightflow-control-tower/02-480.webp 480w, /projects/freightflow-control-tower/02-960.webp 960w, /projects/freightflow-control-tower/02-1600.webp 1600w",
+      "full": "/projects/freightflow-control-tower/02-1600.webp",
+      "width": 1600,
+      "height": 737,
+      "alt": "FreightFlow Control Tower: FreightFlow Control Tower 2"
     },
     {
-     "list": [
-      "Carrier quote requests",
-      "Booking confirmations",
-      "Shipment documents",
-      "Customer status updates",
-      "Delivery exception alerts"
-     ]
+      "src": "/projects/freightflow-control-tower/03-960.webp",
+      "srcSet": "/projects/freightflow-control-tower/03-480.webp 480w, /projects/freightflow-control-tower/03-960.webp 960w, /projects/freightflow-control-tower/03-1600.webp 1600w",
+      "full": "/projects/freightflow-control-tower/03-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "FreightFlow Control Tower: FreightFlow Control Tower 3"
     },
     {
-     "p": "This keeps logistics communication consistent across customers, carriers, shipments, and delivery stages."
+      "src": "/projects/freightflow-control-tower/04-960.webp",
+      "srcSet": "/projects/freightflow-control-tower/04-480.webp 480w, /projects/freightflow-control-tower/04-960.webp 960w, /projects/freightflow-control-tower/04-1600.webp 1600w",
+      "full": "/projects/freightflow-control-tower/04-1600.webp",
+      "width": 1600,
+      "height": 733,
+      "alt": "FreightFlow Control Tower: FreightFlow Control Tower 4"
+    },
+    {
+      "src": "/projects/freightflow-control-tower/05-960.webp",
+      "srcSet": "/projects/freightflow-control-tower/05-480.webp 480w, /projects/freightflow-control-tower/05-960.webp 960w, /projects/freightflow-control-tower/05-1600.webp 1600w",
+      "full": "/projects/freightflow-control-tower/05-1600.webp",
+      "width": 1600,
+      "height": 733,
+      "alt": "FreightFlow Control Tower: FreightFlow Control Tower 5"
+    },
+    {
+      "src": "/projects/freightflow-control-tower/06-960.webp",
+      "srcSet": "/projects/freightflow-control-tower/06-480.webp 480w, /projects/freightflow-control-tower/06-960.webp 960w, /projects/freightflow-control-tower/06-1448.webp 1448w",
+      "full": "/projects/freightflow-control-tower/06-1448.webp",
+      "width": 1448,
+      "height": 1086,
+      "alt": "FreightFlow Control Tower: FreightFlow Control Tower 6"
     }
-   ]
-  },
-  {
-   "heading": "Content Management",
-   "blocks": [
-    {
-     "p": "Airtable or SmartSuite acts as the central shipment, carrier, exception, and delivery tracking system."
-    },
-    {
-     "p": "Each shipment is updated with:"
-    },
-    {
-     "list": [
-      "Shipment status",
-      "Selected carrier",
-      "Carrier score",
-      "Pickup status",
-      "Current ETA",
-      "Delivery risk",
-      "Exception status",
-      "POD status",
-      "Delivery result",
-      "Carrier performance"
-     ]
-    }
-   ]
-  }
- ],
- "result": [
-  "A complete automated logistics pipeline that turns a shipment request into an approved, booked, tracked, delivered, reconciled, and documented shipment without requiring operations teams to manually coordinate every step.",
-  "The system also keeps carrier quotations, pickup activity, live ETA, shipment exceptions, proof of delivery, claims, carrier performance, and logistics analytics organized in one workflow."
- ],
- "images": [
-  {
-   "src": "/projects/freightflow-control-tower/01-960.webp",
-   "srcSet": "/projects/freightflow-control-tower/01-480.webp 480w, /projects/freightflow-control-tower/01-960.webp 960w, /projects/freightflow-control-tower/01-1600.webp 1600w",
-   "full": "/projects/freightflow-control-tower/01-1600.webp",
-   "width": 1600,
-   "height": 759,
-   "alt": "FreightFlow Control Tower: FreightFlow Control Tower 1"
-  },
-  {
-   "src": "/projects/freightflow-control-tower/02-960.webp",
-   "srcSet": "/projects/freightflow-control-tower/02-480.webp 480w, /projects/freightflow-control-tower/02-960.webp 960w, /projects/freightflow-control-tower/02-1600.webp 1600w",
-   "full": "/projects/freightflow-control-tower/02-1600.webp",
-   "width": 1600,
-   "height": 737,
-   "alt": "FreightFlow Control Tower: FreightFlow Control Tower 2"
-  },
-  {
-   "src": "/projects/freightflow-control-tower/03-960.webp",
-   "srcSet": "/projects/freightflow-control-tower/03-480.webp 480w, /projects/freightflow-control-tower/03-960.webp 960w, /projects/freightflow-control-tower/03-1600.webp 1600w",
-   "full": "/projects/freightflow-control-tower/03-1600.webp",
-   "width": 1600,
-   "height": 900,
-   "alt": "FreightFlow Control Tower: FreightFlow Control Tower 3"
-  },
-  {
-   "src": "/projects/freightflow-control-tower/04-960.webp",
-   "srcSet": "/projects/freightflow-control-tower/04-480.webp 480w, /projects/freightflow-control-tower/04-960.webp 960w, /projects/freightflow-control-tower/04-1600.webp 1600w",
-   "full": "/projects/freightflow-control-tower/04-1600.webp",
-   "width": 1600,
-   "height": 733,
-   "alt": "FreightFlow Control Tower: FreightFlow Control Tower 4"
-  },
-  {
-   "src": "/projects/freightflow-control-tower/05-960.webp",
-   "srcSet": "/projects/freightflow-control-tower/05-480.webp 480w, /projects/freightflow-control-tower/05-960.webp 960w, /projects/freightflow-control-tower/05-1600.webp 1600w",
-   "full": "/projects/freightflow-control-tower/05-1600.webp",
-   "width": 1600,
-   "height": 733,
-   "alt": "FreightFlow Control Tower: FreightFlow Control Tower 5"
-  },
-  {
-   "src": "/projects/freightflow-control-tower/06-960.webp",
-   "srcSet": "/projects/freightflow-control-tower/06-480.webp 480w, /projects/freightflow-control-tower/06-960.webp 960w, /projects/freightflow-control-tower/06-1448.webp 1448w",
-   "full": "/projects/freightflow-control-tower/06-1448.webp",
-   "width": 1448,
-   "height": 1086,
-   "alt": "FreightFlow Control Tower: FreightFlow Control Tower 6"
-  }
- ]
+  ]
 }

@@ -1,187 +1,180 @@
 {
- "slug": "hisabdaar",
- "tags": [
-  "Accounting",
-  "Sales",
-  "Inventory",
-  "CRM",
-  "Reporting",
-  "Business Operations"
- ],
- "overview": [
-  "Hisabdaar is a complete business management system built to manage sales, customers, products, purchases, expenses, inventory, accounting, payments, and reports from one platform.",
-  "The system provides a centralized dashboard and module based structure for managing daily business operations and financial activities."
- ],
- "sections": [
-  {
-   "heading": "Main Modules",
-   "blocks": [
+  "slug": "hisabdaar",
+  "tags": ["Accounting", "Sales", "Inventory", "CRM", "Reporting", "Business Operations"],
+  "overview": [
+    "Hisabdaar is a complete business management system built to manage sales, customers, products, purchases, expenses, inventory, accounting, payments, and reports from one platform.",
+    "The system provides a centralized dashboard and module based structure for managing daily business operations and financial activities."
+  ],
+  "sections": [
     {
-     "list": [
-      "Business Dashboard",
-      "Products & Services",
-      "Customer & Contact Management",
-      "Sales & Invoice Management",
-      "Purchases & Expenses",
-      "Accounting & Banking",
-      "Inventory & Warehouse Management",
-      "Financial & Sales Reports",
-      "User Management",
-      "Application & General Settings"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Sales & Invoice Management",
-   "blocks": [
-    {
-     "p": "The sales module supports complete invoice processing, including:"
+      "heading": "Main Modules",
+      "blocks": [
+        {
+          "list": [
+            "Business Dashboard",
+            "Products & Services",
+            "Customer & Contact Management",
+            "Sales & Invoice Management",
+            "Purchases & Expenses",
+            "Accounting & Banking",
+            "Inventory & Warehouse Management",
+            "Financial & Sales Reports",
+            "User Management",
+            "Application & General Settings"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Customer and walk in customer selection",
-      "Product code and product selection",
-      "Quantity and pricing",
-      "Discounts and taxes",
-      "Additional charges",
-      "Payment processing",
-      "Customer balance and invoice history",
-      "Return invoices",
-      "Draft and parked transactions"
-     ]
+      "heading": "Sales & Invoice Management",
+      "blocks": [
+        {
+          "p": "The sales module supports complete invoice processing, including:"
+        },
+        {
+          "list": [
+            "Customer and walk in customer selection",
+            "Product code and product selection",
+            "Quantity and pricing",
+            "Discounts and taxes",
+            "Additional charges",
+            "Payment processing",
+            "Customer balance and invoice history",
+            "Return invoices",
+            "Draft and parked transactions"
+          ]
+        },
+        {
+          "p": "Sales Flow:Customer → Products → Pricing → Discounts / Taxes → Invoice Total → Payment"
+        }
+      ]
     },
     {
-     "p": "Sales Flow:Customer → Products → Pricing → Discounts / Taxes → Invoice Total → Payment"
-    }
-   ]
-  },
-  {
-   "heading": "Accounting & Reporting",
-   "blocks": [
-    {
-     "p": "The system includes a wide range of financial reports such as:"
+      "heading": "Accounting & Reporting",
+      "blocks": [
+        {
+          "p": "The system includes a wide range of financial reports such as:"
+        },
+        {
+          "list": [
+            "Trial Balance",
+            "Income Statement",
+            "General Ledger",
+            "Customer & Vendor Ledger",
+            "Cash Flow Statement",
+            "Balance Sheet",
+            "Accounts Receivable & Payable",
+            "Cash Book",
+            "Expense Analysis",
+            "Profit & Loss"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Trial Balance",
-      "Income Statement",
-      "General Ledger",
-      "Customer & Vendor Ledger",
-      "Cash Flow Statement",
-      "Balance Sheet",
-      "Accounts Receivable & Payable",
-      "Cash Book",
-      "Expense Analysis",
-      "Profit & Loss"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Inventory Management",
-   "blocks": [
-    {
-     "p": "Inventory operations include:"
+      "heading": "Inventory Management",
+      "blocks": [
+        {
+          "p": "Inventory operations include:"
+        },
+        {
+          "list": [
+            "Product stock tracking",
+            "Product Ledger",
+            "Stock movement",
+            "Purchase & Purchase Returns",
+            "Goods Receive Notes",
+            "Stock Transfers",
+            "Warehouse Wise Stock",
+            "Stock Issues",
+            "Stock Waste",
+            "COGS Ledger",
+            "Dead Stock Analysis"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Product stock tracking",
-      "Product Ledger",
-      "Stock movement",
-      "Purchase & Purchase Returns",
-      "Goods Receive Notes",
-      "Stock Transfers",
-      "Warehouse Wise Stock",
-      "Stock Issues",
-      "Stock Waste",
-      "COGS Ledger",
-      "Dead Stock Analysis"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Sales Analytics",
-   "blocks": [
-    {
-     "p": "Management can monitor:"
+      "heading": "Sales Analytics",
+      "blocks": [
+        {
+          "p": "Management can monitor:"
+        },
+        {
+          "list": [
+            "Recent sales trends",
+            "Top selling products",
+            "Product wise sales",
+            "Category wise sales",
+            "Monthly sales analysis",
+            "Product profitability",
+            "Sales targets",
+            "Customer performance",
+            "Salesman performance",
+            "Reseller performance"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Recent sales trends",
-      "Top selling products",
-      "Product wise sales",
-      "Category wise sales",
-      "Monthly sales analysis",
-      "Product profitability",
-      "Sales targets",
-      "Customer performance",
-      "Salesman performance",
-      "Reseller performance"
-     ]
+      "heading": "System Configuration",
+      "blocks": [
+        {
+          "p": "The platform provides extensive configuration options for:"
+        },
+        {
+          "list": [
+            "Accounting and sales settings",
+            "Invoice customization",
+            "Product search",
+            "Purchase invoices",
+            "Sale orders",
+            "Company information",
+            "Email and WhatsApp settings",
+            "User permissions",
+            "Time zone",
+            "Recycle Bin",
+            "Report configuration"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "System Configuration",
-   "blocks": [
+  ],
+  "result": [
+    "Hisabdaar brings sales, inventory, accounting, purchasing, customers, payments, and reporting into one integrated system, giving businesses better operational control, centralized records, and clear visibility into their financial and sales performance."
+  ],
+  "images": [
     {
-     "p": "The platform provides extensive configuration options for:"
+      "src": "/projects/hisabdaar/01-960.webp",
+      "srcSet": "/projects/hisabdaar/01-480.webp 480w, /projects/hisabdaar/01-960.webp 960w, /projects/hisabdaar/01-1400.webp 1400w",
+      "full": "/projects/hisabdaar/01-1400.webp",
+      "width": 1400,
+      "height": 611,
+      "alt": "Hisabdaar: Hisabdaar Dashboard"
     },
     {
-     "list": [
-      "Accounting and sales settings",
-      "Invoice customization",
-      "Product search",
-      "Purchase invoices",
-      "Sale orders",
-      "Company information",
-      "Email and WhatsApp settings",
-      "User permissions",
-      "Time zone",
-      "Recycle Bin",
-      "Report configuration"
-     ]
+      "src": "/projects/hisabdaar/02-960.webp",
+      "srcSet": "/projects/hisabdaar/02-480.webp 480w, /projects/hisabdaar/02-960.webp 960w, /projects/hisabdaar/02-1400.webp 1400w",
+      "full": "/projects/hisabdaar/02-1400.webp",
+      "width": 1400,
+      "height": 636,
+      "alt": "Hisabdaar: Hisabdaar Reports"
+    },
+    {
+      "src": "/projects/hisabdaar/03-960.webp",
+      "srcSet": "/projects/hisabdaar/03-480.webp 480w, /projects/hisabdaar/03-960.webp 960w, /projects/hisabdaar/03-1400.webp 1400w",
+      "full": "/projects/hisabdaar/03-1400.webp",
+      "width": 1400,
+      "height": 585,
+      "alt": "Hisabdaar: Hisabdaar Sales Invoice"
+    },
+    {
+      "src": "/projects/hisabdaar/04-960.webp",
+      "srcSet": "/projects/hisabdaar/04-480.webp 480w, /projects/hisabdaar/04-960.webp 960w, /projects/hisabdaar/04-1400.webp 1400w",
+      "full": "/projects/hisabdaar/04-1400.webp",
+      "width": 1400,
+      "height": 649,
+      "alt": "Hisabdaar: Hisabdaar Settings"
     }
-   ]
-  }
- ],
- "result": [
-  "Hisabdaar brings sales, inventory, accounting, purchasing, customers, payments, and reporting into one integrated system, giving businesses better operational control, centralized records, and clear visibility into their financial and sales performance."
- ],
- "images": [
-  {
-   "src": "/projects/hisabdaar/01-960.webp",
-   "srcSet": "/projects/hisabdaar/01-480.webp 480w, /projects/hisabdaar/01-960.webp 960w, /projects/hisabdaar/01-1400.webp 1400w",
-   "full": "/projects/hisabdaar/01-1400.webp",
-   "width": 1400,
-   "height": 611,
-   "alt": "Hisabdaar: Hisabdaar Dashboard"
-  },
-  {
-   "src": "/projects/hisabdaar/02-960.webp",
-   "srcSet": "/projects/hisabdaar/02-480.webp 480w, /projects/hisabdaar/02-960.webp 960w, /projects/hisabdaar/02-1400.webp 1400w",
-   "full": "/projects/hisabdaar/02-1400.webp",
-   "width": 1400,
-   "height": 636,
-   "alt": "Hisabdaar: Hisabdaar Reports"
-  },
-  {
-   "src": "/projects/hisabdaar/03-960.webp",
-   "srcSet": "/projects/hisabdaar/03-480.webp 480w, /projects/hisabdaar/03-960.webp 960w, /projects/hisabdaar/03-1400.webp 1400w",
-   "full": "/projects/hisabdaar/03-1400.webp",
-   "width": 1400,
-   "height": 585,
-   "alt": "Hisabdaar: Hisabdaar Sales Invoice"
-  },
-  {
-   "src": "/projects/hisabdaar/04-960.webp",
-   "srcSet": "/projects/hisabdaar/04-480.webp 480w, /projects/hisabdaar/04-960.webp 960w, /projects/hisabdaar/04-1400.webp 1400w",
-   "full": "/projects/hisabdaar/04-1400.webp",
-   "width": 1400,
-   "height": 649,
-   "alt": "Hisabdaar: Hisabdaar Settings"
-  }
- ]
+  ]
 }

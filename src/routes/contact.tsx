@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CalendarClock, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
+import { CalendarClock, Globe2, Linkedin, Mail, MessageCircle } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { PageHero } from "@/components/page-hero";
 import { Container } from "@/components/section";
@@ -15,9 +15,9 @@ export const Route = createFileRoute("/contact")({
     typeof search.service === "string" ? { service: search.service } : {},
   head: () =>
     seo({
-      title: "Contact — Discuss a Project",
+      title: "Contact Abdullah Bukhari",
       description:
-        "Tell me about your GoHighLevel, n8n, voice AI, chatbot or custom software project. Send a short message or book a call.",
+        "Tell me about your GoHighLevel, n8n, Make, Zapier, voice AI or custom software project. Send a short message, book a 30-minute call or message me on WhatsApp.",
       path: "/contact",
     }),
   component: ContactPage,
@@ -30,7 +30,7 @@ const nextSteps = [
   },
   {
     title: "Pick a time to talk",
-    body: "You're taken to my calendar to book a 30-minute call — or reply by email if you prefer.",
+    body: "You're taken to my calendar to book a 30-minute call. You can also just reply by email.",
   },
   {
     title: "You get a clear plan",
@@ -44,12 +44,7 @@ function ContactPage() {
     <PageShell>
       <PageHero
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Contact" }]}
-        eyebrow="Contact"
-        title={
-          <>
-            Let's talk about <span className="gradient-text">your project</span>
-          </>
-        }
+        title="Let's talk about your project"
         intro={
           <p>
             A few sentences is enough to start: what you're trying to automate or build, and which
@@ -60,7 +55,7 @@ function ContactPage() {
 
       <section
         aria-label="Contact form and details"
-        className={`${bandClass("light")} pt-12 pb-20 md:pt-16 md:pb-28`}
+        className={`${bandClass("light")} py-16 md:py-24`}
       >
         <Container>
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:gap-12">
@@ -128,9 +123,12 @@ function ContactPage() {
                       </a>
                     </li>
                   )}
-                  <li className="flex items-center gap-3 text-muted-foreground">
-                    <MapPin size={18} className="shrink-0 text-cyan" aria-hidden />
-                    {site.location}
+                  <li className="flex items-start gap-3 text-muted-foreground">
+                    <Globe2 size={18} className="mt-0.5 shrink-0 text-cyan" aria-hidden />
+                    <span>
+                      <span className="text-foreground">{site.country}</span>
+                      <span className="block text-sm">{site.timeZones}</span>
+                    </span>
                   </li>
                 </ul>
               </div>

@@ -13,12 +13,11 @@ export function NotFoundPage() {
   }, []);
   return (
     <PageShell>
-      <section className={`${bandClass("brand")} overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32`}>
-        <div aria-hidden className="aurora" />
+      <section className={`${bandClass("brand")} overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24`}>
         <Container className="max-w-3xl text-center">
           <p className="font-mono text-sm text-eyebrow">Error 404</p>
           <h1 className="mt-4 text-4xl font-extrabold text-foreground sm:text-6xl">
-            This page <span className="gradient-text">doesn't exist.</span>
+            This page doesn't exist.
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg text-muted-foreground">
             The link may be out of date, or the page has moved. Here are the most useful places to
@@ -28,16 +27,16 @@ export function NotFoundPage() {
             <ButtonLink to="/" variant="secondary" size="lg">
               <Home size={16} aria-hidden /> Home
             </ButtonLink>
-            <ButtonLink to="/projects" variant="secondary" size="lg">
+            <ButtonLink to="/projects/" variant="secondary" size="lg">
               <LayoutGrid size={16} aria-hidden /> Case studies
             </ButtonLink>
-            <ButtonLink to="/contact" size="lg">
+            <ButtonLink to="/contact/" size="lg">
               <Mail size={16} aria-hidden /> Contact
             </ButtonLink>
           </div>
           <p className="mt-8 text-sm text-muted-foreground">
             Looking for a service?{" "}
-            <ButtonLink to="/services" variant="ghost" className="text-sm text-cyan">
+            <ButtonLink to="/services/" variant="ghost" className="text-sm text-cyan">
               Browse all services <ArrowRight size={14} aria-hidden />
             </ButtonLink>
           </p>

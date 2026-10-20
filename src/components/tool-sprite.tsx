@@ -9,7 +9,7 @@ function ToolSprite({ scope }: { scope: SpriteScope }) {
     scope.redraw = redraw;
   }, [scope]);
   scope.drawn = new Set(scope.used);
-  const list = tools.filter((t) => t.path && scope.used.has(t.id));
+  const list = tools.filter((t) => (t.path || t.svg) && scope.used.has(t.id));
   if (!list.length) return null;
   return (
     <svg
@@ -19,11 +19,21 @@ function ToolSprite({ scope }: { scope: SpriteScope }) {
       height="0"
       style={{ position: "absolute", width: 0, height: 0, overflow: "hidden" }}
     >
-      {list.map((t) => (
-        <symbol key={t.id} id={toolSymbolId(t.id)} viewBox="0 0 24 24">
-          <path d={t.path} />
-        </symbol>
-      ))}
+      {list.map((t) =>
+        t.svg ? (
+          // Multi-colour marks keep their own fills; the markup is static data from tools.ts.
+          <symbol
+            key={t.id}
+            id={toolSymbolId(t.id)}
+            viewBox={t.svg.viewBox}
+            dangerouslySetInnerHTML={{ __html: t.svg.body }}
+          />
+        ) : (
+          <symbol key={t.id} id={toolSymbolId(t.id)} viewBox="0 0 24 24">
+            <path d={t.path} />
+          </symbol>
+        ),
+      )}
     </svg>
   );
 }

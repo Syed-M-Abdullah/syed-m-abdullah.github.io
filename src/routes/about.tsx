@@ -1,26 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Linkedin, MapPin } from "lucide-react";
+import { ArrowRight, CalendarClock } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Container, Section } from "@/components/section";
+import { MaskLines } from "@/components/reveal-text";
 import { bandClass } from "@/lib/band";
-import { Eyebrow, Chip } from "@/components/badges";
-import { Portrait } from "@/components/portrait";
-import { Principles } from "@/components/process";
-import { ExperienceTimeline } from "@/components/experience";
+import { PortraitStage } from "@/components/portrait";
 import { CtaPanel } from "@/components/cta-panel";
 import { ButtonAnchor, ButtonLink } from "@/components/button-link";
-import { automationStart, careerStart, yearsSince } from "@/data/misc";
-import { toolGroups, toolsInGroup, type ToolGroup } from "@/data/tools";
-import { ToolChip } from "@/components/tech-marquee";
+import { ProjectGrid } from "@/components/projects";
+import { ToolChip } from "@/components/tool-logo";
+import { ExperienceBar } from "@/components/experience-bar";
+import { principles } from "@/data/misc";
+import { projectsFromDifferentTools } from "@/data/projects";
+import { tools } from "@/data/tools";
 import { site } from "@/data/site";
 import { jsonLd, personJsonLd, seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
   head: () => {
     const s = seo({
-      title: "About — AI Automation & .NET Engineer",
-      description: `${site.name} is an AI automation engineer and .NET developer in ${site.locality}, Pakistan, building GoHighLevel, n8n, voice AI and custom software for agencies.`,
+      title: "About Abdullah Bukhari, AI Automation and .NET Engineer",
+      description:
+        "Full-stack .NET engineer and AI automation architect: 6+ years building business software, 3+ years in AI automation. GoHighLevel, n8n, Make, Zapier, voice AI and custom .NET systems.",
       path: "/about",
       type: "profile",
     });
@@ -29,184 +31,148 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
-const problems = [
-  "Integrations between tools that were never designed to talk to each other",
-  "Lead flows where speed matters and nothing can fall through the cracks",
-  "Voice and chat agents that need real business data, not just a script",
-  "Processes that have outgrown spreadsheets and copy-paste",
-];
+/** Three working principles, picked from the full list in data/misc.ts. */
+const howIWork = [
+  "Written scope before work starts",
+  "Built for the unhappy path",
+  "You own everything",
+].map((t) => principles.find((p) => p.title === t)!);
+
+/** The main tools, one compact row (the full list is on the home page). */
+const mainTools = [
+  "gohighlevel",
+  "n8n",
+  "make",
+  "zapier",
+  "vapi",
+  "elevenlabs",
+  "openai",
+  "claude",
+  "aspnetcore",
+  "sqlserver",
+  "react",
+].flatMap((id) => tools.filter((t) => t.id === id));
 
 function AboutPage() {
-  const years = yearsSince(careerStart);
-  const automationYears = yearsSince(automationStart);
+  const work = projectsFromDifferentTools();
   return (
     <PageShell>
-      <section className={`${bandClass("brand")} overflow-hidden pt-28 pb-14 md:pt-36 md:pb-20`}>
-        <div aria-hidden className="aurora" />
+      <section className={`${bandClass("brand")} pt-28 pb-16 md:pt-36 md:pb-20`}>
         <Container>
-          <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "About" }]} />
-          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-16">
-            <div className="relative mx-auto w-full max-w-md lg:order-last">
-              <div
-                aria-hidden
-                className="absolute inset-[6%] -z-10 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--violet)_38%,transparent),transparent),radial-gradient(closest-side_at_35%_65%,color-mix(in_oklab,var(--blue)_36%,transparent),transparent)] blur-2xl"
-              />
-              <svg
-                aria-hidden
-                viewBox="0 0 100 100"
-                className="absolute inset-0 -z-10 h-full w-full"
-              >
-                <circle
-                  cx="50"
-                  cy="52"
-                  r="45"
-                  fill="none"
-                  stroke="color-mix(in oklab, var(--violet) 45%, transparent)"
-                  strokeWidth="0.35"
-                  strokeDasharray="0.6 2.2"
-                  className="ring-spin origin-center"
-                />
-              </svg>
-              <div className="aspect-square [mask-image:linear-gradient(to_bottom,black_80%,transparent)]">
-                <Portrait priority sizes="(min-width: 1024px) 448px, 90vw" />
+          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)] lg:gap-16">
+            <div>
+              <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "About" }]} />
+              <h1 className="text-[2.4rem] font-extrabold leading-[1.05] text-foreground sm:text-5xl md:text-[3.4rem]">
+                {site.name}
+              </h1>
+              <p className="mt-3 font-heading text-lg font-semibold text-eyebrow md:text-xl">
+                {site.title}
+              </p>
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                I build the automation, CRM, voice and chat systems that agencies and service
+                businesses run on, and the custom .NET software behind them when a tool runs out of
+                road. You work with me directly, from the first call to handover.
+              </p>
+              <ExperienceBar className="mt-8 max-w-md" />
+              <div className="mt-8 flex flex-wrap gap-3">
+                <ButtonAnchor href={site.calendly} external size="lg">
+                  <CalendarClock size={16} aria-hidden /> Book a Call
+                </ButtonAnchor>
+                <ButtonLink to="/projects/" variant="secondary" size="lg">
+                  View My Work <ArrowRight size={16} aria-hidden />
+                </ButtonLink>
               </div>
             </div>
-            <div>
-              <Eyebrow className="mb-4">About</Eyebrow>
-              <h1 className="text-[2.25rem] font-extrabold leading-[1.08] text-foreground sm:text-5xl md:text-[3.25rem]">
-                Engineer first. <span className="gradient-text">Automation specialist</span> by
-                focus.
-              </h1>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                I'm {site.name} — an AI automation engineer and full-stack .NET developer based in{" "}
-                {site.locality}, Pakistan, working remotely with agencies and businesses. I build
-                GoHighLevel systems, n8n workflows, voice and chat agents, and the custom software
-                behind them when it's needed.
-              </p>
-              <ul className="mt-8 grid grid-cols-2 gap-3 sm:max-w-md">
-                <li className="glass rounded-2xl p-4">
-                  <div className="font-display text-2xl font-bold text-foreground">
-                    {years}+ yrs
-                  </div>
-                  <div className="text-sm text-muted-foreground">Software development</div>
-                </li>
-                <li className="glass rounded-2xl p-4">
-                  <div className="font-display text-2xl font-bold text-foreground">
-                    {automationYears}+ yrs
-                  </div>
-                  <div className="text-sm text-muted-foreground">AI & automation focus</div>
-                </li>
-              </ul>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <ButtonLink to="/contact" size="lg">
-                  Discuss a Project <ArrowRight size={16} aria-hidden />
-                </ButtonLink>
-                <ButtonAnchor href={site.linkedin} external variant="secondary" size="lg">
-                  <Linkedin size={16} aria-hidden /> LinkedIn
-                </ButtonAnchor>
-              </div>
-              <p className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-                <MapPin size={15} className="text-cyan" aria-hidden /> {site.location}
-              </p>
+            <div className="mx-auto w-full max-w-[400px] lg:mx-0 lg:justify-self-end">
+              <PortraitStage priority sizes="(min-width: 1024px) 400px, 80vw" />
             </div>
           </div>
         </Container>
       </section>
 
-      <Section eyebrow="My path" title="From business software to automation" tone="light">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
-          <div
-            data-reveal="left"
-            className="space-y-5 text-[17px] leading-relaxed text-muted-foreground"
-          >
-            <p>
-              I started in 2020 as a .NET developer, building the software businesses run on: ERP
-              modules, point-of-sale systems, web APIs and mobile apps. That work covered
-              multi-warehouse inventory, financial reporting, payment and shipping integrations, and
-              e-invoicing integrations with Pakistan's FBR and Saudi Arabia's ZATCA.
-            </p>
-            <p>
-              In 2024 I began focusing on AI automation — GoHighLevel builds, n8n workflows, voice
-              agents and chatbots. The tools are newer, but the problems are familiar: data that has
-              to stay consistent across systems, integrations that fail at the worst moment, and
-              people who need to trust what the system does.
-            </p>
-            <p>
-              Today most of my work is with agencies that need dependable implementation for their
-              clients. The engineering background still matters: it's why I treat workflows as
-              software, and why I can build a custom API when a no-code tool runs out of road.
-            </p>
+      {/* The heading sits with the story (not above the whole grid), so it never floats
+          far above the text next to the tall photo. */}
+      <Section tone="light" id="story">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-16">
+          <div className="max-w-2xl">
+            <h2
+              id="story-title"
+              data-reveal="mask-lines"
+              className="text-3xl font-bold text-foreground sm:text-4xl md:text-[2.75rem]"
+            >
+              <MaskLines>How I got here</MaskLines>
+            </h2>
+            <div
+              data-reveal="up"
+              data-delay="200"
+              className="mt-6 space-y-5 text-[17px] leading-relaxed text-muted-foreground"
+            >
+              <p>
+                I started in 2020 as a .NET developer, building the software businesses run on: ERP
+                modules, point-of-sale systems, web APIs and mobile apps, including e-invoicing for
+                Pakistan's FBR and Saudi Arabia's ZATCA.
+              </p>
+              <p>
+                Then I moved into AI automation: GoHighLevel builds, n8n, Make and Zapier workflows,
+                voice agents and chatbots. The problems are familiar. Data has to stay consistent
+                across systems, integrations fail at the worst moment, and people need to trust what
+                the system does.
+              </p>
+              <p>
+                Most of my work now is for agencies and service businesses that need dependable
+                implementation. The engineering background is why I treat workflows as software, and
+                why I can build a custom API when a no-code tool runs out of road.
+              </p>
+            </div>
           </div>
-          <div
-            data-reveal="right"
-            data-delay="200"
-            className="panel-border h-fit rounded-3xl p-6 sm:p-7"
-          >
-            <h3 className="text-lg font-bold text-foreground">Problems I like solving</h3>
-            <ul className="mt-4 space-y-3">
-              {problems.map((p) => (
-                <li key={p} className="flex gap-3 text-[15px] leading-relaxed text-foreground">
-                  <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" />
-                  {p}
-                </li>
-              ))}
-            </ul>
+          <div data-reveal="right" data-delay="200" className="mx-auto w-full max-w-[320px]">
+            <PortraitStage pose="standing" sizes="(min-width: 1024px) 320px, 70vw" />
           </div>
         </div>
       </Section>
 
-      <Section eyebrow="Engineering values" title="How I approach every build" tone="sage">
-        <Principles />
+      <Section title="How I work" tone="sage">
+        <ol className="grid gap-x-10 gap-y-8 md:grid-cols-3">
+          {howIWork.map((p, i) => (
+            <li
+              key={p.title}
+              data-reveal="up"
+              style={{ "--i": i } as React.CSSProperties}
+              className="border-t-2 border-[color-mix(in_oklab,var(--eyebrow)_45%,transparent)] pt-5"
+            >
+              <span className="font-mono text-xs text-subtle">0{i + 1}</span>
+              <h3 className="mt-1 text-lg font-bold text-foreground">{p.title}</h3>
+              <p className="mt-1.5 text-[15px] leading-relaxed text-muted-foreground">{p.body}</p>
+            </li>
+          ))}
+        </ol>
       </Section>
 
       <Section
-        eyebrow="Toolkit"
-        title="Tools I work with"
-        intro="Grouped by what they're used for — not a logo wall."
+        title="Selected work"
         tone="light"
+        action={
+          <ButtonLink to="/projects/" variant="secondary">
+            All projects <ArrowRight size={15} aria-hidden />
+          </ButtonLink>
+        }
       >
-        <div className="grid gap-4 lg:grid-cols-2">
-          {(Object.keys(toolGroups) as ToolGroup[]).map((g, i) => (
-            <div
-              key={g}
-              data-reveal={i % 2 ? "right" : "left"}
-              className="panel-border rounded-3xl p-6"
-            >
-              <h3 className="font-heading text-base font-semibold text-foreground">
-                {toolGroups[g]}
-              </h3>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {toolsInGroup(g).map((t) => (
-                  <li key={t.id}>
-                    <ToolChip tool={t} size="sm" />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <ProjectGrid projects={work} />
+        <div data-reveal="up" className="mt-12 border-t border-border pt-8">
+          <h3 className="font-heading text-[15px] font-semibold text-foreground">
+            Tools I use most
+          </h3>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {mainTools.map((t) => (
+              <li key={t.id}>
+                <ToolChip tool={t} size="sm" />
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
 
-      <Section eyebrow="Experience" title="Where I've worked" tone="sage">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-          <div data-reveal="left">
-            <ExperienceTimeline />
-          </div>
-          <div data-reveal="right" data-delay="200" className="glass h-fit rounded-3xl p-6 sm:p-8">
-            <h3 className="text-lg font-bold text-foreground">Working with me</h3>
-            <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
-              You work directly with me from the first call to handover — no account managers in
-              between. I'm comfortable working inside an agency's process and brand, or directly
-              with a business owner.
-            </p>
-            <ButtonLink to="/process" variant="secondary" className="mt-6">
-              See how I work <ArrowRight size={15} aria-hidden />
-            </ButtonLink>
-          </div>
-        </div>
-      </Section>
-
-      <CtaPanel />
+      <CtaPanel exclude={work.map((p) => p.slug)} />
     </PageShell>
   );
 }

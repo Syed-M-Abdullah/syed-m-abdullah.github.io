@@ -1,54 +1,43 @@
 {
- "slug": "linkedin-lead-enrichment",
- "tags": [
-  "LinkedIn Ops",
-  "Global"
- ],
- "overview": [
-  "Three-stage enrichment that turns LinkedIn profile URLs into a sheet of direct email addresses."
- ],
- "sections": [
-  {
-   "heading": "The challenge",
-   "blocks": [
+  "slug": "linkedin-lead-enrichment",
+  "tags": ["LinkedIn Ops", "Global"],
+  "overview": [
+    "Three-stage enrichment that turns LinkedIn profile URLs into a sheet of direct email addresses."
+  ],
+  "sections": [
     {
-     "p": "Enrichment meant copy-pasting between tools, emails were often missing, and nothing was tracked."
-    }
-   ]
-  },
-  {
-   "heading": "Solution & architecture",
-   "blocks": [
+      "heading": "The challenge",
+      "blocks": [
+        {
+          "p": "Enrichment meant copy-pasting between tools, emails were often missing, and nothing was tracked."
+        }
+      ]
+    },
     {
-     "p": "The workflow collects LinkedIn URLs, enriches them through the SalesQL API, keeps only direct (non-generic) email addresses and stores the results in Google Sheets."
-    }
-   ]
-  },
-  {
-   "heading": "Workflow",
-   "blocks": [
+      "heading": "Solution & architecture",
+      "blocks": [
+        {
+          "p": "The workflow collects LinkedIn URLs, enriches them through the SalesQL API, keeps only direct (non-generic) email addresses and stores the results in Google Sheets."
+        }
+      ]
+    },
     {
-     "list": [
-      "Collect URLs",
-      "SalesQL enrich",
-      "Filter direct emails",
-      "Store in Sheets"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Key facts",
-   "blocks": [
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "list": ["Collect URLs", "SalesQL enrich", "Filter direct emails", "Store in Sheets"]
+        }
+      ]
+    },
     {
-     "list": [
-      "3-stage — Enrichment",
-      "Direct — Emails only"
-     ]
+      "heading": "Key facts",
+      "blocks": [
+        {
+          "list": ["3-stage, Enrichment", "Direct, Emails only"]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [],
- "images": []
+  ],
+  "result": [],
+  "images": []
 }

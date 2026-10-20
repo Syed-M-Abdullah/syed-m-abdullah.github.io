@@ -1,0 +1,19 @@
+{
+  "slug": "lead-generation-workflow",
+  "tags": [],
+  "overview": [
+    "Starts from a lead form submission. It creates the contact, sends a welcome email, then a value email and an SMS follow-up, and two days later an offer or case study email. It checks whether the lead engaged before the final step."
+  ],
+  "sections": [],
+  "result": [],
+  "images": [
+    {
+      "src": "/projects/lead-generation-workflow/01-592.webp",
+      "srcSet": "/projects/lead-generation-workflow/01-480.webp 480w, /projects/lead-generation-workflow/01-592.webp 592w",
+      "full": "/projects/lead-generation-workflow/01-592.webp",
+      "width": 592,
+      "height": 806,
+      "alt": "Lead Generation Workflow: Lead Generation"
+    }
+  ]
+}

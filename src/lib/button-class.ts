@@ -9,9 +9,8 @@ const base =
 const variants: Record<ButtonVariant, string> = {
   // One primary treatment across the whole site.
   primary:
-    "text-white bg-[linear-gradient(110deg,#2563eb_0%,#4f46e5_55%,#7c3aed_100%)] shadow-[0_10px_30px_-12px_rgba(79,70,229,0.75),inset_0_1px_0_rgba(255,255,255,0.22)] hover:brightness-110 hover:shadow-[0_14px_36px_-12px_rgba(79,70,229,0.9),inset_0_1px_0_rgba(255,255,255,0.22)]",
-  secondary:
-    "border border-border bg-panel/60 text-foreground backdrop-blur hover:border-cyan/60 hover:bg-panel",
+    "text-white bg-[#2563eb] shadow-[0_8px_20px_-12px_rgba(37,99,235,0.9)] hover:bg-[#1d4ed8]",
+  secondary: "border border-border bg-panel text-foreground hover:border-cyan/60",
   ghost: "text-foreground hover:text-cyan",
 };
 

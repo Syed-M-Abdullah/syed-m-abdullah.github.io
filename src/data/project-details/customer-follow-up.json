@@ -1,0 +1,19 @@
+{
+  "slug": "customer-follow-up",
+  "tags": [],
+  "overview": [
+    "A customer follow-up sequence of email and SMS messages, with waits between the steps."
+  ],
+  "sections": [],
+  "result": [],
+  "images": [
+    {
+      "src": "/projects/customer-follow-up/01-960.webp",
+      "srcSet": "/projects/customer-follow-up/01-480.webp 480w, /projects/customer-follow-up/01-960.webp 960w, /projects/customer-follow-up/01-1556.webp 1556w",
+      "full": "/projects/customer-follow-up/01-1556.webp",
+      "width": 1556,
+      "height": 800,
+      "alt": "Customer Follow-Up: Customer Follow-Up"
+    }
+  ]
+}

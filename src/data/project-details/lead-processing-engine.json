@@ -1,55 +1,43 @@
 {
- "slug": "lead-processing-engine",
- "tags": [
-  "B2B Sales",
-  "Global"
- ],
- "overview": [
-  "n8n pipeline that verifies, classifies, researches and personalises large lead lists in batch."
- ],
- "sections": [
-  {
-   "heading": "The challenge",
-   "blocks": [
+  "slug": "lead-processing-engine",
+  "tags": ["B2B Sales", "Global"],
+  "overview": [
+    "n8n pipeline that verifies, classifies, researches and personalises large lead lists in batch."
+  ],
+  "sections": [
     {
-     "p": "Cleaning, verifying and personalising large monthly lead lists took the team days of manual work."
-    }
-   ]
-  },
-  {
-   "heading": "Solution & architecture",
-   "blocks": [
+      "heading": "The challenge",
+      "blocks": [
+        {
+          "p": "Cleaning, verifying and personalising large monthly lead lists took the team days of manual work."
+        }
+      ]
+    },
     {
-     "p": "The workflow verifies email addresses with MillionVerifier, classifies each lead's industry, runs AI research with OpenAI and writes personalised copy for every lead, exporting the results to Google Sheets. Four processing modes cover different list types."
-    }
-   ]
-  },
-  {
-   "heading": "Workflow",
-   "blocks": [
+      "heading": "Solution & architecture",
+      "blocks": [
+        {
+          "p": "The workflow verifies email addresses with MillionVerifier, classifies each lead's industry, runs AI research with OpenAI and writes personalised copy for every lead, exporting the results to Google Sheets. Four processing modes cover different list types."
+        }
+      ]
+    },
     {
-     "list": [
-      "Verify emails",
-      "Classify industry",
-      "AI research",
-      "Personalise",
-      "Export"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Key facts",
-   "blocks": [
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "list": ["Verify emails", "Classify industry", "AI research", "Personalise", "Export"]
+        }
+      ]
+    },
     {
-     "list": [
-      "4 — Processing modes",
-      "Per lead — Personalised copy"
-     ]
+      "heading": "Key facts",
+      "blocks": [
+        {
+          "list": ["4, Processing modes", "Per lead, Personalised copy"]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [],
- "images": []
+  ],
+  "result": [],
+  "images": []
 }

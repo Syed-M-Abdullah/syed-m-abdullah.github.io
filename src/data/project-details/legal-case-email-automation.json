@@ -1,71 +1,65 @@
 {
- "slug": "legal-case-email-automation",
- "tags": [
-  "Zapier",
-  "Webhooks",
-  "Paths",
-  "Gmail",
-  "Email Automation"
- ],
- "overview": [
-  "Built an automated legal case email workflow using Zapier to receive case data, evaluate different conditions, and send the appropriate email based on the case stage."
- ],
- "sections": [
-  {
-   "heading": "Workflow",
-   "blocks": [
+  "slug": "legal-case-email-automation",
+  "tags": ["Zapier", "Webhooks", "Paths", "Gmail", "Email Automation"],
+  "overview": [
+    "Built an automated legal case email workflow using Zapier to receive case data, evaluate different conditions, and send the appropriate email based on the case stage."
+  ],
+  "sections": [
     {
-     "p": "The automation:"
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "p": "The automation:"
+        },
+        {
+          "list": [
+            "Receives data through a webhook",
+            "Checks the incoming case information",
+            "Routes the data through different paths",
+            "Applies conditions for each case stage",
+            "Sends the relevant email through Gmail"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Receives data through a webhook",
-      "Checks the incoming case information",
-      "Routes the data through different paths",
-      "Applies conditions for each case stage",
-      "Sends the relevant email through Gmail"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Automated Case Stages",
-   "blocks": [
-    {
-     "p": "The workflow handles different case situations including:"
+      "heading": "Automated Case Stages",
+      "blocks": [
+        {
+          "p": "The workflow handles different case situations including:"
+        },
+        {
+          "list": [
+            "Draft Demand",
+            "Demand Sent",
+            "Negotiations",
+            "Disbursement",
+            "No Matches",
+            "Review for Litigation"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Draft Demand",
-      "Demand Sent",
-      "Negotiations",
-      "Disbursement",
-      "No Matches",
-      "Review for Litigation"
-     ]
+      "heading": "Email Automation",
+      "blocks": [
+        {
+          "p": "Each path contains its own conditions and email action, ensuring the appropriate message is sent based on the case information."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Email Automation",
-   "blocks": [
+  ],
+  "result": [
+    "A structured legal case communication workflow that automatically receives case information, determines the appropriate stage, and sends the corresponding email without requiring manual routing."
+  ],
+  "images": [
     {
-     "p": "Each path contains its own conditions and email action, ensuring the appropriate message is sent based on the case information."
+      "src": "/projects/legal-case-email-automation/01-960.webp",
+      "srcSet": "/projects/legal-case-email-automation/01-480.webp 480w, /projects/legal-case-email-automation/01-960.webp 960w, /projects/legal-case-email-automation/01-1600.webp 1600w",
+      "full": "/projects/legal-case-email-automation/01-1600.webp",
+      "width": 1600,
+      "height": 736,
+      "alt": "Legal Case Email Automation, screenshot 1"
     }
-   ]
-  }
- ],
- "result": [
-  "A structured legal case communication workflow that automatically receives case information, determines the appropriate stage, and sends the corresponding email without requiring manual routing."
- ],
- "images": [
-  {
-   "src": "/projects/legal-case-email-automation/01-960.webp",
-   "srcSet": "/projects/legal-case-email-automation/01-480.webp 480w, /projects/legal-case-email-automation/01-960.webp 960w, /projects/legal-case-email-automation/01-1600.webp 1600w",
-   "full": "/projects/legal-case-email-automation/01-1600.webp",
-   "width": 1600,
-   "height": 736,
-   "alt": "Legal Case Email Automation, screenshot 1"
-  }
- ]
+  ]
 }

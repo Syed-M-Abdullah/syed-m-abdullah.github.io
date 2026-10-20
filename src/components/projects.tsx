@@ -12,7 +12,7 @@ import {
 import { tools } from "@/data/tools";
 import { cn } from "@/lib/utils";
 import { withViewTransition } from "@/lib/view-transition";
-import { ToolLogo } from "./tech-marquee";
+import { ToolLogo } from "./tool-logo";
 
 /** Brand tint per tool (badges, cover fallbacks). */
 const toolTint: Record<ProjectTool, string> = {
@@ -160,7 +160,7 @@ export function ProjectCard({
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <H className="text-lg font-bold leading-snug text-foreground sm:text-xl">
           <Link
-            to="/projects/$slug"
+            to="/projects/$slug/"
             params={{ slug: project.slug }}
             className="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none"
           >

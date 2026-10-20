@@ -1,126 +1,123 @@
 {
- "slug": "barber",
- "tags": [
-  "GoHighLevel",
-  "Synthflow",
-  "Voice Agents",
-  "CRM",
-  "Inbound & Outbound Calling",
-  "Appointment Booking"
- ],
- "overview": [
-  "Built a GoHighLevel automation system for a barber business to manage inbound and outbound calls, appointment bookings, post call data, and customer communication.",
-  "The setup connects voice agents with GoHighLevel workflows so call activity and appointment information are handled directly through the CRM."
- ],
- "sections": [
-  {
-   "heading": "Voice Agent Setup",
-   "blocks": [
+  "slug": "barber",
+  "tags": [
+    "GoHighLevel",
+    "Synthflow",
+    "Voice Agents",
+    "CRM",
+    "Inbound & Outbound Calling",
+    "Appointment Booking"
+  ],
+  "overview": [
+    "Built a GoHighLevel automation system for a barber business to manage inbound and outbound calls, appointment bookings, post call data, and customer communication.",
+    "The setup connects voice agents with GoHighLevel workflows so call activity and appointment information are handled directly through the CRM."
+  ],
+  "sections": [
     {
-     "p": "Configured dedicated voice agents for the Barber subaccount:"
+      "heading": "Voice Agent Setup",
+      "blocks": [
+        {
+          "p": "Configured dedicated voice agents for the Barber subaccount:"
+        },
+        {
+          "list": ["Barber Inbound", "Barber Outbound"]
+        },
+        {
+          "p": "The agents are connected with the relevant inbound and outbound workflows."
+        }
+      ]
     },
     {
-     "list": [
-      "Barber Inbound",
-      "Barber Outbound"
-     ]
+      "heading": "Inbound Automation",
+      "blocks": [
+        {
+          "p": "The inbound setup includes:"
+        },
+        {
+          "list": [
+            "Inbound agent handling",
+            "Appointment booking",
+            "Post inbound data processing",
+            "CRM updates"
+          ]
+        }
+      ]
     },
     {
-     "p": "The agents are connected with the relevant inbound and outbound workflows."
+      "heading": "Outbound Automation",
+      "blocks": [
+        {
+          "p": "The outbound setup includes:"
+        },
+        {
+          "list": [
+            "Initial outbound calls",
+            "Appointment booking",
+            "Post outbound call data",
+            "CRM updates"
+          ]
+        },
+        {
+          "p": "This keeps the outbound calling process organized from the initial call through the final outcome."
+        }
+      ]
+    },
+    {
+      "heading": "Appointment & Communication",
+      "blocks": [
+        {
+          "p": "Appointment activity is connected to the CRM so customer and booking information can be tracked in one place."
+        },
+        {
+          "p": "The system also supports automated appointment related communication through GoHighLevel."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Inbound Automation",
-   "blocks": [
+  ],
+  "result": [
+    "A centralized barber communication system connecting inbound calls, outbound calls, appointment booking, post call processing, and CRM updates in one setup.",
+    "The automation reduces manual calling and follow up work while keeping customer and appointment activity organized inside GoHighLevel."
+  ],
+  "images": [
     {
-     "p": "The inbound setup includes:"
+      "src": "/projects/barber/01-960.webp",
+      "srcSet": "/projects/barber/01-480.webp 480w, /projects/barber/01-960.webp 960w, /projects/barber/01-1600.webp 1600w",
+      "full": "/projects/barber/01-1600.webp",
+      "width": 1600,
+      "height": 827,
+      "alt": "Barber: Barber Synthflow"
     },
     {
-     "list": [
-      "Inbound agent handling",
-      "Appointment booking",
-      "Post inbound data processing",
-      "CRM updates"
-     ]
+      "src": "/projects/barber/02-960.webp",
+      "srcSet": "/projects/barber/02-480.webp 480w, /projects/barber/02-960.webp 960w, /projects/barber/02-1600.webp 1600w",
+      "full": "/projects/barber/02-1600.webp",
+      "width": 1600,
+      "height": 848,
+      "alt": "Barber: Barber Agents"
+    },
+    {
+      "src": "/projects/barber/03-960.webp",
+      "srcSet": "/projects/barber/03-480.webp 480w, /projects/barber/03-960.webp 960w, /projects/barber/03-1600.webp 1600w",
+      "full": "/projects/barber/03-1600.webp",
+      "width": 1600,
+      "height": 846,
+      "alt": "Barber: Barber Inbound"
+    },
+    {
+      "src": "/projects/barber/04-960.webp",
+      "srcSet": "/projects/barber/04-480.webp 480w, /projects/barber/04-960.webp 960w, /projects/barber/04-1600.webp 1600w",
+      "full": "/projects/barber/04-1600.webp",
+      "width": 1600,
+      "height": 850,
+      "alt": "Barber: Cafe Outbound"
+    },
+    {
+      "src": "/projects/barber/05-960.webp",
+      "srcSet": "/projects/barber/05-480.webp 480w, /projects/barber/05-960.webp 960w, /projects/barber/05-1600.webp 1600w",
+      "full": "/projects/barber/05-1600.webp",
+      "width": 1600,
+      "height": 851,
+      "alt": "Barber: Cafe Subaccount"
     }
-   ]
-  },
-  {
-   "heading": "Outbound Automation",
-   "blocks": [
-    {
-     "p": "The outbound setup includes:"
-    },
-    {
-     "list": [
-      "Initial outbound calls",
-      "Appointment booking",
-      "Post outbound call data",
-      "CRM updates"
-     ]
-    },
-    {
-     "p": "This keeps the outbound calling process organized from the initial call through the final outcome."
-    }
-   ]
-  },
-  {
-   "heading": "Appointment & Communication",
-   "blocks": [
-    {
-     "p": "Appointment activity is connected to the CRM so customer and booking information can be tracked in one place."
-    },
-    {
-     "p": "The system also supports automated appointment related communication through GoHighLevel."
-    }
-   ]
-  }
- ],
- "result": [
-  "A centralized barber communication system connecting inbound calls, outbound calls, appointment booking, post call processing, and CRM updates in one setup.",
-  "The automation reduces manual calling and follow up work while keeping customer and appointment activity organized inside GoHighLevel."
- ],
- "images": [
-  {
-   "src": "/projects/barber/01-960.webp",
-   "srcSet": "/projects/barber/01-480.webp 480w, /projects/barber/01-960.webp 960w, /projects/barber/01-1600.webp 1600w",
-   "full": "/projects/barber/01-1600.webp",
-   "width": 1600,
-   "height": 827,
-   "alt": "Barber: Barber Synthflow"
-  },
-  {
-   "src": "/projects/barber/02-960.webp",
-   "srcSet": "/projects/barber/02-480.webp 480w, /projects/barber/02-960.webp 960w, /projects/barber/02-1600.webp 1600w",
-   "full": "/projects/barber/02-1600.webp",
-   "width": 1600,
-   "height": 848,
-   "alt": "Barber: Barber Agents"
-  },
-  {
-   "src": "/projects/barber/03-960.webp",
-   "srcSet": "/projects/barber/03-480.webp 480w, /projects/barber/03-960.webp 960w, /projects/barber/03-1600.webp 1600w",
-   "full": "/projects/barber/03-1600.webp",
-   "width": 1600,
-   "height": 846,
-   "alt": "Barber: Barber Inbound"
-  },
-  {
-   "src": "/projects/barber/04-960.webp",
-   "srcSet": "/projects/barber/04-480.webp 480w, /projects/barber/04-960.webp 960w, /projects/barber/04-1600.webp 1600w",
-   "full": "/projects/barber/04-1600.webp",
-   "width": 1600,
-   "height": 850,
-   "alt": "Barber: Cafe Outbound"
-  },
-  {
-   "src": "/projects/barber/05-960.webp",
-   "srcSet": "/projects/barber/05-480.webp 480w, /projects/barber/05-960.webp 960w, /projects/barber/05-1600.webp 1600w",
-   "full": "/projects/barber/05-1600.webp",
-   "width": 1600,
-   "height": 851,
-   "alt": "Barber: Cafe Subaccount"
-  }
- ]
+  ]
 }

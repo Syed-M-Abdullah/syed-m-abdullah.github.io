@@ -498,21 +498,16 @@ export function VoiceSamplesSection({ tone }: { tone?: Tone }) {
       id="voice-demos"
       aria-labelledby="voice-demos-title"
       className={cn(
-        "cv-auto relative scroll-mt-24 py-20 [contain-intrinsic-size:auto_700px] md:py-24",
+        "cv-auto relative scroll-mt-24 py-16 [contain-intrinsic-size:auto_700px] md:py-24",
         tone && bandClass(tone),
       )}
     >
       <Container>
         <SectionHeading
           id="voice-demos-title"
-          eyebrow="Hear them live"
           align="center"
-          title={
-            <>
-              Voice agents that <span className="gradient-text">sound human</span>
-            </>
-          }
-          intro="Recordings of voice agents I've built, in real conversation. Press play — one plays at a time, and nothing downloads until you do."
+          title={<>Voice agents that sound human</>}
+          intro="Recordings of voice agents I've built, in real conversation. Press play. One plays at a time, and nothing downloads until you do."
         />
         <LazyMount className="min-h-[440px] md:min-h-[270px]">
           <VoiceSamples />
@@ -533,7 +528,7 @@ export function VoiceSamplesSection({ tone }: { tone?: Tone }) {
               <CalendarClock size={15} aria-hidden /> Book a call
             </a>
             <Link
-              to="/services/$slug"
+              to="/services/$slug/"
               params={{ slug: "voice-ai" }}
               className={buttonClass("secondary", "md")}
             >

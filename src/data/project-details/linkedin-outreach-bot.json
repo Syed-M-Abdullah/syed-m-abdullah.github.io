@@ -1,54 +1,43 @@
 {
- "slug": "linkedin-outreach-bot",
- "tags": [
-  "Growth Ops",
-  "Global"
- ],
- "overview": [
-  "Automates connection requests, scores replies with AI and triggers the right CRM follow-up."
- ],
- "sections": [
-  {
-   "heading": "The challenge",
-   "blocks": [
+  "slug": "linkedin-outreach-bot",
+  "tags": ["Growth Ops", "Global"],
+  "overview": [
+    "Automates connection requests, scores replies with AI and triggers the right CRM follow-up."
+  ],
+  "sections": [
     {
-     "p": "The team sent 30–40 connection requests a day by hand, with no way of prioritising replies."
-    }
-   ]
-  },
-  {
-   "heading": "Solution & architecture",
-   "blocks": [
+      "heading": "The challenge",
+      "blocks": [
+        {
+          "p": "The team sent 30–40 connection requests a day by hand, with no way of prioritising replies."
+        }
+      ]
+    },
     {
-     "p": "The workflow sends connection requests, scores each reply with OpenAI, syncs the graded lead to Zoho CRM and triggers the matching follow-up sequence."
-    }
-   ]
-  },
-  {
-   "heading": "Workflow",
-   "blocks": [
+      "heading": "Solution & architecture",
+      "blocks": [
+        {
+          "p": "The workflow sends connection requests, scores each reply with OpenAI, syncs the graded lead to Zoho CRM and triggers the matching follow-up sequence."
+        }
+      ]
+    },
     {
-     "list": [
-      "Auto-connect",
-      "AI scores reply",
-      "Sync to CRM",
-      "Trigger follow-up"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Key facts",
-   "blocks": [
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "list": ["Auto-connect", "AI scores reply", "Sync to CRM", "Trigger follow-up"]
+        }
+      ]
+    },
     {
-     "list": [
-      "AI — Reply scoring",
-      "Auto — CRM follow-up trigger"
-     ]
+      "heading": "Key facts",
+      "blocks": [
+        {
+          "list": ["AI, Reply scoring", "Auto, CRM follow-up trigger"]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [],
- "images": []
+  ],
+  "result": [],
+  "images": []
 }

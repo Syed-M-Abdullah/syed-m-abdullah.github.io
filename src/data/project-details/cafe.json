@@ -1,140 +1,130 @@
 {
- "slug": "cafe",
- "tags": [
-  "GoHighLevel",
-  "Synthflow",
-  "Voice Agents",
-  "CRM",
-  "Appointment Booking",
-  "Email"
- ],
- "overview": [
-  "Built a GoHighLevel automation system for a cafe to manage inbound and outbound customer calls, appointment booking, follow ups, and customer communication.",
-  "The setup connects Synthflow voice agents with GoHighLevel workflows to keep the complete process organized inside the CRM."
- ],
- "sections": [
-  {
-   "heading": "Subaccount Setup",
-   "blocks": [
+  "slug": "cafe",
+  "tags": ["GoHighLevel", "Synthflow", "Voice Agents", "CRM", "Appointment Booking", "Email"],
+  "overview": [
+    "Built a GoHighLevel automation system for a cafe to manage inbound and outbound customer calls, appointment booking, follow ups, and customer communication.",
+    "The setup connects Synthflow voice agents with GoHighLevel workflows to keep the complete process organized inside the CRM."
+  ],
+  "sections": [
     {
-     "p": "A dedicated Cafe subaccount was configured with separate areas for:"
+      "heading": "Subaccount Setup",
+      "blocks": [
+        {
+          "p": "A dedicated Cafe subaccount was configured with separate areas for:"
+        },
+        {
+          "list": [
+            "Inbound calls",
+            "Outbound calls",
+            "Appointment booking",
+            "Post call data",
+            "Customer communication"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Inbound calls",
-      "Outbound calls",
-      "Appointment booking",
-      "Post call data",
-      "Customer communication"
-     ]
+      "heading": "Voice Agents",
+      "blocks": [
+        {
+          "p": "Two separate Synthflow agents were configured:"
+        },
+        {
+          "list": ["Cafe Inbound Agent", "Cafe Outbound Agent"]
+        },
+        {
+          "p": "The agents handle incoming and outgoing customer conversations and connect the results with the GoHighLevel CRM."
+        }
+      ]
+    },
+    {
+      "heading": "Inbound Automation",
+      "blocks": [
+        {
+          "p": "The inbound workflow includes:"
+        },
+        {
+          "list": [
+            "Incoming call handling",
+            "Appointment booking",
+            "Post inbound data processing",
+            "CRM updates"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Outbound Automation",
+      "blocks": [
+        {
+          "p": "The outbound workflow includes:"
+        },
+        {
+          "list": [
+            "Initial outbound calls",
+            "Appointment booking",
+            "Post outbound call data",
+            "CRM updates"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Appointment & Email",
+      "blocks": [
+        {
+          "p": "Once an appointment is booked, the customer record is updated and the required confirmation email is sent."
+        },
+        {
+          "p": "The confirmation includes the appointment details and provides the customer with the relevant meeting information."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Voice Agents",
-   "blocks": [
+  ],
+  "result": [
+    "A centralized cafe communication system connecting inbound calls, outbound calls, appointment booking, post call processing, and customer emails inside GoHighLevel.",
+    "The setup reduces manual handling and keeps customer interactions and appointments organized in one place."
+  ],
+  "images": [
     {
-     "p": "Two separate Synthflow agents were configured:"
+      "src": "/projects/cafe/01-960.webp",
+      "srcSet": "/projects/cafe/01-480.webp 480w, /projects/cafe/01-960.webp 960w, /projects/cafe/01-1600.webp 1600w",
+      "full": "/projects/cafe/01-1600.webp",
+      "width": 1600,
+      "height": 789,
+      "alt": "Cafe: Cafe Agents"
     },
     {
-     "list": [
-      "Cafe Inbound Agent",
-      "Cafe Outbound Agent"
-     ]
+      "src": "/projects/cafe/02-960.webp",
+      "srcSet": "/projects/cafe/02-480.webp 480w, /projects/cafe/02-960.webp 960w, /projects/cafe/02-1600.webp 1600w",
+      "full": "/projects/cafe/02-1600.webp",
+      "width": 1600,
+      "height": 790,
+      "alt": "Cafe: Cafe Inbound"
     },
     {
-     "p": "The agents handle incoming and outgoing customer conversations and connect the results with the GoHighLevel CRM."
+      "src": "/projects/cafe/03-960.webp",
+      "srcSet": "/projects/cafe/03-480.webp 480w, /projects/cafe/03-960.webp 960w, /projects/cafe/03-1600.webp 1600w",
+      "full": "/projects/cafe/03-1600.webp",
+      "width": 1600,
+      "height": 790,
+      "alt": "Cafe: Cafe Outbound"
+    },
+    {
+      "src": "/projects/cafe/04-960.webp",
+      "srcSet": "/projects/cafe/04-480.webp 480w, /projects/cafe/04-960.webp 960w, /projects/cafe/04-1600.webp 1600w",
+      "full": "/projects/cafe/04-1600.webp",
+      "width": 1600,
+      "height": 796,
+      "alt": "Cafe: Cafe Subaccount"
+    },
+    {
+      "src": "/projects/cafe/05-960.webp",
+      "srcSet": "/projects/cafe/05-480.webp 480w, /projects/cafe/05-960.webp 960w, /projects/cafe/05-1600.webp 1600w",
+      "full": "/projects/cafe/05-1600.webp",
+      "width": 1600,
+      "height": 828,
+      "alt": "Cafe: Cafe Synthflow"
     }
-   ]
-  },
-  {
-   "heading": "Inbound Automation",
-   "blocks": [
-    {
-     "p": "The inbound workflow includes:"
-    },
-    {
-     "list": [
-      "Incoming call handling",
-      "Appointment booking",
-      "Post inbound data processing",
-      "CRM updates"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Outbound Automation",
-   "blocks": [
-    {
-     "p": "The outbound workflow includes:"
-    },
-    {
-     "list": [
-      "Initial outbound calls",
-      "Appointment booking",
-      "Post outbound call data",
-      "CRM updates"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Appointment & Email",
-   "blocks": [
-    {
-     "p": "Once an appointment is booked, the customer record is updated and the required confirmation email is sent."
-    },
-    {
-     "p": "The confirmation includes the appointment details and provides the customer with the relevant meeting information."
-    }
-   ]
-  }
- ],
- "result": [
-  "A centralized cafe communication system connecting inbound calls, outbound calls, appointment booking, post call processing, and customer emails inside GoHighLevel.",
-  "The setup reduces manual handling and keeps customer interactions and appointments organized in one place."
- ],
- "images": [
-  {
-   "src": "/projects/cafe/01-960.webp",
-   "srcSet": "/projects/cafe/01-480.webp 480w, /projects/cafe/01-960.webp 960w, /projects/cafe/01-1600.webp 1600w",
-   "full": "/projects/cafe/01-1600.webp",
-   "width": 1600,
-   "height": 789,
-   "alt": "Cafe: Cafe Agents"
-  },
-  {
-   "src": "/projects/cafe/02-960.webp",
-   "srcSet": "/projects/cafe/02-480.webp 480w, /projects/cafe/02-960.webp 960w, /projects/cafe/02-1600.webp 1600w",
-   "full": "/projects/cafe/02-1600.webp",
-   "width": 1600,
-   "height": 790,
-   "alt": "Cafe: Cafe Inbound"
-  },
-  {
-   "src": "/projects/cafe/03-960.webp",
-   "srcSet": "/projects/cafe/03-480.webp 480w, /projects/cafe/03-960.webp 960w, /projects/cafe/03-1600.webp 1600w",
-   "full": "/projects/cafe/03-1600.webp",
-   "width": 1600,
-   "height": 790,
-   "alt": "Cafe: Cafe Outbound"
-  },
-  {
-   "src": "/projects/cafe/04-960.webp",
-   "srcSet": "/projects/cafe/04-480.webp 480w, /projects/cafe/04-960.webp 960w, /projects/cafe/04-1600.webp 1600w",
-   "full": "/projects/cafe/04-1600.webp",
-   "width": 1600,
-   "height": 796,
-   "alt": "Cafe: Cafe Subaccount"
-  },
-  {
-   "src": "/projects/cafe/05-960.webp",
-   "srcSet": "/projects/cafe/05-480.webp 480w, /projects/cafe/05-960.webp 960w, /projects/cafe/05-1600.webp 1600w",
-   "full": "/projects/cafe/05-1600.webp",
-   "width": 1600,
-   "height": 828,
-   "alt": "Cafe: Cafe Synthflow"
-  }
- ]
+  ]
 }

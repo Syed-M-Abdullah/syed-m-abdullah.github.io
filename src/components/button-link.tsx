@@ -1,17 +1,19 @@
-import { Link, type LinkComponentProps } from "@tanstack/react-router";
+import type { AnchorHTMLAttributes, Ref } from "react";
+import { createLink } from "@tanstack/react-router";
 import { buttonClass, type ButtonSize, type ButtonVariant } from "@/lib/button-class";
 
-type ButtonLinkProps = LinkComponentProps<"a"> & { variant?: ButtonVariant; size?: ButtonSize };
+type StyledAnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  ref?: Ref<HTMLAnchorElement>;
+};
 
-/** Router link styled as a button. */
-export function ButtonLink({ variant, size, className, ...props }: ButtonLinkProps) {
-  return (
-    <Link
-      {...props}
-      className={buttonClass(variant, size, typeof className === "string" ? className : undefined)}
-    />
-  );
+function StyledAnchor({ variant, size, className, ...props }: StyledAnchorProps) {
+  return <a {...props} className={buttonClass(variant, size, className)} />;
 }
+
+/** Router link styled as a button (typed `to`, `params` and `search`, like <Link>). */
+export const ButtonLink = createLink(StyledAnchor);
 
 /** External / mailto link styled as a button. */
 export function ButtonAnchor({

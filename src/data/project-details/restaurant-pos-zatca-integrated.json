@@ -1,182 +1,182 @@
 {
- "slug": "restaurant-pos-zatca-integrated",
- "tags": [
-  "Point of Sale",
-  "Order Management",
-  "Table Management",
-  "Billing",
-  "Receipts",
-  "Reports"
- ],
- "overview": [
-  "A desktop based restaurant management system designed to handle daily restaurant operations from one platform. It covers order entry, dine in, takeaway, table management, billing, receipts, and sales reporting."
- ],
- "sections": [
-  {
-   "heading": "Main Modules",
-   "blocks": [
+  "slug": "restaurant-pos-zatca-integrated",
+  "tags": [
+    "Point of Sale",
+    "Order Management",
+    "Table Management",
+    "Billing",
+    "Receipts",
+    "Reports"
+  ],
+  "overview": [
+    "A desktop based restaurant management system designed to handle daily restaurant operations from one platform. It covers order entry, dine in, takeaway, table management, billing, receipts, and sales reporting."
+  ],
+  "sections": [
     {
-     "list": [
-      "Staff Login",
-      "Restaurant Dashboard",
-      "POS / Sales",
-      "Menu & Categories",
-      "Table Management",
-      "Dine In Orders",
-      "Takeaway Orders",
-      "Receipt Management",
-      "Sales Reports",
-      "Logout"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "POS & Order Management",
-   "blocks": [
-    {
-     "p": "Staff can quickly create orders by selecting products from categorized menus."
+      "heading": "Main Modules",
+      "blocks": [
+        {
+          "list": [
+            "Staff Login",
+            "Restaurant Dashboard",
+            "POS / Sales",
+            "Menu & Categories",
+            "Table Management",
+            "Dine In Orders",
+            "Takeaway Orders",
+            "Receipt Management",
+            "Sales Reports",
+            "Logout"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Product and category selection",
-      "Quantity and price management",
-      "Discounts",
-      "VAT calculation",
-      "Cash received and change calculation",
-      "Total amount and quantity",
-      "Final bill and receipt",
-      "Clear and transaction controls"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Table Management",
-   "blocks": [
-    {
-     "p": "The system provides a visual table layout showing which tables are available or occupied."
+      "heading": "POS & Order Management",
+      "blocks": [
+        {
+          "p": "Staff can quickly create orders by selecting products from categorized menus."
+        },
+        {
+          "list": [
+            "Product and category selection",
+            "Quantity and price management",
+            "Discounts",
+            "VAT calculation",
+            "Cash received and change calculation",
+            "Total amount and quantity",
+            "Final bill and receipt",
+            "Clear and transaction controls"
+          ]
+        }
+      ]
     },
     {
-     "p": "Order Flow:Select Products → Choose Dining → Select Table → Process Order → Final Bill → Receipt"
-    }
-   ]
-  },
-  {
-   "heading": "Takeaway Management",
-   "blocks": [
-    {
-     "p": "Takeaway orders are handled separately through a Pending Take Aways section, showing order ID, date, and total amount so staff can easily track outstanding orders."
-    }
-   ]
-  },
-  {
-   "heading": "Receipt Management",
-   "blocks": [
-    {
-     "p": "The receipt module allows staff to:"
+      "heading": "Table Management",
+      "blocks": [
+        {
+          "p": "The system provides a visual table layout showing which tables are available or occupied."
+        },
+        {
+          "p": "Order Flow:Select Products → Choose Dining → Select Table → Process Order → Final Bill → Receipt"
+        }
+      ]
     },
     {
-     "list": [
-      "Search orders",
-      "Filter by date",
-      "Filter by status",
-      "View invoice numbers",
-      "Check totals and discounts",
-      "Review cash received",
-      "Check table and order type",
-      "Print receipts and KOT"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Reporting",
-   "blocks": [
-    {
-     "p": "The system includes a reporting section where users can select a date range and generate reports such as Daily Sale through an integrated report preview."
-    }
-   ]
-  },
-  {
-   "heading": "User Experience",
-   "blocks": [
-    {
-     "p": "The POS is designed for fast restaurant operations with:"
+      "heading": "Takeaway Management",
+      "blocks": [
+        {
+          "p": "Takeaway orders are handled separately through a Pending Take Aways section, showing order ID, date, and total amount so staff can easily track outstanding orders."
+        }
+      ]
     },
     {
-     "list": [
-      "Large product buttons",
-      "Category based menu navigation",
-      "On screen numeric keypad",
-      "Quick Dine In and Takeaway actions",
-      "Clear payment summary",
-      "Color coded table status",
-      "Quick access to Sales, Tables, Receipts and Reports"
-     ]
+      "heading": "Receipt Management",
+      "blocks": [
+        {
+          "p": "The receipt module allows staff to:"
+        },
+        {
+          "list": [
+            "Search orders",
+            "Filter by date",
+            "Filter by status",
+            "View invoice numbers",
+            "Check totals and discounts",
+            "Review cash received",
+            "Check table and order type",
+            "Print receipts and KOT"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Reporting",
+      "blocks": [
+        {
+          "p": "The system includes a reporting section where users can select a date range and generate reports such as Daily Sale through an integrated report preview."
+        }
+      ]
+    },
+    {
+      "heading": "User Experience",
+      "blocks": [
+        {
+          "p": "The POS is designed for fast restaurant operations with:"
+        },
+        {
+          "list": [
+            "Large product buttons",
+            "Category based menu navigation",
+            "On screen numeric keypad",
+            "Quick Dine In and Takeaway actions",
+            "Clear payment summary",
+            "Color coded table status",
+            "Quick access to Sales, Tables, Receipts and Reports"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [
-  "The system brings restaurant sales, table management, takeaway orders, billing, receipts, and reporting into one application, giving staff a faster way to process orders while giving management better visibility into daily restaurant activity."
- ],
- "images": [
-  {
-   "src": "/projects/restaurant-pos-zatca-integrated/01-960.webp",
-   "srcSet": "/projects/restaurant-pos-zatca-integrated/01-480.webp 480w, /projects/restaurant-pos-zatca-integrated/01-960.webp 960w",
-   "full": "/projects/restaurant-pos-zatca-integrated/01-960.webp",
-   "width": 960,
-   "height": 518,
-   "alt": "Restaurant POS (ZATCA Integrated): 01 Login Start 00s"
-  },
-  {
-   "src": "/projects/restaurant-pos-zatca-integrated/02-960.webp",
-   "srcSet": "/projects/restaurant-pos-zatca-integrated/02-480.webp 480w, /projects/restaurant-pos-zatca-integrated/02-960.webp 960w",
-   "full": "/projects/restaurant-pos-zatca-integrated/02-960.webp",
-   "width": 960,
-   "height": 518,
-   "alt": "Restaurant POS (ZATCA Integrated): 02 Sales Screen 15s"
-  },
-  {
-   "src": "/projects/restaurant-pos-zatca-integrated/03-960.webp",
-   "srcSet": "/projects/restaurant-pos-zatca-integrated/03-480.webp 480w, /projects/restaurant-pos-zatca-integrated/03-960.webp 960w",
-   "full": "/projects/restaurant-pos-zatca-integrated/03-960.webp",
-   "width": 960,
-   "height": 518,
-   "alt": "Restaurant POS (ZATCA Integrated): 03 Order Screen 24s"
-  },
-  {
-   "src": "/projects/restaurant-pos-zatca-integrated/04-960.webp",
-   "srcSet": "/projects/restaurant-pos-zatca-integrated/04-480.webp 480w, /projects/restaurant-pos-zatca-integrated/04-960.webp 960w",
-   "full": "/projects/restaurant-pos-zatca-integrated/04-960.webp",
-   "width": 960,
-   "height": 518,
-   "alt": "Restaurant POS (ZATCA Integrated): 04 Report Table 36s"
-  },
-  {
-   "src": "/projects/restaurant-pos-zatca-integrated/05-960.webp",
-   "srcSet": "/projects/restaurant-pos-zatca-integrated/05-480.webp 480w, /projects/restaurant-pos-zatca-integrated/05-960.webp 960w",
-   "full": "/projects/restaurant-pos-zatca-integrated/05-960.webp",
-   "width": 960,
-   "height": 518,
-   "alt": "Restaurant POS (ZATCA Integrated): 05 Report Details 48s"
-  },
-  {
-   "src": "/projects/restaurant-pos-zatca-integrated/06-960.webp",
-   "srcSet": "/projects/restaurant-pos-zatca-integrated/06-480.webp 480w, /projects/restaurant-pos-zatca-integrated/06-960.webp 960w",
-   "full": "/projects/restaurant-pos-zatca-integrated/06-960.webp",
-   "width": 960,
-   "height": 518,
-   "alt": "Restaurant POS (ZATCA Integrated): 06 Tables View 63s"
-  },
-  {
-   "src": "/projects/restaurant-pos-zatca-integrated/07-960.webp",
-   "srcSet": "/projects/restaurant-pos-zatca-integrated/07-480.webp 480w, /projects/restaurant-pos-zatca-integrated/07-960.webp 960w",
-   "full": "/projects/restaurant-pos-zatca-integrated/07-960.webp",
-   "width": 960,
-   "height": 518,
-   "alt": "Restaurant POS (ZATCA Integrated): 07 Management Screen 78s"
-  }
- ]
+  ],
+  "result": [
+    "The system brings restaurant sales, table management, takeaway orders, billing, receipts, and reporting into one application, giving staff a faster way to process orders while giving management better visibility into daily restaurant activity."
+  ],
+  "images": [
+    {
+      "src": "/projects/restaurant-pos-zatca-integrated/01-960.webp",
+      "srcSet": "/projects/restaurant-pos-zatca-integrated/01-480.webp 480w, /projects/restaurant-pos-zatca-integrated/01-960.webp 960w",
+      "full": "/projects/restaurant-pos-zatca-integrated/01-960.webp",
+      "width": 960,
+      "height": 518,
+      "alt": "Restaurant POS (ZATCA Integrated): 01 Login Start 00s"
+    },
+    {
+      "src": "/projects/restaurant-pos-zatca-integrated/02-960.webp",
+      "srcSet": "/projects/restaurant-pos-zatca-integrated/02-480.webp 480w, /projects/restaurant-pos-zatca-integrated/02-960.webp 960w",
+      "full": "/projects/restaurant-pos-zatca-integrated/02-960.webp",
+      "width": 960,
+      "height": 518,
+      "alt": "Restaurant POS (ZATCA Integrated): 02 Sales Screen 15s"
+    },
+    {
+      "src": "/projects/restaurant-pos-zatca-integrated/03-960.webp",
+      "srcSet": "/projects/restaurant-pos-zatca-integrated/03-480.webp 480w, /projects/restaurant-pos-zatca-integrated/03-960.webp 960w",
+      "full": "/projects/restaurant-pos-zatca-integrated/03-960.webp",
+      "width": 960,
+      "height": 518,
+      "alt": "Restaurant POS (ZATCA Integrated): 03 Order Screen 24s"
+    },
+    {
+      "src": "/projects/restaurant-pos-zatca-integrated/04-960.webp",
+      "srcSet": "/projects/restaurant-pos-zatca-integrated/04-480.webp 480w, /projects/restaurant-pos-zatca-integrated/04-960.webp 960w",
+      "full": "/projects/restaurant-pos-zatca-integrated/04-960.webp",
+      "width": 960,
+      "height": 518,
+      "alt": "Restaurant POS (ZATCA Integrated): 04 Report Table 36s"
+    },
+    {
+      "src": "/projects/restaurant-pos-zatca-integrated/05-960.webp",
+      "srcSet": "/projects/restaurant-pos-zatca-integrated/05-480.webp 480w, /projects/restaurant-pos-zatca-integrated/05-960.webp 960w",
+      "full": "/projects/restaurant-pos-zatca-integrated/05-960.webp",
+      "width": 960,
+      "height": 518,
+      "alt": "Restaurant POS (ZATCA Integrated): 05 Report Details 48s"
+    },
+    {
+      "src": "/projects/restaurant-pos-zatca-integrated/06-960.webp",
+      "srcSet": "/projects/restaurant-pos-zatca-integrated/06-480.webp 480w, /projects/restaurant-pos-zatca-integrated/06-960.webp 960w",
+      "full": "/projects/restaurant-pos-zatca-integrated/06-960.webp",
+      "width": 960,
+      "height": 518,
+      "alt": "Restaurant POS (ZATCA Integrated): 06 Tables View 63s"
+    },
+    {
+      "src": "/projects/restaurant-pos-zatca-integrated/07-960.webp",
+      "srcSet": "/projects/restaurant-pos-zatca-integrated/07-480.webp 480w, /projects/restaurant-pos-zatca-integrated/07-960.webp 960w",
+      "full": "/projects/restaurant-pos-zatca-integrated/07-960.webp",
+      "width": 960,
+      "height": 518,
+      "alt": "Restaurant POS (ZATCA Integrated): 07 Management Screen 78s"
+    }
+  ]
 }

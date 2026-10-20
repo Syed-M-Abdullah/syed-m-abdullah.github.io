@@ -9,7 +9,7 @@ import {
 } from "@/data/services";
 import { tools } from "@/data/tools";
 import { cn } from "@/lib/utils";
-import { ToolLogo } from "./tech-marquee";
+import { ToolLogo } from "./tool-logo";
 
 function PlatformLogo({ id, size = 22 }: { id: AutomationPlatformId; size?: number }) {
   const tool = tools.find((t) => t.id === id);
@@ -220,7 +220,7 @@ export function ComparisonTeaser() {
       >
         <p className="text-[15px] text-foreground">{automationPositioning}</p>
         <Link
-          to="/services/$slug"
+          to="/services/$slug/"
           params={{ slug: "workflow-automation" }}
           hash="compare"
           className="inline-flex shrink-0 items-center gap-1.5 rounded-md font-heading text-sm font-semibold text-blue hover:underline"

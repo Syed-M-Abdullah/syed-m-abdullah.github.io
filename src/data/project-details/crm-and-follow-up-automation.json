@@ -1,103 +1,97 @@
 {
- "slug": "crm-and-follow-up-automation",
- "tags": [
-  "Zapier",
-  "Typeform",
-  "GoHighLevel",
-  "Google Sheets",
-  "Gmail",
-  "Twilio",
-  "Slack",
-  "Asana"
- ],
- "overview": [
-  "Built an automated lead management workflow that captures new form submissions, checks lead status, updates the CRM, notifies the team, and manages follow up communication."
- ],
- "sections": [
-  {
-   "heading": "New Lead Workflow",
-   "blocks": [
+  "slug": "crm-and-follow-up-automation",
+  "tags": [
+    "Zapier",
+    "Typeform",
+    "GoHighLevel",
+    "Google Sheets",
+    "Gmail",
+    "Twilio",
+    "Slack",
+    "Asana"
+  ],
+  "overview": [
+    "Built an automated lead management workflow that captures new form submissions, checks lead status, updates the CRM, notifies the team, and manages follow up communication."
+  ],
+  "sections": [
     {
-     "p": "For new leads, the system:"
+      "heading": "New Lead Workflow",
+      "blocks": [
+        {
+          "p": "For new leads, the system:"
+        },
+        {
+          "list": [
+            "Captures the Typeform submission",
+            "Finds or creates the contact in GoHighLevel",
+            "Checks whether the lead is new",
+            "Creates or updates the opportunity",
+            "Adds the lead to Google Sheets",
+            "Sends a welcome email",
+            "Sends an SMS",
+            "Notifies the team in Slack",
+            "Creates a follow up task in Asana"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Captures the Typeform submission",
-      "Finds or creates the contact in GoHighLevel",
-      "Checks whether the lead is new",
-      "Creates or updates the opportunity",
-      "Adds the lead to Google Sheets",
-      "Sends a welcome email",
-      "Sends an SMS",
-      "Notifies the team in Slack",
-      "Creates a follow up task in Asana"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Existing Lead Workflow",
-   "blocks": [
-    {
-     "p": "For existing leads, the system checks the last contact date and routes the lead based on the result."
-    }
-   ]
-  },
-  {
-   "heading": "Re Engage",
-   "blocks": [
-    {
-     "p": "If the lead has not been contacted for more than 30 days:"
+      "heading": "Existing Lead Workflow",
+      "blocks": [
+        {
+          "p": "For existing leads, the system checks the last contact date and routes the lead based on the result."
+        }
+      ]
     },
     {
-     "list": [
-      "Sends a re engagement email",
-      "Adds the lead to a re engagement list",
-      "Notifies the team in Slack"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Recently Contacted",
-   "blocks": [
-    {
-     "p": "If the lead was contacted within 30 days:"
+      "heading": "Re Engage",
+      "blocks": [
+        {
+          "p": "If the lead has not been contacted for more than 30 days:"
+        },
+        {
+          "list": [
+            "Sends a re engagement email",
+            "Adds the lead to a re engagement list",
+            "Notifies the team in Slack"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Adds a note to the GoHighLevel contact",
-      "Sends an internal Slack notification"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Follow-Up",
-   "blocks": [
-    {
-     "p": "After the lead is processed:"
+      "heading": "Recently Contacted",
+      "blocks": [
+        {
+          "p": "If the lead was contacted within 30 days:"
+        },
+        {
+          "list": ["Adds a note to the GoHighLevel contact", "Sends an internal Slack notification"]
+        }
+      ]
     },
     {
-     "list": [
-      "Waits 2 days",
-      "Creates a follow up reminder in GoHighLevel"
-     ]
+      "heading": "Follow-Up",
+      "blocks": [
+        {
+          "p": "After the lead is processed:"
+        },
+        {
+          "list": ["Waits 2 days", "Creates a follow up reminder in GoHighLevel"]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [
-  "An automated lead handling system that manages new and existing leads, keeps the CRM updated, notifies the team, and ensures follow ups are created without manual tracking."
- ],
- "images": [
-  {
-   "src": "/projects/crm-and-follow-up-automation/01-960.webp",
-   "srcSet": "/projects/crm-and-follow-up-automation/01-480.webp 480w, /projects/crm-and-follow-up-automation/01-960.webp 960w, /projects/crm-and-follow-up-automation/01-1536.webp 1536w",
-   "full": "/projects/crm-and-follow-up-automation/01-1536.webp",
-   "width": 1536,
-   "height": 1024,
-   "alt": "CRM & Follow-Up Automation: CRM & Follow-Up Automation"
-  }
- ]
+  ],
+  "result": [
+    "An automated lead handling system that manages new and existing leads, keeps the CRM updated, notifies the team, and ensures follow ups are created without manual tracking."
+  ],
+  "images": [
+    {
+      "src": "/projects/crm-and-follow-up-automation/01-960.webp",
+      "srcSet": "/projects/crm-and-follow-up-automation/01-480.webp 480w, /projects/crm-and-follow-up-automation/01-960.webp 960w, /projects/crm-and-follow-up-automation/01-1536.webp 1536w",
+      "full": "/projects/crm-and-follow-up-automation/01-1536.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": "CRM & Follow-Up Automation: CRM & Follow-Up Automation"
+    }
+  ]
 }

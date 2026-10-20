@@ -28,9 +28,8 @@ export function PageHero({
   return (
     <section
       data-pause-offscreen
-      className={cn(bandClass("brand"), "overflow-hidden pt-28 pb-14 md:pt-36 md:pb-20", className)}
+      className={cn(bandClass("brand"), "overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20", className)}
     >
-      <div aria-hidden className="aurora" />
       <Container>
         {breadcrumbs && <Breadcrumbs items={breadcrumbs} />}
         <div

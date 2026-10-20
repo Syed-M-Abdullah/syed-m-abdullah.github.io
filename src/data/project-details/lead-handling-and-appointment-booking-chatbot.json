@@ -1,78 +1,73 @@
 {
- "slug": "lead-handling-and-appointment-booking-chatbot",
- "tags": [
-  "GoHighLevel",
-  "Facebook Ads",
-  "CRM",
-  "Chatbot"
- ],
- "overview": [
-  "Built a chatbot for a skin treatment clinic to handle leads coming from Facebook Ads and GoHighLevel.",
-  "The chatbot responds to new and existing leads, answers common treatment and pricing questions, qualifies prospects, and guides them toward appointment booking or course enrollment."
- ],
- "sections": [
-  {
-   "heading": "Client Challenges",
-   "blocks": [
+  "slug": "lead-handling-and-appointment-booking-chatbot",
+  "tags": ["GoHighLevel", "Facebook Ads", "CRM", "Chatbot"],
+  "overview": [
+    "Built a chatbot for a skin treatment clinic to handle leads coming from Facebook Ads and GoHighLevel.",
+    "The chatbot responds to new and existing leads, answers common treatment and pricing questions, qualifies prospects, and guides them toward appointment booking or course enrollment."
+  ],
+  "sections": [
     {
-     "p": "The clinic was dealing with:"
+      "heading": "Client Challenges",
+      "blocks": [
+        {
+          "p": "The clinic was dealing with:"
+        },
+        {
+          "list": [
+            "Delayed responses to new leads",
+            "Missed follow up opportunities",
+            "Repetitive treatment and pricing questions",
+            "Poor quality chatbot conversations",
+            "Inconsistent handling of course inquiries",
+            "Difficulty maintaining accurate service information"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Delayed responses to new leads",
-      "Missed follow up opportunities",
-      "Repetitive treatment and pricing questions",
-      "Poor quality chatbot conversations",
-      "Inconsistent handling of course inquiries",
-      "Difficulty maintaining accurate service information"
-     ]
+      "heading": "Solution",
+      "blocks": [
+        {
+          "p": "I connected the chatbot with GoHighLevel to manage the lead journey from first message to booking."
+        },
+        {
+          "p": "The system:"
+        },
+        {
+          "list": [
+            "Responds to Facebook Ads leads automatically",
+            "Handles leads already stored in the CRM",
+            "Answers treatment and pricing questions",
+            "Qualifies leads based on their requirements",
+            "Handles appointment scheduling and follow ups",
+            "Manages course related inquiries",
+            "Uses conversation context to provide relevant responses",
+            "Routes leads through the appropriate booking workflow"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Solution",
-   "blocks": [
+  ],
+  "result": [
+    "The system gave the clinic a faster and more consistent way to handle incoming leads, reduced repetitive work for staff, and helped move qualified prospects from initial conversation to appointment booking.",
+    "The chatbot now works as the clinic’s first point of contact, while the team remains involved when human assistance is needed."
+  ],
+  "images": [
     {
-     "p": "I connected the chatbot with GoHighLevel to manage the lead journey from first message to booking."
+      "src": "/projects/lead-handling-and-appointment-booking-chatbot/01-960.webp",
+      "srcSet": "/projects/lead-handling-and-appointment-booking-chatbot/01-480.webp 480w, /projects/lead-handling-and-appointment-booking-chatbot/01-960.webp 960w, /projects/lead-handling-and-appointment-booking-chatbot/01-1600.webp 1600w",
+      "full": "/projects/lead-handling-and-appointment-booking-chatbot/01-1600.webp",
+      "width": 1600,
+      "height": 696,
+      "alt": "Lead Handling & Appointment Booking Chatbot: Chatbot"
     },
     {
-     "p": "The system:"
-    },
-    {
-     "list": [
-      "Responds to Facebook Ads leads automatically",
-      "Handles leads already stored in the CRM",
-      "Answers treatment and pricing questions",
-      "Qualifies leads based on their requirements",
-      "Handles appointment scheduling and follow ups",
-      "Manages course related inquiries",
-      "Uses conversation context to provide relevant responses",
-      "Routes leads through the appropriate booking workflow"
-     ]
+      "src": "/projects/lead-handling-and-appointment-booking-chatbot/02-960.webp",
+      "srcSet": "/projects/lead-handling-and-appointment-booking-chatbot/02-480.webp 480w, /projects/lead-handling-and-appointment-booking-chatbot/02-960.webp 960w, /projects/lead-handling-and-appointment-booking-chatbot/02-1600.webp 1600w",
+      "full": "/projects/lead-handling-and-appointment-booking-chatbot/02-1600.webp",
+      "width": 1600,
+      "height": 688,
+      "alt": "Lead Handling & Appointment Booking Chatbot: Initial Tempelate"
     }
-   ]
-  }
- ],
- "result": [
-  "The system gave the clinic a faster and more consistent way to handle incoming leads, reduced repetitive work for staff, and helped move qualified prospects from initial conversation to appointment booking.",
-  "The chatbot now works as the clinic’s first point of contact, while the team remains involved when human assistance is needed."
- ],
- "images": [
-  {
-   "src": "/projects/lead-handling-and-appointment-booking-chatbot/01-960.webp",
-   "srcSet": "/projects/lead-handling-and-appointment-booking-chatbot/01-480.webp 480w, /projects/lead-handling-and-appointment-booking-chatbot/01-960.webp 960w, /projects/lead-handling-and-appointment-booking-chatbot/01-1600.webp 1600w",
-   "full": "/projects/lead-handling-and-appointment-booking-chatbot/01-1600.webp",
-   "width": 1600,
-   "height": 696,
-   "alt": "Lead Handling & Appointment Booking Chatbot: Chatbot"
-  },
-  {
-   "src": "/projects/lead-handling-and-appointment-booking-chatbot/02-960.webp",
-   "srcSet": "/projects/lead-handling-and-appointment-booking-chatbot/02-480.webp 480w, /projects/lead-handling-and-appointment-booking-chatbot/02-960.webp 960w, /projects/lead-handling-and-appointment-booking-chatbot/02-1600.webp 1600w",
-   "full": "/projects/lead-handling-and-appointment-booking-chatbot/02-1600.webp",
-   "width": 1600,
-   "height": 688,
-   "alt": "Lead Handling & Appointment Booking Chatbot: Initial Tempelate"
-  }
- ]
+  ]
 }

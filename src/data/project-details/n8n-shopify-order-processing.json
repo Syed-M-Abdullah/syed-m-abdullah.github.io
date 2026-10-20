@@ -1,69 +1,63 @@
 {
- "slug": "n8n-shopify-order-processing",
- "tags": [
-  "n8n",
-  "Shopify",
-  "Google Drive",
-  "Google Sheets",
-  "JavaScript"
- ],
- "overview": [
-  "Built an automated Shopify order processing system that handles order data, product costs, financial calculations, and reporting without manual spreadsheet work.",
-  "The workflow processes each order, calculates the relevant costs and profit, and automatically organizes the data into the correct Google Drive and Sheets structure."
- ],
- "sections": [
-  {
-   "heading": "Workflow",
-   "blocks": [
+  "slug": "n8n-shopify-order-processing",
+  "tags": ["n8n", "Shopify", "Google Drive", "Google Sheets", "JavaScript"],
+  "overview": [
+    "Built an automated Shopify order processing system that handles order data, product costs, financial calculations, and reporting without manual spreadsheet work.",
+    "The workflow processes each order, calculates the relevant costs and profit, and automatically organizes the data into the correct Google Drive and Sheets structure."
+  ],
+  "sections": [
     {
-     "p": "The system:"
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "p": "The system:"
+        },
+        {
+          "list": [
+            "Captures new Shopify orders automatically",
+            "Categorizes products based on product information",
+            "Retrieves variant and cost data from Shopify",
+            "Calculates fees, payouts, shipping, packaging, and net profit or loss",
+            "Identifies repeat customers and applies the required calculations",
+            "Determines the correct folder, spreadsheet, and sheet for each order",
+            "Creates missing folders, files, or sheets when required",
+            "Maintains consistent spreadsheet structures",
+            "Adds or updates order records in the appropriate sheet"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Captures new Shopify orders automatically",
-      "Categorizes products based on product information",
-      "Retrieves variant and cost data from Shopify",
-      "Calculates fees, payouts, shipping, packaging, and net profit or loss",
-      "Identifies repeat customers and applies the required calculations",
-      "Determines the correct folder, spreadsheet, and sheet for each order",
-      "Creates missing folders, files, or sheets when required",
-      "Maintains consistent spreadsheet structures",
-      "Adds or updates order records in the appropriate sheet"
-     ]
+      "heading": "Financial Tracking",
+      "blocks": [
+        {
+          "p": "Each order can be processed against:"
+        },
+        {
+          "list": [
+            "Product cost",
+            "Platform fees",
+            "Payment fees",
+            "Streamer payouts",
+            "Shipping costs",
+            "Packaging costs",
+            "Net profit or loss"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Financial Tracking",
-   "blocks": [
+  ],
+  "result": [
+    "A scalable order processing and financial tracking system that removes manual accounting work, keeps order data organized, and provides a consistent view of costs, payouts, and profitability as order volume grows."
+  ],
+  "images": [
     {
-     "p": "Each order can be processed against:"
-    },
-    {
-     "list": [
-      "Product cost",
-      "Platform fees",
-      "Payment fees",
-      "Streamer payouts",
-      "Shipping costs",
-      "Packaging costs",
-      "Net profit or loss"
-     ]
+      "src": "/projects/n8n-shopify-order-processing/01-960.webp",
+      "srcSet": "/projects/n8n-shopify-order-processing/01-480.webp 480w, /projects/n8n-shopify-order-processing/01-960.webp 960w, /projects/n8n-shopify-order-processing/01-1600.webp 1600w",
+      "full": "/projects/n8n-shopify-order-processing/01-1600.webp",
+      "width": 1600,
+      "height": 743,
+      "alt": "n8n Shopify Order Processing: Shopify S"
     }
-   ]
-  }
- ],
- "result": [
-  "A scalable order processing and financial tracking system that removes manual accounting work, keeps order data organized, and provides a consistent view of costs, payouts, and profitability as order volume grows."
- ],
- "images": [
-  {
-   "src": "/projects/n8n-shopify-order-processing/01-960.webp",
-   "srcSet": "/projects/n8n-shopify-order-processing/01-480.webp 480w, /projects/n8n-shopify-order-processing/01-960.webp 960w, /projects/n8n-shopify-order-processing/01-1600.webp 1600w",
-   "full": "/projects/n8n-shopify-order-processing/01-1600.webp",
-   "width": 1600,
-   "height": 743,
-   "alt": "n8n Shopify Order Processing: Shopify S"
-  }
- ]
+  ]
 }

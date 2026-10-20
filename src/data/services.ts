@@ -46,7 +46,7 @@ export const services: Service[] = [
     title: "Business Automation",
     shortTitle: "Business Automation",
     tagline:
-      "Connect your apps and remove manual work with n8n, Zapier or Make — built to keep running.",
+      "Connect your apps and remove manual work with n8n, Zapier or Make, built to keep running.",
     bullets: [
       "Lead routing, CRM sync and reporting",
       "AI steps that sort, summarise and draft",
@@ -110,12 +110,12 @@ export const services: Service[] = [
     ],
     cta: {
       title: "Not sure which platform fits?",
-      body: "Tell me what you want automated. I'll recommend n8n, Zapier or Make — and explain why.",
+      body: "Tell me what you want automated. I'll recommend n8n, Zapier or Make and explain why.",
     },
     meta: {
       title: "Business Automation with n8n, Zapier & Make",
       description:
-        "Business process automation with n8n, Zapier and Make.com — lead routing, CRM sync, documents and AI steps, plus an honest comparison of the three platforms.",
+        "Business process automation with n8n, Zapier and Make.com: lead routing, CRM sync, documents and AI steps, plus an honest comparison of the three platforms.",
     },
   },
   {
@@ -192,7 +192,7 @@ export const services: Service[] = [
     meta: {
       title: "GoHighLevel Automation & CRM Setup",
       description:
-        "GoHighLevel CRM setup and automation — pipelines, follow-up workflows, calendars, AI agents and integrations for agencies and service businesses.",
+        "GoHighLevel CRM setup and automation: pipelines, follow-up workflows, calendars, AI agents and integrations for agencies and service businesses.",
     },
   },
   {
@@ -269,7 +269,7 @@ export const services: Service[] = [
     meta: {
       title: "Automated Lead Generation Systems",
       description:
-        "Automated lead generation with Apify, Apollo.io and n8n — prospect scraping, enrichment, email verification, AI-personalised outreach and CRM sync.",
+        "Automated lead generation with Apify, Apollo.io and n8n: prospect scraping, enrichment, email verification, AI-personalised outreach and CRM sync.",
     },
   },
   {
@@ -277,7 +277,7 @@ export const services: Service[] = [
     title: "AI Content & Blog Automation",
     shortTitle: "AI Content & Blogs",
     tagline:
-      "From keyword research to a published WordPress post — researched, written in your voice and reviewed.",
+      "From keyword research to a published WordPress post: researched, written in your voice and reviewed.",
     bullets: [
       "Topic and keyword research",
       "Brand-voice drafts with a review step",
@@ -346,7 +346,7 @@ export const services: Service[] = [
     meta: {
       title: "AI Content & Blog Automation for WordPress",
       description:
-        "AI blog automation — keyword and article research, brand-voice drafting, a human review step, SEO and scheduled publishing to WordPress.",
+        "AI blog automation: keyword and article research, brand-voice drafting, a human review step, SEO and scheduled publishing to WordPress.",
     },
   },
   {
@@ -423,7 +423,7 @@ export const services: Service[] = [
     meta: {
       title: "AI Voice Agents for Bookings & Lead Qualification",
       description:
-        "Inbound and outbound AI voice agents built with Vapi, ElevenLabs and Synthflow — connected to your calendar and CRM. Hear real recordings.",
+        "Inbound and outbound AI voice agents built with Vapi, ElevenLabs and Synthflow, connected to your calendar and CRM. Hear real recordings.",
     },
   },
   {
@@ -496,7 +496,7 @@ export const services: Service[] = [
     meta: {
       title: "WhatsApp & AI Chat Agents",
       description:
-        "AI chat agents for WhatsApp, Instagram, Messenger and websites — grounded in your knowledge base, with lead qualification, booking and human hand-off.",
+        "AI chat agents for WhatsApp, Instagram, Messenger and websites, grounded in your knowledge base, with lead qualification, booking and human hand-off.",
     },
   },
   {
@@ -514,7 +514,7 @@ export const services: Service[] = [
     hero: {
       title: "Custom software when automation isn't enough",
       intro:
-        "Before automation, I spent years building business software in .NET — ERP and POS systems, APIs, e-commerce and mobile apps. I build the custom backend a project needs.",
+        "Before automation, I spent years building business software in .NET: ERP and POS systems, APIs, e-commerce and mobile apps. I build the custom backend a project needs.",
     },
     problem: [
       "Your process doesn't fit any off-the-shelf tool you've tried.",
@@ -569,7 +569,7 @@ export const services: Service[] = [
     meta: {
       title: "Custom ERP, POS & .NET Software Development",
       description:
-        "Custom .NET software — ERP modules, POS with ZATCA and FBR e-invoicing, secure APIs, e-commerce backends and web and mobile platforms.",
+        "Custom .NET software: ERP modules, POS with ZATCA and FBR e-invoicing, secure APIs, e-commerce backends, and web and mobile platforms.",
     },
   },
 ];
@@ -605,8 +605,8 @@ export const comparisonRows: { label: string; cells: Record<AutomationPlatformId
   {
     label: "Pricing model",
     cells: {
-      zapier: "Per task — every action step counts",
-      make: "Per operation — every module run counts",
+      zapier: "Per task: every action step counts",
+      make: "Per operation: every module run counts",
       n8n: "Per workflow run on Cloud; steps don't add cost",
     },
   },
@@ -646,7 +646,7 @@ export const comparisonRows: { label: string; cells: Record<AutomationPlatformId
     label: "Learning curve",
     cells: {
       zapier: "Easiest to start",
-      make: "Moderate — visual but detailed",
+      make: "Moderate: visual but detailed",
       n8n: "Steepest, and the most flexible",
     },
   },

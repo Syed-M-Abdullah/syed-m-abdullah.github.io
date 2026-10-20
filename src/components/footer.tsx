@@ -15,21 +15,20 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div data-reveal="up">
-            <Link to="/" className="inline-block rounded-lg" aria-label={`${site.name} — home`}>
+            <Link to="/" className="inline-block rounded-lg" aria-label={`${site.name}, home page`}>
               <Logo />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Intelligent business systems — automation with n8n, Zapier and Make, GoHighLevel CRM,
-              lead generation, AI content, voice and chat agents, and custom software.
+              I build the automation, CRM, voice and chat systems small teams run on, and the custom
+              .NET software behind them when a tool runs out of road.
             </p>
-            <p className="mt-4 text-sm text-muted-foreground">{site.location}</p>
           </div>
 
           <FooterCol title="Services" index={1}>
             {services.map((s) => (
               <li key={s.slug}>
                 <Link
-                  to="/services/$slug"
+                  to="/services/$slug/"
                   params={{ slug: s.slug }}
                   className="text-sm text-muted-foreground transition hover:text-foreground"
                 >
@@ -42,10 +41,10 @@ export function Footer() {
           <FooterCol title="Explore" index={2}>
             {(
               [
-                { to: "/projects", label: "Projects" },
-                { to: "/process", label: "How I work" },
-                { to: "/about", label: "About" },
-                { to: "/contact", label: "Contact" },
+                { to: "/projects/", label: "Projects" },
+                { to: "/process/", label: "How I work" },
+                { to: "/about/", label: "About" },
+                { to: "/contact/", label: "Contact" },
               ] as const
             ).map((l) => (
               <li key={l.to}>

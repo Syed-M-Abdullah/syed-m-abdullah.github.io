@@ -31,7 +31,7 @@ export function seo({
   description,
   path,
   image = "/og-image.jpg",
-  imageAlt = `${site.name} — ${site.role}`,
+  imageAlt = `${site.name}, ${site.role}`,
   imageWidth = image === "/og-image.jpg" ? 1200 : undefined,
   imageHeight = image === "/og-image.jpg" ? 630 : undefined,
   type = "website",
@@ -67,6 +67,18 @@ export function seo({
   };
 }
 
+/** Head tags for a retired URL that forwards to `to` (a path, optionally with a query). */
+export function forwardHead(to: string, title: string) {
+  return {
+    meta: [
+      { title: `${title} | ${site.name}` },
+      { name: "robots", content: "noindex" },
+      { httpEquiv: "refresh", content: `0; url=${to}` },
+    ],
+    links: [{ rel: "canonical", href: canonicalUrl(to.split("?")[0]) }],
+  };
+}
+
 export const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -74,13 +86,10 @@ export const personJsonLd = {
   alternateName: site.legalName,
   url: `${site.url}/`,
   image: `${site.url}/og-image.jpg`,
-  jobTitle: site.role,
+  jobTitle: site.title,
   email: `mailto:${site.email}`,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: site.locality,
-    addressCountry: "PK",
-  },
+  // Country only: the site never names a city.
+  address: { "@type": "PostalAddress", addressCountry: "PK" },
   sameAs: [site.linkedin, site.fiverr].filter(Boolean),
   knowsAbout: [
     "GoHighLevel",
@@ -102,6 +111,16 @@ export const websiteJsonLd = {
   name: site.name,
   url: `${site.url}/`,
 };
+
+export const faqJsonLd = (faqs: { q: string; a: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+});
 
 /** JSON-LD as a head script entry (rendered by <Scripts />). */
 export const jsonLd = (data: object) => ({

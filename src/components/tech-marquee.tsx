@@ -1,100 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Pause, Play } from "lucide-react";
-import { toolGroups, toolsInGroup, type Tool, type ToolGroup } from "@/data/tools";
+import { toolGroups, toolsInGroup, toolUses, type Tool, type ToolGroup } from "@/data/tools";
+import { projectCountForTool, toolTab } from "@/data/projects";
 import { cn } from "@/lib/utils";
 import { Container, SectionHeading } from "./section";
 import { bandClass, type Tone } from "@/lib/band";
-import { useToolSymbol } from "@/lib/tool-sprite";
 import { LazyMount } from "./lazy-mount";
+import { ToolChip, ToolLogo } from "./tool-logo";
 import { prefersReducedMotion } from "@/lib/motion-pref";
-
-/** Darkens a brand colour just enough for white badge text to reach 4.5:1 (WCAG AA). */
-function badgeColor(hex: string) {
-  const ch = (v: number) => {
-    const c = v / 255;
-    return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
-  };
-  let [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
-  for (let i = 0; i < 20; i++) {
-    const lum = 0.2126 * ch(r) + 0.7152 * ch(g) + 0.0722 * ch(b);
-    if (1.05 / (lum + 0.05) >= 4.6) break;
-    [r, g, b] = [r, g, b].map((v) => Math.round(v * 0.92));
-  }
-  return `rgb(${r}, ${g}, ${b})`;
-}
-
-/** A tool's logo in its own brand colour (official glyph, or a monogram badge placeholder). */
-export function ToolLogo({ tool, size = 22 }: { tool: Tool; size?: number }) {
-  // Hooks first: registers the glyph in the page's shared sprite (components/tool-sprite.tsx).
-  const symbol = useToolSymbol(tool.id);
-  if (tool.monogram) {
-    return (
-      <span
-        aria-hidden
-        className="grid shrink-0 place-items-center rounded-md font-heading font-extrabold leading-none text-white"
-        style={{
-          width: size,
-          height: size,
-          background: badgeColor(tool.color),
-          fontSize: tool.monogram.length > 2 ? size * 0.36 : size * 0.46,
-        }}
-      >
-        {tool.monogram}
-      </span>
-    );
-  }
-  const glyph = (
-    <svg
-      aria-hidden
-      viewBox="0 0 24 24"
-      width={tool.tile ? size * 0.68 : size}
-      height={tool.tile ? size * 0.68 : size}
-      fill={tool.tile?.fg ?? tool.color}
-    >
-      {symbol ? <use href={symbol} /> : <path d={tool.path} />}
-    </svg>
-  );
-  if (!tool.tile) return <span className="grid shrink-0 place-items-center">{glyph}</span>;
-  return (
-    <span
-      aria-hidden
-      className="grid shrink-0 place-items-center rounded-md"
-      style={{ width: size, height: size, background: tool.tile.bg }}
-    >
-      {glyph}
-    </span>
-  );
-}
-
-const chipSizes = {
-  md: { cls: "gap-2.5 px-4 py-2.5 text-sm", logo: 22 },
-  sm: { cls: "gap-2 px-3 py-1.5 text-[13px]", logo: 17 },
-  xs: { cls: "gap-1.5 px-2.5 py-1 text-[12px]", logo: 14 },
-};
-
-export function ToolChip({
-  tool,
-  size = "md",
-  className,
-}: {
-  tool: Tool;
-  size?: keyof typeof chipSizes;
-  className?: string;
-}) {
-  return (
-    <span
-      className={cn(
-        "tool-chip inline-flex items-center rounded-full border border-border bg-panel font-heading font-semibold whitespace-nowrap text-foreground",
-        chipSizes[size].cls,
-        className,
-      )}
-      style={{ ["--tool" as string]: tool.color }}
-    >
-      <ToolLogo tool={tool} size={chipSizes[size].logo} />
-      {tool.name}
-    </span>
-  );
-}
 
 /**
  * The looping copy is added after the page has loaded (idle time), so the first render and
@@ -114,27 +27,128 @@ function useLoopCopy() {
   return loop;
 }
 
-function Row({ group, speed = 3.2 }: { group: ToolGroup; speed?: number }) {
+/** What the hover card shows for one tool: real project counts only, never invented. */
+function toolInfo(tool: Tool) {
+  const count = projectCountForTool(tool.id);
+  const tab = toolTab[tool.id];
+  return {
+    use: toolUses[tool.id],
+    count,
+    href: tab && count > 0 ? `/projects/?tool=${tab}` : undefined,
+  };
+}
+
+type Hover = { tool: Tool; x: number; y: number } | null;
+
+/** A pill (row 1) or a tile (row 2); a link to that tool's projects when there are some. */
+function Item({
+  tool,
+  kind,
+  copy,
+  onShow,
+  onHide,
+}: {
+  tool: Tool;
+  kind: "pill" | "tile";
+  /** The looping duplicate: hidden from assistive tech and the tab order. */
+  copy: boolean;
+  onShow: (tool: Tool, el: HTMLElement) => void;
+  onHide: () => void;
+}) {
+  const { use, href } = toolInfo(tool);
+  const body =
+    kind === "pill" ? (
+      <ToolChip tool={tool} />
+    ) : (
+      <span className="tool-tile" style={{ ["--tool" as string]: tool.color }}>
+        <ToolLogo tool={tool} size={30} />
+        <span className="tool-tile-name mt-2.5 font-heading text-[13px] font-semibold whitespace-nowrap">
+          {tool.name}
+        </span>
+      </span>
+    );
+  const events = {
+    onMouseEnter: (e: React.MouseEvent<HTMLElement>) => onShow(tool, e.currentTarget),
+    onMouseLeave: onHide,
+    onFocus: (e: React.FocusEvent<HTMLElement>) => onShow(tool, e.currentTarget),
+    onBlur: onHide,
+  };
+  const described = !copy && use ? <span className="sr-only">: {use}</span> : null;
+  return (
+    <li>
+      {href ? (
+        <a
+          href={href}
+          tabIndex={copy ? -1 : undefined}
+          className="tool-item block rounded-2xl"
+          {...events}
+        >
+          {body}
+          {described}
+        </a>
+      ) : (
+        <span className="tool-item block" {...events}>
+          {body}
+          {described}
+        </span>
+      )}
+    </li>
+  );
+}
+
+function Row({
+  group,
+  kind,
+  caption,
+  seconds,
+  reverse,
+  onShow,
+  onHide,
+}: {
+  group: ToolGroup;
+  kind: "pill" | "tile";
+  caption: string;
+  /** Seconds per item: the two rows run at different speeds. */
+  seconds: number;
+  /** true: content glides left to right. */
+  reverse: boolean;
+  onShow: (tool: Tool, el: HTMLElement) => void;
+  onHide: () => void;
+}) {
   const items = toolsInGroup(group);
   const loop = useLoopCopy();
-  const list = (hidden: boolean) => (
-    <ul aria-hidden={hidden || undefined} className="flex shrink-0 items-center gap-3 py-3">
+  const list = (copy: boolean) => (
+    <ul
+      aria-hidden={copy || undefined}
+      className={cn("flex shrink-0 items-center py-4", kind === "tile" ? "gap-4" : "gap-3")}
+    >
       {items.map((t) => (
-        <li key={t.id}>
-          <ToolChip tool={t} />
-        </li>
+        <Item key={t.id} tool={t} kind={kind} copy={copy} onShow={onShow} onHide={onHide} />
       ))}
     </ul>
   );
+  // Each group is its own panel: no-code on a light card, code on a dark navy card.
+  const dark = kind === "tile";
   return (
-    <div>
-      <p className="mb-1 px-4 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-subtle">
-        {toolGroups[group]}
-      </p>
-      <div className="marquee">
+    <div className={cn("tool-panel", dark ? "tool-panel-dark on-dark" : "tool-panel-light")}>
+      <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-1 px-6 pt-6 sm:px-8 sm:pt-7">
+        <div>
+          <h3 className="font-heading text-[17px] font-semibold text-foreground">
+            {toolGroups[group]}
+          </h3>
+          <p className="mt-0.5 text-[14px] text-muted-foreground">{caption}</p>
+        </div>
+        <span className="font-mono text-[12px] text-subtle">{items.length} tools</span>
+      </div>
+      <div className="marquee mt-2 pb-3 sm:pb-4">
         <div
-          className={cn("marquee-track is-reverse", loop && "is-looping")}
-          style={{ ["--marquee-duration" as string]: `${items.length * speed}s` }}
+          className={cn(
+            "marquee-track",
+            kind === "tile" && "is-tiles",
+            reverse && "is-reverse",
+            loop && "is-looping",
+          )}
+          style={{ ["--marquee-duration" as string]: `${items.length * seconds}s` }}
         >
           {list(false)}
           {loop && list(true)}
@@ -144,36 +158,112 @@ function Row({ group, speed = 3.2 }: { group: ToolGroup; speed?: number }) {
   );
 }
 
+/** Floating card above the hovered / focused tool. Lives outside the clipped marquee. */
+function ToolPopover({ hover }: { hover: Hover }) {
+  if (!hover) return null;
+  const { tool, x, y } = hover;
+  const { use, count, href } = toolInfo(tool);
+  return (
+    <div
+      role="tooltip"
+      className="tool-popover pointer-events-none absolute z-20 w-[260px] rounded-2xl border border-border bg-panel p-4 text-left shadow-[0_24px_48px_-20px_rgba(11,18,36,0.45)]"
+      style={{ left: x, top: y }}
+    >
+      <div className="flex items-center gap-2.5">
+        <ToolLogo tool={tool} size={20} />
+        <span className="font-heading text-[14.5px] font-semibold text-foreground">
+          {tool.name}
+        </span>
+      </div>
+      {use && <p className="mt-2 text-[13px] leading-snug text-muted-foreground">{use}</p>}
+      {count > 0 && (
+        <p className="mt-2.5 font-heading text-[12.5px] font-semibold text-eyebrow">
+          Used in {count} {count === 1 ? "project" : "projects"}
+          {href ? " · select to see them" : ""}
+        </p>
+      )}
+    </div>
+  );
+}
+
 /**
- * Tools & technologies: two infinite marquees, both gliding left to right at slightly different
- * speeds (pure CSS), logos in brand colour. Hovering a row pauses it and the hovered tool
- * bounces. A pause button covers WCAG 2.2.2; static and wrapped under reduced motion.
+ * Tools: two separate panels, each a row moving the opposite way at its own speed (pure CSS).
+ * No-code and AI platforms: a light card of brand-colour pills, left to right. Code and
+ * infrastructure: a dark navy card of white tiles with a brand-colour top edge, right to left. Hovering or focusing a
+ * tool pauses its row, bounces the tool and shows what I use it for, with a project count from
+ * the generated project data where one exists. A pause button covers WCAG 2.2.2; static and
+ * wrapped under reduced motion.
  */
 export function TechMarquee({ tone }: { tone?: Tone }) {
   const [paused, setPaused] = useState(false);
+  const [hover, setHover] = useState<Hover>(null);
+  const areaRef = useRef<HTMLDivElement>(null);
+  const hideTimer = useRef(0);
+
+  const onShow = (tool: Tool, el: HTMLElement) => {
+    window.clearTimeout(hideTimer.current);
+    const area = areaRef.current;
+    if (!area) return;
+    const a = area.getBoundingClientRect();
+    const r = el.getBoundingClientRect();
+    const half = 130;
+    const x = Math.min(Math.max(r.left + r.width / 2 - a.left, half + 8), a.width - half - 8);
+    setHover({ tool, x, y: r.top - a.top - 10 });
+  };
+  const onHide = () => {
+    window.clearTimeout(hideTimer.current);
+    hideTimer.current = window.setTimeout(() => setHover(null), 80);
+  };
+  useEffect(() => () => window.clearTimeout(hideTimer.current), []);
+
   return (
     <section
       aria-labelledby="stack-title"
       className={cn(
-        "cv-auto py-16 [contain-intrinsic-size:auto_560px] md:py-20",
+        "cv-auto py-16 [contain-intrinsic-size:auto_620px] md:py-24",
         tone && bandClass(tone),
       )}
     >
       <Container>
         <SectionHeading
           id="stack-title"
-          eyebrow="Tools & technologies"
           align="center"
-          title="The stack behind the systems"
-          intro="No-code platforms where they're the fastest route, real code where a project needs it."
+          title="The tools I build with"
+          intro="No-code platforms when they are the fastest route. Real code when a project needs it."
         />
       </Container>
-      <div data-reveal="up" data-delay="200" className={cn("space-y-4", paused && "is-paused")}>
-        <LazyMount className="min-h-[200px]">
-          <Row group="nocode" />
-          <Row group="code" speed={3.8} />
-        </LazyMount>
-      </div>
+      <Container>
+        <div
+          ref={areaRef}
+          data-reveal="up"
+          data-delay="200"
+          className={cn("relative", paused && "is-paused")}
+        >
+          <LazyMount className="min-h-[420px]">
+            <div className="grid gap-5">
+              <Row
+                group="nocode"
+                kind="pill"
+                caption="For speed and flexibility"
+                seconds={1.9}
+                reverse
+                onShow={onShow}
+                onHide={onHide}
+              />
+              <Row
+                group="code"
+                kind="tile"
+                caption="For scale and control"
+                seconds={3.1}
+                reverse={false}
+                onShow={onShow}
+                onHide={onHide}
+              />
+            </div>
+          </LazyMount>
+          <ToolPopover hover={hover} />
+        </div>
+      </Container>
       <div className="mt-6 flex justify-center">
         <button
           type="button"

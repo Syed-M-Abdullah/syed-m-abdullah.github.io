@@ -2,12 +2,12 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { ArrowRight, CalendarClock, Check } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { PageHero } from "@/components/page-hero";
-import { Section } from "@/components/section";
+import { Container, Section } from "@/components/section";
+import { TalkCard } from "@/components/talk-card";
 import { type Tone } from "@/lib/band";
 import { ProjectGrid } from "@/components/projects";
 import { CtaPanel } from "@/components/cta-panel";
 import { ButtonLink } from "@/components/button-link";
-import { Eyebrow } from "@/components/badges";
 import { MaskLines } from "@/components/reveal-text";
 import { DrawLine } from "@/components/process";
 import { automationPositioning, getService, type Service } from "@/data/services";
@@ -18,7 +18,7 @@ import { buttonClass } from "@/lib/button-class";
 import { ServiceVisual } from "@/components/service-visuals";
 import { VoiceSamples } from "@/components/voice-samples";
 import { LazyMount } from "@/components/lazy-mount";
-import { ToolChip } from "@/components/tech-marquee";
+import { ToolChip } from "@/components/tool-logo";
 import { PlatformComparison } from "@/components/platform-comparison";
 import { seo } from "@/lib/seo";
 import { NotFoundPage } from "@/components/not-found";
@@ -65,7 +65,7 @@ function ServiceDetail() {
       <PageHero
         breadcrumbs={[
           { label: "Home", to: "/" },
-          { label: "Services", to: "/services" },
+          { label: "Services", to: "/services/" },
           { label: s.shortTitle },
         ]}
         eyebrow={s.eyebrow}
@@ -76,7 +76,7 @@ function ServiceDetail() {
             <a href={site.calendly} data-magnetic className={buttonClass("primary", "lg")}>
               <CalendarClock size={16} aria-hidden /> Book a Call
             </a>
-            <ButtonLink to="/contact" search={{ service: s.slug }} variant="secondary" size="lg">
+            <ButtonLink to="/contact/" search={{ service: s.slug }} variant="secondary" size="lg">
               Discuss your project <ArrowRight size={16} aria-hidden />
             </ButtonLink>
           </>
@@ -88,9 +88,8 @@ function ServiceDetail() {
         <Section
           id="voice-demos"
           tone={next()}
-          eyebrow="Hear them live"
           title="Real voice agent recordings"
-          intro="Press play — one sample plays at a time."
+          intro="Press play. One sample plays at a time."
         >
           <LazyMount className="min-h-[440px] md:min-h-[270px]">
             <VoiceSamples />
@@ -111,14 +110,16 @@ function ServiceDetail() {
         </Section>
       )}
 
-      {/* The problem — two lines, in the client's words */}
-      <section aria-labelledby="problem-title" className={`band tone-${next()} py-14 md:py-20`}>
-        <div className="mx-auto w-full max-w-4xl px-4 text-center sm:px-6">
-          <div data-reveal="blur-up">
-            <Eyebrow className="mb-4">
-              <span id="problem-title">The problem</span>
-            </Eyebrow>
-          </div>
+      {/* The problem: two lines, in the client's words */}
+      <section aria-labelledby="problem-title" className={`band tone-${next()} py-16 md:py-24`}>
+        <Container className="max-w-4xl">
+          <h2
+            id="problem-title"
+            data-reveal="blur-up"
+            className="mb-4 font-heading text-[15px] font-semibold tracking-normal text-muted-foreground"
+          >
+            The problem
+          </h2>
           <p
             data-reveal="mask-lines"
             data-delay="100"
@@ -133,49 +134,46 @@ function ServiceDetail() {
           >
             {s.problem[1]}
           </p>
-        </div>
+        </Container>
       </section>
 
-      <Section tone={next()} eyebrow="What I build" title="Systems that fix it">
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {/* An editorial two-column list, not another grid of cards. */}
+      <Section tone={next()} title="What I build">
+        <ol className="grid gap-x-12 md:grid-cols-2">
           {s.build.map((b, i) => (
             <li
               key={b.title}
               data-reveal={i % 2 ? "right" : "left"}
-              style={{ "--i": i % 3 } as React.CSSProperties}
-              className="panel-border panel-border-hover rounded-3xl p-6"
+              style={{ "--i": i % 2 } as React.CSSProperties}
+              className="flex gap-5 border-t border-border py-6"
             >
-              <span className="font-mono text-xs text-subtle">
+              <span className="w-7 shrink-0 pt-1 font-mono text-xs text-subtle">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-2 text-lg font-bold text-foreground">{b.title}</h3>
-              <p className="mt-1.5 text-[15px] leading-relaxed text-muted-foreground">{b.body}</p>
+              <div>
+                <h3 className="text-lg font-bold text-foreground">{b.title}</h3>
+                <p className="mt-1 text-[15px] leading-relaxed text-muted-foreground">{b.body}</p>
+              </div>
             </li>
           ))}
-        </ul>
+        </ol>
       </Section>
 
       {isAutomation && (
         <Section
           id="compare"
           tone={next()}
-          eyebrow="n8n vs Zapier vs Make"
-          title="Which platform fits your business?"
+          title="n8n, Zapier or Make: which fits your business?"
           intro={automationPositioning}
         >
           <PlatformComparison />
         </Section>
       )}
 
-      <Section
-        tone="brand"
-        angle
-        eyebrow="How it works"
-        title="Three steps to a live system"
-        align="center"
-      >
+      <Section tone="brand" angle title="Three steps to a live system" align="center">
         <ol className="relative grid gap-5 md:grid-cols-3">
-          <DrawLine className="absolute top-7 right-[16%] left-[16%] hidden w-[68%] md:block" />
+          {/* Runs from the first step's centre to the last; the circles sit on top of it. */}
+          <DrawLine className="absolute top-7 left-[16.6%] hidden w-[66.8%] md:block" />
           {s.steps.map((st, i) => (
             <li
               key={st.title}
@@ -183,7 +181,7 @@ function ServiceDetail() {
               style={{ "--i": i * 2 } as React.CSSProperties}
               className="relative flex flex-col items-center text-center"
             >
-              <span className="relative grid h-14 w-14 place-items-center rounded-full bg-[linear-gradient(135deg,#2563eb,#7c3aed)] font-heading text-lg font-bold text-white shadow-[0_0_0_6px_rgba(99,102,241,0.18),0_14px_30px_-12px_rgba(79,70,229,0.9)]">
+              <span className="relative grid h-14 w-14 place-items-center rounded-full border-4 border-[var(--background)] bg-[#2563eb] font-heading text-lg font-bold text-white">
                 {i + 1}
               </span>
               <h3 className="mt-5 text-xl font-bold text-foreground">{st.title}</h3>
@@ -195,15 +193,15 @@ function ServiceDetail() {
         </ol>
       </Section>
 
-      <Section tone={next()} eyebrow="What you get" title="Outcomes you can count on">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10">
-          <ul className="grid h-fit gap-3 sm:grid-cols-2 lg:grid-cols-1">
+      <Section tone={next()} title="What you get">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12">
+          <ul className="h-fit divide-y divide-border border-y border-border">
             {s.outcomes.map((o, i) => (
               <li
                 key={o}
                 data-reveal="left"
                 style={{ "--i": i } as React.CSSProperties}
-                className="flex gap-3 rounded-2xl border border-border bg-panel p-4 text-[15px] leading-snug text-foreground shadow-[var(--shadow-card)]"
+                className="flex gap-3 py-4 text-[16px] leading-snug text-foreground"
               >
                 <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[color-mix(in_oklab,var(--success)_14%,transparent)] text-success">
                   <Check size={12} strokeWidth={3} aria-hidden />
@@ -212,29 +210,29 @@ function ServiceDetail() {
               </li>
             ))}
           </ul>
-          {serviceTools.length > 0 && (
-            <div
-              data-reveal="right"
-              data-delay="200"
-              className="panel-border h-fit rounded-3xl p-6 sm:p-7"
-            >
-              <h3 className="text-lg font-bold text-foreground">Tools I use for this</h3>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {serviceTools.map((t) => (
-                  <li key={t.id}>
-                    <ToolChip tool={t} size="sm" />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <div data-reveal="right" data-delay="200" className="space-y-5">
+            {serviceTools.length > 0 && (
+              <div>
+                <h3 className="font-heading text-[15px] font-semibold text-foreground">
+                  Tools I use for this
+                </h3>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {serviceTools.map((t) => (
+                    <li key={t.id}>
+                      <ToolChip tool={t} size="sm" />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            <TalkCard />
+          </div>
         </div>
       </Section>
 
       {related.length > 0 && (
         <Section
           tone={next()}
-          eyebrow="Related work"
           title={`${s.shortTitle} projects`}
           action={
             <a
@@ -250,7 +248,12 @@ function ServiceDetail() {
         </Section>
       )}
 
-      <CtaPanel title={s.cta.title} body={s.cta.body} service={s.slug} />
+      <CtaPanel
+        title={s.cta.title}
+        body={s.cta.body}
+        service={s.slug}
+        exclude={related.map((p) => p.slug)}
+      />
     </PageShell>
   );
 }

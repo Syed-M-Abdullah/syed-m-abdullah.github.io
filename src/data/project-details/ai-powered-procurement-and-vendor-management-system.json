@@ -1,138 +1,138 @@
 {
- "slug": "ai-powered-procurement-and-vendor-management-system",
- "tags": [
-  "Make.com",
-  "Airtable",
-  "Google Sheets",
-  "Google Drive",
-  "Gmail",
-  "Slack",
-  "OpenAI",
-  "DocuSign",
-  "Webhooks"
- ],
- "overview": [
-  "Built an automated procurement and vendor management system for handling purchase requests, vendor onboarding, quotation comparison, approvals, purchase orders, and delivery tracking.",
-  "The workflow takes a new purchase request and turns it into a complete procurement process with automated budget checks, vendor evaluation, approvals, document management, and final delivery verification."
- ],
- "sections": [
-  {
-   "heading": "Workflow",
-   "blocks": [
+  "slug": "ai-powered-procurement-and-vendor-management-system",
+  "tags": [
+    "Make.com",
+    "Airtable",
+    "Google Sheets",
+    "Google Drive",
+    "Gmail",
+    "Slack",
+    "OpenAI",
+    "DocuSign",
+    "Webhooks"
+  ],
+  "overview": [
+    "Built an automated procurement and vendor management system for handling purchase requests, vendor onboarding, quotation comparison, approvals, purchase orders, and delivery tracking.",
+    "The workflow takes a new purchase request and turns it into a complete procurement process with automated budget checks, vendor evaluation, approvals, document management, and final delivery verification."
+  ],
+  "sections": [
     {
-     "p": "The system:"
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "p": "The system:"
+        },
+        {
+          "list": [
+            "Receives purchase requests through a webhook",
+            "Creates and validates procurement records automatically",
+            "Checks department budget before processing",
+            "Searches approved vendors based on the requested category",
+            "Starts vendor onboarding when no suitable vendor is available",
+            "Creates vendor folders and stores compliance documents in Google Drive",
+            "Extracts and analyzes vendor documents using AI",
+            "Calculates vendor compliance scores and approval status",
+            "Sends RFQs to approved vendors automatically",
+            "Receives and stores vendor quotations",
+            "Extracts pricing, delivery, warranty, and payment terms from quotes",
+            "Compares vendors using weighted scoring",
+            "Generates an AI based vendor recommendation",
+            "Routes purchases through manager, finance, and director approvals",
+            "Generates the final purchase order automatically",
+            "Sends documents for digital signature through DocuSign",
+            "Sends the approved purchase order to the selected vendor",
+            "Tracks active purchase orders and delivery deadlines",
+            "Sends reminders and late delivery alerts",
+            "Verifies received goods against the original order",
+            "Updates vendor performance and procurement status",
+            "Updates procurement analytics automatically"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Receives purchase requests through a webhook",
-      "Creates and validates procurement records automatically",
-      "Checks department budget before processing",
-      "Searches approved vendors based on the requested category",
-      "Starts vendor onboarding when no suitable vendor is available",
-      "Creates vendor folders and stores compliance documents in Google Drive",
-      "Extracts and analyzes vendor documents using AI",
-      "Calculates vendor compliance scores and approval status",
-      "Sends RFQs to approved vendors automatically",
-      "Receives and stores vendor quotations",
-      "Extracts pricing, delivery, warranty, and payment terms from quotes",
-      "Compares vendors using weighted scoring",
-      "Generates an AI based vendor recommendation",
-      "Routes purchases through manager, finance, and director approvals",
-      "Generates the final purchase order automatically",
-      "Sends documents for digital signature through DocuSign",
-      "Sends the approved purchase order to the selected vendor",
-      "Tracks active purchase orders and delivery deadlines",
-      "Sends reminders and late delivery alerts",
-      "Verifies received goods against the original order",
-      "Updates vendor performance and procurement status",
-      "Updates procurement analytics automatically"
-     ]
+      "heading": "Branding & Templates",
+      "blocks": [
+        {
+          "p": "The workflow uses predefined procurement, RFQ, approval, and purchase order templates."
+        },
+        {
+          "p": "Each template controls:"
+        },
+        {
+          "list": [
+            "Vendor communication",
+            "RFQ structure",
+            "Approval requests",
+            "Purchase order details",
+            "Delivery notifications"
+          ]
+        },
+        {
+          "p": "This keeps the procurement process consistent across different departments and vendors."
+        }
+      ]
+    },
+    {
+      "heading": "Content Management",
+      "blocks": [
+        {
+          "p": "Airtable acts as the central procurement and vendor tracking system."
+        },
+        {
+          "p": "Each request is updated with:"
+        },
+        {
+          "list": [
+            "Request status",
+            "Budget approval",
+            "Selected vendor",
+            "Vendor score",
+            "Purchase order number",
+            "Approval status",
+            "Delivery status",
+            "Vendor performance"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Branding & Templates",
-   "blocks": [
+  ],
+  "result": [
+    "A complete automated procurement pipeline that turns a purchase request into an approved, documented, signed, tracked, and completed purchase order without requiring teams to manually manage every procurement step.",
+    "The system also keeps vendor documents, quotations, approvals, delivery status, vendor performance, and procurement analytics organized in one workflow."
+  ],
+  "images": [
     {
-     "p": "The workflow uses predefined procurement, RFQ, approval, and purchase order templates."
+      "src": "/projects/ai-powered-procurement-and-vendor-management-system/01-960.webp",
+      "srcSet": "/projects/ai-powered-procurement-and-vendor-management-system/01-480.webp 480w, /projects/ai-powered-procurement-and-vendor-management-system/01-960.webp 960w, /projects/ai-powered-procurement-and-vendor-management-system/01-1600.webp 1600w",
+      "full": "/projects/ai-powered-procurement-and-vendor-management-system/01-1600.webp",
+      "width": 1600,
+      "height": 532,
+      "alt": "AI Powered Procurement & Vendor Management System: AI Powered Procurement & Vendor Management System 1"
     },
     {
-     "p": "Each template controls:"
+      "src": "/projects/ai-powered-procurement-and-vendor-management-system/02-960.webp",
+      "srcSet": "/projects/ai-powered-procurement-and-vendor-management-system/02-480.webp 480w, /projects/ai-powered-procurement-and-vendor-management-system/02-960.webp 960w, /projects/ai-powered-procurement-and-vendor-management-system/02-1600.webp 1600w",
+      "full": "/projects/ai-powered-procurement-and-vendor-management-system/02-1600.webp",
+      "width": 1600,
+      "height": 631,
+      "alt": "AI Powered Procurement & Vendor Management System: AI Powered Procurement & Vendor Management System 2"
     },
     {
-     "list": [
-      "Vendor communication",
-      "RFQ structure",
-      "Approval requests",
-      "Purchase order details",
-      "Delivery notifications"
-     ]
+      "src": "/projects/ai-powered-procurement-and-vendor-management-system/03-960.webp",
+      "srcSet": "/projects/ai-powered-procurement-and-vendor-management-system/03-480.webp 480w, /projects/ai-powered-procurement-and-vendor-management-system/03-960.webp 960w, /projects/ai-powered-procurement-and-vendor-management-system/03-1600.webp 1600w",
+      "full": "/projects/ai-powered-procurement-and-vendor-management-system/03-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "AI Powered Procurement & Vendor Management System: AI Powered Procurement & Vendor Management System 3"
     },
     {
-     "p": "This keeps the procurement process consistent across different departments and vendors."
+      "src": "/projects/ai-powered-procurement-and-vendor-management-system/04-960.webp",
+      "srcSet": "/projects/ai-powered-procurement-and-vendor-management-system/04-480.webp 480w, /projects/ai-powered-procurement-and-vendor-management-system/04-960.webp 960w, /projects/ai-powered-procurement-and-vendor-management-system/04-1600.webp 1600w",
+      "full": "/projects/ai-powered-procurement-and-vendor-management-system/04-1600.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "AI Powered Procurement & Vendor Management System: AI Powered Procurement & Vendor Management System 4"
     }
-   ]
-  },
-  {
-   "heading": "Content Management",
-   "blocks": [
-    {
-     "p": "Airtable acts as the central procurement and vendor tracking system."
-    },
-    {
-     "p": "Each request is updated with:"
-    },
-    {
-     "list": [
-      "Request status",
-      "Budget approval",
-      "Selected vendor",
-      "Vendor score",
-      "Purchase order number",
-      "Approval status",
-      "Delivery status",
-      "Vendor performance"
-     ]
-    }
-   ]
-  }
- ],
- "result": [
-  "A complete automated procurement pipeline that turns a purchase request into an approved, documented, signed, tracked, and completed purchase order without requiring teams to manually manage every procurement step.",
-  "The system also keeps vendor documents, quotations, approvals, delivery status, vendor performance, and procurement analytics organized in one workflow."
- ],
- "images": [
-  {
-   "src": "/projects/ai-powered-procurement-and-vendor-management-system/01-960.webp",
-   "srcSet": "/projects/ai-powered-procurement-and-vendor-management-system/01-480.webp 480w, /projects/ai-powered-procurement-and-vendor-management-system/01-960.webp 960w, /projects/ai-powered-procurement-and-vendor-management-system/01-1600.webp 1600w",
-   "full": "/projects/ai-powered-procurement-and-vendor-management-system/01-1600.webp",
-   "width": 1600,
-   "height": 532,
-   "alt": "AI Powered Procurement & Vendor Management System: AI Powered Procurement & Vendor Management System 1"
-  },
-  {
-   "src": "/projects/ai-powered-procurement-and-vendor-management-system/02-960.webp",
-   "srcSet": "/projects/ai-powered-procurement-and-vendor-management-system/02-480.webp 480w, /projects/ai-powered-procurement-and-vendor-management-system/02-960.webp 960w, /projects/ai-powered-procurement-and-vendor-management-system/02-1600.webp 1600w",
-   "full": "/projects/ai-powered-procurement-and-vendor-management-system/02-1600.webp",
-   "width": 1600,
-   "height": 631,
-   "alt": "AI Powered Procurement & Vendor Management System: AI Powered Procurement & Vendor Management System 2"
-  },
-  {
-   "src": "/projects/ai-powered-procurement-and-vendor-management-system/03-960.webp",
-   "srcSet": "/projects/ai-powered-procurement-and-vendor-management-system/03-480.webp 480w, /projects/ai-powered-procurement-and-vendor-management-system/03-960.webp 960w, /projects/ai-powered-procurement-and-vendor-management-system/03-1600.webp 1600w",
-   "full": "/projects/ai-powered-procurement-and-vendor-management-system/03-1600.webp",
-   "width": 1600,
-   "height": 900,
-   "alt": "AI Powered Procurement & Vendor Management System: AI Powered Procurement & Vendor Management System 3"
-  },
-  {
-   "src": "/projects/ai-powered-procurement-and-vendor-management-system/04-960.webp",
-   "srcSet": "/projects/ai-powered-procurement-and-vendor-management-system/04-480.webp 480w, /projects/ai-powered-procurement-and-vendor-management-system/04-960.webp 960w, /projects/ai-powered-procurement-and-vendor-management-system/04-1600.webp 1600w",
-   "full": "/projects/ai-powered-procurement-and-vendor-management-system/04-1600.webp",
-   "width": 1600,
-   "height": 900,
-   "alt": "AI Powered Procurement & Vendor Management System: AI Powered Procurement & Vendor Management System 4"
-  }
- ]
+  ]
 }

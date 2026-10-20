@@ -13,7 +13,10 @@ const SSR_HANDLER = path.join(ROOT, ".output", "server", "index.mjs");
 const ROUTES_MODULE = path.join(ROOT, "src", "data", "routes.ts");
 // Files the Cloudflare/Nitro build emits that GitHub Pages doesn't use.
 const SKIP_FILES = new Set(["_headers", "_redirects"]);
-const NOT_FOUND_PROBE = "/__export-404__";
+const NOT_FOUND_PROBE = "/__export-404__/";
+// Pages are requested in their trailing-slash form, the URL GitHub Pages serves them at (the
+// router uses trailingSlash: "always").
+const pageUrl = (route) => (route === "/" ? "/" : `${route}/`);
 
 function log(...args) {
   console.log("[export-static]", ...args);
@@ -131,7 +134,7 @@ async function main() {
   const base = "http://localhost:8080";
   // Redirect pages (old URLs) render like any page but stay out of the sitemap.
   for (const route of [...routes, ...redirects]) {
-    const { status, html } = await render(handler, base + route);
+    const { status, html } = await render(handler, base + pageUrl(route));
     if (status !== 200) throw new Error(`Failed to render ${route}: HTTP ${status}`);
     if (!/<title>[^<]+<\/title>/.test(html)) throw new Error(`No <title> rendered for ${route}`);
     writeFile(outputFile(route), html);

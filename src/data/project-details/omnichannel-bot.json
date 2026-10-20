@@ -1,55 +1,49 @@
 {
- "slug": "omnichannel-bot",
- "tags": [
-  "Multi-Platform",
-  "Global"
- ],
- "overview": [
-  "One AI assistant answering across six messaging platforms, with intent detection and GoHighLevel sync."
- ],
- "sections": [
-  {
-   "heading": "The challenge",
-   "blocks": [
+  "slug": "omnichannel-bot",
+  "tags": ["Multi-Platform", "Global"],
+  "overview": [
+    "One AI assistant answering across six messaging platforms, with intent detection and GoHighLevel sync."
+  ],
+  "sections": [
     {
-     "p": "The business needed consistent AI replies on every channel, with conversations synced to the CRM."
-    }
-   ]
-  },
-  {
-   "heading": "Solution & architecture",
-   "blocks": [
+      "heading": "The challenge",
+      "blocks": [
+        {
+          "p": "The business needed consistent AI replies on every channel, with conversations synced to the CRM."
+        }
+      ]
+    },
     {
-     "p": "A single assistant (OpenAI with a Pinecone knowledge base) answers on WhatsApp, Instagram, Messenger, Telegram, Slack and Discord. It qualifies leads, detects when a person should take over, and syncs conversations to GoHighLevel through n8n."
-    }
-   ]
-  },
-  {
-   "heading": "Workflow",
-   "blocks": [
+      "heading": "Solution & architecture",
+      "blocks": [
+        {
+          "p": "A single assistant (OpenAI with a Pinecone knowledge base) answers on WhatsApp, Instagram, Messenger, Telegram, Slack and Discord. It qualifies leads, detects when a person should take over, and syncs conversations to GoHighLevel through n8n."
+        }
+      ]
+    },
     {
-     "list": [
-      "Message in (any channel)",
-      "LLM responds",
-      "Qualify",
-      "Escalate on intent",
-      "CRM sync"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Key facts",
-   "blocks": [
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "list": [
+            "Message in (any channel)",
+            "LLM responds",
+            "Qualify",
+            "Escalate on intent",
+            "CRM sync"
+          ]
+        }
+      ]
+    },
     {
-     "list": [
-      "6 — Platforms, one assistant",
-      "Intent — Escalation detection"
-     ]
+      "heading": "Key facts",
+      "blocks": [
+        {
+          "list": ["6, Platforms, one assistant", "Intent, Escalation detection"]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [],
- "images": []
+  ],
+  "result": [],
+  "images": []
 }

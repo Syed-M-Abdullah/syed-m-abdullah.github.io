@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { PageShell } from "./page-shell";
 import { bandClass } from "@/lib/band";
 import { Container } from "./section";
@@ -16,5 +16,21 @@ export function RedirectPage({ children }: { children: ReactNode }) {
         </Container>
       </section>
     </PageShell>
+  );
+}
+
+/** Page body for a retired URL: forwards straight away, with a link as a fallback. */
+export function ForwardPage({ to, label }: { to: string; label: string }) {
+  useEffect(() => {
+    window.location.replace(to);
+  }, [to]);
+  return (
+    <RedirectPage>
+      This page has moved:{" "}
+      <a href={to} className="font-semibold text-eyebrow underline">
+        {label}
+      </a>
+      .
+    </RedirectPage>
   );
 }

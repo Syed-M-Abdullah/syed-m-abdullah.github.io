@@ -1,106 +1,95 @@
 {
- "slug": "social-media-agency-voice-assistant",
- "tags": [
-  "GoHighLevel",
-  "Synthflow",
-  "Voice Agent",
-  "CRM",
-  "Appointment Booking",
-  "Email"
- ],
- "overview": [
-  "Built an inbound voice automation system for Brandy Social using Synthflow and GoHighLevel.",
-  "The system handles incoming calls, captures customer information, manages appointment bookings, and keeps the resulting data organized inside the CRM."
- ],
- "sections": [
-  {
-   "heading": "Voice Agent Setup",
-   "blocks": [
+  "slug": "social-media-agency-voice-assistant",
+  "tags": ["GoHighLevel", "Synthflow", "Voice Agent", "CRM", "Appointment Booking", "Email"],
+  "overview": [
+    "Built an inbound voice automation system for Brandy Social using Synthflow and GoHighLevel.",
+    "The system handles incoming calls, captures customer information, manages appointment bookings, and keeps the resulting data organized inside the CRM."
+  ],
+  "sections": [
     {
-     "p": "Configured a dedicated Brandy Inbound Agent in Synthflow and connected it with the Brandy Social GoHighLevel subaccount."
+      "heading": "Voice Agent Setup",
+      "blocks": [
+        {
+          "p": "Configured a dedicated Brandy Inbound Agent in Synthflow and connected it with the Brandy Social GoHighLevel subaccount."
+        },
+        {
+          "p": "The agent handles incoming customer conversations and supports the appointment process."
+        }
+      ]
     },
     {
-     "p": "The agent handles incoming customer conversations and supports the appointment process."
+      "heading": "GoHighLevel Workflows",
+      "blocks": [
+        {
+          "p": "The inbound setup includes:"
+        },
+        {
+          "list": ["Brandy Inbound Agent", "Appointment Booked", "Post Inbound Data"]
+        },
+        {
+          "p": "These workflows manage the different stages of the customer journey and update the CRM accordingly."
+        }
+      ]
+    },
+    {
+      "heading": "Appointment Automation",
+      "blocks": [
+        {
+          "p": "When an appointment is booked, the workflow processes the booking information and updates the related contact record in GoHighLevel."
+        },
+        {
+          "p": "Post call data is also handled automatically to keep customer information organized."
+        }
+      ]
+    },
+    {
+      "heading": "Email Communication",
+      "blocks": [
+        {
+          "p": "The system uses GoHighLevel email communication for appointment related messages and customer follow ups."
+        },
+        {
+          "p": "Email activity is stored directly against the contact record, providing a complete view of customer interactions."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "GoHighLevel Workflows",
-   "blocks": [
+  ],
+  "result": [
+    "A structured inbound voice system connecting customer calls, appointment booking, post call processing, CRM updates, and email communication in one GoHighLevel setup.",
+    "The automation reduces manual handling and keeps the customer journey organized from the initial call through appointment follow up."
+  ],
+  "images": [
     {
-     "p": "The inbound setup includes:"
+      "src": "/projects/social-media-agency-voice-assistant/01-960.webp",
+      "srcSet": "/projects/social-media-agency-voice-assistant/01-480.webp 480w, /projects/social-media-agency-voice-assistant/01-960.webp 960w, /projects/social-media-agency-voice-assistant/01-1600.webp 1600w",
+      "full": "/projects/social-media-agency-voice-assistant/01-1600.webp",
+      "width": 1600,
+      "height": 802,
+      "alt": "Social Media Agency Voice Assistant: Brandy Synthflow"
     },
     {
-     "list": [
-      "Brandy Inbound Agent",
-      "Appointment Booked",
-      "Post Inbound Data"
-     ]
+      "src": "/projects/social-media-agency-voice-assistant/02-960.webp",
+      "srcSet": "/projects/social-media-agency-voice-assistant/02-480.webp 480w, /projects/social-media-agency-voice-assistant/02-960.webp 960w, /projects/social-media-agency-voice-assistant/02-1600.webp 1600w",
+      "full": "/projects/social-media-agency-voice-assistant/02-1600.webp",
+      "width": 1600,
+      "height": 855,
+      "alt": "Social Media Agency Voice Assistant: Brandy Agents"
     },
     {
-     "p": "These workflows manage the different stages of the customer journey and update the CRM accordingly."
+      "src": "/projects/social-media-agency-voice-assistant/03-960.webp",
+      "srcSet": "/projects/social-media-agency-voice-assistant/03-480.webp 480w, /projects/social-media-agency-voice-assistant/03-960.webp 960w, /projects/social-media-agency-voice-assistant/03-1600.webp 1600w",
+      "full": "/projects/social-media-agency-voice-assistant/03-1600.webp",
+      "width": 1600,
+      "height": 850,
+      "alt": "Social Media Agency Voice Assistant: Brandy Inbound"
+    },
+    {
+      "src": "/projects/social-media-agency-voice-assistant/04-960.webp",
+      "srcSet": "/projects/social-media-agency-voice-assistant/04-480.webp 480w, /projects/social-media-agency-voice-assistant/04-960.webp 960w, /projects/social-media-agency-voice-assistant/04-1600.webp 1600w",
+      "full": "/projects/social-media-agency-voice-assistant/04-1600.webp",
+      "width": 1600,
+      "height": 854,
+      "alt": "Social Media Agency Voice Assistant: Brandy Subccount"
     }
-   ]
-  },
-  {
-   "heading": "Appointment Automation",
-   "blocks": [
-    {
-     "p": "When an appointment is booked, the workflow processes the booking information and updates the related contact record in GoHighLevel."
-    },
-    {
-     "p": "Post call data is also handled automatically to keep customer information organized."
-    }
-   ]
-  },
-  {
-   "heading": "Email Communication",
-   "blocks": [
-    {
-     "p": "The system uses GoHighLevel email communication for appointment related messages and customer follow ups."
-    },
-    {
-     "p": "Email activity is stored directly against the contact record, providing a complete view of customer interactions."
-    }
-   ]
-  }
- ],
- "result": [
-  "A structured inbound voice system connecting customer calls, appointment booking, post call processing, CRM updates, and email communication in one GoHighLevel setup.",
-  "The automation reduces manual handling and keeps the customer journey organized from the initial call through appointment follow up."
- ],
- "images": [
-  {
-   "src": "/projects/social-media-agency-voice-assistant/01-960.webp",
-   "srcSet": "/projects/social-media-agency-voice-assistant/01-480.webp 480w, /projects/social-media-agency-voice-assistant/01-960.webp 960w, /projects/social-media-agency-voice-assistant/01-1600.webp 1600w",
-   "full": "/projects/social-media-agency-voice-assistant/01-1600.webp",
-   "width": 1600,
-   "height": 802,
-   "alt": "Social Media Agency Voice Assistant: Brandy Synthflow"
-  },
-  {
-   "src": "/projects/social-media-agency-voice-assistant/02-960.webp",
-   "srcSet": "/projects/social-media-agency-voice-assistant/02-480.webp 480w, /projects/social-media-agency-voice-assistant/02-960.webp 960w, /projects/social-media-agency-voice-assistant/02-1600.webp 1600w",
-   "full": "/projects/social-media-agency-voice-assistant/02-1600.webp",
-   "width": 1600,
-   "height": 855,
-   "alt": "Social Media Agency Voice Assistant: Brandy Agents"
-  },
-  {
-   "src": "/projects/social-media-agency-voice-assistant/03-960.webp",
-   "srcSet": "/projects/social-media-agency-voice-assistant/03-480.webp 480w, /projects/social-media-agency-voice-assistant/03-960.webp 960w, /projects/social-media-agency-voice-assistant/03-1600.webp 1600w",
-   "full": "/projects/social-media-agency-voice-assistant/03-1600.webp",
-   "width": 1600,
-   "height": 850,
-   "alt": "Social Media Agency Voice Assistant: Brandy Inbound"
-  },
-  {
-   "src": "/projects/social-media-agency-voice-assistant/04-960.webp",
-   "srcSet": "/projects/social-media-agency-voice-assistant/04-480.webp 480w, /projects/social-media-agency-voice-assistant/04-960.webp 960w, /projects/social-media-agency-voice-assistant/04-1600.webp 1600w",
-   "full": "/projects/social-media-agency-voice-assistant/04-1600.webp",
-   "width": 1600,
-   "height": 854,
-   "alt": "Social Media Agency Voice Assistant: Brandy Subccount"
-  }
- ]
+  ]
 }

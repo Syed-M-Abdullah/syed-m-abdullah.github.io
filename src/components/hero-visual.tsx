@@ -12,7 +12,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { tools } from "@/data/tools";
-import { ToolLogo } from "./tech-marquee";
+import { ToolLogo } from "./tool-logo";
 
 const steps: { label: string; sub: string; icon: LucideIcon }[] = [
   { label: "Lead captured", sub: "Web form · Ads · WhatsApp", icon: Inbox },
@@ -81,8 +81,6 @@ export function HeroVisual() {
 
   return (
     <div ref={ref} aria-hidden className="hero-visual relative mx-auto w-full max-w-[540px]">
-      <div className="hero-visual-glow absolute -inset-10 -z-10" />
-
       <div className="wf-panel relative overflow-hidden rounded-[1.75rem] p-5 sm:p-6">
         <div className="hero-visual-grid absolute inset-0 -z-10" />
 

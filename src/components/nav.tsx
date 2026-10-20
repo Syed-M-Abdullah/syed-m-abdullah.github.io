@@ -11,13 +11,13 @@ import { cn } from "@/lib/utils";
 const links = [
   { to: "/", label: "Home", match: (p: string) => p === "/" },
   {
-    to: "/projects",
+    to: "/projects/",
     label: "Projects",
     match: (p: string) => p.startsWith("/projects") || p.startsWith("/case"),
   },
-  { to: "/process", label: "Process", match: (p: string) => p.startsWith("/process") },
-  { to: "/about", label: "About", match: (p: string) => p.startsWith("/about") },
-  { to: "/contact", label: "Contact", match: (p: string) => p.startsWith("/contact") },
+  { to: "/process/", label: "Process", match: (p: string) => p.startsWith("/process") },
+  { to: "/about/", label: "About", match: (p: string) => p.startsWith("/about") },
+  { to: "/contact/", label: "Contact", match: (p: string) => p.startsWith("/contact") },
 ] as const;
 
 const linkClass = (active: boolean) =>
@@ -38,13 +38,17 @@ function ActiveBar() {
 /**
  * Desktop Services mega-menu. Opens on hover (with a short intent delay) and on click /
  * Enter / Space / ArrowDown. Arrow keys move between services, Esc closes and returns focus,
- * clicking outside closes. Hidden menus are `visibility: hidden`, so they're out of the tab order.
+ * clicking outside, tabbing away or navigating closes. Hidden menus are `visibility: hidden`,
+ * so they're out of the tab order.
  */
-function ServicesMenu({ active }: { active: boolean }) {
+function ServicesMenu({ active, pathname }: { active: boolean; pathname: string }) {
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLLIElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const timer = useRef<number>(0);
+  // How the menu was opened. Hovering opens it a moment before the click that usually follows;
+  // that click must keep it open, not toggle it shut (the old "menu doesn't work" bug).
+  const openedBy = useRef<"hover" | "other">("other");
   const menuId = useId();
 
   const items = () =>
@@ -59,12 +63,20 @@ function ServicesMenu({ active }: { active: boolean }) {
     return () => document.removeEventListener("pointerdown", onDown);
   }, [open]);
 
+  // Any navigation (menu item, back/forward, another link) closes the menu.
+  useEffect(() => setOpen(false), [pathname]);
+
   useEffect(() => () => window.clearTimeout(timer.current), []);
 
   const hoverOpen = () => {
     if (!window.matchMedia("(hover: hover)").matches) return;
     window.clearTimeout(timer.current);
-    timer.current = window.setTimeout(() => setOpen(true), 70);
+    timer.current = window.setTimeout(() => {
+      setOpen((o) => {
+        if (!o) openedBy.current = "hover";
+        return true;
+      });
+    }, 70);
   };
   const hoverClose = () => {
     if (!window.matchMedia("(hover: hover)").matches) return;
@@ -72,12 +84,31 @@ function ServicesMenu({ active }: { active: boolean }) {
     timer.current = window.setTimeout(() => setOpen(false), 160);
   };
 
+  const onTriggerClick = () => {
+    window.clearTimeout(timer.current);
+    if (open && openedBy.current === "hover") {
+      openedBy.current = "other";
+      return;
+    }
+    openedBy.current = "other";
+    setOpen((o) => !o);
+  };
+
   const onTriggerKey = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowDown") {
       e.preventDefault();
+      openedBy.current = "other";
       setOpen(true);
       requestAnimationFrame(() => items()[0]?.focus());
+    } else if (e.key === "Escape" && open) {
+      e.preventDefault();
+      setOpen(false);
     }
+  };
+
+  // Tabbing out of the menu (forwards or backwards) closes it.
+  const onBlur = (e: React.FocusEvent) => {
+    if (!wrapRef.current?.contains(e.relatedTarget as Node | null)) setOpen(false);
   };
 
   const onMenuKey = (e: React.KeyboardEvent) => {
@@ -99,13 +130,19 @@ function ServicesMenu({ active }: { active: boolean }) {
   };
 
   return (
-    <li ref={wrapRef} className="relative" onMouseEnter={hoverOpen} onMouseLeave={hoverClose}>
+    <li
+      ref={wrapRef}
+      className="relative"
+      onMouseEnter={hoverOpen}
+      onMouseLeave={hoverClose}
+      onBlur={onBlur}
+    >
       <button
         ref={triggerRef}
         type="button"
         aria-expanded={open}
         aria-controls={menuId}
-        onClick={() => setOpen((o) => !o)}
+        onClick={onTriggerClick}
         onKeyDown={onTriggerKey}
         className={cn(
           linkClass(active || open),
@@ -134,7 +171,7 @@ function ServicesMenu({ active }: { active: boolean }) {
             {services.map((s) => (
               <li key={s.slug}>
                 <Link
-                  to="/services/$slug"
+                  to="/services/$slug/"
                   params={{ slug: s.slug }}
                   data-menu-item
                   onClick={() => setOpen(false)}
@@ -168,7 +205,7 @@ function ServicesMenu({ active }: { active: boolean }) {
                   fits?
                 </span>
                 <span className="text-[12.5px] leading-snug text-muted-foreground">
-                  Book a free 30-minute call and I'll point you in the right direction.
+                  Book a 30-minute call. I'll tell you which service, if any, fits the problem.
                 </span>
               </a>
             </li>
@@ -178,7 +215,7 @@ function ServicesMenu({ active }: { active: boolean }) {
               Seven services, one engineer from first call to handover.
             </span>
             <Link
-              to="/services"
+              to="/services/"
               data-menu-item
               onClick={() => setOpen(false)}
               className="inline-flex items-center gap-1 rounded-md font-heading text-[13px] font-semibold text-eyebrow hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
@@ -252,7 +289,7 @@ export function Nav() {
         aria-label="Primary"
         className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
       >
-        <Link to="/" className="shrink-0 rounded-lg" aria-label="Abdullah Bukhari — home">
+        <Link to="/" className="shrink-0 rounded-lg" aria-label="Abdullah Bukhari, home page">
           <Logo />
         </Link>
 
@@ -267,7 +304,7 @@ export function Nav() {
               {isActive(links[0].match) && <ActiveBar />}
             </Link>
           </li>
-          <ServicesMenu active={servicesActive} />
+          <ServicesMenu active={servicesActive} pathname={path} />
           {links.slice(1).map((l) => {
             const active = isActive(l.match);
             return (
@@ -286,7 +323,7 @@ export function Nav() {
         </ul>
 
         <div className="flex items-center gap-2">
-          <ButtonLink to="/contact" size="sm" className="hidden md:inline-flex">
+          <ButtonLink to="/contact/" size="sm" className="hidden md:inline-flex">
             Discuss a Project <ArrowRight size={15} aria-hidden />
           </ButtonLink>
           <button
@@ -309,9 +346,15 @@ export function Nav() {
         hidden={!open}
         className="h-[calc(100dvh-72px)] overflow-y-auto border-t border-border bg-background lg:hidden"
       >
-        {/* Rendered only while open: keeps every page's initial DOM and hydration smaller. */}
+        {/* Rendered only while open: keeps every page's initial DOM and hydration smaller.
+            Any link inside closes it, even one to the page you're already on. */}
         {open && (
-          <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-6 sm:px-6">
+          <ul
+            className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-6 sm:px-6"
+            onClick={(e) => {
+              if ((e.target as HTMLElement).closest("a")) setOpen(false);
+            }}
+          >
             <li>
               <Link
                 to="/"
@@ -346,7 +389,7 @@ export function Nav() {
                 {services.map((s) => (
                   <li key={s.slug}>
                     <Link
-                      to="/services/$slug"
+                      to="/services/$slug/"
                       params={{ slug: s.slug }}
                       className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-foreground hover:bg-panel"
                     >
@@ -357,7 +400,7 @@ export function Nav() {
                 ))}
                 <li>
                   <Link
-                    to="/services"
+                    to="/services/"
                     className="flex items-center gap-1 rounded-xl px-3 py-2.5 font-heading text-[15px] font-semibold text-eyebrow"
                   >
                     View all services <ArrowRight size={15} aria-hidden />
@@ -386,7 +429,7 @@ export function Nav() {
               );
             })}
             <li className="mt-4">
-              <ButtonLink to="/contact" size="lg" className="w-full">
+              <ButtonLink to="/contact/" size="lg" className="w-full">
                 Discuss a Project <ArrowRight size={16} aria-hidden />
               </ButtonLink>
             </li>

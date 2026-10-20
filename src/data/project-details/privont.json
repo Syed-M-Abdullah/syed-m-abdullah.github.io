@@ -1,206 +1,199 @@
 {
- "slug": "privont",
- "tags": [
-  "Real Estate CRM",
-  "Agent Management",
-  "Lender Management",
-  "Vendor Management",
-  "Lead Management"
- ],
- "overview": [
-  "PRIVONT is a secure web based real estate management platform built to centralize agents, lenders, vendors, leads, users, and business relationships in one system.",
-  "The platform combines a premium members experience with a structured administrative dashboard for managing business records."
- ],
- "sections": [
-  {
-   "heading": "Main Modules",
-   "blocks": [
+  "slug": "privont",
+  "tags": [
+    "Real Estate CRM",
+    "Agent Management",
+    "Lender Management",
+    "Vendor Management",
+    "Lead Management"
+  ],
+  "overview": [
+    "PRIVONT is a secure web based real estate management platform built to centralize agents, lenders, vendors, leads, users, and business relationships in one system.",
+    "The platform combines a premium members experience with a structured administrative dashboard for managing business records."
+  ],
+  "sections": [
     {
-     "list": [
-      "Real Estate Agents",
-      "Lenders",
-      "Vendors",
-      "Leads",
-      "Favourite Lenders",
-      "Lead Expiry",
-      "Users",
-      "Profile Management"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Real Estate Agent Management",
-   "blocks": [
-    {
-     "p": "Administrators can manage agent records including:"
+      "heading": "Main Modules",
+      "blocks": [
+        {
+          "list": [
+            "Real Estate Agents",
+            "Lenders",
+            "Vendors",
+            "Leads",
+            "Favourite Lenders",
+            "Lead Expiry",
+            "Users",
+            "Profile Management"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Name",
-      "License",
-      "Organization",
-      "Email",
-      "Contact",
-      "Approval status"
-     ]
+      "heading": "Real Estate Agent Management",
+      "blocks": [
+        {
+          "p": "Administrators can manage agent records including:"
+        },
+        {
+          "list": ["Name", "License", "Organization", "Email", "Contact", "Approval status"]
+        },
+        {
+          "p": "The module also supports search, sorting, pagination, create, edit, delete, export, and print functions."
+        }
+      ]
     },
     {
-     "p": "The module also supports search, sorting, pagination, create, edit, delete, export, and print functions."
-    }
-   ]
-  },
-  {
-   "heading": "Lender Management",
-   "blocks": [
-    {
-     "p": "The lender module provides detailed profiles with:"
+      "heading": "Lender Management",
+      "blocks": [
+        {
+          "p": "The lender module provides detailed profiles with:"
+        },
+        {
+          "list": [
+            "Personal information",
+            "License number",
+            "Office number",
+            "Website",
+            "Email",
+            "Multiple contact numbers",
+            "Organization",
+            "Address",
+            "Username and password",
+            "Remarks"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Personal information",
-      "License number",
-      "Office number",
-      "Website",
-      "Email",
-      "Multiple contact numbers",
-      "Organization",
-      "Address",
-      "Username and password",
-      "Remarks"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Vendor Management",
-   "blocks": [
-    {
-     "p": "The vendor section maintains business vendor records with:"
+      "heading": "Vendor Management",
+      "blocks": [
+        {
+          "p": "The vendor section maintains business vendor records with:"
+        },
+        {
+          "list": [
+            "Name",
+            "Registration number",
+            "Email",
+            "Contact information",
+            "Search",
+            "Create, edit and delete",
+            "CSV, Excel, PDF and print export"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Name",
-      "Registration number",
-      "Email",
-      "Contact information",
-      "Search",
-      "Create, edit and delete",
-      "CSV, Excel, PDF and print export"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Lead Management",
-   "blocks": [
-    {
-     "p": "The platform includes dedicated areas for Leads, Favourite Lenders, and Lead Expiry, providing a structured foundation for managing real estate relationships and lead related activities."
-    }
-   ]
-  },
-  {
-   "heading": "User Management",
-   "blocks": [
-    {
-     "p": "Administrators can manage application users through a dedicated interface with:"
+      "heading": "Lead Management",
+      "blocks": [
+        {
+          "p": "The platform includes dedicated areas for Leads, Favourite Lenders, and Lead Expiry, providing a structured foundation for managing real estate relationships and lead related activities."
+        }
+      ]
     },
     {
-     "list": [
-      "User listing",
-      "Search",
-      "New user creation",
-      "Edit",
-      "Delete",
-      "Export",
-      "Pagination"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Authentication",
-   "blocks": [
-    {
-     "p": "The platform includes a members login experience with:"
+      "heading": "User Management",
+      "blocks": [
+        {
+          "p": "Administrators can manage application users through a dedicated interface with:"
+        },
+        {
+          "list": [
+            "User listing",
+            "Search",
+            "New user creation",
+            "Edit",
+            "Delete",
+            "Export",
+            "Pagination"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Username and password",
-      "Remember Me",
-      "Forgot Password",
-      "Google sign in option",
-      "Facebook sign in option"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Admin Interface",
-   "blocks": [
-    {
-     "p": "The authenticated dashboard provides:"
+      "heading": "Authentication",
+      "blocks": [
+        {
+          "p": "The platform includes a members login experience with:"
+        },
+        {
+          "list": [
+            "Username and password",
+            "Remember Me",
+            "Forgot Password",
+            "Google sign in option",
+            "Facebook sign in option"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Persistent navigation",
-      "Global search",
-      "Notifications",
-      "Profile access",
-      "Data tables",
-      "Search and filtering",
-      "Export options",
-      "Pagination",
-      "Record management actions"
-     ]
+      "heading": "Admin Interface",
+      "blocks": [
+        {
+          "p": "The authenticated dashboard provides:"
+        },
+        {
+          "list": [
+            "Persistent navigation",
+            "Global search",
+            "Notifications",
+            "Profile access",
+            "Data tables",
+            "Search and filtering",
+            "Export options",
+            "Pagination",
+            "Record management actions"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [
-  "PRIVONT provides a centralized environment for managing real estate agents, lenders, vendors, leads, and users, while standardizing common business operations such as record management, approval, searching, exporting, and administration.",
-  "The result is a clean and organized real estate relationship management platform designed around secure access and efficient business record management."
- ],
- "images": [
-  {
-   "src": "/projects/privont/01-960.webp",
-   "srcSet": "/projects/privont/01-480.webp 480w, /projects/privont/01-960.webp 960w, /projects/privont/01-1600.webp 1600w",
-   "full": "/projects/privont/01-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "Privont: 01 1s"
-  },
-  {
-   "src": "/projects/privont/02-960.webp",
-   "srcSet": "/projects/privont/02-480.webp 480w, /projects/privont/02-960.webp 960w, /projects/privont/02-1600.webp 1600w",
-   "full": "/projects/privont/02-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "Privont: 02 6s"
-  },
-  {
-   "src": "/projects/privont/03-960.webp",
-   "srcSet": "/projects/privont/03-480.webp 480w, /projects/privont/03-960.webp 960w, /projects/privont/03-1600.webp 1600w",
-   "full": "/projects/privont/03-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "Privont: 04 21s"
-  },
-  {
-   "src": "/projects/privont/04-960.webp",
-   "srcSet": "/projects/privont/04-480.webp 480w, /projects/privont/04-960.webp 960w, /projects/privont/04-1600.webp 1600w",
-   "full": "/projects/privont/04-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "Privont: 06 56s"
-  },
-  {
-   "src": "/projects/privont/05-960.webp",
-   "srcSet": "/projects/privont/05-480.webp 480w, /projects/privont/05-960.webp 960w, /projects/privont/05-1600.webp 1600w",
-   "full": "/projects/privont/05-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "Privont: 07 65s"
-  }
- ]
+  ],
+  "result": [
+    "PRIVONT provides a centralized environment for managing real estate agents, lenders, vendors, leads, and users, while standardizing common business operations such as record management, approval, searching, exporting, and administration.",
+    "The result is a clean and organized real estate relationship management platform designed around secure access and efficient business record management."
+  ],
+  "images": [
+    {
+      "src": "/projects/privont/01-960.webp",
+      "srcSet": "/projects/privont/01-480.webp 480w, /projects/privont/01-960.webp 960w, /projects/privont/01-1600.webp 1600w",
+      "full": "/projects/privont/01-1600.webp",
+      "width": 1600,
+      "height": 783,
+      "alt": "Privont: 01 1s"
+    },
+    {
+      "src": "/projects/privont/02-960.webp",
+      "srcSet": "/projects/privont/02-480.webp 480w, /projects/privont/02-960.webp 960w, /projects/privont/02-1600.webp 1600w",
+      "full": "/projects/privont/02-1600.webp",
+      "width": 1600,
+      "height": 783,
+      "alt": "Privont: 02 6s"
+    },
+    {
+      "src": "/projects/privont/03-960.webp",
+      "srcSet": "/projects/privont/03-480.webp 480w, /projects/privont/03-960.webp 960w, /projects/privont/03-1600.webp 1600w",
+      "full": "/projects/privont/03-1600.webp",
+      "width": 1600,
+      "height": 783,
+      "alt": "Privont: 04 21s"
+    },
+    {
+      "src": "/projects/privont/04-960.webp",
+      "srcSet": "/projects/privont/04-480.webp 480w, /projects/privont/04-960.webp 960w, /projects/privont/04-1600.webp 1600w",
+      "full": "/projects/privont/04-1600.webp",
+      "width": 1600,
+      "height": 783,
+      "alt": "Privont: 06 56s"
+    },
+    {
+      "src": "/projects/privont/05-960.webp",
+      "srcSet": "/projects/privont/05-480.webp 480w, /projects/privont/05-960.webp 960w, /projects/privont/05-1600.webp 1600w",
+      "full": "/projects/privont/05-1600.webp",
+      "width": 1600,
+      "height": 783,
+      "alt": "Privont: 07 65s"
+    }
+  ]
 }

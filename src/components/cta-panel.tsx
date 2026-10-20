@@ -1,109 +1,149 @@
 import type { ReactNode } from "react";
-import { ArrowRight, CalendarClock, Globe2, MapPin, Sparkles } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { ArrowRight, CalendarClock, Mail } from "lucide-react";
 import { site } from "@/data/site";
 import type { ServiceSlug } from "@/data/services";
-import { ButtonAnchor, ButtonLink } from "./button-link";
+import {
+  projectsForService,
+  projectsFromDifferentTools,
+  type ProjectSummary,
+} from "@/data/projects";
+import { ButtonAnchor } from "./button-link";
 import { WhatsAppIcon } from "./floating-actions";
 import { whatsappLink } from "@/lib/whatsapp";
 import { Container } from "./section";
 import { bandClass } from "@/lib/band";
-import { PortraitStanding } from "./portrait";
+import { Avatar } from "./portrait";
+import { ToolBadge } from "./projects";
 
-/** Closing call-to-action: a full-width brand band at the bottom of every page. */
-export function CtaPanel({
-  title = "Let's automate the work that slows you down",
-  body = "Tell me what eats your team's time — leads, follow-ups, content or calls. I'll suggest the simplest system that fixes it.",
-  service,
-  extra,
-}: {
-  title?: ReactNode;
-  body?: ReactNode;
-  /** Pre-selects the service on the contact form. */
-  service?: ServiceSlug;
-  extra?: ReactNode;
-}) {
+/** One compact, real project: cover, tool, title, one line, link to the full write-up. */
+function CtaProject({ project: p, index }: { project: ProjectSummary; index: number }) {
   return (
-    <section
-      aria-labelledby="cta-title"
-      className={`${bandClass("brand")} cv-auto overflow-hidden pt-16 pb-12 [contain-intrinsic-size:auto_640px] md:pt-24 md:pb-14`}
+    <article
+      data-reveal="up"
+      style={{ "--i": index } as React.CSSProperties}
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-panel shadow-[var(--shadow-card)]"
     >
-      <div aria-hidden className="aurora opacity-90" />
-      <Container>
-        <div data-reveal="zoom" className="relative">
-          <span aria-hidden className="cta-sweep" />
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.85fr)_minmax(0,0.85fr)] lg:items-center lg:gap-12">
-            <div>
-              <h2 id="cta-title" className="text-3xl font-bold text-foreground sm:text-4xl">
-                {title}
-              </h2>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                {body}
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <ButtonAnchor href={site.calendly} external size="lg">
-                  <CalendarClock size={16} aria-hidden /> Book a call
-                </ButtonAnchor>
-                <ButtonAnchor href={whatsappLink()} external variant="secondary" size="lg">
-                  <WhatsAppIcon className="h-[18px] w-[18px] text-[#25d366]" /> WhatsApp
-                </ButtonAnchor>
-                <ButtonLink
-                  to="/contact"
-                  search={service ? { service } : undefined}
-                  variant="ghost"
-                  size="lg"
-                  className="px-2"
-                >
-                  Discuss a project <ArrowRight size={16} aria-hidden />
-                </ButtonLink>
-              </div>
-              {extra}
-            </div>
-            <ul className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              <InfoItem
-                icon={<Globe2 size={18} aria-hidden />}
-                title="Remote-first"
-                body="Working with clients worldwide"
-              />
-              <InfoItem
-                icon={<MapPin size={18} aria-hidden />}
-                title={`Based in ${site.locality}`}
-                body={site.country}
-              />
-              {site.availableForWork && (
-                <InfoItem
-                  icon={<Sparkles size={18} aria-hidden />}
-                  title="Available"
-                  body="Taking on new projects"
-                />
-              )}
-            </ul>
-            {/* Photo last (after the badges); it stands on the bottom edge of the band. */}
-            <div className="relative mx-auto -mb-12 w-full max-w-[260px] self-end sm:max-w-[300px] md:-mb-14 lg:max-w-[340px]">
-              <div
-                aria-hidden
-                className="absolute inset-x-[2%] top-[8%] bottom-[4%] -z-10 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--violet)_42%,transparent),transparent),radial-gradient(closest-side_at_50%_35%,color-mix(in_oklab,var(--blue)_38%,transparent),transparent)] blur-2xl"
-              />
-              <div className="cta-photo [mask-image:linear-gradient(to_bottom,black_86%,transparent)]">
-                <PortraitStanding />
-              </div>
-            </div>
-          </div>
+      {p.cover && (
+        <div
+          data-reveal="wipe"
+          style={{ "--i": index } as React.CSSProperties}
+          className="aspect-[16/10] overflow-hidden border-b border-border bg-panel-2"
+        >
+          <img
+            src={p.cover.src}
+            srcSet={p.cover.srcSet}
+            sizes="(min-width: 1024px) 240px, (min-width: 640px) 33vw, 100vw"
+            alt={p.cover.alt}
+            width={p.cover.width}
+            height={p.cover.height}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+          />
         </div>
-      </Container>
-    </section>
+      )}
+      <div className="flex flex-1 flex-col p-4">
+        <ToolBadge tool={p.tool} className="self-start" />
+        <h3 className="mt-3 line-clamp-2 text-[15px] font-semibold leading-snug text-foreground">
+          {p.title}
+        </h3>
+        {p.excerpt && (
+          <p className="mt-1.5 line-clamp-1 text-[13px] text-muted-foreground">{p.excerpt}</p>
+        )}
+        <Link
+          to="/projects/$slug/"
+          params={{ slug: p.slug }}
+          className="mt-auto inline-flex items-center gap-1 pt-3 font-heading text-[13px] font-semibold text-eyebrow after:absolute after:inset-0 after:content-[''] hover:underline"
+        >
+          Read case study <ArrowRight size={13} aria-hidden />
+        </Link>
+      </div>
+    </article>
   );
 }
 
-function InfoItem({ icon, title, body }: { icon: ReactNode; title: string; body: string }) {
+/**
+ * Closing call-to-action, a brand band at the bottom of every page: who you talk to and how to
+ * reach me on the left; three real projects from three different tools on the right, so the
+ * decision sits next to work you can inspect.
+ */
+export function CtaPanel({
+  title = "Tell me what is slowing your team down.",
+  body = "Book a 30-minute call. We will go through the process, and I will tell you honestly whether automation is the right fix.",
+  service,
+  exclude = [],
+}: {
+  title?: ReactNode;
+  body?: ReactNode;
+  /** A service page: its own projects come first. */
+  service?: ServiceSlug;
+  /** Projects already shown on the page, so the cards add something new. */
+  exclude?: string[];
+}) {
+  const preferred = service ? projectsForService(service) : [];
+  const work = projectsFromDifferentTools(preferred, 3, exclude);
   return (
-    <li className="glass flex items-center gap-3 rounded-2xl px-4 py-3.5">
-      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[color-mix(in_oklab,var(--cyan)_14%,transparent)] text-cyan">
-        {icon}
-      </span>
-      <div className="min-w-0 text-sm">
-        <div className="font-heading font-semibold text-foreground">{title}</div>
-        <div className="text-muted-foreground">{body}</div>
-      </div>
-    </li>
+    <section
+      aria-labelledby="cta-title"
+      className={`${bandClass("brand")} cv-auto py-16 [contain-intrinsic-size:auto_720px] md:py-24`}
+    >
+      <Container>
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.68fr)_minmax(0,1fr)] lg:items-center lg:gap-14">
+          <div data-reveal="up">
+            <div className="flex items-center gap-3">
+              <Avatar size={52} />
+              <div className="text-[13.5px] leading-snug">
+                <div className="font-heading font-semibold text-foreground">{site.name}</div>
+                <div className="text-muted-foreground">{site.title}</div>
+              </div>
+            </div>
+            <h2
+              id="cta-title"
+              className="mt-7 text-3xl font-bold text-foreground sm:text-4xl md:text-[2.6rem]"
+            >
+              {title}
+            </h2>
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground md:text-lg">
+              {body}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <ButtonAnchor href={site.calendly} external size="lg">
+                <CalendarClock size={16} aria-hidden /> Book a Call
+              </ButtonAnchor>
+              <ButtonAnchor href={whatsappLink()} external variant="secondary" size="lg">
+                <WhatsAppIcon className="h-[18px] w-[18px] text-[#25d366]" /> WhatsApp
+              </ButtonAnchor>
+            </div>
+            <a
+              href={`mailto:${site.email}`}
+              className="mt-5 inline-flex items-center gap-2 rounded-md text-[14.5px] text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <Mail size={15} aria-hidden /> {site.email}
+            </a>
+          </div>
+
+          {work.length > 0 && (
+            <div>
+              <h3 className="mb-4 font-heading text-[13.5px] font-semibold text-muted-foreground">
+                Work you can inspect
+              </h3>
+              <ul className="grid gap-4 sm:grid-cols-3">
+                {work.map((p, i) => (
+                  <li key={p.slug}>
+                    <CtaProject project={p} index={i} />
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-[14px] leading-relaxed text-muted-foreground">
+                <span className="font-semibold text-foreground">What happens after you book: </span>
+                1. We talk for 30 minutes. 2. I map the process and recommend an approach. 3. You
+                decide.
+              </p>
+            </div>
+          )}
+        </div>
+      </Container>
+    </section>
   );
 }

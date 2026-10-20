@@ -1,44 +1,48 @@
 import { useEffect } from "react";
 import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
-import { RedirectPage } from "@/components/redirect-page";
+import { ForwardPage, RedirectPage } from "@/components/redirect-page";
+import { forwardHead } from "@/lib/seo";
 import { NotFoundPage } from "@/components/not-found";
-import { projectForLegacySlug, type ProjectSummary } from "@/data/projects";
-import { canonicalUrl } from "@/lib/seo";
-import { site } from "@/data/site";
+import { projectForLegacySlug, retiredUrls, type ProjectSummary } from "@/data/projects";
 
-// Old project URLs (/case/<slug>) forward to the project's new page under /projects.
+type CaseData = { kind: "project"; project: ProjectSummary } | { kind: "forward"; forward: string };
+
+// Old project URLs (/case/<slug>) forward to the project's new page under /projects, or, for a
+// project that was split up, to the list it now lives in.
 export const Route = createFileRoute("/case/$slug")({
-  loader: ({ params }): { project: ProjectSummary } => {
+  loader: ({ params }): CaseData => {
+    const forward = retiredUrls[`/case/${params.slug}`];
+    if (forward) return { kind: "forward", forward };
     const project = projectForLegacySlug(params.slug);
     if (!project) throw notFound();
-    return { project };
+    return { kind: "project", project };
   },
   head: ({ loaderData }) =>
     loaderData
-      ? {
-          meta: [
-            { title: `${loaderData.project.title} | ${site.name}` },
-            { name: "robots", content: "noindex" },
-            { httpEquiv: "refresh", content: `0; url=/projects/${loaderData.project.slug}/` },
-          ],
-          links: [{ rel: "canonical", href: canonicalUrl(`/projects/${loaderData.project.slug}`) }],
-        }
-      : { meta: [{ title: `Page not found | ${site.name}` }] },
+      ? loaderData.kind === "forward"
+        ? forwardHead(loaderData.forward, "Projects")
+        : forwardHead(`/projects/${loaderData.project.slug}/`, loaderData.project.title)
+      : { meta: [{ title: "Page not found" }] },
   component: MovedProject,
   notFoundComponent: NotFoundPage,
 });
 
 function MovedProject() {
-  const { project } = Route.useLoaderData();
+  const data = Route.useLoaderData();
+  if (data.kind === "forward") return <ForwardPage to={data.forward} label="see the projects" />;
+  return <MovedToProject project={data.project} />;
+}
+
+function MovedToProject({ project }: { project: ProjectSummary }) {
   const navigate = useNavigate();
   useEffect(() => {
-    void navigate({ to: "/projects/$slug", params: { slug: project.slug }, replace: true });
+    void navigate({ to: "/projects/$slug/", params: { slug: project.slug }, replace: true });
   }, [navigate, project.slug]);
   return (
     <RedirectPage>
-      This project has moved —{" "}
+      This project has moved:{" "}
       <Link
-        to="/projects/$slug"
+        to="/projects/$slug/"
         params={{ slug: project.slug }}
         className="font-semibold text-eyebrow underline"
       >

@@ -1,54 +1,43 @@
 {
- "slug": "car-rental-fleet",
- "tags": [
-  "Fleet Sales",
-  "United States"
- ],
- "overview": [
-  "Inbound agent that qualifies callers, identifies the decision-maker, dials them and creates the GoHighLevel opportunity."
- ],
- "sections": [
-  {
-   "heading": "The challenge",
-   "blocks": [
+  "slug": "car-rental-fleet",
+  "tags": ["Fleet Sales", "United States"],
+  "overview": [
+    "Inbound agent that qualifies callers, identifies the decision-maker, dials them and creates the GoHighLevel opportunity."
+  ],
+  "sections": [
     {
-     "p": "Fleet sales reps spent hours reaching drivers instead of the owners who make purchasing decisions."
-    }
-   ]
-  },
-  {
-   "heading": "Solution & architecture",
-   "blocks": [
+      "heading": "The challenge",
+      "blocks": [
+        {
+          "p": "Fleet sales reps spent hours reaching drivers instead of the owners who make purchasing decisions."
+        }
+      ]
+    },
     {
-     "p": "The ElevenLabs voice agent qualifies each inbound caller and works out who actually owns the decision. It then dials the owner directly, and n8n creates the deal in the GoHighLevel pipeline so reps start from a qualified opportunity."
-    }
-   ]
-  },
-  {
-   "heading": "Workflow",
-   "blocks": [
+      "heading": "Solution & architecture",
+      "blocks": [
+        {
+          "p": "The ElevenLabs voice agent qualifies each inbound caller and works out who actually owns the decision. It then dials the owner directly, and n8n creates the deal in the GoHighLevel pipeline so reps start from a qualified opportunity."
+        }
+      ]
+    },
     {
-     "list": [
-      "AI qualifies caller",
-      "Identify owner",
-      "Auto-dial owner",
-      "Create GHL deal"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Key facts",
-   "blocks": [
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "list": ["AI qualifies caller", "Identify owner", "Auto-dial owner", "Create GHL deal"]
+        }
+      ]
+    },
     {
-     "list": [
-      "Owner — Hand-off to decision-maker",
-      "Auto — GHL pipeline entry"
-     ]
+      "heading": "Key facts",
+      "blocks": [
+        {
+          "list": ["Owner, Hand-off to decision-maker", "Auto, GHL pipeline entry"]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [],
- "images": []
+  ],
+  "result": [],
+  "images": []
 }

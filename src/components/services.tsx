@@ -16,7 +16,7 @@ import {
 import { services, type Service, type ServiceSlug } from "@/data/services";
 import { tools, type Tool } from "@/data/tools";
 import { cn } from "@/lib/utils";
-import { ToolChip, ToolLogo } from "./tech-marquee";
+import { ToolChip, ToolLogo } from "./tool-logo";
 
 const serviceIcons: Record<ServiceSlug, LucideIcon> = {
   "workflow-automation": Workflow,
@@ -130,7 +130,7 @@ export function ServiceChooserCard({ service, index }: { service: Service; index
             ))}
           </ul>
           <Link
-            to="/services/$slug"
+            to="/services/$slug/"
             params={{ slug: service.slug }}
             className="group inline-flex items-center gap-1.5 font-heading text-sm font-semibold text-foreground hover:text-cyan"
           >
@@ -249,11 +249,6 @@ function BentoCard({ service, index }: { service: Service; index: number }) {
       >
         <div className={cn("flex items-start justify-between gap-4", wide && "lg:shrink-0")}>
           <ServiceIcon slug={service.slug} size={featured ? "lg" : "md"} />
-          {featured && (
-            <span className="rounded-full border border-[color-mix(in_oklab,var(--cyan)_40%,transparent)] bg-[color-mix(in_oklab,var(--cyan)_12%,transparent)] px-3 py-1 font-heading text-[11.5px] font-semibold text-eyebrow">
-              Most requested
-            </span>
-          )}
         </div>
 
         <div className={cn("min-w-0", wide ? "mt-5 lg:mt-0 lg:w-[34%] lg:shrink-0" : "mt-5")}>
@@ -264,7 +259,7 @@ function BentoCard({ service, index }: { service: Service; index: number }) {
             )}
           >
             <Link
-              to="/services/$slug"
+              to="/services/$slug/"
               params={{ slug: service.slug }}
               className="rounded-md after:absolute after:inset-0 after:z-[1] after:rounded-[inherit] focus-visible:outline-none"
             >

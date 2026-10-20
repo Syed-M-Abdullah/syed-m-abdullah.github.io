@@ -1,25 +1,25 @@
 {
- "slug": "ai-blog-automation-system",
- "tags": [],
- "overview": [],
- "sections": [],
- "result": [],
- "images": [
-  {
-   "src": "/projects/ai-blog-automation-system/01-960.webp",
-   "srcSet": "/projects/ai-blog-automation-system/01-480.webp 480w, /projects/ai-blog-automation-system/01-960.webp 960w, /projects/ai-blog-automation-system/01-1600.webp 1600w",
-   "full": "/projects/ai-blog-automation-system/01-1600.webp",
-   "width": 1600,
-   "height": 774,
-   "alt": "AI Blog Automation System, screenshot 1"
-  },
-  {
-   "src": "/projects/ai-blog-automation-system/02-960.webp",
-   "srcSet": "/projects/ai-blog-automation-system/02-480.webp 480w, /projects/ai-blog-automation-system/02-960.webp 960w, /projects/ai-blog-automation-system/02-1600.webp 1600w",
-   "full": "/projects/ai-blog-automation-system/02-1600.webp",
-   "width": 1600,
-   "height": 657,
-   "alt": "AI Blog Automation System, screenshot 2"
-  }
- ]
+  "slug": "ai-blog-automation-system",
+  "tags": [],
+  "overview": [],
+  "sections": [],
+  "result": [],
+  "images": [
+    {
+      "src": "/projects/ai-blog-automation-system/01-960.webp",
+      "srcSet": "/projects/ai-blog-automation-system/01-480.webp 480w, /projects/ai-blog-automation-system/01-960.webp 960w, /projects/ai-blog-automation-system/01-1600.webp 1600w",
+      "full": "/projects/ai-blog-automation-system/01-1600.webp",
+      "width": 1600,
+      "height": 774,
+      "alt": "AI Blog Automation System, screenshot 1"
+    },
+    {
+      "src": "/projects/ai-blog-automation-system/02-960.webp",
+      "srcSet": "/projects/ai-blog-automation-system/02-480.webp 480w, /projects/ai-blog-automation-system/02-960.webp 960w, /projects/ai-blog-automation-system/02-1600.webp 1600w",
+      "full": "/projects/ai-blog-automation-system/02-1600.webp",
+      "width": 1600,
+      "height": 657,
+      "alt": "AI Blog Automation System, screenshot 2"
+    }
+  ]
 }

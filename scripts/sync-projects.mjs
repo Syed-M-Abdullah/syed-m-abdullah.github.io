@@ -3,7 +3,14 @@
 //   npm run projects:sync            (incremental: unchanged images are skipped)
 //   npm run projects:sync -- --force (re-encode every image)
 //
-// For each project folder (<tool folder>/<project folder>, or a flat tool folder):
+// Projects are found per tool folder, in this order (mixed folders work too):
+//   1. every subfolder is one project;
+//   2. loose files: a description file plus the images that share its name ("Dental.md",
+//      "Dental 1.png", "Dental-2.png") are one project;
+//   3. other loose images that differ only by a trailing number ("sms campaign 1", "sms campaign 2")
+//      are one project; every other loose image is its own project. Different projects are never
+//      merged; names that only look related are listed in the report so they can be renamed.
+// For each project:
 //   • images → responsive WebP in public/projects/<slug>/ (480 / 960 / 1600 px wide, never
 //     upscaled; originals are not modified). The cover is `cover.*` if present, otherwise the
 //     first image alphabetically.
@@ -57,6 +64,7 @@ const ACRONYMS = {
   zatca: "ZATCA",
   ruda: "RUDA",
   sla: "SLA",
+  sms: "SMS",
   uk: "UK",
 };
 const SMALL = new Set([
@@ -83,7 +91,7 @@ function prettifyFolder(name) {
   // Split joined words only in one-word names ("BeautySaloon"), never brand names in titles.
   if (!/\s/.test(s.trim())) s = s.replace(/([a-z])([A-Z])/g, "$1 $2");
   s = s.replace(/\(\s*/g, "(").replace(/\s*\)/g, ")").replace(/\s+/g, " ").trim();
-  s = fixTypos(s);
+  s = fixTypos(s).replace(/\bfollow ?up\b/gi, "Follow-Up");
   return s
     .split(" ")
     .map((w, i) => {
@@ -368,6 +376,80 @@ async function processImages(slug, files, title, crop = {}) {
   return images;
 }
 
+// ---------- loose files directly in a tool folder ----------
+// A trailing number after a separator: "sms campaign 1", "dental-2", "shot (3)". Never the
+// digits of a name itself ("GarageFlow 360").
+const INDEX = /(?:[\s_-]+\(?\d{1,2}\)?|\(\d{1,2}\))$/;
+const baseName = (f) => path.basename(f, path.extname(f)).trim();
+const fullKey = (f) => norm(baseName(f).replace(/[_-]+/g, " "));
+const stemKey = (f) => norm(baseName(f).replace(INDEX, "").replace(/[_-]+/g, " ")) || fullKey(f);
+const VIDEO = /\.(mp4|mov|webm)$/i;
+
+/** Splits the loose files of a tool folder into projects (rules 2 and 3 above). */
+function groupLoose(toolName, files) {
+  const docs = files.filter((f) => DOC.test(f)).sort(naturalSort);
+  const media = files.filter((f) => IMG.test(f) || VIDEO.test(f)).sort(naturalSort);
+  const notes = [];
+  const units = docs.map((doc) => ({
+    name: baseName(doc),
+    files: [doc],
+    grouping: "description file",
+  }));
+  const taken = new Set();
+  for (const f of media) {
+    const d = (u) => stemKey(u.files[0]);
+    const hits = units
+      .filter(
+        (u) => stemKey(f) === d(u) || fullKey(f) === d(u) || fullKey(f).startsWith(`${d(u)} `),
+      )
+      .sort((a, b) => d(b).length - d(a).length);
+    if (!hits.length) continue;
+    if (hits[1] && d(hits[1]).length === d(hits[0]).length)
+      notes.push(
+        `"${path.basename(f)}" matches ${hits.map((h) => `"${path.basename(h.files[0])}"`).join(" and ")}; attached to the first`,
+      );
+    hits[0].files.push(f);
+    hits[0].grouping = "description file + images with its name";
+    taken.add(f);
+  }
+  const groups = new Map();
+  for (const f of media.filter((m) => !taken.has(m))) {
+    if (VIDEO.test(f)) {
+      notes.push(`"${path.basename(f)}" has no matching description or image; not used`);
+      continue;
+    }
+    const k = stemKey(f);
+    groups.set(k, [...(groups.get(k) ?? []), f]);
+  }
+  for (const group of groups.values())
+    units.push({
+      name: baseName(group[0]).replace(INDEX, "").trim(),
+      files: group,
+      grouping: group.length > 1 ? "same name, numbered" : "single image",
+    });
+  // Names that share a first word but differ are kept apart; list them in case they belong
+  // together (rename them "<name> 1", "<name> 2" to merge).
+  const byWord = new Map();
+  for (const u of units) {
+    const w = norm(u.name).split(" ")[0];
+    byWord.set(w, [...(byWord.get(w) ?? []), u.name]);
+  }
+  for (const [w, names] of byWord)
+    if (names.length > 1)
+      notes.push(`"${w}…": ${names.map((n) => `"${n}"`).join(", ")} kept as separate projects`);
+  return {
+    units: units.map((u) => ({
+      key: `${toolName}/${u.name}`,
+      folder: u.name,
+      // A trailing single capital ("Facebook M") is a filing marker, not part of the title.
+      title: u.name.replace(/\s+[A-Z]$/, ""),
+      files: u.files,
+      grouping: u.grouping,
+    })),
+    notes,
+  };
+}
+
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
     const p = path.join(dir, e.name);
@@ -385,6 +467,7 @@ const excerptOf = (overview) => {
 
 // ---------- main ----------
 const report = [];
+const groupingNotes = [];
 const summaries = [];
 const details = [];
 const usedSlugs = new Set();
@@ -414,11 +497,14 @@ for (const toolDir of toolDirs) {
   const units = subdirs.map((name) => ({
     key: `${toolDir.name}/${name}`,
     folder: name,
+    title: name,
     files: walk(path.join(tdir, name)),
+    grouping: "subfolder",
   }));
-  // Screenshots / a document directly in the tool folder: one showcase project for that tool.
-  if (flatFiles.some((f) => IMG.test(f) || DOC.test(f)))
-    units.push({ key: toolDir.name, folder: null, files: flatFiles });
+  // Files directly in the tool folder: split into separate projects, never one showcase.
+  const loose = groupLoose(toolDir.name, flatFiles);
+  units.push(...loose.units);
+  groupingNotes.push(...loose.notes.map((n) => `${toolDir.name}: ${n}`));
 
   for (const unit of units) {
     const cfg = config.projects[unit.key] ?? {};
@@ -433,11 +519,7 @@ for (const toolDir of toolDirs) {
     if (docFile && cfg.description === "ignore")
       issues.push("description ignored (belongs to another project)");
 
-    const title =
-      cfg.title ??
-      (unit.folder
-        ? prettifyFolder(unit.folder)
-        : `${prettifyFolder(toolDir.name)} Automation Showcase`);
+    const title = cfg.title ?? prettifyFolder(unit.title);
     const slug = cfg.slug ?? slugify(title);
     if (usedSlugs.has(slug))
       throw new Error(`duplicate slug ${slug} (${unit.key}) — set "slug" in projects.config.json`);
@@ -488,10 +570,11 @@ for (const toolDir of toolDirs) {
     });
     report.push({
       tool: toolDir.name,
-      project: unit.folder ?? "(flat folder)",
+      project: unit.folder,
       slug,
       images: images.length,
       description: docFile ? path.relative(path.join(SRC, toolDir.name), docFile) : "—",
+      grouping: unit.grouping,
       issues: issues.join("; "),
     });
   }
@@ -541,6 +624,39 @@ for (const m of manual) {
 }
 
 // ---------- write ----------
+// Project URLs that no longer exist must keep working: each needs a target in config.retired.
+const retired = config.retired ?? {};
+const previousSlugs = fs.existsSync(OUT_INDEX)
+  ? [...fs.readFileSync(OUT_INDEX, "utf8").matchAll(/"?slug"?:\s*"([^"]+)"/g)].map((m) => m[1])
+  : [];
+const vanished = previousSlugs.filter((s) => !usedSlugs.has(s) && !retired[`/projects/${s}`]);
+for (const [from, to] of Object.entries(retired)) {
+  const slug = /^\/projects\/([^/?#]+)/.exec(to)?.[1];
+  if (slug && !usedSlugs.has(slug)) throw new Error(`retired ${from} points to missing ${to}`);
+}
+
+// House style: no em dashes (or spaced en dashes) in site copy. Titles and headings get a colon,
+// running text a comma. The source documents are not changed.
+const undash = (s, heading) => s.replace(/\s*—\s*|\s+–\s+/g, heading ? ": " : ", ");
+for (const p of summaries) {
+  p.title = undash(p.title, true);
+  if (p.subtitle) p.subtitle = undash(p.subtitle, true);
+  p.excerpt = undash(p.excerpt);
+  if (p.cover) p.cover.alt = undash(p.cover.alt, true);
+}
+for (const d of details) {
+  d.tags = d.tags.map((t) => undash(t, true));
+  d.overview = d.overview.map((t) => undash(t));
+  d.result = d.result.map((t) => undash(t));
+  d.sections = d.sections.map((s) => ({
+    heading: undash(s.heading, true),
+    blocks: s.blocks.map((b) =>
+      "p" in b ? { p: undash(b.p) } : { list: b.list.map((t) => undash(t)) },
+    ),
+  }));
+  d.images = d.images.map((img) => ({ ...img, alt: undash(img.alt, true) }));
+}
+
 fs.rmSync(OUT_DETAILS, { recursive: true, force: true });
 fs.mkdirSync(OUT_DETAILS, { recursive: true });
 for (const d of details)
@@ -556,17 +672,25 @@ fs.writeFileSync(
 import type { ProjectSummary } from "./projects";
 
 export const generatedProjects: ProjectSummary[] = ${JSON.stringify(summaries, null, 1)};
+
+/** Old project URLs and where they now forward (scripts/projects.config.json → "retired"). */
+export const retiredUrls: Record<string, string> = ${JSON.stringify(retired, null, 1)};
 `,
 );
 
 const pad = (s, n) => String(s).padEnd(n).slice(0, n);
 console.log(
-  `\n${pad("Tool folder", 12)} | ${pad("Project", 44)} | Img | ${pad("Description", 52)} | Issues`,
+  `\n${pad("Tool folder", 12)} | ${pad("Project", 44)} | Img | ${pad("Description", 40)} | ${pad("Grouped by", 26)} | Issues`,
 );
 for (const r of report)
   console.log(
-    `${pad(r.tool, 12)} | ${pad(r.project, 44)} | ${String(r.images).padStart(3)} | ${pad(r.description, 52)} | ${r.issues}`,
+    `${pad(r.tool, 12)} | ${pad(r.project, 44)} | ${String(r.images).padStart(3)} | ${pad(r.description, 40)} | ${pad(r.grouping ?? "", 26)} | ${r.issues}`,
   );
 console.log(
   `\n${summaries.filter((s) => s.source === "folder").length} folder projects, ${manual.length} manual projects, ${details.reduce((a, d) => a + d.images.length, 0)} images.`,
 );
+if (groupingNotes.length) console.log(`\nCheck these names:\n- ${groupingNotes.join("\n- ")}`);
+if (vanished.length)
+  console.warn(
+    `\nWARNING: these project URLs no longer exist. Add each to "retired" in scripts/projects.config.json with the page it should forward to:\n- /projects/${vanished.join("\n- /projects/")}`,
+  );

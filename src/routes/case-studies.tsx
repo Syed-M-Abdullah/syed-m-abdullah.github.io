@@ -36,12 +36,12 @@ function MovedToProjects() {
   useEffect(() => {
     const category = new URLSearchParams(window.location.search).get("category") ?? "";
     const tool = categoryToTool[category];
-    void navigate({ to: "/projects", search: tool ? { tool } : {}, replace: true });
+    void navigate({ to: "/projects/", search: tool ? { tool } : {}, replace: true });
   }, [navigate]);
   return (
     <RedirectPage>
-      Projects have moved —{" "}
-      <Link to="/projects" className="font-semibold text-eyebrow underline">
+      Projects have moved:{" "}
+      <Link to="/projects/" className="font-semibold text-eyebrow underline">
         view all projects
       </Link>
       .

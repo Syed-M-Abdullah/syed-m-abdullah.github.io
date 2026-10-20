@@ -1,206 +1,199 @@
 {
- "slug": "medzah-client-portal",
- "tags": [
-  "B2B E-Commerce",
-  "Medical Products",
-  "Customer Portal",
-  "Orders",
-  "Shopping Lists",
-  "Checkout"
- ],
- "overview": [
-  "MEDZAH is a web based customer portal for medical product suppliers, allowing business customers to browse products, configure product options, place orders, manage shopping lists, track orders, and maintain their account information."
- ],
- "sections": [
-  {
-   "heading": "Main Modules",
-   "blocks": [
+  "slug": "medzah-client-portal",
+  "tags": [
+    "B2B E-Commerce",
+    "Medical Products",
+    "Customer Portal",
+    "Orders",
+    "Shopping Lists",
+    "Checkout"
+  ],
+  "overview": [
+    "MEDZAH is a web based customer portal for medical product suppliers, allowing business customers to browse products, configure product options, place orders, manage shopping lists, track orders, and maintain their account information."
+  ],
+  "sections": [
     {
-     "list": [
-      "Customer Registration",
-      "Dashboard",
-      "Products",
-      "Shopping Cart",
-      "Shopping Lists",
-      "Checkout",
-      "Orders",
-      "Messages",
-      "My Profile"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Product Management",
-   "blocks": [
-    {
-     "p": "Customers can browse medical products and configure their purchases before adding them to the cart."
+      "heading": "Main Modules",
+      "blocks": [
+        {
+          "list": [
+            "Customer Registration",
+            "Dashboard",
+            "Products",
+            "Shopping Cart",
+            "Shopping Lists",
+            "Checkout",
+            "Orders",
+            "Messages",
+            "My Profile"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Product details and pricing",
-      "Manufacturer information",
-      "Size and variant selection",
-      "Packaging options",
-      "Quantity management",
-      "Product availability",
-      "Add to Cart"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Shopping Cart & Lists",
-   "blocks": [
-    {
-     "p": "The cart provides a complete overview of selected products, including:"
+      "heading": "Product Management",
+      "blocks": [
+        {
+          "p": "Customers can browse medical products and configure their purchases before adding them to the cart."
+        },
+        {
+          "list": [
+            "Product details and pricing",
+            "Manufacturer information",
+            "Size and variant selection",
+            "Packaging options",
+            "Quantity management",
+            "Product availability",
+            "Add to Cart"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Product",
-      "Unit",
-      "Variant",
-      "Price",
-      "Quantity",
-      "Total"
-     ]
+      "heading": "Shopping Cart & Lists",
+      "blocks": [
+        {
+          "p": "The cart provides a complete overview of selected products, including:"
+        },
+        {
+          "list": ["Product", "Unit", "Variant", "Price", "Quantity", "Total"]
+        },
+        {
+          "p": "Customers can also save products to named shopping lists, making repeat purchasing easier."
+        }
+      ]
     },
     {
-     "p": "Customers can also save products to named shopping lists, making repeat purchasing easier."
-    }
-   ]
-  },
-  {
-   "heading": "Checkout",
-   "blocks": [
-    {
-     "p": "The checkout process supports business purchasing requirements such as:"
+      "heading": "Checkout",
+      "blocks": [
+        {
+          "p": "The checkout process supports business purchasing requirements such as:"
+        },
+        {
+          "list": [
+            "Customer information",
+            "Purchase Order Number",
+            "Shipment instructions",
+            "Shipment date",
+            "Shipping address",
+            "Shipping method",
+            "Distribution center information",
+            "Pay Now and Pay Later options"
+          ]
+        },
+        {
+          "p": "Checkout Flow:Products → Configure Item → Cart → Checkout → Shipping Details → Payment → Order"
+        }
+      ]
     },
     {
-     "list": [
-      "Customer information",
-      "Purchase Order Number",
-      "Shipment instructions",
-      "Shipment date",
-      "Shipping address",
-      "Shipping method",
-      "Distribution center information",
-      "Pay Now and Pay Later options"
-     ]
+      "heading": "Order Management",
+      "blocks": [
+        {
+          "p": "Customers can view and manage their orders through a dedicated order portal."
+        },
+        {
+          "list": [
+            "Order history",
+            "Date filtering",
+            "Status filtering",
+            "Order search",
+            "Purchase order references",
+            "Order cost",
+            "Payment status",
+            "Order preview",
+            "Make Payment"
+          ]
+        }
+      ]
     },
     {
-     "p": "Checkout Flow:Products → Configure Item → Cart → Checkout → Shipping Details → Payment → Order"
-    }
-   ]
-  },
-  {
-   "heading": "Order Management",
-   "blocks": [
-    {
-     "p": "Customers can view and manage their orders through a dedicated order portal."
+      "heading": "Customer Profile",
+      "blocks": [
+        {
+          "p": "Customers can manage their own account information, including:"
+        },
+        {
+          "list": [
+            "Personal details",
+            "Company information",
+            "Contact information",
+            "Billing information",
+            "Shipment addresses",
+            "Additional profile information"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Order history",
-      "Date filtering",
-      "Status filtering",
-      "Order search",
-      "Purchase order references",
-      "Order cost",
-      "Payment status",
-      "Order preview",
-      "Make Payment"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Customer Profile",
-   "blocks": [
-    {
-     "p": "Customers can manage their own account information, including:"
+      "heading": "Dashboard",
+      "blocks": [
+        {
+          "p": "The dashboard provides a quick overview of customer activity:"
+        },
+        {
+          "list": [
+            "Total orders",
+            "Pending orders",
+            "Shipped orders",
+            "Shopping lists",
+            "Top ordered products"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Personal details",
-      "Company information",
-      "Contact information",
-      "Billing information",
-      "Shipment addresses",
-      "Additional profile information"
-     ]
+      "heading": "Business Value",
+      "blocks": [
+        {
+          "p": "The portal provides a self service purchasing experience for business customers, reducing manual order handling while making product selection, repeat purchasing, checkout, shipment information, and order tracking easier to manage."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Dashboard",
-   "blocks": [
+  ],
+  "result": [
+    "MEDZAH brings medical product browsing, product configuration, shopping lists, checkout, purchasing, order tracking, and customer account management into one centralized B2B portal."
+  ],
+  "images": [
     {
-     "p": "The dashboard provides a quick overview of customer activity:"
+      "src": "/projects/medzah-client-portal/01-960.webp",
+      "srcSet": "/projects/medzah-client-portal/01-480.webp 480w, /projects/medzah-client-portal/01-960.webp 960w, /projects/medzah-client-portal/01-1600.webp 1600w",
+      "full": "/projects/medzah-client-portal/01-1600.webp",
+      "width": 1600,
+      "height": 783,
+      "alt": "Medzah Client Portal: 01 8s"
     },
     {
-     "list": [
-      "Total orders",
-      "Pending orders",
-      "Shipped orders",
-      "Shopping lists",
-      "Top ordered products"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Business Value",
-   "blocks": [
+      "src": "/projects/medzah-client-portal/02-960.webp",
+      "srcSet": "/projects/medzah-client-portal/02-480.webp 480w, /projects/medzah-client-portal/02-960.webp 960w, /projects/medzah-client-portal/02-1600.webp 1600w",
+      "full": "/projects/medzah-client-portal/02-1600.webp",
+      "width": 1600,
+      "height": 783,
+      "alt": "Medzah Client Portal: 02 35s"
+    },
     {
-     "p": "The portal provides a self service purchasing experience for business customers, reducing manual order handling while making product selection, repeat purchasing, checkout, shipment information, and order tracking easier to manage."
+      "src": "/projects/medzah-client-portal/03-960.webp",
+      "srcSet": "/projects/medzah-client-portal/03-480.webp 480w, /projects/medzah-client-portal/03-960.webp 960w, /projects/medzah-client-portal/03-1600.webp 1600w",
+      "full": "/projects/medzah-client-portal/03-1600.webp",
+      "width": 1600,
+      "height": 783,
+      "alt": "Medzah Client Portal: 04 68s"
+    },
+    {
+      "src": "/projects/medzah-client-portal/04-960.webp",
+      "srcSet": "/projects/medzah-client-portal/04-480.webp 480w, /projects/medzah-client-portal/04-960.webp 960w, /projects/medzah-client-portal/04-1600.webp 1600w",
+      "full": "/projects/medzah-client-portal/04-1600.webp",
+      "width": 1600,
+      "height": 783,
+      "alt": "Medzah Client Portal: 06 112s"
+    },
+    {
+      "src": "/projects/medzah-client-portal/05-960.webp",
+      "srcSet": "/projects/medzah-client-portal/05-480.webp 480w, /projects/medzah-client-portal/05-960.webp 960w, /projects/medzah-client-portal/05-1600.webp 1600w",
+      "full": "/projects/medzah-client-portal/05-1600.webp",
+      "width": 1600,
+      "height": 783,
+      "alt": "Medzah Client Portal: 07 128s"
     }
-   ]
-  }
- ],
- "result": [
-  "MEDZAH brings medical product browsing, product configuration, shopping lists, checkout, purchasing, order tracking, and customer account management into one centralized B2B portal."
- ],
- "images": [
-  {
-   "src": "/projects/medzah-client-portal/01-960.webp",
-   "srcSet": "/projects/medzah-client-portal/01-480.webp 480w, /projects/medzah-client-portal/01-960.webp 960w, /projects/medzah-client-portal/01-1600.webp 1600w",
-   "full": "/projects/medzah-client-portal/01-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "Medzah Client Portal: 01 8s"
-  },
-  {
-   "src": "/projects/medzah-client-portal/02-960.webp",
-   "srcSet": "/projects/medzah-client-portal/02-480.webp 480w, /projects/medzah-client-portal/02-960.webp 960w, /projects/medzah-client-portal/02-1600.webp 1600w",
-   "full": "/projects/medzah-client-portal/02-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "Medzah Client Portal: 02 35s"
-  },
-  {
-   "src": "/projects/medzah-client-portal/03-960.webp",
-   "srcSet": "/projects/medzah-client-portal/03-480.webp 480w, /projects/medzah-client-portal/03-960.webp 960w, /projects/medzah-client-portal/03-1600.webp 1600w",
-   "full": "/projects/medzah-client-portal/03-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "Medzah Client Portal: 04 68s"
-  },
-  {
-   "src": "/projects/medzah-client-portal/04-960.webp",
-   "srcSet": "/projects/medzah-client-portal/04-480.webp 480w, /projects/medzah-client-portal/04-960.webp 960w, /projects/medzah-client-portal/04-1600.webp 1600w",
-   "full": "/projects/medzah-client-portal/04-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "Medzah Client Portal: 06 112s"
-  },
-  {
-   "src": "/projects/medzah-client-portal/05-960.webp",
-   "srcSet": "/projects/medzah-client-portal/05-480.webp 480w, /projects/medzah-client-portal/05-960.webp 960w, /projects/medzah-client-portal/05-1600.webp 1600w",
-   "full": "/projects/medzah-client-portal/05-1600.webp",
-   "width": 1600,
-   "height": 783,
-   "alt": "Medzah Client Portal: 07 128s"
-  }
- ]
+  ]
 }

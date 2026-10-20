@@ -103,7 +103,7 @@ export function Hero() {
               {capabilities.map((c) => (
                 <li key={c.slug}>
                   <Link
-                    to="/services/$slug"
+                    to="/services/$slug/"
                     params={{ slug: c.slug }}
                     className="hero-cap inline-flex items-center rounded-full border border-border px-3 py-1.5 font-heading text-[12.5px] font-semibold text-foreground"
                   >

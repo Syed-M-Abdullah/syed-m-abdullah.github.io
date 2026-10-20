@@ -1,143 +1,137 @@
 {
- "slug": "hair-salon",
- "tags": [
-  "GoHighLevel",
-  "Voice Agents",
-  "CRM",
-  "Inbound & Outbound Automation",
-  "Email"
- ],
- "overview": [
-  "Built a GoHighLevel automation system for a hair salon to manage inbound and outbound leads, handle calls, book appointments, and keep customer communication organized inside the CRM.",
-  "The setup uses separate workflows for inbound and outbound activity, along with appointment and follow up automation."
- ],
- "sections": [
-  {
-   "heading": "CRM & Subaccount Setup",
-   "blocks": [
+  "slug": "hair-salon",
+  "tags": ["GoHighLevel", "Voice Agents", "CRM", "Inbound & Outbound Automation", "Email"],
+  "overview": [
+    "Built a GoHighLevel automation system for a hair salon to manage inbound and outbound leads, handle calls, book appointments, and keep customer communication organized inside the CRM.",
+    "The setup uses separate workflows for inbound and outbound activity, along with appointment and follow up automation."
+  ],
+  "sections": [
     {
-     "p": "The salon was configured as a dedicated GoHighLevel subaccount with its own:"
+      "heading": "CRM & Subaccount Setup",
+      "blocks": [
+        {
+          "p": "The salon was configured as a dedicated GoHighLevel subaccount with its own:"
+        },
+        {
+          "list": [
+            "Contacts and CRM",
+            "Voice agents",
+            "Inbound workflows",
+            "Outbound workflows",
+            "Appointment handling",
+            "Email communication"
+          ]
+        }
+      ]
     },
     {
-     "list": [
-      "Contacts and CRM",
-      "Voice agents",
-      "Inbound workflows",
-      "Outbound workflows",
-      "Appointment handling",
-      "Email communication"
-     ]
+      "heading": "Inbound Automation",
+      "blocks": [
+        {
+          "p": "The inbound setup handles incoming customer interactions and moves them through the appropriate workflow."
+        },
+        {
+          "p": "The system includes:"
+        },
+        {
+          "list": [
+            "Inbound agent handling",
+            "Appointment booking",
+            "Post interaction data processing",
+            "Customer record updates"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Outbound Automation",
+      "blocks": [
+        {
+          "p": "The outbound setup manages the lead calling process through separate workflows."
+        },
+        {
+          "p": "It includes:"
+        },
+        {
+          "list": [
+            "Initial outbound calls",
+            "Appointment booking",
+            "Post call data processing",
+            "Follow up handling"
+          ]
+        },
+        {
+          "p": "This keeps the calling process structured and allows lead activity to be tracked inside the CRM."
+        }
+      ]
+    },
+    {
+      "heading": "Appointment & Email Automation",
+      "blocks": [
+        {
+          "p": "Once an appointment is booked, the system handles the related customer communication."
+        },
+        {
+          "p": "Appointment confirmation emails include:"
+        },
+        {
+          "list": [
+            "Customer name",
+            "Appointment date and time",
+            "Meeting or booking details",
+            "Rescheduling information"
+          ]
+        },
+        {
+          "p": "The communication is recorded against the customer contact inside GoHighLevel."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "Inbound Automation",
-   "blocks": [
+  ],
+  "result": [
+    "A centralized hair salon automation system that connects inbound calls, outbound calls, appointment booking, follow ups, and customer communication inside GoHighLevel.",
+    "The setup reduces manual lead handling and gives the salon a structured process for managing customers from the first interaction through appointment confirmation."
+  ],
+  "images": [
     {
-     "p": "The inbound setup handles incoming customer interactions and moves them through the appropriate workflow."
+      "src": "/projects/hair-salon/01-960.webp",
+      "srcSet": "/projects/hair-salon/01-480.webp 480w, /projects/hair-salon/01-960.webp 960w, /projects/hair-salon/01-1600.webp 1600w",
+      "full": "/projects/hair-salon/01-1600.webp",
+      "width": 1600,
+      "height": 833,
+      "alt": "Hair Salon: Hair Saloon Synthflow"
     },
     {
-     "p": "The system includes:"
+      "src": "/projects/hair-salon/02-960.webp",
+      "srcSet": "/projects/hair-salon/02-480.webp 480w, /projects/hair-salon/02-960.webp 960w, /projects/hair-salon/02-1600.webp 1600w",
+      "full": "/projects/hair-salon/02-1600.webp",
+      "width": 1600,
+      "height": 851,
+      "alt": "Hair Salon: HairSaloon Agents"
     },
     {
-     "list": [
-      "Inbound agent handling",
-      "Appointment booking",
-      "Post interaction data processing",
-      "Customer record updates"
-     ]
+      "src": "/projects/hair-salon/03-960.webp",
+      "srcSet": "/projects/hair-salon/03-480.webp 480w, /projects/hair-salon/03-960.webp 960w, /projects/hair-salon/03-1600.webp 1600w",
+      "full": "/projects/hair-salon/03-1600.webp",
+      "width": 1600,
+      "height": 850,
+      "alt": "Hair Salon: HairSaloon Inbound"
+    },
+    {
+      "src": "/projects/hair-salon/04-960.webp",
+      "srcSet": "/projects/hair-salon/04-480.webp 480w, /projects/hair-salon/04-960.webp 960w, /projects/hair-salon/04-1600.webp 1600w",
+      "full": "/projects/hair-salon/04-1600.webp",
+      "width": 1600,
+      "height": 851,
+      "alt": "Hair Salon: HairSaloon Outbound"
+    },
+    {
+      "src": "/projects/hair-salon/05-960.webp",
+      "srcSet": "/projects/hair-salon/05-480.webp 480w, /projects/hair-salon/05-960.webp 960w, /projects/hair-salon/05-1600.webp 1600w",
+      "full": "/projects/hair-salon/05-1600.webp",
+      "width": 1600,
+      "height": 849,
+      "alt": "Hair Salon: HairSaloon Subaccount"
     }
-   ]
-  },
-  {
-   "heading": "Outbound Automation",
-   "blocks": [
-    {
-     "p": "The outbound setup manages the lead calling process through separate workflows."
-    },
-    {
-     "p": "It includes:"
-    },
-    {
-     "list": [
-      "Initial outbound calls",
-      "Appointment booking",
-      "Post call data processing",
-      "Follow up handling"
-     ]
-    },
-    {
-     "p": "This keeps the calling process structured and allows lead activity to be tracked inside the CRM."
-    }
-   ]
-  },
-  {
-   "heading": "Appointment & Email Automation",
-   "blocks": [
-    {
-     "p": "Once an appointment is booked, the system handles the related customer communication."
-    },
-    {
-     "p": "Appointment confirmation emails include:"
-    },
-    {
-     "list": [
-      "Customer name",
-      "Appointment date and time",
-      "Meeting or booking details",
-      "Rescheduling information"
-     ]
-    },
-    {
-     "p": "The communication is recorded against the customer contact inside GoHighLevel."
-    }
-   ]
-  }
- ],
- "result": [
-  "A centralized hair salon automation system that connects inbound calls, outbound calls, appointment booking, follow ups, and customer communication inside GoHighLevel.",
-  "The setup reduces manual lead handling and gives the salon a structured process for managing customers from the first interaction through appointment confirmation."
- ],
- "images": [
-  {
-   "src": "/projects/hair-salon/01-960.webp",
-   "srcSet": "/projects/hair-salon/01-480.webp 480w, /projects/hair-salon/01-960.webp 960w, /projects/hair-salon/01-1600.webp 1600w",
-   "full": "/projects/hair-salon/01-1600.webp",
-   "width": 1600,
-   "height": 833,
-   "alt": "Hair Salon: Hair Saloon Synthflow"
-  },
-  {
-   "src": "/projects/hair-salon/02-960.webp",
-   "srcSet": "/projects/hair-salon/02-480.webp 480w, /projects/hair-salon/02-960.webp 960w, /projects/hair-salon/02-1600.webp 1600w",
-   "full": "/projects/hair-salon/02-1600.webp",
-   "width": 1600,
-   "height": 851,
-   "alt": "Hair Salon: HairSaloon Agents"
-  },
-  {
-   "src": "/projects/hair-salon/03-960.webp",
-   "srcSet": "/projects/hair-salon/03-480.webp 480w, /projects/hair-salon/03-960.webp 960w, /projects/hair-salon/03-1600.webp 1600w",
-   "full": "/projects/hair-salon/03-1600.webp",
-   "width": 1600,
-   "height": 850,
-   "alt": "Hair Salon: HairSaloon Inbound"
-  },
-  {
-   "src": "/projects/hair-salon/04-960.webp",
-   "srcSet": "/projects/hair-salon/04-480.webp 480w, /projects/hair-salon/04-960.webp 960w, /projects/hair-salon/04-1600.webp 1600w",
-   "full": "/projects/hair-salon/04-1600.webp",
-   "width": 1600,
-   "height": 851,
-   "alt": "Hair Salon: HairSaloon Outbound"
-  },
-  {
-   "src": "/projects/hair-salon/05-960.webp",
-   "srcSet": "/projects/hair-salon/05-480.webp 480w, /projects/hair-salon/05-960.webp 960w, /projects/hair-salon/05-1600.webp 1600w",
-   "full": "/projects/hair-salon/05-1600.webp",
-   "width": 1600,
-   "height": 849,
-   "alt": "Hair Salon: HairSaloon Subaccount"
-  }
- ]
+  ]
 }

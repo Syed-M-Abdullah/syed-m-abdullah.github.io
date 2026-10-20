@@ -14,7 +14,7 @@ export function StatValue({ value, className }: { value: string; className?: str
     <span ref={ref as React.Ref<HTMLSpanElement>} className={className}>
       <span aria-hidden className="stat-value">
         {n}
-        <span className="gradient-text">{suffix}</span>
+        <span className="text-eyebrow">{suffix}</span>
       </span>
       <span className="sr-only">{value}</span>
     </span>

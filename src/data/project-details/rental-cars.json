@@ -1,83 +1,71 @@
 {
- "slug": "rental-cars",
- "tags": [
-  "GoHighLevel",
-  "Synthflow",
-  "Voice Agent",
-  "CRM",
-  "Appointment Booking",
-  "Email"
- ],
- "overview": [
-  "Built an inbound voice and appointment automation system for a car rental client using GoHighLevel and Synthflow.",
-  "The system handles incoming customer calls, manages appointment bookings, updates contact records, and sends appointment confirmation emails automatically."
- ],
- "sections": [
-  {
-   "heading": "Voice Agent Setup",
-   "blocks": [
+  "slug": "rental-cars",
+  "tags": ["GoHighLevel", "Synthflow", "Voice Agent", "CRM", "Appointment Booking", "Email"],
+  "overview": [
+    "Built an inbound voice and appointment automation system for a car rental client using GoHighLevel and Synthflow.",
+    "The system handles incoming customer calls, manages appointment bookings, updates contact records, and sends appointment confirmation emails automatically."
+  ],
+  "sections": [
     {
-     "p": "Configured a dedicated inbound voice agent in Synthflow for handling incoming calls."
+      "heading": "Voice Agent Setup",
+      "blocks": [
+        {
+          "p": "Configured a dedicated inbound voice agent in Synthflow for handling incoming calls."
+        },
+        {
+          "p": "The agent connects with the GoHighLevel subaccount and supports the appointment booking process."
+        }
+      ]
     },
     {
-     "p": "The agent connects with the GoHighLevel subaccount and supports the appointment booking process."
+      "heading": "GoHighLevel Workflows",
+      "blocks": [
+        {
+          "p": "The setup includes dedicated workflows for:"
+        },
+        {
+          "list": ["Appointment Booked", "Post Inbound Data", "Inbound Agent", "Campaign handling"]
+        },
+        {
+          "p": "These workflows keep customer information and call outcomes organized inside the CRM."
+        }
+      ]
+    },
+    {
+      "heading": "Appointment Automation",
+      "blocks": [
+        {
+          "p": "When an appointment is booked, the system updates the contact record and triggers the required follow up process."
+        },
+        {
+          "p": "Appointment information is used to prepare the confirmation communication automatically."
+        }
+      ]
+    },
+    {
+      "heading": "Email Confirmation",
+      "blocks": [
+        {
+          "p": "The system sends appointment confirmation emails containing:"
+        },
+        {
+          "list": [
+            "Customer name",
+            "Appointment date and time",
+            "Meeting details",
+            "Confirmation information",
+            "Rescheduling instructions"
+          ]
+        },
+        {
+          "p": "The communication is recorded within the customer’s CRM record."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "heading": "GoHighLevel Workflows",
-   "blocks": [
-    {
-     "p": "The setup includes dedicated workflows for:"
-    },
-    {
-     "list": [
-      "Appointment Booked",
-      "Post Inbound Data",
-      "Inbound Agent",
-      "Campaign handling"
-     ]
-    },
-    {
-     "p": "These workflows keep customer information and call outcomes organized inside the CRM."
-    }
-   ]
-  },
-  {
-   "heading": "Appointment Automation",
-   "blocks": [
-    {
-     "p": "When an appointment is booked, the system updates the contact record and triggers the required follow up process."
-    },
-    {
-     "p": "Appointment information is used to prepare the confirmation communication automatically."
-    }
-   ]
-  },
-  {
-   "heading": "Email Confirmation",
-   "blocks": [
-    {
-     "p": "The system sends appointment confirmation emails containing:"
-    },
-    {
-     "list": [
-      "Customer name",
-      "Appointment date and time",
-      "Meeting details",
-      "Confirmation information",
-      "Rescheduling instructions"
-     ]
-    },
-    {
-     "p": "The communication is recorded within the customer’s CRM record."
-    }
-   ]
-  }
- ],
- "result": [
-  "A complete inbound appointment system connecting voice calls, lead capture, CRM updates, appointment booking, and email confirmations in one workflow.",
-  "This reduces manual follow up work and keeps the entire appointment process organized inside GoHighLevel."
- ],
- "images": []
+  ],
+  "result": [
+    "A complete inbound appointment system connecting voice calls, lead capture, CRM updates, appointment booking, and email confirmations in one workflow.",
+    "This reduces manual follow up work and keeps the entire appointment process organized inside GoHighLevel."
+  ],
+  "images": []
 }

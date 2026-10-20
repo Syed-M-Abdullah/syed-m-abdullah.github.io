@@ -154,27 +154,266 @@ export const generatedProjects: ProjectSummary[] = [
     source: "folder",
   },
   {
-    slug: "gohighlevel-automation-showcase",
-    title: "GoHighLevel Automation Showcase",
+    slug: "automated-appointment-management",
+    title: "Automated Appointment Management",
     tool: "ghl",
     excerpt:
-      "A set of GoHighLevel workflows covering lead nurturing, appointment management, payment processing and instalment plans.",
+      "Runs when a customer books an appointment. It creates or updates the contact, confirms the booking by email and SMS, checks that the contact and appointment are valid,…",
     cover: {
-      src: "/projects/gohighlevel-automation-showcase/01-736.webp",
+      src: "/projects/automated-appointment-management/01-736.webp",
       srcSet:
-        "/projects/gohighlevel-automation-showcase/01-480.webp 480w, /projects/gohighlevel-automation-showcase/01-736.webp 736w",
-      full: "/projects/gohighlevel-automation-showcase/01-736.webp",
+        "/projects/automated-appointment-management/01-480.webp 480w, /projects/automated-appointment-management/01-736.webp 736w",
+      full: "/projects/automated-appointment-management/01-736.webp",
       width: 736,
       height: 877,
-      alt: "GoHighLevel Automation Showcase: Appointment Booking",
+      alt: "Automated Appointment Management: Appointment Booking",
     },
-    imageCount: 11,
-    toolsUsed: ["GoHighLevel", "Workflows", "Email", "SMS", "Payments"],
+    imageCount: 1,
+    toolsUsed: ["GoHighLevel", "Calendars", "Email", "SMS"],
     toolIds: ["gohighlevel"],
     services: ["gohighlevel-automation"],
     featured: true,
-    order: 100,
-    legacySlugs: ["ghl-workflow-library"],
+    order: 1,
+    legacySlugs: [],
+    source: "folder",
+  },
+  {
+    slug: "appointment-confirmation",
+    title: "Appointment Confirmation",
+    tool: "ghl",
+    excerpt: "Confirms each booking with a sequence of email and SMS messages.",
+    cover: {
+      src: "/projects/appointment-confirmation/01-960.webp",
+      srcSet:
+        "/projects/appointment-confirmation/01-480.webp 480w, /projects/appointment-confirmation/01-960.webp 960w, /projects/appointment-confirmation/01-1600.webp 1600w",
+      full: "/projects/appointment-confirmation/01-1600.webp",
+      width: 1600,
+      height: 724,
+      alt: "Appointment Confirmation: Appointment Confirmation",
+    },
+    imageCount: 1,
+    toolsUsed: ["GoHighLevel", "Calendars", "Email", "SMS"],
+    toolIds: ["gohighlevel"],
+    services: ["gohighlevel-automation"],
+    featured: false,
+    order: 9,
+    legacySlugs: [],
+    source: "folder",
+  },
+  {
+    slug: "customer-follow-up",
+    title: "Customer Follow-Up",
+    tool: "ghl",
+    excerpt:
+      "A customer follow-up sequence of email and SMS messages, with waits between the steps.",
+    cover: {
+      src: "/projects/customer-follow-up/01-960.webp",
+      srcSet:
+        "/projects/customer-follow-up/01-480.webp 480w, /projects/customer-follow-up/01-960.webp 960w, /projects/customer-follow-up/01-1556.webp 1556w",
+      full: "/projects/customer-follow-up/01-1556.webp",
+      width: 1556,
+      height: 800,
+      alt: "Customer Follow-Up: Customer Follow-Up",
+    },
+    imageCount: 1,
+    toolsUsed: ["GoHighLevel", "Email", "SMS"],
+    toolIds: ["gohighlevel"],
+    services: ["gohighlevel-automation"],
+    featured: false,
+    order: 10,
+    legacySlugs: [],
+    source: "folder",
+  },
+  {
+    slug: "newsletter-subscriber-onboarding",
+    title: "Newsletter Subscriber Onboarding",
+    tool: "ghl",
+    excerpt:
+      "Starts when a contact gets the newsletter subscriber tag. It checks the address can receive email, sends a welcome email and, two days later, an educational email.",
+    cover: {
+      src: "/projects/newsletter-subscriber-onboarding/01-677.webp",
+      srcSet:
+        "/projects/newsletter-subscriber-onboarding/01-480.webp 480w, /projects/newsletter-subscriber-onboarding/01-677.webp 677w",
+      full: "/projects/newsletter-subscriber-onboarding/01-677.webp",
+      width: 677,
+      height: 882,
+      alt: "Newsletter Subscriber Onboarding: Email Campaign",
+    },
+    imageCount: 1,
+    toolsUsed: ["GoHighLevel", "Email", "Tags"],
+    toolIds: ["gohighlevel"],
+    services: ["gohighlevel-automation"],
+    featured: false,
+    order: 6,
+    legacySlugs: [],
+    source: "folder",
+  },
+  {
+    slug: "facebook-post-automation",
+    title: "Facebook Post Automation",
+    tool: "ghl",
+    excerpt:
+      "A new row in the post list triggers it through a webhook. AI writes the post and caption, generates an image and matches the post to the right Facebook page, then the…",
+    cover: {
+      src: "/projects/facebook-post-automation/01-960.webp",
+      srcSet:
+        "/projects/facebook-post-automation/01-480.webp 480w, /projects/facebook-post-automation/01-960.webp 960w, /projects/facebook-post-automation/01-1034.webp 1034w",
+      full: "/projects/facebook-post-automation/01-1034.webp",
+      width: 1034,
+      height: 1521,
+      alt: "Facebook Post Automation: Facebook",
+    },
+    imageCount: 1,
+    toolsUsed: ["GoHighLevel", "Webhooks", "AI", "Facebook"],
+    toolIds: ["gohighlevel"],
+    services: ["gohighlevel-automation", "ai-content-automation"],
+    featured: false,
+    order: 5,
+    legacySlugs: [],
+    source: "folder",
+  },
+  {
+    slug: "lead-follow-up",
+    title: "Lead Follow-Up",
+    tool: "ghl",
+    excerpt:
+      "Creates or updates the opportunity, then sends up to three SMS messages, waiting 24 hours for a reply after each one.",
+    cover: {
+      src: "/projects/lead-follow-up/01-714.webp",
+      srcSet:
+        "/projects/lead-follow-up/01-480.webp 480w, /projects/lead-follow-up/01-714.webp 714w",
+      full: "/projects/lead-follow-up/01-714.webp",
+      width: 714,
+      height: 740,
+      alt: "Lead Follow-Up: Lead Follow-Up",
+    },
+    imageCount: 1,
+    toolsUsed: ["GoHighLevel", "Opportunities", "SMS"],
+    toolIds: ["gohighlevel"],
+    services: ["gohighlevel-automation"],
+    featured: false,
+    order: 7,
+    legacySlugs: [],
+    source: "folder",
+  },
+  {
+    slug: "lead-generation-workflow",
+    title: "Lead Generation Workflow",
+    tool: "ghl",
+    excerpt:
+      "Starts from a lead form submission. It creates the contact, sends a welcome email, then a value email and an SMS follow-up, and two days later an offer or case study…",
+    cover: {
+      src: "/projects/lead-generation-workflow/01-592.webp",
+      srcSet:
+        "/projects/lead-generation-workflow/01-480.webp 480w, /projects/lead-generation-workflow/01-592.webp 592w",
+      full: "/projects/lead-generation-workflow/01-592.webp",
+      width: 592,
+      height: 806,
+      alt: "Lead Generation Workflow: Lead Generation",
+    },
+    imageCount: 1,
+    toolsUsed: ["GoHighLevel", "Forms", "Email", "SMS"],
+    toolIds: ["gohighlevel"],
+    services: ["gohighlevel-automation"],
+    featured: false,
+    order: 8,
+    legacySlugs: [],
+    source: "folder",
+  },
+  {
+    slug: "lead-nurturing-automation",
+    title: "Lead Nurturing Automation",
+    tool: "ghl",
+    excerpt:
+      "Starts from a lead form. It creates or updates the contact, sends a welcome email, then value emails and SMS on a schedule.",
+    cover: {
+      src: "/projects/lead-nurturing-automation/01-596.webp",
+      srcSet:
+        "/projects/lead-nurturing-automation/01-480.webp 480w, /projects/lead-nurturing-automation/01-596.webp 596w",
+      full: "/projects/lead-nurturing-automation/01-596.webp",
+      width: 596,
+      height: 865,
+      alt: "Lead Nurturing Automation: Lead Nurturing",
+    },
+    imageCount: 1,
+    toolsUsed: ["GoHighLevel", "Forms", "Email", "SMS"],
+    toolIds: ["gohighlevel"],
+    services: ["gohighlevel-automation"],
+    featured: false,
+    order: 2,
+    legacySlugs: [],
+    source: "folder",
+  },
+  {
+    slug: "automated-payment-processing",
+    title: "Automated Payment Processing",
+    tool: "ghl",
+    excerpt:
+      "Runs when a payment is received. It updates the customer and payment records, applies the payment to the invoice or subscription, branches on success or failure and…",
+    cover: {
+      src: "/projects/automated-payment-processing/01-960.webp",
+      srcSet:
+        "/projects/automated-payment-processing/01-480.webp 480w, /projects/automated-payment-processing/01-960.webp 960w, /projects/automated-payment-processing/01-1030.webp 1030w",
+      full: "/projects/automated-payment-processing/01-1030.webp",
+      width: 1030,
+      height: 1526,
+      alt: "Automated Payment Processing: Payment Automation",
+    },
+    imageCount: 1,
+    toolsUsed: ["GoHighLevel", "Payments", "Email"],
+    toolIds: ["gohighlevel"],
+    services: ["gohighlevel-automation"],
+    featured: false,
+    order: 4,
+    legacySlugs: [],
+    source: "folder",
+  },
+  {
+    slug: "installment-payment-management",
+    title: "Installment Payment Management",
+    tool: "ghl",
+    excerpt:
+      "Runs when an instalment payment arrives. It creates or updates the contact, generates the instalment schedule and confirms the first payment by email and SMS.",
+    cover: {
+      src: "/projects/installment-payment-management/01-960.webp",
+      srcSet:
+        "/projects/installment-payment-management/01-480.webp 480w, /projects/installment-payment-management/01-960.webp 960w, /projects/installment-payment-management/01-1033.webp 1033w",
+      full: "/projects/installment-payment-management/01-1033.webp",
+      width: 1033,
+      height: 1522,
+      alt: "Installment Payment Management: Payment Installment",
+    },
+    imageCount: 1,
+    toolsUsed: ["GoHighLevel", "Payments", "Email", "SMS"],
+    toolIds: ["gohighlevel"],
+    services: ["gohighlevel-automation"],
+    featured: false,
+    order: 3,
+    legacySlugs: [],
+    source: "folder",
+  },
+  {
+    slug: "sms-campaign-router",
+    title: "SMS Campaign Router",
+    tool: "ghl",
+    excerpt:
+      "Several campaign triggers feed one router that splits contacts into five branches, each sending its own SMS.",
+    cover: {
+      src: "/projects/sms-campaign-router/01-960.webp",
+      srcSet:
+        "/projects/sms-campaign-router/01-480.webp 480w, /projects/sms-campaign-router/01-960.webp 960w, /projects/sms-campaign-router/01-1600.webp 1600w",
+      full: "/projects/sms-campaign-router/01-1600.webp",
+      width: 1600,
+      height: 682,
+      alt: "SMS Campaign Router: SMS Campaign 1",
+    },
+    imageCount: 1,
+    toolsUsed: ["GoHighLevel", "SMS"],
+    toolIds: ["gohighlevel"],
+    services: ["gohighlevel-automation"],
+    featured: false,
+    order: 11,
+    legacySlugs: [],
     source: "folder",
   },
   {
@@ -472,7 +711,7 @@ export const generatedProjects: ProjectSummary[] = [
   },
   {
     slug: "garageflow-360-auto-repair-operations-and-customer-retention-automation",
-    title: "GarageFlow 360 – Auto Repair Operations & Customer Retention Automation",
+    title: "GarageFlow 360: Auto Repair Operations & Customer Retention Automation",
     tool: "make",
     excerpt:
       "Built an automated workshop management system for handling customer inquiries, vehicle appointments, inspections, repair estimates, parts coordination, technician…",
@@ -483,7 +722,7 @@ export const generatedProjects: ProjectSummary[] = [
       full: "/projects/garageflow-360-auto-repair-operations-and-customer-retention-automation/01-1600.webp",
       width: 1600,
       height: 726,
-      alt: "GarageFlow 360 – Auto Repair Operations & Customer Retention Automation: GarageFlow 360 1",
+      alt: "GarageFlow 360: Auto Repair Operations & Customer Retention Automation: GarageFlow 360 1",
     },
     imageCount: 3,
     toolsUsed: [
@@ -1428,7 +1667,7 @@ export const generatedProjects: ProjectSummary[] = [
   },
   {
     slug: "tristrum-sales-lettings",
-    title: "Property-Search Voice Agent — Tristrum Sales & Lettings",
+    title: "Property-Search Voice Agent: Tristrum Sales & Lettings",
     tool: "voice",
     excerpt:
       "Inbound voice agent that searches the agency's live property data during the call and books valuations.",
@@ -1444,7 +1683,7 @@ export const generatedProjects: ProjectSummary[] = [
   },
   {
     slug: "neo-taxi",
-    title: "Taxi Booking Voice Agent — NEO Taxi",
+    title: "Taxi Booking Voice Agent: NEO Taxi",
     tool: "voice",
     excerpt:
       "Voice agent that books taxi rides in a single call and sends the caller a live Google Maps link.",
@@ -1460,7 +1699,7 @@ export const generatedProjects: ProjectSummary[] = [
   },
   {
     slug: "mavera-ai",
-    title: "AI Outbound Calling Pipeline — Mavera.ai",
+    title: "AI Outbound Calling Pipeline: Mavera.ai",
     tool: "voice",
     excerpt:
       "Outbound pipeline that sources leads, calls them with an AI agent, books appointments and hands off to GoHighLevel follow-up.",
@@ -1508,7 +1747,7 @@ export const generatedProjects: ProjectSummary[] = [
   },
   {
     slug: "my360agents",
-    title: "Industry Voice Agent Library — My360Agents.ai",
+    title: "Industry Voice Agent Library: My360Agents.ai",
     tool: "voice",
     excerpt:
       "Library of pre-built, industry-specific voice agents with an embeddable inbound-call widget and a live demo.",
@@ -1715,3 +1954,9 @@ export const generatedProjects: ProjectSummary[] = [
     flow: ["Rep takes order (offline)", "Stored locally", "Device reconnects", "Sync to API"],
   },
 ];
+
+/** Old project URLs and where they now forward (scripts/projects.config.json → "retired"). */
+export const retiredUrls: Record<string, string> = {
+  "/projects/gohighlevel-automation-showcase": "/projects/?tool=ghl",
+  "/case/ghl-workflow-library": "/projects/?tool=ghl",
+};

@@ -1,0 +1,17 @@
+{
+  "slug": "appointment-confirmation",
+  "tags": [],
+  "overview": ["Confirms each booking with a sequence of email and SMS messages."],
+  "sections": [],
+  "result": [],
+  "images": [
+    {
+      "src": "/projects/appointment-confirmation/01-960.webp",
+      "srcSet": "/projects/appointment-confirmation/01-480.webp 480w, /projects/appointment-confirmation/01-960.webp 960w, /projects/appointment-confirmation/01-1600.webp 1600w",
+      "full": "/projects/appointment-confirmation/01-1600.webp",
+      "width": 1600,
+      "height": 724,
+      "alt": "Appointment Confirmation: Appointment Confirmation"
+    }
+  ]
+}

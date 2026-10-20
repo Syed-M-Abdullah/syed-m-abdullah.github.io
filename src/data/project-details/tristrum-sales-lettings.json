@@ -1,54 +1,43 @@
 {
- "slug": "tristrum-sales-lettings",
- "tags": [
-  "Real Estate",
-  "United Kingdom"
- ],
- "overview": [
-  "Inbound voice agent that searches the agency's live property data during the call and books valuations."
- ],
- "sections": [
-  {
-   "heading": "The challenge",
-   "blocks": [
+  "slug": "tristrum-sales-lettings",
+  "tags": ["Real Estate", "United Kingdom"],
+  "overview": [
+    "Inbound voice agent that searches the agency's live property data during the call and books valuations."
+  ],
+  "sections": [
     {
-     "p": "Staff searched the Jupix ERP by hand while on the phone to find properties matching each caller's criteria, which slowed calls down and tied up the team."
-    }
-   ]
-  },
-  {
-   "heading": "Solution & architecture",
-   "blocks": [
+      "heading": "The challenge",
+      "blocks": [
+        {
+          "p": "Staff searched the Jupix ERP by hand while on the phone to find properties matching each caller's criteria, which slowed calls down and tied up the team."
+        }
+      ]
+    },
     {
-     "p": "A Synthflow voice agent with an ElevenLabs voice handles incoming valuation and property enquiries. During the call it queries the agency's Jupix data through a Firebase / Google Cloud layer, matches listings against what the caller asks for, and books the valuation into the calendar."
-    }
-   ]
-  },
-  {
-   "heading": "Workflow",
-   "blocks": [
+      "heading": "Solution & architecture",
+      "blocks": [
+        {
+          "p": "A Synthflow voice agent with an ElevenLabs voice handles incoming valuation and property enquiries. During the call it queries the agency's Jupix data through a Firebase / Google Cloud layer, matches listings against what the caller asks for, and books the valuation into the calendar."
+        }
+      ]
+    },
     {
-     "list": [
-      "Call in",
-      "Query Jupix data",
-      "Match listings",
-      "Book valuation"
-     ]
-    }
-   ]
-  },
-  {
-   "heading": "Key facts",
-   "blocks": [
+      "heading": "Workflow",
+      "blocks": [
+        {
+          "list": ["Call in", "Query Jupix data", "Match listings", "Book valuation"]
+        }
+      ]
+    },
     {
-     "list": [
-      "24/7 — Call coverage",
-      "Live — ERP lookups mid-call"
-     ]
+      "heading": "Key facts",
+      "blocks": [
+        {
+          "list": ["24/7, Call coverage", "Live, ERP lookups mid-call"]
+        }
+      ]
     }
-   ]
-  }
- ],
- "result": [],
- "images": []
+  ],
+  "result": [],
+  "images": []
 }

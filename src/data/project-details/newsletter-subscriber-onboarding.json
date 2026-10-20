@@ -1,0 +1,19 @@
+{
+  "slug": "newsletter-subscriber-onboarding",
+  "tags": [],
+  "overview": [
+    "Starts when a contact gets the newsletter subscriber tag. It checks the address can receive email, sends a welcome email and, two days later, an educational email. It then checks whether that email was opened and stops for contacts who unsubscribe."
+  ],
+  "sections": [],
+  "result": [],
+  "images": [
+    {
+      "src": "/projects/newsletter-subscriber-onboarding/01-677.webp",
+      "srcSet": "/projects/newsletter-subscriber-onboarding/01-480.webp 480w, /projects/newsletter-subscriber-onboarding/01-677.webp 677w",
+      "full": "/projects/newsletter-subscriber-onboarding/01-677.webp",
+      "width": 677,
+      "height": 882,
+      "alt": "Newsletter Subscriber Onboarding: Email Campaign"
+    }
+  ]
+}
