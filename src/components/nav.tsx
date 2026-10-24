@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowRight, CalendarClock, ChevronDown, Menu, X } from "lucide-react";
-import { services } from "@/data/services";
+import { groupOrder, serviceGroups, servicesInGroup } from "@/data/services";
 import { site } from "@/data/site";
 import { Logo } from "./logo";
 import { ButtonLink } from "./button-link";
@@ -130,13 +130,7 @@ function ServicesMenu({ active, pathname }: { active: boolean; pathname: string 
   };
 
   return (
-    <li
-      ref={wrapRef}
-      className="relative"
-      onMouseEnter={hoverOpen}
-      onMouseLeave={hoverClose}
-      onBlur={onBlur}
-    >
+    <li ref={wrapRef} onMouseEnter={hoverOpen} onMouseLeave={hoverClose} onBlur={onBlur}>
       <button
         ref={triggerRef}
         type="button"
@@ -162,63 +156,76 @@ function ServicesMenu({ active, pathname }: { active: boolean; pathname: string 
         id={menuId}
         onKeyDown={onMenuKey}
         className={cn(
-          "mega-menu absolute top-full left-1/2 z-50 w-[720px] pt-3",
+          "mega-menu absolute top-[54px] left-1/2 z-50 w-[min(1040px,calc(100vw-2rem))] pt-4",
           open && "is-open",
         )}
       >
         <div className="overflow-hidden rounded-2xl border border-border bg-panel shadow-[0_30px_80px_-30px_rgba(0,0,0,0.7)]">
-          <ul className="grid grid-cols-2 gap-1 p-3">
-            {services.map((s) => (
-              <li key={s.slug}>
-                <Link
-                  to="/services/$slug/"
-                  params={{ slug: s.slug }}
-                  data-menu-item
-                  onClick={() => setOpen(false)}
-                  className="group flex gap-3 rounded-xl p-3 transition-colors hover:bg-panel-2 focus-visible:bg-panel-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
-                >
-                  <ServiceIcon slug={s.slug} size="sm" />
-                  <span className="min-w-0">
-                    <span className="flex items-center gap-1.5 font-heading text-[14px] font-semibold text-foreground">
-                      {s.title}
-                      <ArrowRight
-                        size={13}
-                        aria-hidden
-                        className="opacity-0 transition group-hover:translate-x-0.5 group-hover:opacity-100"
-                      />
-                    </span>
-                    <span className="mt-0.5 line-clamp-2 block text-[12.5px] leading-snug text-muted-foreground">
-                      {s.tagline}
-                    </span>
+          {/* Three stages side by side; arrow keys move through them in reading order. */}
+          <div className="grid grid-cols-3 divide-x divide-border">
+            {groupOrder.map((g) => (
+              <div key={g} className="p-3">
+                <div className="flex items-center gap-2.5 px-2.5 pt-2 pb-1">
+                  <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#2563eb] font-heading text-[11px] font-bold text-white">
+                    {serviceGroups[g].n}
                   </span>
-                </Link>
-              </li>
+                  <span className="font-heading text-[14px] font-bold text-foreground">
+                    {serviceGroups[g].title}
+                  </span>
+                </div>
+                <p className="px-2.5 pb-2 text-[12.5px] leading-snug text-muted-foreground">
+                  {serviceGroups[g].blurb}
+                </p>
+                <ul className="space-y-0.5">
+                  {servicesInGroup(g).map((s) => (
+                    <li key={s.slug}>
+                      <Link
+                        to="/services/$slug/"
+                        params={{ slug: s.slug }}
+                        data-menu-item
+                        onClick={() => setOpen(false)}
+                        className="group flex gap-3 rounded-xl p-2.5 transition-colors hover:bg-panel-2 focus-visible:bg-panel-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
+                      >
+                        <ServiceIcon slug={s.slug} size="sm" />
+                        <span className="min-w-0">
+                          <span className="flex items-center gap-1.5 font-heading text-[14px] leading-snug font-semibold text-foreground">
+                            {s.title}
+                            <ArrowRight
+                              size={13}
+                              aria-hidden
+                              className="shrink-0 opacity-0 transition group-hover:translate-x-0.5 group-hover:opacity-100"
+                            />
+                          </span>
+                          <span className="mt-0.5 block text-[12.5px] leading-snug text-muted-foreground">
+                            {s.summary}
+                          </span>
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-            <li className="flex">
-              <a
-                href={site.calendly}
-                data-menu-item
-                className="flex w-full flex-col justify-center gap-1 rounded-xl bg-[linear-gradient(135deg,color-mix(in_oklab,var(--blue)_10%,transparent),color-mix(in_oklab,var(--violet)_12%,transparent))] p-3 transition-colors hover:bg-panel-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
-              >
-                <span className="flex items-center gap-1.5 font-heading text-[14px] font-semibold text-foreground">
-                  <CalendarClock size={15} aria-hidden className="text-eyebrow" /> Not sure which
-                  fits?
-                </span>
-                <span className="text-[12.5px] leading-snug text-muted-foreground">
-                  Book a 30-minute call. I'll tell you which service, if any, fits the problem.
-                </span>
-              </a>
-            </li>
-          </ul>
-          <div className="flex items-center justify-between border-t border-border bg-panel-2/60 px-5 py-3">
-            <span className="text-[12.5px] text-muted-foreground">
-              Seven services, one engineer from first call to handover.
-            </span>
+          </div>
+          <div className="flex items-center justify-between gap-6 border-t border-border bg-panel-2/60 px-5 py-3">
+            <a
+              href={site.calendly}
+              data-menu-item
+              className="inline-flex items-center gap-2 rounded-md text-[13px] text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
+            >
+              <CalendarClock size={15} aria-hidden className="text-eyebrow" />
+              <span>
+                <span className="font-heading font-semibold text-foreground">
+                  Not sure which fits?
+                </span>{" "}
+                Book a 30-minute call and I'll point you to the right service.
+              </span>
+            </a>
             <Link
               to="/services/"
               data-menu-item
               onClick={() => setOpen(false)}
-              className="inline-flex items-center gap-1 rounded-md font-heading text-[13px] font-semibold text-eyebrow hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
+              className="inline-flex shrink-0 items-center gap-1 rounded-md font-heading text-[13px] font-semibold text-eyebrow hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
             >
               View all services <ArrowRight size={14} aria-hidden />
             </Link>
@@ -287,7 +294,7 @@ export function Nav() {
       </a>
       <nav
         aria-label="Primary"
-        className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
+        className="relative mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
       >
         <Link to="/" className="shrink-0 rounded-lg" aria-label="Abdullah Bukhari, home page">
           <Logo />
@@ -386,16 +393,27 @@ export function Nav() {
                 />
               </button>
               <ul id="mobile-services" hidden={!servicesOpen} className="mt-1 space-y-1 pl-2">
-                {services.map((s) => (
-                  <li key={s.slug}>
-                    <Link
-                      to="/services/$slug/"
-                      params={{ slug: s.slug }}
-                      className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-foreground hover:bg-panel"
-                    >
-                      <ServiceIcon slug={s.slug} size="sm" />
-                      <span className="font-heading text-[15px] font-semibold">{s.title}</span>
-                    </Link>
+                {groupOrder.map((g) => (
+                  <li key={g}>
+                    <p className="px-3 pt-3 pb-1 font-heading text-[12.5px] font-semibold text-subtle">
+                      {serviceGroups[g].n} · {serviceGroups[g].title}
+                    </p>
+                    <ul className="space-y-1">
+                      {servicesInGroup(g).map((s) => (
+                        <li key={s.slug}>
+                          <Link
+                            to="/services/$slug/"
+                            params={{ slug: s.slug }}
+                            className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-foreground hover:bg-panel"
+                          >
+                            <ServiceIcon slug={s.slug} size="sm" />
+                            <span className="font-heading text-[15px] font-semibold">
+                              {s.title}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </li>
                 ))}
                 <li>

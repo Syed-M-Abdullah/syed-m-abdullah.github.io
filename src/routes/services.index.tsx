@@ -2,19 +2,20 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { PageHero } from "@/components/page-hero";
-import { Section } from "@/components/section";
-import { ServiceChooserCard, ServiceIcon } from "@/components/services";
+import { Container, Section } from "@/components/section";
+import { ServiceChooserCard, ServiceIcon, StageHeading } from "@/components/services";
 import { CtaPanel } from "@/components/cta-panel";
 import { ButtonLink } from "@/components/button-link";
-import { services } from "@/data/services";
+import { groupOrder, serviceGroups, services, servicesInGroup } from "@/data/services";
+import { bandClass } from "@/lib/band";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/services/")({
   head: () =>
     seo({
-      title: "Services: Automation, CRM, Voice AI and Custom Software",
+      title: "Services: Lead Generation, CRM, AI Agents, Automation and Software",
       description:
-        "Seven services: business automation with n8n, Zapier and Make, GoHighLevel CRM, lead generation, AI content for WordPress, voice agents, chat agents and custom .NET software.",
+        "Ten services in three stages: lead generation, websites and AI content to get more leads; GoHighLevel CRM, voice and chat agents to convert them; automation, custom .NET software, React Native apps and website care to run the business.",
       path: "/services",
     }),
   component: ServicesPage,
@@ -35,13 +36,16 @@ const audiences = [
   },
 ];
 
+/** Global position in the journey order, so cards are numbered 01 to 10 across the stages. */
+const position = (slug: string) => services.findIndex((s) => s.slug === slug);
+
 function ServicesPage() {
   return (
     <PageShell>
       <PageHero
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Services" }]}
-        title="Choose the system you need built"
-        intro="Each service starts from a business problem, not a tool. Not sure which fits? Describe the problem and I'll point you in the right direction."
+        title="Ten services, organised by the result you need"
+        intro="Find your stage: getting more leads, converting every enquiry, or automating the work behind them. Each service is built in your accounts, documented and handed over. Not sure where you fit? Describe the problem and I'll point you to the right one."
         actions={
           <>
             <ButtonLink to="/contact/" size="lg">
@@ -53,42 +57,67 @@ function ServicesPage() {
           </>
         }
         aside={
-          <nav aria-label="Jump to a service" className="panel-border rounded-3xl p-5">
-            <h2 className="mb-3 px-2 font-heading text-[14px] font-semibold text-muted-foreground">
-              Jump to a service
-            </h2>
-            <ul className="space-y-1.5">
-              {services.map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    to="/services/$slug/"
-                    params={{ slug: s.slug }}
-                    className="group flex items-center gap-3 rounded-2xl p-2 transition hover:bg-panel-2/70"
+          <nav aria-label="Services by stage" className="panel-border rounded-3xl p-5">
+            <ol className="space-y-4">
+              {groupOrder.map((g) => (
+                <li key={g}>
+                  <a
+                    href={`#stage-${g}`}
+                    className="flex items-center gap-2.5 rounded-lg px-2 font-heading text-[13px] font-semibold text-subtle hover:text-foreground"
                   >
-                    <ServiceIcon slug={s.slug} size="sm" />
-                    <span className="flex-1 font-heading text-sm font-semibold text-foreground">
-                      {s.title}
+                    <span className="grid h-6 w-6 place-items-center rounded-full bg-[#2563eb] text-[11px] font-bold text-white">
+                      {serviceGroups[g].n}
                     </span>
-                    <ArrowRight
-                      size={15}
-                      aria-hidden
-                      className="text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-cyan"
-                    />
-                  </Link>
+                    {serviceGroups[g].title}
+                  </a>
+                  <ul className="mt-1.5 space-y-0.5">
+                    {servicesInGroup(g).map((s) => (
+                      <li key={s.slug}>
+                        <Link
+                          to="/services/$slug/"
+                          params={{ slug: s.slug }}
+                          className="group flex items-center gap-3 rounded-2xl p-1.5 transition hover:bg-panel-2/70"
+                        >
+                          <ServiceIcon slug={s.slug} size="sm" />
+                          <span className="flex-1 font-heading text-sm font-semibold text-foreground">
+                            {s.title}
+                          </span>
+                          <ArrowRight
+                            size={15}
+                            aria-hidden
+                            className="text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-cyan"
+                          />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </li>
               ))}
-            </ul>
+            </ol>
           </nav>
         }
       />
 
-      <Section tone="light">
-        <div className="space-y-5">
-          {services.map((s, i) => (
-            <ServiceChooserCard key={s.slug} service={s} index={i} />
-          ))}
-        </div>
-      </Section>
+      {groupOrder.map((g, gi) => {
+        const list = servicesInGroup(g);
+        return (
+          <section
+            key={g}
+            id={`stage-${g}`}
+            aria-labelledby={`stage-${g}-title`}
+            className={`${bandClass(gi % 2 ? "sage" : "light")} scroll-mt-20 py-16 md:py-24`}
+          >
+            <Container>
+              <StageHeading group={g} count={list.length} />
+              <div className="space-y-5">
+                {list.map((s) => (
+                  <ServiceChooserCard key={s.slug} service={s} index={position(s.slug)} />
+                ))}
+              </div>
+            </Container>
+          </section>
+        );
+      })}
 
       <Section
         title="Agency delivery, white-label or direct"

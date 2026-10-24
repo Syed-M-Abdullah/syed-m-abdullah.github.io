@@ -19,6 +19,7 @@ const capabilities: { label: string; slug: ServiceSlug }[] = [
   { label: "n8n / Zapier / Make", slug: "workflow-automation" },
   { label: "AI Content to WordPress", slug: "ai-content-automation" },
   { label: "AI Voice Agents", slug: "voice-ai" },
+  { label: "Websites & Mobile Apps", slug: "website-development" },
   { label: "Custom Software", slug: "custom-software" },
 ];
 

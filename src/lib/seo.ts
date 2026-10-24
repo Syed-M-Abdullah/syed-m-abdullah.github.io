@@ -102,6 +102,10 @@ export const personJsonLd = {
     "Chatbots",
     "ASP.NET",
     "SQL Server",
+    "Website development",
+    "React Native",
+    "Mobile app development",
+    "Website maintenance",
   ],
 };
 

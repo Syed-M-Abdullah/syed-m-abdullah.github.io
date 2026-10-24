@@ -1069,7 +1069,7 @@
     ],
     "result": [],
     "toolsUsed": ["Xamarin.Forms", "ASP.NET Web API", "SQLite"],
-    "services": ["custom-software"],
+    "services": ["custom-software", "mobile-app-development"],
     "featured": false,
     "images": [],
     "flow": ["Rep takes order (offline)", "Stored locally", "Device reconnects", "Sync to API"]

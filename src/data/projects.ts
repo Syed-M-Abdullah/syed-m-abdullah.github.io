@@ -142,7 +142,10 @@ export const serviceTool: Record<ServiceSlug, ProjectTool | undefined> = {
   "ai-content-automation": undefined,
   "voice-ai": "voice",
   "ai-chatbots": undefined,
+  "website-development": "custom",
+  "mobile-app-development": "custom",
   "custom-software": "custom",
+  "website-maintenance": undefined,
 };
 
 /** Projects for a service page: projects tagged with the service, those with images first. */

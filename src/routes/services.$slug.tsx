@@ -1,15 +1,21 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { ArrowRight, CalendarClock, Check } from "lucide-react";
+import { ArrowRight, CalendarClock } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { PageHero } from "@/components/page-hero";
 import { Container, Section } from "@/components/section";
-import { TalkCard } from "@/components/talk-card";
-import { type Tone } from "@/lib/band";
+import { bandClass, type Tone } from "@/lib/band";
 import { ProjectGrid } from "@/components/projects";
 import { CtaPanel } from "@/components/cta-panel";
 import { ButtonLink } from "@/components/button-link";
-import { MaskLines } from "@/components/reveal-text";
-import { DrawLine } from "@/components/process";
+import { FaqSection } from "@/components/faq";
+import {
+  BeforeAfter,
+  CapabilityGrid,
+  FitAndIncluded,
+  ServicePager,
+  StepsTimeline,
+  WhyThisService,
+} from "@/components/service-page";
 import { automationPositioning, getService, type Service } from "@/data/services";
 import { projectsForService, serviceTool, toolLabels } from "@/data/projects";
 import { site } from "@/data/site";
@@ -20,7 +26,7 @@ import { VoiceSamples } from "@/components/voice-samples";
 import { LazyMount } from "@/components/lazy-mount";
 import { ToolChip } from "@/components/tool-logo";
 import { PlatformComparison } from "@/components/platform-comparison";
-import { seo } from "@/lib/seo";
+import { canonicalUrl, faqJsonLd, jsonLd, seo } from "@/lib/seo";
 import { NotFoundPage } from "@/components/not-found";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -29,14 +35,28 @@ export const Route = createFileRoute("/services/$slug")({
     if (!service) throw notFound();
     return { service };
   },
-  head: ({ loaderData, params }) =>
-    loaderData
-      ? seo({
-          title: loaderData.service.meta.title,
-          description: loaderData.service.meta.description,
-          path: `/services/${params.slug}`,
-        })
-      : seo({ title: "Service not found", description: "", path: "/services", noindex: true }),
+  head: ({ loaderData, params }) => {
+    if (!loaderData) {
+      return seo({ title: "Service not found", description: "", path: "/services", noindex: true });
+    }
+    const s = loaderData.service;
+    const path = `/services/${params.slug}`;
+    return {
+      ...seo({ title: s.meta.title, description: s.meta.description, path }),
+      scripts: [
+        jsonLd({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: s.title,
+          serviceType: s.shortTitle,
+          description: s.meta.description,
+          url: canonicalUrl(path),
+          provider: { "@type": "Person", name: site.name, url: `${site.url}/` },
+        }),
+        jsonLd(faqJsonLd(s.faqs)),
+      ],
+    };
+  },
   component: ServiceDetail,
   notFoundComponent: NotFoundPage,
 });
@@ -48,8 +68,9 @@ function toneCycle() {
 }
 
 /**
- * Service page: hero with its own animation → the problem → what I build → (comparison) →
- * how it works → what you get + tools → related projects → call to action.
+ * Service page, in the order a buyer decides: the promise (hero) → what changes → what I build
+ * → (comparison) → who it's for and what's included → real work → how it works → why me → FAQ
+ * → call to action.
  */
 function ServiceDetail() {
   const { service: s } = Route.useLoaderData();
@@ -110,53 +131,12 @@ function ServiceDetail() {
         </Section>
       )}
 
-      {/* The problem: two lines, in the client's words */}
-      <section aria-labelledby="problem-title" className={`band tone-${next()} py-16 md:py-24`}>
-        <Container className="max-w-4xl">
-          <h2
-            id="problem-title"
-            data-reveal="blur-up"
-            className="mb-4 font-heading text-[15px] font-semibold tracking-normal text-muted-foreground"
-          >
-            The problem
-          </h2>
-          <p
-            data-reveal="mask-lines"
-            data-delay="100"
-            className="text-2xl font-bold leading-snug text-foreground sm:text-[2rem]"
-          >
-            <MaskLines>{s.problem[0]}</MaskLines>
-          </p>
-          <p
-            data-reveal="up"
-            data-delay="400"
-            className="mt-3 text-xl leading-snug text-muted-foreground sm:text-[1.6rem]"
-          >
-            {s.problem[1]}
-          </p>
-        </Container>
-      </section>
+      <Section id="changes" tone={next()} title="What changes for your business">
+        <BeforeAfter items={s.beforeAfter} />
+      </Section>
 
-      {/* An editorial two-column list, not another grid of cards. */}
-      <Section tone={next()} title="What I build">
-        <ol className="grid gap-x-12 md:grid-cols-2">
-          {s.build.map((b, i) => (
-            <li
-              key={b.title}
-              data-reveal={i % 2 ? "right" : "left"}
-              style={{ "--i": i % 2 } as React.CSSProperties}
-              className="flex gap-5 border-t border-border py-6"
-            >
-              <span className="w-7 shrink-0 pt-1 font-mono text-xs text-subtle">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h3 className="text-lg font-bold text-foreground">{b.title}</h3>
-                <p className="mt-1 text-[15px] leading-relaxed text-muted-foreground">{b.body}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
+      <Section id="build" tone={next()} title="What I build">
+        <CapabilityGrid service={s} />
       </Section>
 
       {isAutomation && (
@@ -170,70 +150,18 @@ function ServiceDetail() {
         </Section>
       )}
 
-      <Section tone="brand" angle title="Three steps to a live system" align="center">
-        <ol className="relative grid gap-5 md:grid-cols-3">
-          {/* Runs from the first step's centre to the last; the circles sit on top of it. */}
-          <DrawLine className="absolute top-7 left-[16.6%] hidden w-[66.8%] md:block" />
-          {s.steps.map((st, i) => (
-            <li
-              key={st.title}
-              data-reveal="up"
-              style={{ "--i": i * 2 } as React.CSSProperties}
-              className="relative flex flex-col items-center text-center"
-            >
-              <span className="relative grid h-14 w-14 place-items-center rounded-full border-4 border-[var(--background)] bg-[#2563eb] font-heading text-lg font-bold text-white">
-                {i + 1}
-              </span>
-              <h3 className="mt-5 text-xl font-bold text-foreground">{st.title}</h3>
-              <p className="mt-2 max-w-xs text-[15px] leading-relaxed text-muted-foreground">
-                {st.body}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </Section>
-
-      <Section tone={next()} title="What you get">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12">
-          <ul className="h-fit divide-y divide-border border-y border-border">
-            {s.outcomes.map((o, i) => (
-              <li
-                key={o}
-                data-reveal="left"
-                style={{ "--i": i } as React.CSSProperties}
-                className="flex gap-3 py-4 text-[16px] leading-snug text-foreground"
-              >
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[color-mix(in_oklab,var(--success)_14%,transparent)] text-success">
-                  <Check size={12} strokeWidth={3} aria-hidden />
-                </span>
-                {o}
-              </li>
-            ))}
-          </ul>
-          <div data-reveal="right" data-delay="200" className="space-y-5">
-            {serviceTools.length > 0 && (
-              <div>
-                <h3 className="font-heading text-[15px] font-semibold text-foreground">
-                  Tools I use for this
-                </h3>
-                <ul className="mt-3 flex flex-wrap gap-2">
-                  {serviceTools.map((t) => (
-                    <li key={t.id}>
-                      <ToolChip tool={t} size="sm" />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            <TalkCard />
-          </div>
-        </div>
-      </Section>
+      <section aria-labelledby="fit-title" className={`${bandClass(next())} py-16 md:py-24`}>
+        <Container>
+          <FitAndIncluded service={s} tools={serviceTools} />
+        </Container>
+      </section>
 
       {related.length > 0 && (
         <Section
+          id="work"
           tone={next()}
-          title={`${s.shortTitle} projects`}
+          title="Recent work like this"
+          intro="Real projects, with screenshots and a short write-up of each."
           action={
             <a
               href={relatedTool ? `/projects/?tool=${relatedTool}` : "/projects/"}
@@ -247,6 +175,27 @@ function ServiceDetail() {
           <ProjectGrid projects={related} />
         </Section>
       )}
+
+      <Section
+        id="steps"
+        tone="brand"
+        angle
+        title="Three steps to a live system"
+        intro="Clear milestones, and something you can see and test at every step."
+        align="center"
+      >
+        <StepsTimeline steps={s.steps} />
+      </Section>
+
+      <section aria-labelledby="why-title" className={`${bandClass(next())} py-16 md:py-24`}>
+        <Container>
+          <WhyThisService service={s} />
+        </Container>
+      </section>
+
+      <FaqSection id="service-faq" title="Common questions" faqs={s.faqs} tone={next()}>
+        <ServicePager slug={s.slug} />
+      </FaqSection>
 
       <CtaPanel
         title={s.cta.title}

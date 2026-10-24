@@ -1,20 +1,27 @@
 import { useEffect, useRef, useState } from "react";
 import {
+  Activity,
   BarChart3,
   BellRing,
   Bot,
   CalendarCheck,
   Check,
   ContactRound,
+  DatabaseBackup,
+  Gauge,
+  Lock,
   MessageCircle,
   MessageSquareText,
   PenLine,
   PhoneMissed,
+  RefreshCw,
   Search,
   Sheet,
+  ShieldCheck,
   Star,
   UserCheck,
   Webhook,
+  WifiOff,
   type LucideIcon,
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
@@ -49,7 +56,7 @@ function Panel({ children, label }: { children: React.ReactNode; label?: string 
 /** White tool chips under a visual (the platforms the service is built on). */
 function PlatformChips({ ids }: { ids: string[] }) {
   return (
-    <div className="flex flex-wrap justify-center gap-2 px-5 pb-6">
+    <div className="relative z-[2] flex flex-wrap justify-center gap-2 px-5 pb-11">
       {ids.map((id) => {
         const t = tools.find((x) => x.id === id);
         return t ? (
@@ -345,10 +352,23 @@ const drops = [
   { x0: 165, depth: 4 },
   { x0: -20, depth: 4 },
 ];
+/** Where the leads come from: outbound, local and inbound channels into one funnel. */
+const leadSources = ["Apollo.io", "LinkedIn", "Google Maps", "Website & ads"];
 function LeadGenVisual() {
   const layerY = (i: number) => 26 + i * 66;
   return (
     <Panel label="Illustration">
+      <ul className="flex flex-wrap justify-center gap-1.5 px-5 pt-5">
+        {leadSources.map((src, i) => (
+          <li
+            key={src}
+            className="lead-source rounded-full border border-white/15 bg-white/10 px-2.5 py-1 font-heading text-[11.5px] font-semibold text-white"
+            style={{ "--i": i } as React.CSSProperties}
+          >
+            {src}
+          </li>
+        ))}
+      </ul>
       <svg viewBox="0 0 520 300" className="block h-auto w-full">
         <defs>
           <linearGradient id="funnel-grad" x1="0" y1="0" x2="0" y2="1">
@@ -551,6 +571,192 @@ function DashboardVisual() {
   );
 }
 
+/* ---- Website Development: a page assembles itself in the browser, then an enquiry is
+   delivered to the CRM. Illustration only: no client data, no numbers. */
+function WebsiteVisual() {
+  const bar = (w: string, c = "#cbd2e0", h = "h-2") => (
+    <span className={`block ${h} rounded-full`} style={{ width: w, background: c }} />
+  );
+  return (
+    <Panel label="Illustration">
+      <div className="p-5 pb-11">
+        <div className="overflow-hidden rounded-xl bg-white shadow-[0_24px_50px_-24px_rgba(0,0,0,0.8)]">
+          <div className="flex items-center gap-1.5 border-b border-[#e5e7eb] bg-[#f3f4f6] px-3 py-2">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#f87171]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#fbbf24]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#34d399]" />
+            <span className="ml-3 flex flex-1 items-center gap-1.5 rounded-md bg-white px-2.5 py-1 text-[10.5px] text-[#475069]">
+              <Lock size={10} strokeWidth={2.5} /> yourbusiness.com
+            </span>
+          </div>
+          <div className="relative space-y-4 p-4">
+            <div
+              className="web-el flex items-center justify-between"
+              style={{ "--d": 0 } as React.CSSProperties}
+            >
+              <span className="block h-3 w-14 rounded bg-[#0b1224]" />
+              <span className="flex items-center gap-2.5">
+                {bar("26px")}
+                {bar("26px")}
+                {bar("26px")}
+                <span className="block h-5 w-14 rounded-full bg-[#2563eb]" />
+              </span>
+            </div>
+            <div className="web-el space-y-2" style={{ "--d": 1 } as React.CSSProperties}>
+              {bar("78%", "#0b1224", "h-3.5")}
+              {bar("56%", "#0b1224", "h-3.5")}
+              {bar("68%")}
+              <span className="flex gap-2 pt-1.5">
+                <span className="block h-6 w-20 rounded-full bg-[#2563eb]" />
+                <span className="block h-6 w-16 rounded-full border border-[#cbd2e0]" />
+              </span>
+            </div>
+            <div
+              className="web-el grid grid-cols-3 gap-2"
+              style={{ "--d": 2 } as React.CSSProperties}
+            >
+              {[0, 1, 2].map((i) => (
+                <span key={i} className="block space-y-1.5 rounded-lg border border-[#eef0f4] p-2">
+                  <span className="web-img block h-9 rounded-md" />
+                  {bar("80%", "#94a3b8", "h-1.5")}
+                  {bar("60%", "#cbd2e0", "h-1.5")}
+                </span>
+              ))}
+            </div>
+            <div className="web-el flex gap-2" style={{ "--d": 3 } as React.CSSProperties}>
+              <span className="block h-7 flex-1 rounded-md border border-[#cbd2e0]" />
+              <span className="flex h-7 items-center rounded-md bg-[#0b1224] px-3 text-[10.5px] font-semibold text-white">
+                Send enquiry
+              </span>
+            </div>
+            <div className="web-toast absolute right-3 bottom-3 flex items-center gap-2 rounded-lg bg-[#0b1224] px-3 py-2 text-[11px] font-semibold text-white shadow-lg">
+              <span className="grid h-4 w-4 place-items-center rounded-full bg-[#10b981]">
+                <Check size={10} strokeWidth={3} />
+              </span>
+              New enquiry sent to your CRM
+            </div>
+          </div>
+        </div>
+      </div>
+      <PlatformChips ids={["react", "wordpress", "aspnetcore"]} />
+    </Panel>
+  );
+}
+
+/* ---- Mobile Apps: one React Native app on two phones. The order flow follows a real project
+   (orders saved offline, synced when the signal returns); the order lines are illustrative. */
+const orderLines = [
+  ["Bottled water, 24-pack", "× 4"],
+  ["Cleaning supplies", "× 2"],
+  ["Office paper, A4", "× 10"],
+];
+function MobileVisual() {
+  return (
+    <Panel label="Illustration">
+      <div className="relative flex justify-center px-5 pt-7 pb-10">
+        {/* second phone behind: the same app on Android */}
+        <div
+          aria-hidden
+          className="absolute top-12 left-[calc(50%-150px)] h-[240px] w-[160px] -rotate-[8deg] rounded-[1.8rem] border-[5px] border-[#1e293b] bg-[#e2e8f0] opacity-80 shadow-xl"
+        >
+          <div className="space-y-2 p-4 pt-7">
+            <span className="block h-2.5 w-16 rounded-full bg-[#94a3b8]" />
+            {[0, 1, 2].map((i) => (
+              <span key={i} className="block h-7 rounded-lg bg-white" />
+            ))}
+          </div>
+        </div>
+        <div className="relative z-[1] w-[210px] rounded-[2rem] border-[6px] border-[#0b1224] bg-white shadow-[0_30px_60px_-24px_rgba(0,0,0,0.85)]">
+          <div className="absolute top-0 left-1/2 h-4 w-20 -translate-x-1/2 rounded-b-xl bg-[#0b1224]" />
+          <div className="px-3.5 pt-7 pb-4 text-[#0b1224]">
+            <div className="flex items-center justify-between">
+              <span className="font-heading text-[13.5px] font-bold">New order</span>
+              <span className="relative h-5 w-[86px]">
+                <span className="app-offline absolute inset-0 inline-flex items-center justify-center gap-1 rounded-full bg-[#fef3c7] text-[9.5px] font-semibold text-[#92400e]">
+                  <WifiOff size={10} strokeWidth={2.5} /> Saved offline
+                </span>
+                <span className="app-synced absolute inset-0 inline-flex items-center justify-center gap-1 rounded-full bg-[#d1fae5] text-[9.5px] font-semibold text-[#065f46]">
+                  <Check size={10} strokeWidth={3} /> Synced
+                </span>
+              </span>
+            </div>
+            <ul className="mt-3 space-y-2">
+              {orderLines.map(([name, qty], i) => (
+                <li
+                  key={name}
+                  className="app-row flex items-center justify-between rounded-lg bg-[#f3f4f6] px-2.5 py-2 text-[10.5px]"
+                  style={{ "--d": i } as React.CSSProperties}
+                >
+                  <span className="truncate">{name}</span>
+                  <span className="font-semibold">{qty}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-3 rounded-lg bg-[#2563eb] py-2 text-center text-[11px] font-semibold text-white">
+              Save order
+            </div>
+            <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#cbd2e0]" />
+          </div>
+        </div>
+      </div>
+      <PlatformChips ids={["reactnative", "typescript", "firebase"]} />
+    </Panel>
+  );
+}
+
+/* ---- Website Care: this month's checks tick off one by one while the site stays online. */
+const careChecks: { label: string; status: string; Icon: LucideIcon }[] = [
+  { label: "Uptime monitoring", status: "Online", Icon: Activity },
+  { label: "Daily backup", status: "Completed", Icon: DatabaseBackup },
+  { label: "Security scan", status: "No issues", Icon: ShieldCheck },
+  { label: "Updates", status: "Tested and applied", Icon: RefreshCw },
+  { label: "Speed check", status: "Passed", Icon: Gauge },
+];
+function MaintenanceVisual() {
+  return (
+    <Panel label="Illustration">
+      <div className="p-5 pb-11">
+        <div className="relative overflow-hidden rounded-2xl bg-white p-4 text-[#0b1224] shadow-[0_24px_50px_-24px_rgba(0,0,0,0.8)]">
+          <span aria-hidden className="care-scan" />
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-[10.5px] tracking-[0.14em] text-[#5c667f] uppercase">
+              Website care · this month
+            </span>
+            <span className="flex items-center gap-1.5 text-[11px] font-semibold text-[#047857]">
+              <span className="hero-live-dot" /> Online
+            </span>
+          </div>
+          <ul className="mt-2 divide-y divide-[#eef0f4]">
+            {careChecks.map((c, i) => (
+              <li
+                key={c.label}
+                className="flex items-center justify-between gap-3 py-2.5 text-[12.5px]"
+              >
+                <span className="flex items-center gap-2 text-[#334155]">
+                  <c.Icon size={14} strokeWidth={2.2} /> {c.label}
+                </span>
+                <span
+                  className="care-check inline-flex items-center gap-1 rounded-full bg-[#d1fae5] px-2 py-0.5 text-[10.5px] font-semibold text-[#065f46]"
+                  style={{ "--i": i } as React.CSSProperties}
+                >
+                  <Check size={10} strokeWidth={3} /> {c.status}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="care-report mt-3 flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-3.5 py-2.5 text-[12px] text-white">
+          <span>Monthly report</span>
+          <span className="inline-flex items-center gap-1 font-semibold text-[#34d399]">
+            <Check size={12} strokeWidth={3} /> Sent
+          </span>
+        </div>
+      </div>
+      <PlatformChips ids={["wordpress", "react", "aspnetcore"]} />
+    </Panel>
+  );
+}
+
 /* ---- Custom Software: real screens from two delivered systems (not a mock dashboard). */
 const screenSlugs = ["restaurant-pos-zatca-integrated", "hisabdaar"];
 function ScreensVisual() {
@@ -619,6 +825,12 @@ export function ServiceVisual({ slug }: { slug: ServiceSlug }) {
       return <ChatVisual />;
     case "custom-software":
       return <ScreensVisual />;
+    case "website-development":
+      return <WebsiteVisual />;
+    case "mobile-app-development":
+      return <MobileVisual />;
+    case "website-maintenance":
+      return <MaintenanceVisual />;
     default:
       return null;
   }

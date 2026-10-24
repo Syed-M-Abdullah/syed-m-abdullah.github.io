@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Linkedin, Mail, MessageCircle, CalendarClock } from "lucide-react";
 import { site } from "@/data/site";
-import { services } from "@/data/services";
+import { groupOrder, serviceGroups, servicesInGroup } from "@/data/services";
 import { Logo } from "./logo";
 
 export function Footer() {
@@ -13,32 +13,37 @@ export function Footer() {
         className="tech-grid pointer-events-none absolute inset-0 -z-10 opacity-60"
       />
       <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
-          <div data-reveal="up">
+        <div className="grid gap-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-8">
+          <div
+            data-reveal="up"
+            className="md:col-span-3 lg:col-span-5 lg:flex lg:items-center lg:justify-between lg:gap-10 lg:border-b lg:border-border lg:pb-10"
+          >
             <Link to="/" className="inline-block rounded-lg" aria-label={`${site.name}, home page`}>
               <Logo />
             </Link>
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              I build the automation, CRM, voice and chat systems small teams run on, and the custom
-              .NET software behind them when a tool runs out of road.
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground lg:mt-0 lg:max-w-md">
+              Lead generation, CRM, AI agents, automation and custom software, built by one engineer
+              from the first call to handover.
             </p>
           </div>
 
-          <FooterCol title="Services" index={1}>
-            {services.map((s) => (
-              <li key={s.slug}>
-                <Link
-                  to="/services/$slug/"
-                  params={{ slug: s.slug }}
-                  className="text-sm text-muted-foreground transition hover:text-foreground"
-                >
-                  {s.shortTitle}
-                </Link>
-              </li>
-            ))}
-          </FooterCol>
+          {groupOrder.map((g, i) => (
+            <FooterCol key={g} title={serviceGroups[g].title} index={1 + i}>
+              {servicesInGroup(g).map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    to="/services/$slug/"
+                    params={{ slug: s.slug }}
+                    className="text-sm text-muted-foreground transition hover:text-foreground"
+                  >
+                    {s.shortTitle}
+                  </Link>
+                </li>
+              ))}
+            </FooterCol>
+          ))}
 
-          <FooterCol title="Explore" index={2}>
+          <FooterCol title="Explore" index={4}>
             {(
               [
                 { to: "/projects/", label: "Projects" },
@@ -58,7 +63,7 @@ export function Footer() {
             ))}
           </FooterCol>
 
-          <FooterCol title="Connect" index={3}>
+          <FooterCol title="Connect" index={5}>
             <li>
               <a
                 href={`mailto:${site.email}`}

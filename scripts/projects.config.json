@@ -16,7 +16,7 @@
   "projects": {
     "Custom Code/Hisabdaar": {
       "legacySlugs": ["hisabdaar"],
-      "services": ["custom-software"],
+      "services": ["custom-software", "website-development"],
       "toolsUsed": ["ASP.NET MVC", "SQL Server", "jQuery", "Bootstrap"]
     },
     "Custom Code/Medzah Admin portal": {
@@ -24,11 +24,12 @@
       "crop": {
         "top": 140
       },
-      "excludeImages": ["screenshot_78s.jpg", "screenshot_89s.jpg"]
+      "excludeImages": ["screenshot_78s.jpg", "screenshot_89s.jpg"],
+      "services": ["custom-software", "website-development"]
     },
     "Custom Code/Medzah Client Portal": {
       "legacySlugs": ["medzah-ecommerce"],
-      "services": ["custom-software"],
+      "services": ["custom-software", "website-development"],
       "toolsUsed": ["ASP.NET MVC 5 / Core", "JWT", "Stripe", "FedEx API"],
       "crop": {
         "top": 140
@@ -37,7 +38,7 @@
     },
     "Custom Code/Privont": {
       "legacySlugs": ["privont"],
-      "services": ["custom-software"],
+      "services": ["custom-software", "website-development", "mobile-app-development"],
       "toolsUsed": ["ASP.NET MVC", "React Native", "JWT", "Follow Up Boss API"],
       "crop": {
         "top": 140
@@ -55,7 +56,7 @@
     },
     "Custom Code/Ruda": {
       "legacySlugs": ["ruda-erp"],
-      "services": ["custom-software"],
+      "services": ["custom-software", "website-development"],
       "toolsUsed": ["ASP.NET MVC", "ADO.NET", "SQL Server 2022", "React"],
       "crop": {
         "top": 140
@@ -116,7 +117,7 @@
     },
     "N8n/Auto Generation Website Home page": {
       "legacySlugs": ["real-estate-deal-pages"],
-      "services": ["workflow-automation"]
+      "services": ["workflow-automation", "website-development"]
     },
     "N8n/Auto Invoice Generation & Therapy Confirmation System Message": {
       "legacySlugs": ["therapy-invoices-swiss-qr"],
@@ -233,7 +234,7 @@
     },
     "Zapier/CRM & Follow Up Automation": {
       "legacySlugs": ["zapier-new-lead-ghl"],
-      "services": ["workflow-automation", "gohighlevel-automation"]
+      "services": ["workflow-automation", "lead-generation"]
     },
     "Zapier/Legal Case Email Automation": {
       "legacySlugs": ["zapier-legal-case-routing"],
@@ -250,7 +251,7 @@
       "toolsUsed": ["GoHighLevel", "Calendars", "Email", "SMS"]
     },
     "GHL/Lead Nurturing M": {
-      "services": ["gohighlevel-automation"],
+      "services": ["gohighlevel-automation", "lead-generation"],
       "title": "Lead Nurturing Automation",
       "order": 2,
       "overview": [
@@ -296,7 +297,7 @@
       "toolsUsed": ["GoHighLevel", "Email", "Tags"]
     },
     "GHL/Lead Followup": {
-      "services": ["gohighlevel-automation"],
+      "services": ["gohighlevel-automation", "lead-generation"],
       "order": 7,
       "overview": [
         "Creates or updates the opportunity, then sends up to three SMS messages, waiting 24 hours for a reply after each one. A reply updates the opportunity and ends the sequence; no reply moves the lead to the next message."
@@ -304,7 +305,7 @@
       "toolsUsed": ["GoHighLevel", "Opportunities", "SMS"]
     },
     "GHL/Lead Generation M": {
-      "services": ["gohighlevel-automation"],
+      "services": ["gohighlevel-automation", "lead-generation"],
       "title": "Lead Generation Workflow",
       "order": 8,
       "overview": [

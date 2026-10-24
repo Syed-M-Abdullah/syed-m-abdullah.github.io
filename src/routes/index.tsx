@@ -5,7 +5,7 @@ import { Hero } from "@/components/hero";
 import { HomeFaq, ProblemSolution, TrustStrip } from "@/components/home-sections";
 import { VoiceSamplesSection } from "@/components/voice-samples";
 import { Section } from "@/components/section";
-import { ServicesBento } from "@/components/services";
+import { ServicesJourney } from "@/components/services";
 import { TechMarquee } from "@/components/tech-marquee";
 import { ComparisonTeaser } from "@/components/platform-comparison";
 import { ProjectGrid, ToolLinks } from "@/components/projects";
@@ -49,15 +49,15 @@ function Index() {
         id="services"
         tone="brand"
         className="cv-auto"
-        title="Systems that run your operations"
-        intro="Automation first, then the CRM, leads, content, calls and chats it connects."
+        title="From first lead to finished system"
+        intro="Ten services in three stages. Start where it hurts most: finding leads, converting them, or running the work behind them."
         action={
           <ButtonLink to="/services/" variant="secondary">
             All services <ArrowRight size={15} aria-hidden />
           </ButtonLink>
         }
       >
-        <ServicesBento />
+        <ServicesJourney />
       </Section>
 
       <TechMarquee tone="light" />

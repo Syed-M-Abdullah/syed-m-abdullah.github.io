@@ -13,6 +13,19 @@ static export picks up new services and projects automatically.
 | Process steps, principles, tools, experience | `src/data/misc.ts`                                |
 | Portrait and logo                            | `src/assets/portrait/`, `src/assets/brand/`       |
 
+## Services
+
+Services follow the client's journey. Every service in `src/data/services.ts` belongs to one of
+three stages (`group`): `leads` (01 Get more leads), `convert` (02 Convert every enquiry) or
+`operate` (03 Automate and scale). The menu, footer, Services page and home page list services by
+stage, in the order of the `services` array, so a new service only needs its `group` set and a
+place in that array. Keep the offer focused: add a service only when it clearly fits one stage.
+
+Each service page is built from its entry: `beforeAfter` (four rows), `build` (six or eight items,
+each with an icon name), `audiences`, `steps` (each with a `deliverable`), `included` (six items),
+`why` (three reasons) and `faqs` (four questions, also published as FAQ structured data). `summary`
+is the short line shown in the menu and on the home page; keep it under 48 characters.
+
 ## Claims and numbers
 
 - `headlineClaims` entries are hidden unless `verified: true`. Only flip one on when you can back it
